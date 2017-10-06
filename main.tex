@@ -1,0 +1,86 @@
+\documentclass[12pt]{report}
+%\documentclass[12pt,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{amsmath, esint}
+\usepackage{accents}
+\usepackage{bm}
+
+\usepackage{biblatex}
+\addbibresource{testReferences.bib}
+\addbibresource{Impedance Spectroscopy.bib}
+
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\Log}{Log}
+
+\setcounter{secnumdepth}{3}
+
+\pagenumbering{roman}
+
+\title{
+        {Single Cell Impedance Sensor}\\
+        {\large Cal Poly}
+}
+\author{David Lange}
+\date{August 2017}
+
+\begin{document}
+
+%\maketitle
+
+
+%\chapter*{Committee Membership}
+%\input{chapters/committeemebership}
+
+%\chapter*{Abstract}
+%\input{chapters/abstract}
+
+%\chapter*{Acknowledgements}
+%\input{chapters/acknowledgements}
+
+\tableofcontents
+
+\listoffigures
+
+%\listoftables
+
+\doublespacing
+
+%\chapter{Test}
+%\input{chapters/test}
+\newpage
+\pagenumbering{arabic}
+
+
+
+
+
+%\chapter{Introduction}
+%\input{chapters/introduction}
+
+\chapter{Background}
+\input{chapters/Background}
+
+%\chapter{Models}
+%\input{chapters/Models}
+
+% \chapter{Chapter 4}
+% \input{chapters/Designs}
+
+%\appendix
+%\chapter{Appendix Title}
+%\include{appendix}
+
+\singlespacing
+\printbibliography
+
+\end{document}
