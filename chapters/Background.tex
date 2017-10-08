@@ -72,11 +72,18 @@
  % Dielectrophoresis
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{Dielectrophoresis}
- \par The dielectrophoretic force (DEP) is the force generated on a particle suspended in a solution by the interaction of a applied nonuniform electric field and an induced dipole moment. Peter Debye and Herbert A. Pohl were among the first to develop dielectrophoresis and demnostrated how particles could be moved with nonuniform electric fields \cite{muller_potential_2003}. With an applied ac electric field, the average DEP force on a spherical particle is expressed as \cite{morgan_single_2007, green_dielectrophoresis_1999}
+ \par The dielectrophoretic force (DEP) is the force generated on a particle suspended in a solution by the interaction of an applied nonuniform electric field and an induced dipole moment developed through Maxwell-Wagner polarization (a build up of charges at dielectric boundaries). Peter Debye and Herbert A. Pohl were among the first to develop dielectrophoresis and demnostrated how particles could be moved with nonuniform electric fields \cite{muller_potential_2003}. With an applied ac electric field, the average DEP force on a spherical particle is expressed as \cite{morgan_single_2007, green_dielectrophoresis_1999}
  
  \begin{equation}
-     \big< F_{DEP} \big> = \pi \epsilon_m R^3 \text{Re}[\tilde{f}_{CM}] \nabla |\textbf{E}|^2 \;\;\; \text{with} \;\;  \tilde{f}_{CM} = \frac{\tilde{\epsilon}_p - \tilde{\epsilon}_m}{\tilde{\epsilon}_p + 2\tilde{\epsilon}_m} 
+     \big< F_{DEP} \big> = \pi \epsilon_m R^3 \text{Re}[\tilde{f}_{CM}] \nabla |\textbf{E}|^2 
      \label{eqn:dep_force}
+ \end{equation}
+ 
+ \noindent with
+ 
+ \begin{equation}
+     \tilde{f}_{CM} = \frac{\tilde{\epsilon}_p - \tilde{\epsilon}_m}{\tilde{\epsilon}_p + 2\tilde{\epsilon}_m} 
+     \label{eqn:fcm_background}
  \end{equation}
  
  \noindent where $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the particle, $\tilde{f}_{CM}$ is the Clausius-Mossotti factor for spherical particles,  $\tilde{\epsilon}_p$ is the complex permittivity of the particle, $\tilde{\epsilon}_m$ is the complex permittivity of the medium, and $\textbf{E}$ is the electric field. For most cases, the complex permittivity can be expressed as 
@@ -87,7 +94,7 @@
  
 \noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency. 
 
-\par From equation \ref{eqn:dep_force}, it can be noted that, given an electric field, the magnitude of the dielectrophoretic force depends on the size of the particle and the polarizability of the particle with respect to the medium (i.e Re$\big[\tilde{f}_{CM}\big]$), and the sign of the force only relates to the polarizability of the particle and medium (figure \ref{fig:freq_crossover}). It should be noted that, based on equation \ref{eqn:dep_force}, the real part of Clausius-Mossotti factor will be less than or equal to 1 and greater than or equal to -0.5. However, for non-spherical shapes, such as elongated ellipses, equation \ref{eqn:dep_force} does not express the Clausius-Mossotti factor and can reach values far greater than 1.  
+\par From equation \ref{eqn:dep_force} and \ref{eqn:fcm_background}, it can be noted that, given an electric field, the magnitude of the dielectrophoretic force depends on the size of the particle and the polarizability of the particle with respect to the medium (i.e Re$\big[\tilde{f}_{CM}\big]$), and the sign of the force only relates to the polarizability of the particle and medium (figure \ref{fig:freq_crossover}). It should be noted that, based on equation \ref{eqn:fcm_background}, the real part of Clausius-Mossotti factor will be less than or equal to 1 and greater than or equal to -0.5. However, for non-spherical shapes, such as elongated ellipses, equation \ref{eqn:fcm_background} does not satisfy the Clausius-Mossotti factor and can reach values far greater than 1.  
 
 
 \begin{figure}[ht]
@@ -104,7 +111,22 @@
      \label{eqn:f_cross}
  \end{equation}
   
- \noindent where $f_{cross}$ is the crossover frequency.
+ \noindent where $f_{cross}$ is the crossover frequency. Equation \ref{eqn:f_cross} can be rewritten to include the Maxwell-Wagner relaxation frequency as \cite{morgan_single_2007}
+ 
+ \begin{equation}
+    f_{cross} = \frac{1}{2 \pi} \sqrt{\frac{\sigma_m - \sigma_p}{\epsilon_p - \epsilon_m}f_{MW}}
+ \end{equation}
+ 
+ \noindent with
+\begin{equation}
+    f_{MW} = \frac{1}{2\pi\tau_{MW}} 
+\end{equation}
+\begin{equation}
+    \tau_{MW} = \frac{\epsilon_p + 2\epsilon_m}{\sigma_p + 2\sigma_m}
+\end{equation}
+ 
+ \noindent where $f_{MW}$ and $\tau_{MW}$ are the Maxwell-Wagner relaxation frequency and time constant respectively. The Maxwell-Wagner relaxation frequency characterizes the frequency of $\beta$ dispersion described by Schwan \cite{morgan_single_2007}.
+ 
  \par For a single shelled model of a cell, the crossover frequency can be expressed as
  
  \begin{equation}
@@ -118,6 +140,7 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{Electrorotation}
  
+ \par Electrorotation is the reaction of a polarized particle, assuming the particle has different dielectric properties than the medium, to a rotating electric field. Such a field can be created with a system of four electrodes with sinusoidal signals of 90\textdegree \;phase shifts between adjacent electrodes \cite{goater_electrorotation_1999}.
  
  % However, a major shortcoming of the previously discussed techniques is long time for measurements. An electrorotaion assay could potentially take up to several seconds per test and, as a result, limit the number of cells tested
  
