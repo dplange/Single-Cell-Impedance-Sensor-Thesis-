@@ -38,7 +38,7 @@
  
  \par The dielectric properties of cells have been investigated since 1910 when H\"{o}ber showed the existence of the cell membrane by measuring the conductivity of erythrocytes (red blood cells) at high and low frequencies \cite{hober_r_methode_1910}. The field of study further developed with Fricke's application of Maxwell's equations to measure the capacitance and thickness of the cell membrane in 1924-1925 \cite{james_clerk_maxwell_treatise_1892, fricke_h_mathematical_1924, fricke_h_electric_1924, fricke_h_electric_1931}. 
  
- \par Then in 1998, Cole used Maxwell's mixture equation to derive the complex impedance of a single shelled cell model and developed equations to describe the Cole-Cole plot \cite{cole_electric_1928}. And with Curtis, Cole made the first singel cell measurements on a Nitella cell \cite{curtis_transverse_1937}. A Nitella cell is a large bacteria cell that ranges in length from 20 $\mu$m to 60 mm. 
+ \par Then in 1998, Cole used Maxwell's mixture equation to derive the complex impedance of a single shelled cell model and developed equations to describe the Cole-Cole plot \cite{cole_electric_1928}. And with Curtis, Cole made the first single cell measurements on a Nitella cell \cite{curtis_transverse_1937}. A Nitella cell is a large bacteria cell that ranges in length from 20 $\mu$m to 60 mm. 
  
  \par From 1957-1968 Schwan used broadband electric impedance spectroscopy to identify $\alpha$, $\beta$, and $\gamma$ dispersions of a cell \cite{schwan_h_p_electrical_1957,schwan_h_p_electrical_1963,schwan_electrical_1994}. Where a dielectric dispersion is a frequency dependent relationship between an applied electric field and the permittivity of a material. The permittivity is the resistance to forming an electric field over a medium, and can be defined as
  \begin{equation}
@@ -144,13 +144,19 @@
  
  \par The average torque exerted on a spherical particle can be expressed as \cite{morgan_single_2007}
  \begin{equation}
-    \Tau_{ROT} = -4\pi \epsilon_m R^3 \text{Im}\big[\tilde{f}_{CM}\big]|\textbf{E}|^2
+    \Tau_{\text{ROT}} = -4\pi \epsilon_m R^3 \text{Im}\big[\tilde{f}_{CM}\big]|\textbf{E}|^2
+    \label{eqn:ROT_torque}
  \end{equation}
  
- \noindent where $\Tau_{ROT}$ is the torque applied to the induced dipole of the particle, $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the spherical particle, $\textbf{E}$ is the electric field, and $\text{Im}\big[\tilde{f}_{CM}\big]$ is the imaginary part of the Clausius-Mossotti factor expressed in equation \ref{eqn:fcm_background}. Similarly to the average dielectrophoretic force applied on a particle (equation \ref{eqn:dep_force}), the Clausius-Mossotti factor is the frequency dependent element and controls whether the particle rotates with or against the applied rotating electric field.
+ \noindent where $\Tau_{\text{ROT}}$ is the torque applied to the induced dipole of the particle, $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the spherical particle, $\textbf{E}$ is the electric field, and $\text{Im}\big[\tilde{f}_{CM}\big]$ is the imaginary part of the Clausius-Mossotti factor expressed in equation \ref{eqn:fcm_background}. Similarly to the average dielectrophoretic force applied on a particle (equation \ref{eqn:dep_force}), the Clausius-Mossotti factor is the frequency dependent element and controls whether the particle rotates with or against the applied rotating electric field.
  
- \par The applied torque can be measured by the angular velocity of the particle which can be expressed as \cite{}
+ \par The applied torque can be measured by the angular velocity of the particle which can be expressed as \cite{morgan_ac_2003}
+ \begin{equation}
+     R_{\text{ROT}} = - \frac{\epsilon_m\text{Im}\big[\tilde{f}_{CM}\big]|\textbf{E}|^2}{2\eta}K, 
+ \end{equation}
+ \noindent where $R_{\text{ROT}}$ is the rotation rate, $\eta$ is the dynamic viscosity, and K is the scaling factor. When the angular velocity has reached equilibrium, the applied torque will be proportional $R_{\text{ROT}}$ and related by the scaling factor K. The electrorotation torque spectrum of a cell can be used, in tandem with equation \ref{eqn:ROT_torque}, to determine the dielectric properties of the cell. 
  
+ \par By combining dielectrophoretic and electrorotaion spectroscopy techniques, significant details on the dielectric properties can be obtained. Since dielectrophoretic spectroscopy obtains the real Clausius-Mossotti factor spectrum, and electrorotation obtains the imaginary Clausius-Mossotti factor, the full $\tilde{f}_{CM}$ spectrum can determined from which dielectric properties can be extracted. Seperating the real and imaginary components of the Clausius-Mossotti factor, the following expressions are obtained
  % However, a major shortcoming of the previously discussed techniques is long time for measurements. An electrorotaion assay could potentially take up to several seconds per test and, as a result, limit the number of cells tested
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
