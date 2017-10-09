@@ -54,7 +54,7 @@
  
  \noindent where $\epsilon$ is the zeroth permittivity tensor. 
  
- \par Examples of charge reorganization include electron cloud displacement, charge ion movement, or reorientation of molecules with dipoles. $\alpha$, $\beta$, and $\gamma$ dispersions refers to the ranges of alternating current frequencies where the permittivity decreases significantly in cells (i.e. dielectric relaxation). Figure \ref{fig:schwan_dispersions} depicts an approximate permittivity spectrum of a cell.
+ \par Examples of charge reorganization include electron cloud distortion, charged particle displacement, and reorientation of molecules with dipoles. $\alpha$, $\beta$, and $\gamma$ dispersions refers to the ranges of alternating current frequencies where the permittivity decreases significantly in cells (i.e. dielectric relaxation). Figure \ref{fig:schwan_dispersions} depicts an approximate permittivity spectrum of a cell.
  
  \begin{figure}[ht]
  \centering
@@ -72,7 +72,7 @@
  % Dielectrophoresis
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{Dielectrophoresis}
- \par The dielectrophoretic force (DEP) is the force generated on a particle suspended in a solution by the interaction of an applied nonuniform electric field and an induced dipole moment developed through Maxwell-Wagner polarization (a build up of charges at dielectric boundaries). Peter Debye and Herbert A. Pohl were among the first to develop dielectrophoresis and demnostrated how particles could be moved with nonuniform electric fields \cite{muller_potential_2003}. With an applied ac electric field, the average DEP force on a spherical particle is expressed as \cite{morgan_single_2007, green_dielectrophoresis_1999}
+ \par The dielectrophoretic force (DEP) is the force generated on a particle suspended in a solution by the interaction of an applied nonuniform electric field and an induced dipole moment developed through Maxwell-Wagner polarization (a build up of charges at dielectric boundaries). Peter Debye and Herbert A. Pohl were among the first to develop dielectrophoresis and demonstrated how particles could be moved with nonuniform electric fields \cite{muller_potential_2003}. With an applied AC electric field, the average DEP force on a spherical particle is expressed as \cite{morgan_single_2007, green_dielectrophoresis_1999}
  
  \begin{equation}
      \big< F_{DEP} \big> = \pi \epsilon_m R^3 \text{Re}[\tilde{f}_{CM}] \nabla |\textbf{E}|^2 
@@ -87,14 +87,12 @@
  \end{equation}
  
  \noindent where $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the particle, $\tilde{f}_{CM}$ is the Clausius-Mossotti factor for spherical particles,  $\tilde{\epsilon}_p$ is the complex permittivity of the particle, $\tilde{\epsilon}_m$ is the complex permittivity of the medium, and $\textbf{E}$ is the electric field. For most cases, the complex permittivity can be expressed as 
- 
  \begin{equation}
      \tilde{\epsilon} = \epsilon - j\frac{\sigma}{\omega}
  \end{equation}
- 
 \noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency. 
 
-\par From equation \ref{eqn:dep_force} and \ref{eqn:fcm_background}, it can be noted that, given an electric field, the magnitude of the dielectrophoretic force depends on the size of the particle and the polarizability of the particle with respect to the medium (i.e Re$\big[\tilde{f}_{CM}\big]$), and the sign of the force only relates to the polarizability of the particle and medium (figure \ref{fig:freq_crossover}). It should be noted that, based on equation \ref{eqn:fcm_background}, the real part of Clausius-Mossotti factor will be less than or equal to 1 and greater than or equal to -0.5. However, for non-spherical shapes, such as elongated ellipses, equation \ref{eqn:fcm_background} does not satisfy the Clausius-Mossotti factor and can reach values far greater than 1.  
+\par From equation \ref{eqn:dep_force} and \ref{eqn:fcm_background}, it can be noted that, given an electric field, the magnitude of the dielectrophoretic force depends on the size of the particle and the polarizability of the particle with respect to the medium (i.e Re$\big[\tilde{f}_{CM}\big]$), and the sign of the force only relates to the polarizability of the particle and medium (figure \ref{fig:freq_crossover}). It should be noted that, based on equation \ref{eqn:fcm_background}, the real part of Clausius-Mossotti factor is restricted to less than 1 and greater than -0.5. However, for non-spherical shapes, such as elongated ellipses, equation \ref{eqn:fcm_background} does not satisfy the Clausius-Mossotti factor which can reach values far greater than 1.  
 
 
 \begin{figure}[ht]
@@ -104,7 +102,7 @@
  \label{fig:freq_crossover}
 \end{figure}
  
- \par To extract dielectric properties of cells using dielectric forces, the DEP crossover frequency can be experimentally determined and compared to theoretical equations for the crossover frequency \cite{morgan_single_2007}. The crossover frequency occurs at the frequency when the real part of the Clausius-Mossotti factor equals zero and is where the DEP force switches from a positive to negative DEP force (or \textit{vice versa}). Experimentally, this can be determined by the observation of a stationary cell in a non-uniform electric field. Theoretically, the crossover frequency can be described as
+ \par To extract dielectric properties of cells using dielectric forces, the DEP crossover frequency can be experimentally determined and compared to theoretical values \cite{morgan_single_2007}. The crossover frequency occurs at the frequency when the real part of the Clausius-Mossotti factor equals zero and is where the DEP force switches from a positive to a negative DEP force (or \textit{vice versa}). Experimentally, this can be determined by the observation of a stationary cell in a non-uniform electric field. Theoretically, the crossover frequency can be described as
  
  \begin{equation}
      f_{cross} = \frac{1}{2 \pi}\sqrt{\frac{(\sigma_m-\sigma_p)(\sigma_p+2\sigma_m)}{(\epsilon_p-\epsilon_m)(\epsilon_p+2\epsilon_m)}},
@@ -148,22 +146,29 @@
     \label{eqn:ROT_torque}
  \end{equation}
  
- \noindent where $\Tau_{\text{ROT}}$ is the torque applied to the induced dipole of the particle, $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the spherical particle, $\textbf{E}$ is the electric field, and $\text{Im}\big[\tilde{f}_{CM}\big]$ is the imaginary part of the Clausius-Mossotti factor expressed in equation \ref{eqn:fcm_background}. Similarly to the average dielectrophoretic force applied on a particle (equation \ref{eqn:dep_force}), the Clausius-Mossotti factor is the frequency dependent element and controls whether the particle rotates with or against the applied rotating electric field.
+ \noindent where $\Tau_{\text{ROT}}$ is the torque applied to the induced dipole of the particle, $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the spherical particle, $\textbf{E}$ is the electric field, and $\text{Im}\big[\tilde{f}_{CM}\big]$ is the imaginary part of the Clausius-Mossotti factor expressed in equation \ref{eqn:fcm_background}. Similarly to the average dielectrophoretic force (equation \ref{eqn:dep_force}), the Clausius-Mossotti factor is the frequency dependent element and controls whether the particle rotates with or against the applied rotating electric field.
  
  \par The applied torque can be measured by the angular velocity of the particle which can be expressed as \cite{morgan_ac_2003}
  \begin{equation}
      R_{\text{ROT}} = - \frac{\epsilon_m\text{Im}\big[\tilde{f}_{CM}\big]|\textbf{E}|^2}{2\eta}K, 
  \end{equation}
- \noindent where $R_{\text{ROT}}$ is the rotation rate, $\eta$ is the dynamic viscosity, and K is the scaling factor. When the angular velocity has reached equilibrium, the applied torque will be proportional $R_{\text{ROT}}$ and related by the scaling factor K. The electrorotation torque spectrum of a cell can be used, in tandem with equation \ref{eqn:ROT_torque}, to determine the dielectric properties of the cell. 
+ \noindent where $R_{\text{ROT}}$ is the angular velocity, $\eta$ is the dynamic viscosity, and K is the scaling factor. When the angular velocity has reached equilibrium, the applied torque will be proportional $R_{\text{ROT}}$ and related by the scaling factor K. The electrorotation torque spectrum of a cell can be used, in tandem with equation \ref{eqn:ROT_torque}, to determine the dielectric properties of the cell. 
  
- \par By combining dielectrophoretic and electrorotaion spectroscopy techniques, significant details on the dielectric properties can be obtained. Since dielectrophoretic spectroscopy obtains the real Clausius-Mossotti factor spectrum, and electrorotation obtains the imaginary Clausius-Mossotti factor, the full $\tilde{f}_{CM}$ spectrum can determined from which dielectric properties can be extracted. Seperating the real and imaginary components of the Clausius-Mossotti factor, the following expressions are obtained
- % However, a major shortcoming of the previously discussed techniques is long time for measurements. An electrorotaion assay could potentially take up to several seconds per test and, as a result, limit the number of cells tested
+ \par By combining dielectrophoretic and electrorotaion spectroscopy techniques, significant details on the dielectric properties can be obtained. Since dielectrophoretic spectroscopy determines the real Clausius-Mossotti factor spectrum, and electrorotation determines the imaginary Clausius-Mossotti factor, the full $\tilde{f}_{CM}$ spectrum can deduced from which dielectric properties can be extracted. Separating the real and imaginary components of the Clausius-Mossotti factor, the following expressions are obtained \cite{hober_zweites_1912, morgan_single_2007}.
+ \begin{equation}
+     \text{Re}\big[\tilde{f}_{\text{CM}}\big] = \frac{(\sigma_p - \sigma_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\sigma_p + 2\sigma_m)} + \frac{\omega^2\tau^2_{\text{MW}}(\epsilon_p-\epsilon_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\epsilon_p+2\epsilon_m)}
+ \end{equation}
+ \begin{equation}
+     \text{Im}\big[\tilde{f}_{\text{CM}} \big] = \frac{3\omega\tau_{\text{MW}}(\epsilon_p\sigma_m-\epsilon_m\sigma_p)}{(1+\omega^2\tau^2_{\text{MW}})(\epsilon_p+2\epsilon_m)(\sigma_p+2\sigma_m)}
+ \end{equation}
+ \par A major shortcoming of the previously discussed techniques is the long time needed for measurements. An electrorotaion assay could potentially take up to several seconds per test and limit the number of cells tested. An alternative approach, electric impedance spectroscopy, allows for rapid dielectric spectroscopy, and with flow-through designs, allows dielectric spectroscopy of every cell in a sample. 
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Electrical Impedance Spectroscopy
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{Electrical Impedance Spectroscopy}
  
+ \par Electrical Impedance is defined as the total opposition of a system to the flow of an alternating current (AC). The value of 
  
  % Electrical impedance spectroscopy has historically only been used on multiple cells to obtain aggregate data, however, with the rise of microelectomechanical systems (MEMS) and microfluidics, electrical impedance spectroscopy can be applied to individualy cells.
  
