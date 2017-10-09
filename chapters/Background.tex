@@ -168,8 +168,83 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{Electrical Impedance Spectroscopy}
  
- \par Electrical Impedance is defined as the total opposition of a system to the flow of an alternating current (AC). The value of 
+ \subsection*{Impedance}
+ \par Electrical Impedance is defined as the total opposition of a system to the flow of an alternating current (AC). If a sinusoidal voltage is applied to an arbitrary system, then the voltage and current can be expressed as
+ \begin{equation}
+    V(w) = |V|\cos(wt-\theta_V)
+    \label{eqn:V(w)}
+ \end{equation}
+ \begin{equation}
+    I(w) = |I|\cos(wt - \theta_I)
+    \label{eqn:I(w)}
+ \end{equation}
+ \noindent where $w$ is the angular frequency, $t$ is the time in seconds, and $\theta_V$ and $\theta_I$ are the phase of $V$ and $I$ respectively. Using Euler's formula, equations \ref{eqn:V(w)} and \ref{eqn:I(w)} can be recognized as the real part of the following:
+ \begin{equation}
+    \hat{V}(w) = |V|e^{j(wt-\theta_V)}
+ \end{equation}
+ \begin{equation}
+     \hat{I}(w) = |I|e^{j(wt-\theta_I)}
+ \end{equation}
  
+ \par Applying Ohm's law, the impedance of the system can be expressed as
+ 
+ \begin{equation}
+    Z = \frac{|V|}{|I|}e^{j(\theta_I-\theta_V)}
+ \end{equation}
+ \noindent or as 
+ \begin{equation}
+     Z = |Z|e^{j\theta}
+     \label{eqn:impedance_euler}
+ \end{equation}
+ \noindent where $\theta$ is the difference in phase of the voltage from the current after the current passes through the system. Equation \ref{eqn:impedance_euler} sets the interpretation of impedance to be a vector that lives on the complex plane where $|Z|$ is the length of the vector and $\theta$ is the angle of the vector from the positive real axis (figure \ref{fig:Impedance_diagram}).
+ 
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/impdedanceDiagram.png}
+ \caption[Representation of Impedance as a vector on the complex plane]{Representation of Impedance as a vector on the complex plane with a real component $R$ and imaginary component $X$. }
+ \label{fig:Impedance_diagram}
+ \end{figure}
+ 
+ \par As a vector on the complex plane, impedance can be represented in rectangular coordinates and polar form:
+ \begin{equation}
+    Z = R + jX,
+ \end{equation}
+ \noindent where $R$ and $X$ are the real and imaginary components of the impedance vector, 
+ \begin{equation}
+     Z = |Z| \angle \theta
+ \end{equation}
+ \noindent where $|Z|$ is the magnitude of the impedance vector and $\theta$ is the angle of the vector from the positive real axis. Given an AC current the voltage drop over the system can be expressed with Ohm's law as
+ \begin{equation}
+    \Delta \hat{V}(w) = Z(w)\hat{I}(w)
+ \end{equation}
+ \noindent and the phase of the voltage signal will be shifted from the current signal by $\theta$.
+ \par The rectangular form and polar form of the impedance are related as follows:
+ \begin{equation}
+     |Z| = \sqrt{R^2 + X^2}
+ \end{equation}
+ \begin{equation}
+    \theta = \text{arctan}(\frac{X}{R})
+ \end{equation}
+ \begin{equation}
+    R = |Z|\cos\theta
+ \end{equation}
+ \begin{equation}
+     X = |Z|\sin\theta
+ \end{equation}
+ 
+ \par The impedance of a system can be represented by a combination of elementary circuit components: reistors, capacitors, and inductor. The voltage response of these elements in the time domain can be expressed as
+ \begin{alignat}{2}
+    &\text{Resistor:} \quad  &&V(t) = I(t)R \label{eqn:ohms_law}\\\nonumber\\
+    &\text{Capacitor:} \quad &&V(t) = C \frac{dV}{dt}\\\nonumber\\
+    &\text{Inductor:} \quad  &&V(t) = L \frac{dI}{dt}\\\nonumber
+ \end{alignat}
+ 
+ \noindent where $V(t)$ and $I(t)$ are the voltage and current as a function of time, $R$ is the resistance, $C$ is the capacitance, $L$ is the inductance. After applying Laplace transforms, the frequency dependent impedance of each element can be obtained as
+  \begin{alignat}{2}
+    &\text{Resistor:} \quad  &&Z(w) = R \;\;\;\\\nonumber\\
+    &\text{Capacitor:} \quad &&Z(w) = \frac{1}{jwC}\\\nonumber\\
+    &\text{Inductor:} \quad  &&Z(w) = jwL\\\nonumber
+ \end{alignat}
  % Electrical impedance spectroscopy has historically only been used on multiple cells to obtain aggregate data, however, with the rise of microelectomechanical systems (MEMS) and microfluidics, electrical impedance spectroscopy can be applied to individualy cells.
  
  
