@@ -212,17 +212,19 @@
  \noindent where $R$ and $X$ are the real and imaginary components of the impedance vector, 
  \begin{equation}
      Z = |Z| \angle \theta
+     \label{eqn:z_polar}
  \end{equation}
  \noindent where $|Z|$ is the magnitude of the impedance vector and $\theta$ is the angle of the vector from the positive real axis. Given an AC applied signal, Ohm's law can then be expressed as
  \begin{equation}
     |V| = |Z||I|
+    \label{eqn:ohm_mag}
  \end{equation}
  \noindent and the phase of the voltage signal will be shifted from the current signal by $\theta$. 
  
  \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/ac_signal.png}
-    \caption[Current Response of a system to an applied voltage]{Current Response of a system to a 1V applied voltage.}
+    \includegraphics[width=0.9\textwidth]{images/ac_signal.png}
+    \caption[Current Response of a system to an applied voltage]{Current Response of a system to a 1 volt applied potential. Using equations \ref{eqn:z_polar} and \ref{eqn:ohm_mag}, the impedance of the system can be expressed as $Z=\sqrt{2}\angle -\dfrac{\pi}{4}$} 
     \label{fig:ac_signal}
  \end{figure}
  
@@ -246,7 +248,6 @@
     &\text{Capacitor:} \quad &&V(t) = C \frac{dV}{dt}\\\nonumber\\
     &\text{Inductor:} \quad  &&V(t) = L \frac{dI}{dt}\\\nonumber
  \end{alignat}
- 
  \noindent where $V(t)$ and $I(t)$ are the voltage and current as a function of time, $R$ is the resistance, $C$ is the capacitance, $L$ is the inductance. After applying Laplace transforms, the frequency dependent impedance of each element can be obtained as
   \begin{alignat}{2}
     &\text{Resistor:} \quad  &&Z(w) = R \;\;\;\\\nonumber\\
@@ -255,8 +256,9 @@
  \end{alignat}
  
  \subsection*{Spectroscopy}
+ \par The application of impedance spectroscopy has a broad range from analysis of reaction kinetics, the study of batteries, to the research of biological samples. The general process of impedance spectroscopy involves the application of a voltage or current signal and the measurement of the signal response over a range of frequencies to obtain an impedance spectrum of the material. The resulting spectrum provides insight into the dielectric properties of the test material(s). 
  
- 
+ \par The simplest method for measuring the impedance is the au 
  % Electrical impedance spectroscopy has historically only been used on multiple cells to obtain aggregate data, however, with the rise of microelectomechanical systems (MEMS) and microfluidics, electrical impedance spectroscopy can be applied to individualy cells.
  
  
