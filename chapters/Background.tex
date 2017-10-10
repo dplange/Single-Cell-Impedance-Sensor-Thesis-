@@ -256,10 +256,16 @@
  \end{alignat}
  
  \subsection*{Spectroscopy}
- \par The application of impedance spectroscopy has a broad range from analysis of reaction kinetics, the study of batteries, to the research of biological samples. The general process of impedance spectroscopy involves the application of a voltage or current signal and the measurement of the signal response over a range of frequencies to obtain an impedance spectrum of the material. The resulting spectrum provides insight into the dielectric properties of the test material(s). 
+ \par The application of impedance spectroscopy has a broad range from analysis of reaction kinetics, the study of batteries, to the research of biological samples. The general process of impedance spectroscopy involves the application of a voltage or current signal and the measurement of the signal response over a range of frequencies to obtain an impedance spectrum of the device under testing (DUT). The resulting spectrum provides insight into the dielectric properties of the DUT. 
  
- \par The system for measuring impedance is the I-V method (figure \ref{fig:IV_impedance_measurement}). The I-V method  
+ \par The simplest system for measuring impedance is the I-V method (figure \ref{fig:IV_impedance_measurement}). The I-V method determines the impedance of a DUT by measuring the voltage drop over the DUT and a high precision resistor in series. The current through the system can be calculated with Ohm's law at the high precision resistor. The impedance of the DUT for the I-V method can be expressed as 
  
+ \begin{equation}
+     Z_{DUT} = \frac{\Delta V_{DUT}}{I} = \frac{V_1 - V_2}{V_2}R
+     \label{eqn:IV_Z}
+ \end{equation}
+ 
+ \noindent where $V_1$, $V_2$, and $R$ correspond to values of elements in figure \ref{fig:IV_impedance_measurement}. An important disadvantage of this configuration, is that the accuracy of the impedance values relies on the precision of the resistor value, and quality of the probes measuring $V1$ and $V2$ which can be challenged under large DUT impedances and high frequencies.
  
  \begin{table}[ht]
     \centering
@@ -271,16 +277,10 @@
  \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/I-VMethod.png}
-    \caption[I-V impedance measurement method]{t}
+    \caption[I-V impedance measurement configuration]{I-V impedance measurement }
     \label{fig:IV_impedance_measurement}
 \end{figure}
 
- \begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/RFIVMethod.png}
-    \caption[RF I-V impedance measurement method]{t}
-    \label{fig:RFIV_impedance_measurement}
-\end{figure}
 
  \begin{figure}[ht]
     \centering
