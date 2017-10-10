@@ -166,7 +166,7 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Electrical Impedance Spectroscopy
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \subsection{Electrical Impedance Spectroscopy}
+ \subsection{Impedance Spectroscopy}
  
  \subsection*{Impedance}
  \par Electrical Impedance is defined as the total opposition of a system to the flow of an alternating current (AC). If a sinusoidal voltage is applied to an arbitrary system, then the voltage and current can be expressed as
@@ -213,11 +213,19 @@
  \begin{equation}
      Z = |Z| \angle \theta
  \end{equation}
- \noindent where $|Z|$ is the magnitude of the impedance vector and $\theta$ is the angle of the vector from the positive real axis. Given an AC current the voltage drop over the system can be expressed with Ohm's law as
+ \noindent where $|Z|$ is the magnitude of the impedance vector and $\theta$ is the angle of the vector from the positive real axis. Given an AC applied signal, Ohm's law can then be expressed as
  \begin{equation}
-    \Delta \hat{V}(w) = Z(w)\hat{I}(w)
+    |V| = |Z||I|
  \end{equation}
- \noindent and the phase of the voltage signal will be shifted from the current signal by $\theta$.
+ \noindent and the phase of the voltage signal will be shifted from the current signal by $\theta$. 
+ 
+ \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/ac_signal.png}
+    \caption[Current Response of a system to an applied voltage]{Current Response of a system to a 1V applied voltage.}
+    \label{fig:ac_signal}
+ \end{figure}
+ 
  \par The rectangular form and polar form of the impedance are related as follows:
  \begin{equation}
      |Z| = \sqrt{R^2 + X^2}
@@ -245,6 +253,10 @@
     &\text{Capacitor:} \quad &&Z(w) = \frac{1}{jwC}\\\nonumber\\
     &\text{Inductor:} \quad  &&Z(w) = jwL\\\nonumber
  \end{alignat}
+ 
+ \subsection*{Spectroscopy}
+ 
+ 
  % Electrical impedance spectroscopy has historically only been used on multiple cells to obtain aggregate data, however, with the rise of microelectomechanical systems (MEMS) and microfluidics, electrical impedance spectroscopy can be applied to individualy cells.
  
  
