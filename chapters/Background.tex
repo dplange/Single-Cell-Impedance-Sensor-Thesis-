@@ -256,7 +256,7 @@
  \end{alignat}
 
 \subsection{spectroscopy}
-\par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chamber connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Measuring the resistance over time, pulses of increased resistance will mark a particle flow through the aperture, and the magnitude of the resistance pulse will correspond to the size of the particle. 
+\par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chamber connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Measuring the resistance over time, pulses of increased resistance marks a particle flowing through the aperture, and the magnitude of the resistance pulse will correspond to the size of the particle. 
 
 
 \begin{figure}
@@ -267,12 +267,18 @@
 \end{figure}
 
 
+In 1970, Deblois and Bean developed an analytical model of the Coulter counter resistance that can be related to dielectric properties of the particle \cite{deblois_counting_1970}. The resistance of the large chambers were assumed to be negligible and the resistance of the aperture was derived (figure \ref{fig:aperture}). For a tube that is filled with an electrolyte, the resistance can be expressed as
 
+\begin{equation}
+    R_t = \frac{4\rho_mL}{\pi d_{t}},
+\end{equation}
+
+\noindent where $R_t$ is the resistance of the tube, $\rho_m$ is the resistivity of the fluid, $L$ is the length of the tube, and $d_{t}$ is the diameter of the tube.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{images/aperture.png}
-    \caption[The aperture connecting the two chamber of the Coulter counter.]{The aperture connecting the two chamber of the Coulter counter where $L$ is the length of the aperture, $d_p$ is the diameter of the particle flowing through the aperture, and $d_{channel}$ is the diameter of the aperture.}
+    \caption[The aperture connecting the two chamber of the Coulter counter.]{The aperture connecting the two chamber of the Coulter counter where $L$ is the length of the aperture, $d_p$ is the diameter of the particle flowing through the aperture, and $d_{t}$ is the diameter of the aperture.}
     \label{fig:aperture}
 \end{figure}
  
