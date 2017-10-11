@@ -255,7 +255,7 @@
     &\text{Inductor:} \quad  &&Z(w) = jwL\\\nonumber
  \end{alignat}
  
- \subsection*{Spectroscopy}
+ \subsection*{Circuit Implementation}
  \par The application of impedance spectroscopy has a broad range from analysis of reaction kinetics, the study of batteries, to the research of biological samples. The general process of impedance spectroscopy involves the application of a voltage or current signal and the measurement of the signal response over a range of frequencies to obtain an impedance spectrum of the device under testing (DUT). The resulting spectrum provides insight into the dielectric properties of the DUT. 
  
  \par The simplest system for measuring impedance is the I-V method (figure \ref{fig:IV_impedance_measurement}). The I-V method determines the impedance of a DUT by measuring the voltage drop over the DUT and a high precision resistor in series. The current through the system can be calculated with Ohm's law at the high precision resistor. The impedance of the DUT for the I-V method can be expressed as 
@@ -281,11 +281,21 @@
     \label{fig:IV_impedance_measurement}
 \end{figure}
 
+\par Another circuit configuration to measure impedance is the auto-balancing bridge method (figure \ref{fig:auto-balancing_bridge}) \cite{keysight_technologies_impedance_2015}. The auto-balancing bridge method works as an extension of the I-V method. Instead of measuring the current directly, the potential on the low side of the DUT is driven to a virtual ground by an op-amp, and an equivalent current is measured. The impedance of the DUT for auto-balancing bridge can be expressed as
+
+\begin{equation}
+    \frac{V_1}{Z_{DUT}} = I_1 = I_2 = \frac{V_2}{R}
+\end{equation}
+\begin{equation}
+    Z_{DUT} = \frac{V_1}{I_1} = \frac{V_1}{V_2}R
+\end{equation}
+
+Key advantages of the auto-balancing bridge method, is that the input impedance of the I-V converter portion of the circuit essentially becomes zero and does not affect measurements, and distributed capacitance 
 
  \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{images/autoBalancingBridge.png}
-    \caption[Auto-balancing bridge impedance method]{t}
+    \caption[Auto-balancing bridge impedance method]{Auto-balancing bridge impedance method}
     \label{fig:auto-balancing_bridge}
 \end{figure}
  
