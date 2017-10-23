@@ -255,7 +255,7 @@
     &\text{Inductor:} \quad  &&Z(w) = jwL\\\nonumber
  \end{alignat}
 
-\subsection{Spectroscopy: Coulter Counter}
+\subsection*{Spectroscopy: Coulter Counter}
 \par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chamber connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Measuring the resistance over time, pulses of increased resistance marks a particle flowing through the aperture, and the magnitude of the resistance pulse will correspond to the size of the particle. 
 
 
@@ -297,7 +297,20 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
 \par Since 2000, Coulter counters have been fabricated on the micro scale and has allowed increased sensitivity and adaptability, leading to nanopore devices capable of analyzing single molecules \cite{sun_single-cell_2010}.
  
  \subsection*{Spectroscopy: Microfluidic Impedance Cytometry}
+ \par Instead of electrodes on either side of an aperture, as in Coulter counter designs, microfluidic impedance cytometry designs electrodes directly onto the walls of the test volume. The test volume is the region that contains the particle and fluid that contain significant current density. The impedance of the test volume can be approximated using Maxwell's mixture theory and a geometric factor, and can be expressed as 
  
+ \begin{equation}
+       \tilde{Z}_{mix} = \frac{1}{jw\tilde{C}_{mix}}
+    \label{eqn:impedance_with_cap}
+ \end{equation}
+ 
+ \noindent where $\tilde{C}_{mix}$ is the complex capacitance of the test volume, and can be expressed as
+ 
+ \begin{equation}
+     \tilde{C}_{mix} = \tilde{\epsilon}_{mix}G_f
+ \end{equation}
+ 
+ \noindent where $\tilde{\epsilon}_{mix}$ is the complex permittivity derived from Maxwell's mixture law and $G_f$ is the geometric factor that accounts for fringing electric fields. Further details are provided in section \ref{sec: analytical_impedance_solution}.
  
  \begin{figure}
      \centering
@@ -306,6 +319,9 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
      \label{fig:parallel_electrodes}
  \end{figure}
  
+ \par Two of the more common electrode configurations are parallel facing electrodes and coplanar electrodes (figure \ref{fig:parallel_electrodes} and \ref{fig:coplanar_electrodes}). Coplanar electrodes are easier to fabricate than parallel facing electrodes, but come at the cost of diminished sensitivity and accuracy \cite{sun_analytical_2007}. Parallel electrode systems experience smaller variations in the produced electric field in the direction orthogonal to the electrode plane when compared to coplanar electrodes. As a result the signal variation based on the height of the cell in the test volume will be greater for coplanar configurations. The will result in a loss of accuracy, unless the vertical placement of the cell in the test volume can be controlled. Parrallel facing electrodes allow designs that can create a large volume fraction for a test volume with a single particle, and therefore, create a system with enhanced sensitivity. This can be observed by noting that given an electrode width, channel height, and channel depth, the coplanar test volume will be over twice that of parallel electrodes configurations.
+  
+ 
  \begin{figure}
      \centering
      \includegraphics[width=\textwidth]{images/coplanar.png}
@@ -313,7 +329,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
      \label{fig:coplanar_electrodes}
  \end{figure}
  
- 
+ \par In microfluidic impedance cytometry, an alternating currents at a series of frequencies are applied to the system to see the impedance response over a range of frequencies. From this impedance spectrum, the frequency dependent complex response can be depicted in magnitude-phase plots, real-imamginary vs frequency plots, and nyquist plots in order to gain insight into the behaviour fo the impedance response. 
  
  \subsection*{Circuit Implementation}
  \par The application of impedance spectroscopy has a broad range from analysis of reaction kinetics, the study of batteries, to the research of biological samples. The general process of impedance spectroscopy involves the application of a voltage or current signal and the measurement of the signal response over a range of frequencies to obtain an impedance spectrum of the device under testing (DUT). The resulting spectrum provides insight into the dielectric properties of the DUT. 
