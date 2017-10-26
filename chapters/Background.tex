@@ -7,7 +7,7 @@
 \par The cell is the basic unit of life. At the fundamental level, a cell must have an outer membrane that acts as a gatekeeper between the surrounding environment and the interior constituents. The actual contents of the cell interior vary widely between between the classes of prokaryotes (single-celled organisms) and eukaryotes (cells of multi-celled organisms), and even between different instances of the classes and different states of those instances. For example, mature red blood cells do not contain a nuclei or any genetic material, but skeletal muscle fiber consist multiple nuclei. However, all these variations can be generalized to useful cell models, such as the model for human cells in figure \ref{fig:human_cell_model}.   
 \begin{figure}[ht]
  \centering
- \includegraphics[width=0.7\textwidth]{images/humanCellOverview.png}
+ \includegraphics[width=\textwidth]{images/humanCellOverview.png}
  \caption[Diagram of human cell structure.]{Diagram of human cell structure. \cite{daniel_d_chiras_human_2005} }
  \label{fig:human_cell_model}
  \end{figure}
@@ -259,7 +259,7 @@
 \par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chamber connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Measuring the resistance over time, pulses of increased resistance marks a particle flowing through the aperture, and the magnitude of the resistance pulse will correspond to the size of the particle. 
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/coultierCounter.png}
     \caption[Illustration of Coulter counter principles]{A Coulter counter that measures the DC resistance of the fluid in the chamber with two electrodes. When a particle enters the aperture, the change in resistance will provide information about the size and electrical properties of the particle}
@@ -287,7 +287,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
 
 \noindent where $d_p$ is the diameter of the particle.
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/aperture.png}
     \caption[The aperture connecting the two chamber of the Coulter counter.]{The aperture connecting the two chamber of the Coulter counter where $L$ is the length of the aperture, $d_p$ is the diameter of the particle flowing through the aperture, and $d_{t}$ is the diameter of the aperture.}
@@ -312,7 +312,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
  
  \noindent where $\tilde{\epsilon}_{mix}$ is the complex permittivity derived from Maxwell's mixture law and $G_f$ is the geometric factor that accounts for fringing electric fields. Further details are provided in section \ref{sec: analytical_impedance_solution}.
  
- \begin{figure}
+ \begin{figure}[ht]
      \centering
      \includegraphics[width=\textwidth]{images/parallel.png}
      \caption{Parallel electrode configuration for impedance cytometry}
@@ -322,14 +322,50 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
  \par Two of the more common electrode configurations are parallel facing electrodes and coplanar electrodes (figure \ref{fig:parallel_electrodes} and \ref{fig:coplanar_electrodes}). Coplanar electrodes are easier to fabricate than parallel facing electrodes, but come at the cost of diminished sensitivity and accuracy \cite{sun_analytical_2007}. Parallel electrode systems experience smaller variations in the produced electric field in the direction orthogonal to the electrode plane when compared to coplanar electrodes. As a result the signal variation based on the height of the cell in the test volume will be greater for coplanar configurations. The will result in a loss of accuracy, unless the vertical placement of the cell in the test volume can be controlled. Parrallel facing electrodes allow designs that can create a large volume fraction for a test volume with a single particle, and therefore, create a system with enhanced sensitivity. This can be observed by noting that given an electrode width, channel height, and channel depth, the coplanar test volume will be over twice that of parallel electrodes configurations.
   
  
- \begin{figure}
+ \begin{figure}[ht]
      \centering
      \includegraphics[width=\textwidth]{images/coplanar.png}
      \caption{Coplanar electrode configuration for impedance cytometry}
      \label{fig:coplanar_electrodes}
  \end{figure}
  
- \par In microfluidic impedance cytometry, an alternating currents at a series of frequencies are applied to the system to see the impedance response over a range of frequencies. From this impedance spectrum, the frequency dependent complex response can be depicted in magnitude-phase plots, real-imamginary vs frequency plots, and nyquist plots in order to gain insight into the behaviour fo the impedance response. 
+ \par In microfluidic impedance cytometry, an alternating currents at a series of frequencies are applied to the system to see the impedance response over a range of frequencies. From this impedance spectrum, the frequency dependent complex response can be depicted in magnitude-phase plots, real-imamginary vs frequency plots, and nyquist plots in order to gain insight into the behaviour for the impedance response (figure \ref{fig:impedance_diagrams}). 
+ 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/exampleCircuit.png}
+    \caption{Example circuit used in impedance diagrams}
+    \label{fig:example_circuit}
+\end{figure} 
+ 
+ 
+ \begin{figure}
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.68\textwidth]{images/magPhaseExample.png}
+        \caption{Magnitude-phase versus frequency diagrams}
+        \label{fig:mag_phase_ex}
+    \end{subfigure}
+ 
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.68\textwidth]{images/complexRealExample.png}
+        \caption{Real-imaginary versus frequency diagrams}
+        \label{fig:real_complex_ex}
+    \end{subfigure}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.52\textwidth]{images/nyquistExample.png}
+        \caption{Nyquist plot}
+        \label{fig:nyquist_plot}
+    \end{subfigure}
+    \caption[Impedance Diagrams]{Examples of magnitude-phase diagrams, real-complex diagrams, and a nyquist plot. The data is based off of the impedance of the circuit in figure \ref{fig:example_circuit}}
+    \label{fig:impedance_diagrams}
+\end{figure}
+
+\par The 
  
  \subsection*{Circuit Implementation}
  \par The application of impedance spectroscopy has a broad range from analysis of reaction kinetics, the study of batteries, to the research of biological samples. The general process of impedance spectroscopy involves the application of a voltage or current signal and the measurement of the signal response over a range of frequencies to obtain an impedance spectrum of the device under testing (DUT). The resulting spectrum provides insight into the dielectric properties of the DUT. 
