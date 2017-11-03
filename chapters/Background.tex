@@ -428,9 +428,11 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Microelectromechanical Systems and Microfluidics
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \section[MEMs and Microfluidics]{Microelctromechanical Systems and Microfluidics}
- s, smaller then 
- \par Microelectromechanical systems (MEMS) aer devices on the order o micron
+ \section[MEMs and Microfluidics]{MEMS and Microfluidics}
+ 
+ \par Microelectromechanical systems (MEMS) are devices on the order of microns, smaller than the diameter of a human hair (about 100 microns). MEMS evolved from the manufacturing processes used to fabricate integrated circuits and ink jet cartridges \cite{xia_soft_1998-1}. Using silicon based microfabrication techniques such as photolithography, etching, and metal deposition, mechanical and electrically driven micro-sized pumps, cantilevers, and sensors can be fabricated \cite{wang_bio-mems:_2006}. 
+ 
+ \par Using these microfabrication techniques, system can be miniturized in precise and reproduceable packages with applications in a variety of biology related problems. MEMS applied in these fields are refereed to as BioMEMS, and is an area of rapidly growing interest and research \cite{grayson_biomems_2004}. The majority of BioMEMS are focused on creating diagnostic systems that can identify diseases and properties of biogical substances. These devices usually need to treat, filter, and utilize detection methods that include electrophoresis, dielectrophoresis, surface plasmon resonance, and !!!! Need better examples / rewording !!!. In order to run diagnostics on a solution of biological material, a sample usually needs to undergo pretreatment, sample preparation, preconcentration and detection. With the miniaturization afforded by microfabrication technology, the concept of combining these steps into a single chip is now feasible. These devices are refereed to as labs on a chip or micro total analysis systems.
  
  %%%%%%%%%%%%%%%%%%%
  % MEMS
@@ -443,7 +445,56 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
  %%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{Microfluidics}
  
- 
+\par In most BioMEMS there is fluid flow on the micrometer scale. At this scale fluid flow physics differs from fluid flow at the macro scale. Understanding and leveraging microfluidic mechanics allows the advantage of smaller reagent and sample volumes, multiplexing, and physic phenomenom that allow experiments and functions not possible at the macro scale. Microfluidics can be defined as the study and application of fluids in structures on the micrometer scale \cite{pamb}. Laminar flow, diffustion, fluidic resistance, surface area to volume, and surface tension, may not be dominant in phenomenom on the macro scale, but on the micro scale become dominant \cite{pamb-12}. 
+
+\subsection*{Laminar Flow}
+\par Laminar flow describes the condition where the velocity of a particle in fluid flow is not a random function of time in contrast to turbulent flow which is chaotic \cite{pamb}. The Reynold number can quantitatively characterize a fluid flow. The Reynold number is a dimensionless number that is a ratio of inertial and viscous forces and can be expressed as
+
+\begin{equation}
+    \text{Re} = \frac{\rho v L}{\mu},
+\end{equation}
+
+\noindent where $\rho$ is the fluid density, $v$ is the characteristic fluid velocity, $\mu$ is the fluid viscosity, and $L$ is the characteristic length. In many cases, the characteristic length is the hydraulic diameter ($D_h$). The hydraulic diameter is used for fluid calculations in non-circular conduits by relating the conduit to a circular geometry in a proportion that maintains the conservation of momentum of the original conduit \cite{PAMB}.
+
+\par The hydraulic diameter can be expressed as ratio of cross-sectional area to conduit perimeter:
+
+\begin{equation}
+    D_h = 4 \frac{A}{P},
+    \label{eqn:hydraulic_diameter}
+\end{equation}
+
+\noindent where $A$ and $P$ is cross-sectional area and perimeter of the conduit respectively. For a cylindrical conduit, equation \ref{eqn:hydraulic_diameter} simplifies to $D_h = D_c$ where $D_c$ is the diameter of circular cross-section. For a rectangular cross-section, the hydraulic diameter is expressed as 
+
+\begin{equation}
+    D_h = \frac{2hw}{w+h},
+\end{equation}
+
+\noindent where $h$ and $w$ are the height and width of the cross-sectional rectangle respectively. For turbulent flows, where the geometry of lesser consequence, equation \ref{eqn:hydraulic_diameter} is a good approximation for fluid calculations, but for laminar flow specifics of the conduit geometry is of great consequence and equation \ref{eqn:hydraulic_diameter} should be used with caution and the understanding that results may be inaccurate. 
+
+\par In general, flow conditions with a Reynolds number much larger than 2300 exhibit turbulent behaviours, and flow conditions with a Reynolds number much smaller than 2300 exhibit laminar flow behaviours. The laminar-turbulent transition number of 2300 is reportedly accurate for microfluidics as well \cite{PAMB-14}.
+
+\par Referring back to equation \ref{eqn:hydraulic_diameter}, since the product of characteristic length and velocity for microfluidic systems, most microfluidic flows are considered laminar. An important consequence is that separate streams that come in contact will not mix via convection, but only through diffusion. This phenomenom can be quantified with the dimensionless P\'eclet number (Pe), which is defined as the ratio of the convection transport to diffusion transport \cite{micromixers}. The P\'eclet number can be expressed as 
+
+\begin{equation}
+    \text{Pe} = \frac{vL}{D}
+\end{equation}
+
+\noindent where D is the diffusion coefficient. The P\'eclet number can also be defined with the Reynolds number
+
+\begin{equation}
+    Pe = \text{Re}\;\text{Sc}
+\end{equation}
+
+\noindent where Sc is the dimensionless Schmidt number and describes the ratio of momentum diffusivity and and mass diffusivity. The Schmidt can be calculated as
+
+\begin{equation}
+    \text{Sc} = \frac{\mu}{\rho D}
+\end{equation}
+
+\par For fluid systems where Pe is much larger than 1, the system is convection dominated and when Pe is much smaller than 1, the system is diffusion dominated. Again, the product of the characteristic velocity and length in microfluidic systems is usually very small so in most BioMEMS, the system is diffusion dominated and cannot rely on convective mixing. To facilitate mixing in microfluidic systems, the device should be designed to create large surface areas between streams that must be mixed to expedite the diffusion process or stimulate turbulent flow to create convective transport.
+
+
+
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Previous Work on the Cal Poly Biofluidic Lab's EIS System
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
