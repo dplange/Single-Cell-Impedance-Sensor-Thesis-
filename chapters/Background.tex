@@ -539,10 +539,17 @@ or in index notation as
 \noindent where \textbf{g} is the acceleration of gravity, and for some microfluidic applications, the electroosmotic flow force (EOF)
 
 \begin{equation}
-    \textbf{f}_{EOF} = -\rho_e \boldsymbol{\nabla}\phi,
+    \textbf{f}_{EOF} = -\rho_e \boldsymbol{E},
 \end{equation}
 
-\noindent where $\phi$ is the applied electric potential, and $\rho_e$ is the net charge density of the electric double layer (EDL). Electric Osmotic flow arises from the coulumb force caused by the net electric charge from the electric double layer at the channel surface and the applied electric field. The electric double layer arises from the equilibrium of the solid-fluid interface and will be discussed in-depth in section. EOF results in plug flow which is characterized by a flat velocity profile in contrast to a parabolic velocity profile in pressure driven flow (figure \ref{fig:parabolic vs plug}).
+\noindent where $\boldsymbol{E}$ is the electric field vector, and $\rho_e$ is the net charge density of the electric double layer (EDL). Electric Osmotic flow arises from the Coulomb force caused by the net electric charge from the electric double layer at the channel surface and the applied electric field. The electric double layer arises from the equilibrium of the solid-fluid interface and will be discussed in-depth in section. EOF results in plug flow which is characterized by a flat velocity profile in contrast to a parabolic velocity profile in pressure driven flow (figure \ref{fig:plug_vs_parabolic_flow}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = \textwidth]{images/plugVsParabolic.png}
+    \caption[Pressure driven versus electroosmotic flow profile]{Pressure driven versus electroosmotic flow profile. }
+    \label{fig:plug_vs_parabolic_flow}
+\end{figure}
 
 \par The most common form of the Navier-Stokes equation includes the surface forces of pressure driven Newtonian fluids with the gravitational forces and can be expressed by combining equations \ref{eqn:cons_momentum}, \ref{eqn:viscous_pressure_force}, and \ref{eqn:gravity_force}. 
 
