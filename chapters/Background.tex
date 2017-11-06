@@ -447,6 +447,99 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
  
 \par In most BioMEMS there is fluid flow on the micrometer scale. At this scale fluid flow physics differs from fluid flow at the macro scale. Understanding and leveraging microfluidic mechanics allows the advantage of smaller reagent and sample volumes, multiplexing, and physic phenomenom that allow experiments and functions not possible at the macro scale. Microfluidics can be defined as the study and application of fluids in structures on the micrometer scale \cite{pamb}. Laminar flow, diffustion, fluidic resistance, surface area to volume, and surface tension, may not be dominant in phenomenom on the macro scale, but on the micro scale become dominant \cite{pamb-12}. 
 
+\subsection*{The Navier-Stokes Equation}
+
+\par !!!!!!!! Add book citation !!!!!!!!!!!!!!
+
+\par The Navier-Stokes formula is a partial differential equation that describes the fluid velocity given a set of boundary conditions. The Navier-Stokes equation is derived from applying the conservation of momentum to an infinitesimally small arbitrary control volume in fluid:
+
+\begin{equation}
+    \rho \frac{\text{D}\textbf{u}}{\text{D}t} = \sum \textbf{f}
+\end{equation}
+
+\noindent where $\rho$ is the mass density, $\textbf{u}$ is the velocity vector, $\sum \textbf{f}$ is the sum of forces applied to the control volume, and $\frac{\text{D}()}{\text{D}t}$ is the material derivative. The material derivative is the time derivative of a function that is spatially dependent and arises from the chain rule. The material derivative of an arbitrary spatial and temporal function ($F = F(t,x,y,z)$) can be calculated as
+
+\begin{equation}
+    \frac{\text{D}F}{\text{D}t} = \frac{dF}{dt} + \frac{dF}{dx}\frac{dx}{dt} + \frac{dF}{dy}\frac{dy}{dt} + \frac{dF}{dz}\frac{dz}{dt},
+\end{equation}
+
+and can be expressed as 
+
+\begin{equation}
+    \frac{\text{D}F}{\text{D}t} = \frac{dF}{dt} + \textbf{v} \cdot \boldsymbol{\nabla}F,
+\end{equation}
+
+or in index notation as
+
+\begin{equation}
+    \frac{\text{D}F}{\text{D}t} = \frac{dF}{dt} + v_j\frac{dF}{dx_j}.
+\end{equation}
+
+\par Surface forces are present in many fluid systems and generally arise from pressure driven flow and viscous properties of the fluid. In general, the surface forces are expressed as the divergence of the stress tensor:
+
+\begin{equation}
+    \textbf{f}_s = \boldsymbol{\nabla} \cdot \Tau
+\end{equation}
+\begin{equation}
+    \textbf{f}_s = \frac{d\tau_{ij}}{dx_i}
+\end{equation}
+
+\noindent where $\textbf{f}_s$ is the surface force, and $\Tau$ and $\tau_{ij}$ are the second order stress tensor which is dependent on the type of fluid and the driving forces. For pressure driven inviscid fluids, the stress tensor and surface forces can be expressed as 
+
+\begin{equation}
+    \tau_{ij} = -p\delta_{ij}
+\end{equation}
+\begin{equation}
+    \textbf{f}_s = - \frac{dp}{dx_j}
+\end{equation}
+
+\noindent where p is the pressure. 
+
+\par For a viscid Newtonian fluid, the stress tensor and surface force can be expressed as
+
+\begin{equation}
+    \tau_{ij} = -p\delta_{ij} + 2\mu(\epsilon_{ij} - \frac{1}{3}\epsilon_{kk}\delta_{ij})
+\end{equation}
+\begin{equation}
+    \textbf{f}_s = \frac{dp}{dx_i} + \mu \frac{d}{dx_j}(\frac{du_i}{dx_j} + \frac{du_j}{dx_i} - \frac{2}{3}\delta_{ij}\frac{du_k}{dx_k})
+    \label{eqn:viscid_newt_force}
+\end{equation}
+
+\noindent where $\epsilon_{ij}$ is the rate of strain tensor written as 
+
+\begin{equation}
+    \epsilon_{ij} = \frac{1}{2} \Big(\frac{du_i}{dx_j} + \frac{du_j}{du_i}\Big).
+\end{equation}
+
+\noindent If the fluid is incompressible, then conservation of mass states
+
+\begin{equation}
+    \frac{du_k}{dx_k} = \boldsymbol{\nabla} \cdot \textbf{u} = 0,
+\end{equation}
+
+\noindent and equation \ref{eqn:viscid_newt_force} can be simplified to 
+
+\begin{equation}
+    \textbf{f}_s = -\frac{dp}{dx_i} + \mu \frac{d^2u_i}{dx^2_j}
+\end{equation}
+\begin{equation}
+    \textbf{f}_s = -\boldsymbol{\nabla}p + \mu\boldsymbol{\nabla}^2\textbf{u} 
+\end{equation}
+
+\par Additional common external forces on the control volume can include the gravitational force
+
+\begin{equation}
+    \textbf{f}_g = \rho \textbf{g},
+\end{equation}
+
+\noindent where \textbf{g} is the acceleration of gravity, and for some microfluidic applications, the electroosmotic flow force (EOF)
+
+\begin{equation}
+    \textbf{f}_{EOF} = -\rho_e \boldsymbol{\nabla}\phi,
+\end{equation}
+
+\noindent where $\phi$ is the applied electric potential, and $\rho_e$ is the net charge density of the electric double layer (EDL). The electroosmotic force arises from a net charge that appears along the surface of channels under an applied voltage known as the electric double layer. This voltage creates 
+
 \subsection*{Laminar Flow}
 \par Laminar flow describes the condition where the velocity of a particle in fluid flow is not a random function of time in contrast to turbulent flow which is chaotic \cite{pamb}. The Reynold number can quantitatively characterize a fluid flow. The Reynold number is a dimensionless number that is a ratio of inertial and viscous forces and can be expressed as
 
