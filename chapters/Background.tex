@@ -455,6 +455,7 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
 
 \begin{equation}
     \rho \frac{\text{D}\textbf{u}}{\text{D}t} = \sum \textbf{f}
+    \label{eqn:cons_momentum}
 \end{equation}
 
 \noindent where $\rho$ is the mass density, $\textbf{u}$ is the velocity vector, $\sum \textbf{f}$ is the sum of forces applied to the control volume, and $\frac{\text{D}()}{\text{D}t}$ is the material derivative. The material derivative is the time derivative of a function that is spatially dependent and arises from the chain rule. The material derivative of an arbitrary spatial and temporal function ($F = F(t,x,y,z)$) can be calculated as
@@ -515,6 +516,7 @@ or in index notation as
 
 \begin{equation}
     \frac{du_k}{dx_k} = \boldsymbol{\nabla} \cdot \textbf{u} = 0,
+    \label{eqn:incompressible_cons_mass}
 \end{equation}
 
 \noindent and equation \ref{eqn:viscid_newt_force} can be simplified to 
@@ -523,13 +525,15 @@ or in index notation as
     \textbf{f}_s = -\frac{dp}{dx_i} + \mu \frac{d^2u_i}{dx^2_j}
 \end{equation}
 \begin{equation}
-    \textbf{f}_s = -\boldsymbol{\nabla}p + \mu\boldsymbol{\nabla}^2\textbf{u} 
+    \textbf{f}_s = -\boldsymbol{\nabla}p + \mu\boldsymbol{\nabla}^2\textbf{u}
+    \label{eqn:viscous_pressure_force}
 \end{equation}
 
 \par Additional common external forces on the control volume can include the gravitational force
 
 \begin{equation}
     \textbf{f}_g = \rho \textbf{g},
+    \label{eqn:gravity_force}
 \end{equation}
 
 \noindent where \textbf{g} is the acceleration of gravity, and for some microfluidic applications, the electroosmotic flow force (EOF)
@@ -538,7 +542,22 @@ or in index notation as
     \textbf{f}_{EOF} = -\rho_e \boldsymbol{\nabla}\phi,
 \end{equation}
 
-\noindent where $\phi$ is the applied electric potential, and $\rho_e$ is the net charge density of the electric double layer (EDL). The electroosmotic force arises from a net charge that appears along the surface of channels under an applied voltage known as the electric double layer. This voltage creates 
+\noindent where $\phi$ is the applied electric potential, and $\rho_e$ is the net charge density of the electric double layer (EDL). Electric Osmotic flow arises from the coulumb force caused by the net electric charge from the electric double layer at the channel surface and the applied electric field. The electric double layer arises from the equilibrium of the solid-fluid interface and will be discussed in-depth in section. EOF results in plug flow which is characterized by a flat velocity profile in contrast to a parabolic velocity profile in pressure driven flow (figure \ref{fig:parabolic vs plug}).
+
+\par The most common form of the Navier-Stokes equation includes the surface forces of pressure driven Newtonian fluids with the gravitational forces and can be expressed by combining equations \ref{eqn:cons_momentum}, \ref{eqn:viscous_pressure_force}, and \ref{eqn:gravity_force}. 
+
+\begin{equation}
+    \rho(\frac{d\textbf{u}}{dt} + \textbf{u}\cdot\boldsymbol{\nabla}\textbf{u}) = -\boldsymbol{\nabla}p + \mu\boldsymbol{\nabla}^2\textbf{u} + \rho \textbf{g}
+    \label{eqn:navier_stokes}
+\end{equation}
+
+\noindent For microfluidic applications, the Navier-Stokes equation can often be simplified by assuming negligible inertial forces (Re $<<$ 2300; laminar flow) and gravitational forces allowing equation \ref{eqn:navier_stokes} to be rewritten as
+
+\begin{equation}
+        0 = -\boldsymbol{\nabla}p + \mu\boldsymbol{\nabla}^2\textbf{u}.
+\end{equation}
+
+\par Currently there is no general closed-form solution to the Navier-Stokes equation, but can be solved in specific applications with simplifying assumptions and is widely used in computational approximations.
 
 \subsection*{Laminar Flow}
 \par Laminar flow describes the condition where the velocity of a particle in fluid flow is not a random function of time in contrast to turbulent flow which is chaotic \cite{pamb}. The Reynold number can quantitatively characterize a fluid flow. The Reynold number is a dimensionless number that is a ratio of inertial and viscous forces and can be expressed as
