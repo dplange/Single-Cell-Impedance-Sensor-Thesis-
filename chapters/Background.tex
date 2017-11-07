@@ -51,21 +51,40 @@
  
  \par Then in 1998, Cole used Maxwell's mixture equation to derive the complex impedance of a single shelled cell model and developed equations to describe the Cole-Cole plot \cite{cole_electric_1928}. And with Curtis, Cole made the first single cell measurements on a Nitella cell \cite{curtis_transverse_1937}. A Nitella cell is a large bacteria cell that ranges in length from 20 $\mu$m to 60 mm. 
  
- \par From 1957-1968 Schwan used broadband electric impedance spectroscopy to identify $\alpha$, $\beta$, and $\gamma$ dispersions of a cell \cite{schwan_h_p_electrical_1957,schwan_h_p_electrical_1963,schwan_electrical_1994}. Where a dielectric dispersion is a frequency range with a large change in permittivity with respect to frequency. The permittivity is the resistance to forming an electric field over a medium, and can be defined as
+ \par From 1957-1968 Schwan used broadband electric impedance spectroscopy to identify $\alpha$, $\beta$, and $\gamma$ dispersions of a cell \cite{schwan_h_p_electrical_1957,schwan_h_p_electrical_1963,schwan_electrical_1994}. Where a dielectric dispersion is a frequency range with a large change in permittivity with respect to frequency. The permittivity of a material is the resistance to forming an electric field over a medium. In general the effects of a source charge can be described as the polarization of surrounding medium and the residual electric field over the resisting polarized medium. For a dielectric material, the electric field may be thought of as having two components: the electric displacement vector $\boldsymbol{D}$ that accounts for the electric field generated from separated free electrical charges and the polarization $\boldsymbol{P}$ which accounts for the bound polarization charges in a dielectric material. The effect of $\boldsymbol{P}$ is the attenuation of the electric field. This relationship can be observed by rearranging the definition of electric displacement
+ 
  \begin{equation}
-     \textbf{D} = \boldsymbol{\epsilon} \textbf{E} = \epsilon_0 \textbf{E} + \textbf{P}
-     \label{eqn:dielectric_displacement}
+     \boldsymbol{D} = \epsilon_o \boldsymbol{E} + \boldsymbol{P}
+     \label{eqn:electric_displacement}
+ \end{equation}
+ \begin{equation}
+    \boldsymbol{E} = \frac{1}{\epsilon_o}\Big(\boldsymbol{D} - \boldsymbol{P}\Big)
  \end{equation}
  
- % Include a discussion of the polarization tensor?
- \noindent where $\boldsymbol{\epsilon}$ is the second order permittivity tensor, $\epsilon_0$ is the permittivity of the vacuum, $\textbf{E}$ is the first order electric field tensor, $\textbf{P}$ is first order polarization density tensor which represent the density of permanent or induced electric dipole moments, and $\textbf{D}$ is the first order electric displacement tensor and represents how the electric field affects the organization or movement of charges in a medium. For a linear, homogeneous, isotropic material with instantaneous charge response, equation \ref{eqn:dielectric_displacement} can be simplified to
+ \noindent where $\epsilon_o$ is known as the dielectric constant or the permittivity of the vacuum. The dielectric constant has a value of 8.85E-12 F/m.
+ 
+ \par For a linear dielectric medium, the polarization can be defined as 
+ 
  \begin{equation}
-    \textbf{D} = \epsilon \textbf{E}
+     \boldsymbol{P} = \epsilon_o\chi\boldsymbol{E},
+     \label{eqn:polarization}
+ \end{equation}
+ \noindent where $\chi$ is the electric susceptibility. Substituting equation \ref{eqn:polarization} into \ref{eqn:electric_displacement}
+ 
+ \begin{equation}
+    \boldsymbol{D} = \epsilon_o(1+\chi)\boldsymbol{E} = \epsilon_o \epsilon_r \boldsymbol{E}=\epsilon\boldsymbol{E},
  \end{equation}
  
- \noindent where $\epsilon$ is the zeroth permittivity tensor. 
-\par In general the effects of a source charge can be described as the polarization of surrounding medium and the residual electric field over the resisting polarized medium. The polarizability of a material is described by electric susceptibility ($x_e$) which is dependent on material properties. 
- \par Examples of charge reorganization include electron cloud distortion, charged particle displacement, and reorientation of molecules with dipoles. $\alpha$, $\beta$, and $\gamma$ dispersions refers to the ranges of alternating current frequencies where the permittivity decreases significantly in cells (i.e. dielectric relaxation). Figure \ref{fig:schwan_dispersions} depicts an approximate permittivity spectrum of a cell.
+ \noindent where $\epsilon = \epsilon_o\epsilon_r$ is the permittivity and $\epsilon_r = 1 + \chi$ is the relative permittivity of a medium. For the case of isotropic materials, $\chi$ and $\epsilon$ reduce to scalar values, but for anisotropic materials they are expressed as second order tensors. The susceptibility of a material describes how a material polarizes under an electric field where the permittivity describes the resistance of to forming an electric field over that material. For dielectrics, the permittivity and susceptibility are closely related, but due to the resistance to forming an electric field over a vacuum, the two quantities are subtly different. The permittivity of a dielectric can be viewed as the sum of resistance to forming an electric field over a vacuum and the effect of polarizing a material.  Figure \ref{tab:permittivity_table} list the permittivity and susceptibility of some common materials.
+ 
+ \begin{table}[h]
+     \centering
+     \includegraphics[width=0.5\textwidth]{images/permittivityTable.png}
+     \caption{Permittivities of and susceptibilities of common materials.}
+     \label{tab:permittivity_table}
+ \end{table}
+
+ \par The frequency dependence of the permittivity arises from the time dependency material polarization or charge reoganization. Examples of charge reorganization include electron cloud distortion, charged particle displacement, and reorientation of molecules with dipoles. $\alpha$, $\beta$, and $\gamma$ dispersions refers to the ranges of alternating current frequencies where the permittivity decreases significantly in cells (i.e. dielectric relaxation). Figure \ref{fig:schwan_dispersions} depicts an approximate permittivity spectrum of a cell.
  
  \begin{figure}[ht]
  \centering
