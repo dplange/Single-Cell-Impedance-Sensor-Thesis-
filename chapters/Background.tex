@@ -80,7 +80,7 @@
  \begin{table}[h]
      \centering
      \includegraphics[width=0.5\textwidth]{images/permittivityTable.png}
-     \caption{Permittivities of and susceptibilities of common materials.}
+     \caption[Permittivities of and susceptibilities of common materials]{Permittivities of and susceptibilities of common materials \cite{kirby_micro-and_2010}.}
      \label{tab:permittivity_table}
  \end{table}
 
@@ -631,7 +631,78 @@ or in index notation as
 
 \par For fluid systems where Pe is much larger than 1, the system is convection dominated and when Pe is much smaller than 1, the system is diffusion dominated. Again, the product of the characteristic velocity and length in microfluidic systems is usually very small so in most BioMEMS, the system is diffusion dominated and cannot rely on convective mixing. To facilitate mixing in microfluidic systems, the device should be designed to create large surface areas between streams that must be mixed to expedite the diffusion process or stimulate turbulent flow to create convective transport.
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{images/diffusion_illustration.png}
+    \caption{Illustration of diffusion}
+    \label{fig:diffusion_ilustration}
+\end{figure} 
+
 \subsection*{Diffusion}
+
+\par Since microfluidic flow is almost always laminar, mixing will only occur via diffusion \cite{david_j._beebe_physics_2002}. Diffusion is the phenomenom where a concentration will average over a volume by Brownian motion. Fick's laws give a quantitative description of diffusion. The first law states that the molar flux of a dissolved species is proportional to the concentration gradient of that species and can be expressed as 
+
+\begin{equation}
+    \boldsymbol{J} = -D \boldsymbol{\nabla}
+    \label{eqn:ficks_first}
+\end{equation}
+
+\noindent where $\boldsymbol{J}$ is the molar flux of a diffusive species, $\boldsymbol{\nabla}C$ is the concentration gradient, and $D$ is a proportionality factor known as the translational diffusion constant.
+
+\par Fick's second law arises from the continuity of mass
+
+\begin{equation}
+    \frac{dC}{dt} + \boldsymbol{\nabla} \cdot \boldsymbol{J} = 0
+\end{equation}
+
+\noindent And by substituting in Fick's first law (equation \ref{eqn:ficks_first}), Fick's second law can be expressed as 
+
+\begin{equation}
+    \frac{dc}{dt} = D\Delta C
+    \label{eqn:ficks_second}
+\end{equation}
+
+\noindent Equation \ref{eqn:ficks_second} describes the time and spatial dependencies of concentrations.
+
+\par By examining the random walk of a particle due to Brownian motion, the mean displacement of particles can be described:
+
+\begin{equation}
+    \Big< r^2 \Big> = 2 N D t
+\end{equation}
+
+\noindent where $<r^2>$ is the squared mean displacement of a particle, $N = 1$, $2$, or $3$ for analysis in 1, 2 or 3 dimensions respectively, $t$ represents the time elapsed, and $D$ is the translation diffusion constant. 
+
+\par The translation diffusion constant is a ration of Brownian motion and viscous resistance terms and can be generally expressed as 
+
+\begin{equation}
+    D = \frac{k_bT}{\overline{f}},
+\end{equation}
+
+\noindent where $k_b$ is the boltzman constant, $T$ is the temperature, and $\overline{f}$ is the mean friction coefficient \cite{perrin from hydrochemical}. The mean friction coefficient arises from the average of the translation friction tensor ($f_{ij}$) components. This tensor describes the viscous force on a particle as a function of velocity:
+
+\begin{equation}
+    F_i = f_{ij}v_j
+\end{equation}
+
+\noindent where for a rigid particle
+
+\begin{equation}
+    f_{ij} = 6\pi \mu R_{ij},
+\end{equation}
+
+\noindent where $\mu$ is the fluid viscosity, and $R_{ij}$ is the translation tensor and describes the equivalent radius. For a spherical particle, $R_{ij}$ reduces to the radius of the sphere and $f_{ij}$ becomes the viscous resistance from Stokes law. In this special case, the diffusion translation constant becomes
+
+\begin{equation}
+    D_o = \frac{k_BT}{6 \pi \mu r},
+\end{equation}
+
+and is known as the Stokes-Einstein equation. For spheroid particles where the radius depends on the orientation of the particle, the main friction coefficient can be used since brownian motion will randomly move the particle in all directions. From the translation friction tensor, the mean friction coefficient can be described as 
+
+\begin{equation}
+    \overline{f}^{-1} = \frac{1}{3}(\frac{1}{f_1} + \frac{1}{f_2} + \frac{1}{f_3})
+\end{equation}
+
+\noindent where $f_1$, $f_2$, and $f_3$ refer to the components of the main diagonal of the translation friction tensor. 
 
 \begin{figure}[ht]
     \centering
@@ -640,6 +711,53 @@ or in index notation as
     \label{fig:diffusion_ilustration}
 \end{figure} 
 
+
+\subsection*{Hydraulic Resistance}
+
+\par Fluid resistance is a powerful analogy of fluid flows to Ohm's law where pressure is analagous to electric potential and volumetric flow rate ($Q$) is analagous to electrical current. 
+
+\begin{equation}
+    \Delta V = I R
+    \label{eqn:ohm_analogy}
+\end{equation}
+
+\begin{equation}
+    \Delta P = Q R
+    \label{eqn:ohm_fluid}
+\end{equation}
+
+\noindent In both equation \ref{eqn:ohm_analogy} and \ref{eqn:ohm_fluid} there is a quantity referred to as the resistance that resists a flow under an applied voltage or pressure. 
+
+\par If the velocity profile is solved for from the Navier-Stokes equation and is integrated over the volume of the conduit, the volumetric flow rate as a function of applied force can be derived. In the case of pressure-driven flow of a non-compressible Newtonian fluid through a cylindrical conduit, the Hagen-Pouisuelle equation is derived is expressed as
+
+\begin{equation}
+    \Delta P = Q \frac{8\mu L}{\pi R_c^4}
+\end{equation}
+
+\noindent where $L$ is the length of the conduit, $R_c$ is the radius of the conduit, and $\mu$ is the viscosity. In the case of Hagen-Pouisuelle flow, the hydraulic resistance is 
+
+\begin{equation}
+    R = \frac{8\mu L}{\pi R_c^4}.
+\end{equation}
+
+\par In the case a rectangular conduit, the hydraulic resistance can be expressed as
+
+\begin{equation}
+    R = \frac{12\mu L}{wh^3}\Bigg[1 - \frac{h}{w}\bigg( \frac{192}{\pi^5} \sum_{n=1,3,5}^\infty \frac{1}{n^5} \tanh\Big(\frac{n\pi w}{2h}\Big) \bigg) \Bigg]^{-1},
+\end{equation}
+
+\noindent where $w$ and $h$ are the cross-sectional width and height of conduit respectively \cite{david_j._beebe_physics_2002}. If the width is far greater or smaller than the width, the hydraulic resistance can be expressed by a much simpler expression \cite{david_j._beebe_physics_2002}:
+
+\begin{equation}
+    R = \frac{12 \mu L}{wh^3} 
+\end{equation}
+
+\par The Ohm's law analogy of fluid flow can be expanded to other circuit techniques such as equivalent parallel and series resistors, and Krichoff's current and voltage laws. This analogy allows the design of complicated fluid networks at the system level.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Electric Double Layer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Electric Double Layer}
 
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
