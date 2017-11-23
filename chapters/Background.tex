@@ -263,7 +263,7 @@
      |Z| = \sqrt{R^2 + X^2}
  \end{equation}
  \begin{equation}
-    \theta = \text{arctan}(\frac{X}{R})
+    \theta = \text{arctan}\Big(\frac{X}{R}\Big)
  \end{equation}
  \begin{equation}
     R = |Z|\cos\theta
@@ -274,9 +274,9 @@
  
  \par The impedance of a system can be represented by a combination of elementary circuit components: reistors, capacitors, and inductor. The voltage response of these elements in the time domain can be expressed as
  \begin{alignat}{2}
-    &\text{Resistor:} \quad  &&V(t) = I(t)R \label{eqn:ohms_law}\\\nonumber\\
-    &\text{Capacitor:} \quad &&V(t) = C \frac{dV}{dt}\\\nonumber\\
-    &\text{Inductor:} \quad  &&V(t) = L \frac{dI}{dt}\\\nonumber
+    &\text{Resistor:} \quad  &&V = IR \label{eqn:ohms_law}\\\nonumber\\
+    &\text{Capacitor:} \quad &&V = C \frac{dV}{dt}\\\nonumber\\
+    &\text{Inductor:} \quad  &&V = L \frac{dI}{dt}\\\nonumber
  \end{alignat}
  \noindent where $V(t)$ and $I(t)$ are the voltage and current as a function of time, $R$ is the resistance, $C$ is the capacitance, $L$ is the inductance. After applying Laplace transforms, the frequency dependent impedance of each element can be obtained as
   \begin{alignat}{2}
@@ -458,6 +458,53 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
  %%%%%%%%%%%%%%%%%%%
  \subsection{MEMS}
  
+ \subsection*{Photolithography}
+ 
+ \par Photolithography is a MEMS fabrication method that patterns a thin layer of photoresist onto a substrate. Photoresist is a polymer that react to certain wavelengths of light. How the photoresist reacts determines whether the photoresist is classified as a positive or negative photoresist. Positive photoresist becomes soluble to a developer after exposure to light and negative photoresist becomes cross-linked and insoluble to the developer after light exposure. 
+ 
+ \begin{figure}[h]
+     \centering
+     \includegraphics[width=\textwidth]{images/negative_vs_positive_resist.png}
+     \caption[A comparison of positive and negative photoresist]{A comparison of positive and negative photoresist. For positive photoresist, exposed regions are removed, and for negative photoresist, unexposed regions are removed.}
+     \label{fig:negative_vs_positive_resist}
+ \end{figure}
+ 
+ \par Photoresist can be evenly applied to a substrate with a precise thickness through application of a spinner machine. The spinner spins the substrate at given rotation velocities to evenly distribute the photoresist and precisely control the thickness. 
+ 
+ \par The photoresist can then be exposed to ultra violet light. In order to apply a design to the surface, a contact aligner can be used to expose the substrate under a mask. The mask is a transparency sheet with the design printed on it. The mask controls where light is allowed and contact aligner controls the distance between the mask and the photoresist. The resist is then developed to reveal the patterned design. design. 
+ 
+ \subsection*{Metal Deposition}
+ 
+ \par One of several methods for MEMS metal deposition is sputtering. Sputtering ejects metal ions onto the target surface. The target substrate is placed on the anode with the desired metal the cathode. An argon plasma bombards the metal plate and ejects metal ions that are attracted to the anode and deposit on the target substrate. 
+ 
+ \subsection*{Plasma Bonding}
+ 
+ \par To irreversibly bond polydimethyl Siloxane (PDMS), the surface can be exposed to an air plasma. The plasma activates the PDMS surface by creating Si-OH groups that can bond to itself, glass, silicon, polystyrene, polyethylene, and silicon nitride \cite{mcdonald_polydimethylsiloxane_2002-1}.
+ \par By chaining together MEMS tools, processes can be developed to create MEM structures. 
+ 
+ \subsection*{Soft-lithography}
+ 
+ \par Soft-lithography uses photolithography to create a mold of the desired structures. A material such as PDMS can be poured over the mold and then removed to create the desired structure. Soft-lithography is frequently used for the fabrication of microfluidic channels since the process is far easier and cheaper than the glass analogue \cite{whitesides_soft_2001}.
+ 
+ \begin{figure}[h]
+     \centering
+     \includegraphics[width=\textwidth]{images/softLithography.png}
+     \caption{Caption}
+     \label{fig:my_label}
+ \end{figure}
+ 
+ 
+ \subsection*{Lift-off Process}
+ 
+ \par The lift-off process is a method for precise metal deposition of a pattern onto a substrate and is useful for creating micro-scale electrodes. Photolithography is first used to pattern photoresist where metal is not desired. The metal deposition of desired metals can be applied to the substrate. The sputtered substrate is then placed in photoresist remover to lift off the photoresist with the undesired metal. 
+ 
+ \begin{figure}
+     \centering
+     \includegraphics[width=\textwidth]{images/electrodeFabrication.png}
+     \caption{Caption}
+     \label{fig:lift_off}
+ \end{figure}
+ 
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%
  % Microfluidics
@@ -631,12 +678,6 @@ or in index notation as
 
 \par For fluid systems where Pe is much larger than 1, the system is convection dominated and when Pe is much smaller than 1, the system is diffusion dominated. Again, the product of the characteristic velocity and length in microfluidic systems is usually very small so in most BioMEMS, the system is diffusion dominated and cannot rely on convective mixing. To facilitate mixing in microfluidic systems, the device should be designed to create large surface areas between streams that must be mixed to expedite the diffusion process or stimulate turbulent flow to create convective transport.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{images/diffusion_illustration.png}
-    \caption{Illustration of diffusion}
-    \label{fig:diffusion_ilustration}
-\end{figure} 
 
 \subsection*{Diffusion}
 
@@ -759,6 +800,14 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Electric Double Layer}
 
+\par When electric fields are applied to ionic solutions, the electrodes will attract ions of opposite charge. With equilibrium to Brownian forces, the applied field will result in the electric double layer (figure \ref{}) \cite{ishai_electrode_2013}.
+
+\begin{figure}
+    \centering
+    \includegraphics{electr}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Previous Work on the Cal Poly Biofluidic Lab's EIS System
