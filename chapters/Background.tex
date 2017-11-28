@@ -1109,11 +1109,39 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
     C_s = \bigg[ \frac{1}{C_H} + \frac{1}{C_{GC}}\bigg]^{-1}
 \end{equation}
 
-\par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer. Gongaze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface of properties of the electrode, electrochemical reactions, and othe non-quantified phenomena in the solution. 
+\par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer. Gongaze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface of properties of the electrode, electrochemical reactions, and other non-quantified phenomena in the solution. 
 
-\par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, and reduced electrode strength, physical compensations do not completely bypass the electric double layer and are usually avoided 
+\par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, and reduced electrode strength, physical compensations do not completely bypass the electric double layer and are usually avoided \cite{ishai_assessment_2012}. 
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuits model the electric double layer as a resistor and capacitor in series (figure **) \cite{ishai-19}. The impedance of the system can be expressed as
+
+\begin{equation}
+    Z = 2Z_p + Z_m
+\end{equation}
+\begin{equation}
+    Z_p = \frac{1 + sC_pR_p}{sC_p}
+\end{equation}
+\begin{equation}
+    Z_m = \frac{R_m}{sC_mR_m+1}
+\end{equation}
+
+\noindent where $Z_p$, $C_p$, and $R_p$ are the impedance, capacitance, and resistance electric double layer respectively; and $Z_m$, $C_m$, and $R_m$ are the impedance, capacitance, and resistance of the medium respectively. $s$ is the Laplace variable, and since our interest is in the steady state behaviour, $s = iw$.
+
+\par A second equivalent circuit involves a similar system, but with the inclusion of recap elements (figure **) \cite{ishai-19}. A recap element can be modeled as 
+\begin{equation}
+    C_v = R(RC)^{-v}s^{-v}
+\end{equation}
+
+\noindent where C is capacitance, R is resistance, and $v$ is $0<v<1$. $v$ determines the degree of capacitance or resistance behavior with $v=1$ a complete capacitor, and $v=0$ a pure resistor. The recap element is known as a type of constant phase element (CPE), which is named after its property of contributing a constant angle and describes an imperfect dielectric and is present in a wide range of electrodes \cite{ishai_electrode_2013}. To fit data to the CPE, it is useful to express the system impedance as
+
+\begin{equation}
+    Z_{sys} = Z_{bulk} + Z_0\bigg(i\frac{f}{f_0}\bigg)^{-v}
+\end{equation}
+
+\noindent where $Z_{bulk}$ is the impedance of the medium, $i$ is the imaginary number, $f$ is frequency, $f_0$ is the onset frequency of the electrode polarization, and $Z_0$ is a impedance fitting term. It is convenient to find the onset frequency by looking for the characteristic tail of the CPE on a nyquist plot (figure **).
+
+
+%%ist %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Previous Work on the Cal Poly Biofluidic Lab's EIS System
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \section{Previous Work on the Cal Poly Biofluidic Lab's EIS System}
