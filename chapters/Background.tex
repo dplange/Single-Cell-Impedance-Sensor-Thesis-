@@ -443,6 +443,232 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
  
  % Electrical impedance spectroscopy has historically only been used on multiple cells to obtain aggregate data, however, with the rise of microelectomechanical systems (MEMS) and microfluidics, electrical impedance spectroscopy can be applied to individualy cells.
  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Theoretical Model of Impedance
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \section{Theoretical Model of Impedance Cytometry}
+ \par Impedance is a measurement of the dielectric properties of a system and is related to the complex permittivity of the materials which is expressed as
+
+\begin{equation}
+    \tilde{\epsilon} = \epsilon - j\frac{\sigma}{\omega}
+\end{equation}
+
+\noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency. The impedance of a single cell suspension, such as depicted in figure \ref{fig:simplified_IS}, can be solved for with Maxwell's mixture thoery \cite{james_clerk_maxwell_treatise_1892, sun_single-cell_2010}.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/cellAndElectrodes.png}
+ \caption[Schematic diagram of simplified impedance sensor chamber.]{Schematic diagram of simplified impedance sensor chamber where w, $g$, and $l$ are the width, gap, and length of the electrodes respectively, and $h$ is the height of the chamber.}
+ \label{fig:simplified_IS}
+ \end{figure}
+ 
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Maxwell's Mixture Theory
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Maxwell's Mixture Theory}
+ 
+ Maxwell's equation for the complex permittivity of a mixture is
+  
+  \begin{equation}
+      \tilde{\epsilon}_{mix} = \tilde{\epsilon}_m\frac{1 + 2\Phi\tilde{f}_{CM}}{1-\Phi\tilde{f}_{CM}}
+  \end{equation}
+  
+  \noindent where $\tilde{\epsilon}_{mix}$ is the complex permittivity of the mixture, $\tilde{\epsilon}_m$ is the complex permittivity of the medium, $\tilde{f}_{CM}$ is the Clausius Mossotti factor, and $\Phi$ is the volume fraction.
+  
+  \par The Clausius Mossotti factor is defined as 
+  
+  \begin{equation}
+    \tilde{f}_{CM} = \frac{\tilde{\epsilon}_p - \tilde{\epsilon}_m}{\tilde{\epsilon}_p + 2\tilde{\epsilon}_m} 
+  \end{equation}
+  
+  \noindent
+  
+  where $\tilde{\epsilon}_p$ is the complex permittivity of the particle and $\tilde{\epsilon}_m$ is the complex permittivity of the medium. 
+
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/singleShelledCell.png}
+ \caption[Diagram of single shelled cell model.]{A diagram of a single shelled cell model where $\sigma_m$, $\epsilon_m$; $\sigma_{mem}$, $\epsilon_{mem}$; $\sigma_i$, and $\epsilon_i$ are the conductivity and permittivity of the medium, cell membrane, and cell cytoplasm respectively. $R$ and $d$ are the radius of the cell and membrane thickness respectively.}
+ \label{fig:single_shell}
+ \end{figure}
+
+  \par The permittivity of the single shelled cell in figure \ref{fig:single_shell}, can be modelled as
+  
+  \begin{equation}
+      \tilde{\epsilon}_p = \tilde{\epsilon}_{mem} 
+      \frac{\gamma^3+2(\frac{\tilde{\epsilon}_i - \tilde{\epsilon}_{mem}}
+      {\tilde{\epsilon}_i + 2\tilde{\epsilon}_{mem}})}{\gamma^3 - (\frac{\tilde{\epsilon}_i - \tilde{\epsilon}_{mem}}{\tilde{\epsilon}_i + 2\tilde{\epsilon}_{mem}})} \;\;\text{  with } 
+      \gamma = \frac{R + d}{R} 
+  \end{equation}
+  
+  \noindent where $\tilde{\epsilon}_i$ is the complex permittivity of the cytoplasm, $\tilde{\epsilon}_{mem}$ is the complex permittivity of the cell membrane, $R$ is the radius of the cell, and $d$ is the thickness of the cell membrane.
+  
+  \par A corrected volume fraction is used to compensate for the fringe fields of the non-uniform electric field produced by the electrodes in figure \ref{fig:simplified_IS} \cite{gawad_micromachined_2001}. 
+  
+  \begin{equation}
+      \Phi = \frac{4}{3} \pi R^3 \frac{1}{G_f\text{w}h}
+      \label{eqn:corrected_vf}
+  \end{equation}
+  
+  \noindent where $h$ is the height of the channel, w is the width of the electrode and $G_f$ is a geometric factor dependent on the geometry of the channel and electrodes.
+  
+  The impedance of the mixture is
+  
+  \begin{equation}
+    \tilde{Z}_{mix} = \frac{1}{jw\tilde{C}_{mix}}
+    \label{eqn:impedance_with_cap}
+  \end{equation}
+  
+  \noindent where $w$ is the angular frequency and $\tilde{C}_{mix}$ is the complex capacitance of the mixture and can be expressed as
+  
+  \begin{equation}
+      \tilde{C}_{mix} = \tilde{\epsilon}_{mix} G_f
+      \label{eqn:capacitance_mix}
+  \end{equation}
+  
+  \noindent If equations \ref{eqn:impedance_with_cap} and \ref{eqn:capacitance_mix} are combined, we obtain
+  
+  \begin{equation}
+    \tilde{Z}_{mix} = \frac{1}{jw\tilde{\epsilon}_{mix}G_f}
+    \label{eqn:impedance_with_Gf}
+  \end{equation}
+  
+  \par To find the value of the geometric factor $G_f$, the cell constant of electrodes must be determined.
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Electrode Cell Constant
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{Electrode Cell Constant}
+  
+  \par The cell constant $\kappa$ is defined as the proportionality factor between the measured resistance $R_b$ and the resistivity $\rho$ of a material.
+  
+  \begin{equation}
+      R_b = \kappa \rho
+      \label{eqn:cell_constant_proportionality}
+  \end{equation}
+  
+  \noindent  Olthius related the measured resistance to capacitance in order to derive an analytic solution to cell constant \cite{olthuis_theoretical_1995}. 
+  
+  \par To find $R_b$ for two electrodes with an interspatial material, the measured resistance can be related to capacitance via Ohm's law and Maxwell's equation.
+  
+  \begin{equation}
+      RC = \frac{\oiint \epsilon \boldsymbol{E} \cdot d\boldsymbol{S}}{\oiint \sigma\boldsymbol{E}\cdot d\boldsymbol{S}}
+      \label{eqn:RC_integral}
+  \end{equation}
+  
+  \noindent where $R$ and $C$ are the resistance and capacitance between the electrodes, $\epsilon$ is the product of the relative and vacuum permittivity, $\boldsymbol{E}$ is the electric field vector, and the integral is taken over a surface including one electrode.
+  
+  \par If the interspatial material is homogeneous and isotropic, then equation \ref{eqn:RC_integral} can be reduced to
+  
+  \begin{equation}
+      RC = \frac{\epsilon}{\sigma}
+      \label{eqn:RC}
+  \end{equation}
+  
+  \par If we take $R_b = R$, we can combine equation \ref{eqn:RC} and \ref{eqn:cell_constant_proportionality} to express the cell constant in terms of capacitance.
+  
+  \begin{equation}
+      \kappa = \frac{\epsilon}{C}
+      \label{eqn:cell_constant_C}
+  \end{equation}
+  
+   \begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/capacitorNoFringe.png}
+  \caption[Uniform electric field between parallel plates]{Uniform electric field between two parallel electrodes where $\boldsymbol{E}$ is the electric field, $\phi$ is the voltage, and $\frac{d\phi}{d\boldsymbol{n}}=0$ is the boundary condition of a perfect insulator. The dimensions of the capacitor are the electrode height $\gamma$, and the distance between the electrodes $d$.}
+  \label{fig:parallel_capacitor}
+  \end{figure}
+  
+  \par The capacitance of the two parallel plates with a uniform electrode field in figure \ref{fig:parallel_capacitor} is
+  \begin{equation}
+      C = \frac{\epsilon A}{d}
+      \label{eqn:capacitor}
+  \end{equation}
+  
+  \noindent where $A$ the area of the plate and $d$ is the distance between the plates. Since $A = l\gamma$, where $l$ is the width, and $\gamma$ is the height of the electrode, the capacitance per unit width can be written as
+  
+  \begin{equation}
+      C_l = \frac{\epsilon\gamma}{d} \;\;\;\text{where} \;\; C =l\, C_l
+      \label{eqn:specific_capacitance}
+  \end{equation}
+  
+  \par Returning to equation \ref{eqn:cell_constant_C}, and substituting equation \ref{eqn:specific_capacitance}, the cell constant can be expressed as 
+  
+  \begin{equation}
+      \kappa = \frac{d}{\gamma \, l}
+      \label{eqn:cell_constant}
+  \end{equation}
+  
+  \noindent The geometric factor is related to the cell constant by 
+  
+  \begin{equation}
+       G_f = \kappa \,l
+       \label{geometric_cell}
+  \end{equation}
+
+  \noindent By combining equations \ref{eqn:cell_constant} and \ref{geometric_cell}, the geometric factor can be expressed as
+  
+  \begin{equation}
+      G_f = \frac{d}{\gamma}
+      \label{eqn:geometric_constant}
+  \end{equation}
+  
+  \par Equation \ref{eqn:geometric_constant} is the solution of the geometric constant for the electrode configuration in figure \ref{fig:parallel_capacitor}, but to find the geometric constant for any other configuration, including the coplanar electrode in figure \ref{fig:simplified_IS}, $d$ and $\gamma$ will need to be mapped to parameters in the other configuration. This will be accomplished in the next section with conformal transformations.
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%
+  % Conformal Mapping
+  %%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{Conformal Transformations}
+  
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/mapping.png}
+  \caption[Illustration of complex mapping.]{An Illustration of complex mapping.}
+  \label{fig:mapping}
+  \end{figure}
+  
+  \par Let $z = x + j\,y$, where $j$ is the imaginary number $\sqrt{-1}$, then a function of $z$, such as $W(z) = u(x,y) + j\,v(x,y)$, can be considered a mapping of an area of one complex plane to an area in another complex plane (figure \ref{fig:mapping}). Conformal transformations are a special kind of mapping between two complex planes that preserves local angles. A mapping is conformal if it is composed of analytic functions, and as a consequent, fulfills the Cauchy-Rieman equations. Conformal mappings are extremely useful for solving problems in complicated domains by mapping the problem to a new domain where the problem is simplified. An example of a conformal mapping is $w(z) = tan(z)$, which maps an infinite vertical strip to a circle (figure \ref{fig:circleMapping}). 
+
+   \begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/tanMappingStrip.png}
+        \caption{Part of the partial infinite strip $-\pi/4<x<\pi/4$.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/tanMapping.png}
+        \caption{Mapping of the partial infinite vertical strip to a circle }
+    \end{subfigure} 
+    \caption[Conformal mapping of vertical strip to circle]{An example of conformal mapping by transforming a partial infinite vertical strip to a circle with the mapping $w(z) = tan(z)$.}
+    \label{fig:circleMapping}
+ \end{figure}
+  
+ 
+    \par Sun, Greene, et al. utilized the Schwartz-Christoffel transform to map the coplanar electrode configuration in figure \ref{fig:simplified_IS} to the configuration of parallel electrodes with uniform electrode fields in figure \ref{fig:parallel_capacitor} \cite{sun_analytical_2007}. The Schwartz-Christoffel formula is a powerful transform that allows the mapping of the upper complex T-plane ($y>0$) to the inside of a polygon. The formula is
+    
+    \begin{equation}
+        Z = C_1 \int_{T_0}^T \prod^m_{r=1} (T - T_r)^{(\theta_r/\pi - 1)} dT + C_2
+    \end{equation}
+    
+    \noindent where $Z$ is the interior of a polygon in the Z-plane with vertices $Z_1,\;Z_2,\;Z_3,\; ...,Z_m$ and angles $\theta_1,\;\theta_2,\;\theta_3,\; ...,\theta_m$ which correspond to the points $T_1,\;T_2,\;T_3,\; ...,T_m$ on the real axis of the T-plane. $C_1$ and $C_2$ are integration constants. The Schwartz-Christoffel transform has three degrees of freedom, and consequently, up to three points may be chosen arbitrarily. $T_0$ is the reference and is typically chosen at the origin.
+    
+    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to the W-plane. The W-plane vastly simplifies the solution to the cell constant and the goemetric constant can be solved for with equation \ref{eqn:geometric_constant}. 
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{images/scmPlanes.png}
+        \caption[Diagrams of coplanar electrodes through Schwartz-Christoffel mapping]{Diagrams of coplanar electrodes through Schwartz-Christoffel mapping where the Z-plane contains the physical dimensions of the electrode configuration, the T-Plane links the Schwartz-Christoffel mappins of Z and W plane, and the W-plane represents the parallel electrodes producing a uniform electrode field.}
+        \label{fig:scm_planes}
+    \end{figure}
+    
+ 
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Microelectromechanical Systems and Microfluidics
@@ -627,10 +853,10 @@ or in index notation as
 \noindent For microfluidic applications, the Navier-Stokes equation can often be simplified by assuming negligible inertial forces (Re $<<$ 2300; laminar flow) and gravitational forces allowing equation \ref{eqn:navier_stokes} to be rewritten as
 
 \begin{equation}
-        0 = -\boldsymbol{\nabla}p + \mu\boldsymbol{\nabla}^2\textbf{u}.
+        \boldsymbol{\nabla}p = \mu\boldsymbol{\nabla}^2\textbf{u}.
 \end{equation}
 
-\par Currently there is no general closed-form solution to the Navier-Stokes equation, but can be solved in specific applications with simplifying assumptions and is widely used in computational approximations.
+\par Currently there is no general closed-form solution to the Navier-Stokes equation, but can be solved in specific applications with simplifying assumptions, and is widely used in computational approximations.
 
 \subsection*{Laminar Flow}
 \par Laminar flow describes the condition where the velocity of a particle in fluid flow is not a random function of time in contrast to turbulent flow which is chaotic \cite{pamb}. The Reynold number can quantitatively characterize a fluid flow. The Reynold number is a dimensionless number that is a ratio of inertial and viscous forces and can be expressed as
@@ -713,7 +939,7 @@ or in index notation as
 
 \noindent where $<r^2>$ is the squared mean displacement of a particle, $N = 1$, $2$, or $3$ for analysis in 1, 2 or 3 dimensions respectively, $t$ represents the time elapsed, and $D$ is the translation diffusion constant. 
 
-\par The translation diffusion constant is a ration of Brownian motion and viscous resistance terms and can be generally expressed as 
+\par The translation diffusion constant is a ratio of Brownian motion and viscous resistance terms and can be generally expressed as 
 
 \begin{equation}
     D = \frac{k_bT}{\overline{f}},
@@ -800,14 +1026,92 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Electric Double Layer}
 
-\par When electric fields are applied to ionic solutions, the electrodes will attract ions of opposite charge. With equilibrium to Brownian forces, the applied field will result in the electric double layer (figure \ref{}) \cite{ishai_electrode_2013}.
+\par When electric fields are applied to ionic solutions, the electrodes will attract ions of opposite charge. With equilibrium to Brownian forces, the applied field will result in the electric double layer (figure \ref{fig:electric_double_layer}) \cite{ishai_electrode_2013}. The electric double layer creates an effective capacitance at the electrode-fluid interface. For electrodes with large surface areas, the capacitance may be large enough to be negligible, but for MEMS with micro-scale electrodes the capacitance will be small and can mask the impedance of the device under testing for frequencies up to 100 kHz to 1 MHz \cite{bordi_reduction_2001}. 
 
-\begin{figure}
+%%%
+% Add in : Although several theoretical formulas attempt to approximate the the electric double layer, there are no physical descriptions that adequately account for the electric double layer. 
+%%%
+
+\begin{figure}[h]
     \centering
-    \includegraphics{electr}
-    \caption{Caption}
-    \label{fig:my_label}
+    \includegraphics[width=0.7\textwidth]{images/electricDoubleLayer.png}
+    \caption[Stern model of the electric double layer]{The Stern model of the electric double layer that includes the Helmholtz and diffuse layers.}
+    \label{fig:electric_double_layer}
 \end{figure}
+
+\par Helmholtz was the first to describe the electric double layer and modeled it as a single layer of ions adsorbed to the surface of the electrode \cite{ishai_electrode_2013}. If the ions are treated as point charges, the Helmholtz model can be interpreted as a parallel capacitor with a distance $d_H$ between the plates that represents the distance between the center of the ion and the surface of the electrode. The capacitance per unit area can be approximated as
+
+\begin{equation}
+    C = \frac{\epsilon_o\epsilon_r}{d_H}
+\end{equation}
+
+\noindent where $\epsilon_o$ is the permittivity of the vacuum, $\epsilon_r$ is the relative permittivity of the medium, and $\lambda_H$ is the thickness of the Helmholtz layer \cite{_gongadze.pdf_????}. The Helmholtz model neglects the thermal, concentration, and voltage dependencies that experiments have found \cite{_jes2011.pdf_????}.
+
+\par Guoy and Chapman expanded on the electric double layer by including the effect of thermal motion, concentration, and applied voltage \cite{gongadze-2,3}. This results in a diffuse layer that consists of counter-ions and co-ions. The distribution of ions in the diffuse layer can be described by the Boltzmann distribution:
+
+\begin{equation}
+    n_{i\pm} = n_i^o \text{exp}\Big(\frac{ \mp z_i e\phi}{k_b T}\Big),
+\end{equation}
+
+\noindent where $n_i$ is the concentration of the ion $i$, $\phi$ is the electric potential, $T$ is the temperature, $k_b$ is the Boltzmann constant, $z_i$ is the charge number of the ion, and $e$ is the charge of an electron. The charge density can be written as the sum of all ions:
+
+\begin{equation}
+    \rho(x) = e \sum_i n_i^o z_i \text{exp}\Big(\frac{-z_i e\phi}{k_b T}\Big)
+\end{equation}
+
+\par Combining Poisson's equation with the charge distribution above results in the Poisson-Boltzmann equation:
+
+\begin{equation}
+    \nabla^2\phi = \frac{e}{\epsilon_o\epsilon_r} \sum_i n_i^o z_i \text{exp}\Big(\frac{-z_i e \phi}{k_b T}\Big),
+\end{equation}
+
+\noindent and then recognizing that
+
+\begin{equation}
+    \frac{d^2\phi}{dx^2} = \frac{d}{dx}\Big(\frac{d\phi}{dx}\Big)^2,
+\end{equation}
+
+\noindent then with the boundary condition for electrodes far apart, $\phi\to0$ and $\frac{d\phi}{dx}\to 0$ as $x\to\infty$,
+
+\begin{equation}
+    \Big(\frac{d\phi}{dx}\Big)^2 = \frac{2k_b T}{\epsilon_o\epsilon_r} \sum n_i^o \bigg[exp\Big(\frac{-z_i e\phi}{k_b T}\Big) - 1\bigg] 
+\end{equation}
+
+\par For a symmetrical electrolyte, the Poisson-Boltzmann equation can be expressed as
+
+\begin{equation}
+    \frac{d\phi}{dx} = \frac{8k_bTn^o}{\epsilon_o\epsilon_r}\sinh\Big(\frac{ze\phi}{2k_bT}\Big)
+    \label{eqn:edl_efield}
+\end{equation}
+
+\par Capacitance can generally be defined as the differential capacitance:
+
+\begin{equation}
+    C_{diff} = \frac{d\sigma}{d\phi_o}
+\end{equation}
+
+\noindent where $\sigma$ is the surface charge of the electrode and $\phi_o$ is the electric surface potential. From Gauss's law and equation \ref{eqn:edl_efield}, the charge for the electric double layer is
+
+\begin{equation}
+    \sigma = \epsilon_o\epsilon_r \Big[\frac{d\phi}{dx}\Big]_{x=0} = \sqrt{8k_bTn_i^o\epsilon_o\epsilon_r}\sinh\Big(\frac{ze\phi_o}{2k_bT}\Big).
+    \label{eqn:edl_surface_charge}
+\end{equation}
+
+\noindent Differentiating \ref{eqn:edl_surface_charge} with respect to surface potential gives the differential capacitance of the electric double layer:
+
+\begin{equation}
+    C_{GC} = \Big(\frac{2z^2e^2n_i^o\epsilon_r\epsilon_o}{k_bT}\Big)\cosh\Big(\frac{ze\phi_o}{2k_bT}\Big)
+\end{equation}
+
+\par Stern combined the Helmholtz and the Guoy-Chapman thoeries to create a model with two layers: the inner layer known as the Stern layer which consists of the adsorbed ions on the electrode surface from the Helmholtz model, and the outer diffuse layer \cite{_jes2011.pdf_????}. The capacitance of the Stern model can be approximated by the capacitance of the Helmholtz and Guoy-Chapman models in series \cite{_gongadze.pdf_????}:
+
+\begin{equation}
+    C_s = \bigg[ \frac{1}{C_H} + \frac{1}{C_{GC}}\bigg]^{-1}
+\end{equation}
+
+\par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer. Gongaze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface of properties of the electrode, electrochemical reactions, and othe non-quantified phenomena in the solution. 
+
+\par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, and reduced electrode strength, physical compensations do not completely bypass the electric double layer and are usually avoided 
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Previous Work on the Cal Poly Biofluidic Lab's EIS System
