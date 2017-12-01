@@ -12,20 +12,16 @@
  \label{fig:human_cell_model}
  \end{figure}
  
- 
  \par Generally, a cell carries genetic information in the nucleus inside the cell membrance and cytoplasm. Cytoplasm is all cell material inside of the cell membrane except the nuclei. The cytoplasm consists of non-nuclei organelles and cytosol.  Cytosol refers to the cellular solution between the cell organelles and the membrane, wich contains salts, nucleic acids and cytoskeleton filaments. Organnelles are membrane bound structures inside the cell that perform a special function. Organelles include nuclei, mitochondria, the Golgi apparatus, lysosomes, and vacuoles.  
- 
- \par All of these 
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % The Cell Membrane
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{The Cell Membrane}
- \par The cell membrane is an essential component of the cell that is necessary for a number of critical functions. The cell membrane is primarily composed of the lipid bilayer which is a semi-permeable barrier constructed from phospholipids. A phospholipid has a hydrophilic head group and a hydrophobic tail group. When exposed to an aqueous environment, phospholipids join together into a configuration that leaves the head groups exposed to the aqueous solution and the tail group surrounded by other non-polar tail groups. In the case of a cell, the phospholipids take the form of a spherical bilayer membrane (figure \ref{fig:cell_membrane}). Although these lipids prevent the passage of many molecule, the form an imperfect semi-permeable membrane that allows for some molecules o pass into or out of the cell. 
+ \par The cell membrane is an essential component of the cell that is necessary for a number of critical functions. The membrane is primarily composed of the lipid bilayer which is a semi-permeable barrier constructed from phospholipids. A phospholipid has a hydrophilic head group and a hydrophobic tail group. When exposed to an aqueous environment, phospholipids join together into a configuration that leaves the head groups exposed to the aqueous solution and the tail group surrounded by other non-polar tail groups. In the case of a cell, the phospholipids take the form of a spherical bilayer membrane (figure \ref{fig:cell_membrane}). Although these lipids prevent the passage of many molecule, the form an imperfect semi-permeable membrane that allows for some molecules to pass into or out of the cell. 
  
- \par In addition to the phospholipids the membrane contains many other constituents that play critical roles. Cell membranes are often packed with proteins that are critical for may functions. Proteins that stick out of both sides of the membrane are known as transmembrane proteins. These proteins range from channel proteins tat allow passage of elements that could not normally make through the membrane, to proteins involved in signalling. 
+ \par In addition to the phospholipids the membrane contains many other constituents that play critical roles. Cell membranes are often packed with proteins that are critical for may functions. These proteins range from channel proteins that allow passage of elements that could not normally make through the membrane, to proteins involved in signalling. 
  
- \par The membrane is the final enforcer of the equilibrium of the cell. 
  \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/Cell_membrane_detailed_diagram.png}
@@ -33,12 +29,20 @@
     \label{fig:cell_membrane}
  \end{figure}
  
+ \par Between the semipermeable nature of the membrane and transport proteins, the plasma membrane can maintain an equilibrium with passive and active diffusion. 
+ 
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Electrical Model of the Cell
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \subsection{Electrical Model of the Cell}
- 
+\subsection{Electrical Model of the Cell}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/completeCellCircuit.png}
+    \caption{Electrical model of cell}
+    \label{fig:electric_model_cell}
+\end{figure}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Dielectric Spectroscopy
@@ -79,7 +83,7 @@
  
  \begin{table}[h]
      \centering
-     \includegraphics[width=0.5\textwidth]{images/permittivityTable.png}
+     \includegraphics[width=0.4\textwidth]{images/permittivityTable.png}
      \caption[Permittivities of and susceptibilities of common materials]{Permittivities of and susceptibilities of common materials \cite{kirby_micro-and_2010}.}
      \label{tab:permittivity_table}
  \end{table}
@@ -446,7 +450,7 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Theoretical Model of Impedance
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \section{Theoretical Model of Impedance Cytometry}
+ \section[Model of Cell Suspension Impedance]{Theoretical Model of Impedance Cytometry}
  \par Impedance is a measurement of the dielectric properties of a system and is related to the complex permittivity of the materials which is expressed as
 
 \begin{equation}
@@ -668,7 +672,49 @@ Key advantages of the auto-balancing bridge method, is that the input impedance 
         \label{fig:scm_planes}
     \end{figure}
     
+ \subsection{Cell Suspension Equivalent Circuit}
  
+ \par With a solution to the impedance of the system, an equivalent circuit of the cell and medium can be used to approximate discrete components of the medium and cell. A simple equivalent circuit was described by Foster and Schwan that describes the cell as a capacitor and resistor in series (figure \ref{fig:simple_equiv_circuit_cell_medium}) \cite{schwan_electrical_1994}. The model assumes that the resistance of the cell membrane is far smaller than the reactance and can be neglected as well as the reactance of the cytoplasm which is normally much smaller than the cytoplasm resistance.
+ 
+ \begin{figure}
+     \centering
+     \includegraphics[width=0.5\textwidth]{images/simpleCellMediumCircuit.png}
+     \caption{Simple equivalent circuit of cell and medium.}
+     \label{fig:simple_equiv_circuit_cell_medium}
+ \end{figure}
+ 
+ \noindent The values of the simplified circuit model are as follow:
+ \begin{equation}
+     R_m = \frac{1}{\sigma_m(1-3\Phi/2)G_f}
+ \end{equation}
+ \begin{equation}
+     C_m = \epsilon_\infty G_f
+ \end{equation}
+ \begin{equation}
+     C_{mem} = \frac{9\Phi RC_{mem,0}}{4}G_f
+ \end{equation}
+ \begin{equation}
+     R_i = \frac{4\Big(\frac{1}{2\sigma_m}+\frac{1}{\sigma_i}\Big)}{9\Phi G_f}
+ \end{equation}
+ 
+ \noindent where $\sigma_m$ and $\sigma_i$ are the conductivities of the medium and cytoplasm respectively, $R$ is the cell radius, $\Phi$ is the volume fraction, and $C_{mem,0}$ is the specific membrance capacitance and can be expressed as \cite{sun_single-cell_2010}
+ \begin{equation}
+   C_{mem,0} = \epsilon_{mem}/d  
+ \end{equation}
+ 
+ \noindent where $\epsilon_{mem}$ is the permittivity of the cell membrane and d is the thickness of the membrane. $\epsilon_\infty$ is the high frequency permittivity of the suspension and can be approximated as
+ \begin{equation}
+     \epsilon_\infty \approx \epsilon_m \bigg[1-3\Phi\frac{\epsilon_m-\epsilon_i}{2\epsilon_m+\epsilon_i}\bigg].
+ \end{equation}
+ 
+ \par For cases where the cytoplasm reactance and membrane resistance is significant, such as during cell lysis, the complete equivalent circuit can be used (\ref{fig:complete_equiv_circuit_cell_medium}) \cite{sun_single-cell_2010}. A quantitative description of the model was described by Sun et al. \cite{sun_dielectric_2007}.
+
+ \begin{figure}
+     \centering
+     \includegraphics[width=0.5\textwidth]{images/completeCellMediumCircuit.png}
+     \caption{Complete equivalent circuit of cell and medium.}
+     \label{fig:complete_equiv_circuit_cell_medium}
+ \end{figure}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Microelectromechanical Systems and Microfluidics
@@ -1028,6 +1074,8 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \par When electric fields are applied to ionic solutions, the electrodes will attract ions of opposite charge. With equilibrium to Brownian forces, the applied field will result in the electric double layer (figure \ref{fig:electric_double_layer}) \cite{ishai_electrode_2013}. The electric double layer creates an effective capacitance at the electrode-fluid interface. For electrodes with large surface areas, the capacitance may be large enough to be negligible, but for MEMS with micro-scale electrodes the capacitance will be small and can mask the impedance of the device under testing for frequencies up to 100 kHz to 1 MHz \cite{bordi_reduction_2001}. 
 
+\subsection{Theoretical Capacitance}
+
 %%%
 % Add in : Although several theoretical formulas attempt to approximate the the electric double layer, there are no physical descriptions that adequately account for the electric double layer. 
 %%%
@@ -1109,7 +1157,9 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
     C_s = \bigg[ \frac{1}{C_H} + \frac{1}{C_{GC}}\bigg]^{-1}
 \end{equation}
 
-\par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer. Gongaze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface of properties of the electrode, electrochemical reactions, and other non-quantified phenomena in the solution. 
+\par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer. Gongadze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface of properties of the electrode, electrochemical reactions, and other non-quantified phenomena in the solution. 
+
+\subsection{Correction for Electric Double Layer}
 
 \par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, and reduced electrode strength, physical compensations do not completely bypass the electric double layer and are usually avoided \cite{ishai_assessment_2012}. 
 
@@ -1140,11 +1190,18 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \noindent where $Z_{bulk}$ is the impedance of the medium, $i$ is the imaginary number, $f$ is frequency, $f_0$ is the onset frequency of the electrode polarization, and $Z_0$ is a impedance fitting term. It is convenient to find the onset frequency by looking for the characteristic tail of the CPE on a nyquist plot (figure **).
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/nyquist_ep_onset.png}
+    \caption[Electrode polarization on a Nyquist plot]{Electrode polarization on a Nyquist plot with Z' and Z'' the real and imaginary components of the impedance respectively. The onset frequency of the electrode polarization can be identified by the beginning of the characteristic CPE tail \cite{ishai_assessment_2012}.}
+    \label{fig:my_label}
+\end{figure}
+
 
 %%ist %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Previous Work on the Cal Poly Biofluidic Lab's EIS System
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \section{Previous Work on the Cal Poly Biofluidic Lab's EIS System}
+ %\section{Previous Work on the Cal Poly Biofluidic Lab's EIS System}
  
  % In 2009 Josh Fadriuela and Stephanie Hernandez fulfilled their thesis under Dr.Clague to create a cell impedance sensor system. Their work will be the foundation for this thesis \cite{fadriquela_design_2009-1}, \cite{hernandez_single_2009-1}.
  
