@@ -1163,9 +1163,16 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, and reduced electrode strength, physical compensations do not completely bypass the electric double layer and are usually avoided \cite{ishai_assessment_2012}. 
 
-\par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuits model the electric double layer as a resistor and capacitor in series (figure **) \cite{ishai-19}. The impedance of the system can be expressed as
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/edl_cap_equiv.png}
+    \caption{A series resistor and capacitor equivalent circuit of the electric double layer.}
+    \label{fig:edl_cap_equiv}
+\end{figure}
 
-\begin{equation}
+\par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuit models of the electric double layer is a resistor and capacitor in series (figure **) \cite{ishai-19}. The impedance of the system can be expressed as
+
+\begin{equation}[h]
     Z = 2Z_p + Z_m
 \end{equation}
 \begin{equation}
@@ -1176,6 +1183,14 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 \end{equation}
 
 \noindent where $Z_p$, $C_p$, and $R_p$ are the impedance, capacitance, and resistance electric double layer respectively; and $Z_m$, $C_m$, and $R_m$ are the impedance, capacitance, and resistance of the medium respectively. $s$ is the Laplace variable, and since our interest is in the steady state behaviour, $s = iw$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/edl_recap_equiv.png}
+    \caption{A recap equivalent circuit of the electric double layer.}
+    \label{fig:edl_cap_equiv}
+\end{figure}
+
 
 \par A second equivalent circuit involves a similar system, but with the inclusion of recap elements (figure **) \cite{ishai-19}. A recap element can be modeled as 
 \begin{equation}
