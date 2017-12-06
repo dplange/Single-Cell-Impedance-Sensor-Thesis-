@@ -697,16 +697,16 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  
  \par Microelectromechanical systems (MEMS) are devices on the order of microns, and are often smaller than the diameter of a human hair (about 100 microns). MEMS evolved from the manufacturing processes used to fabricate integrated circuits and ink jet cartridges \cite{xia_soft_1998-1}. Using silicon based microfabrication techniques such as photolithography, etching, and metal deposition; mechanical and electrically driven micro-sized pumps, cantilevers, and sensors can be fabricated \cite{wang_bio-mems:_2006}. 
  
- \par Using these microfabrication techniques, systems can be miniturized in precise and reproduceable packages with applications in a variety of biology related problems. MEMS applied in these fields are referred to as BioMEMS, and is an area of rapidly growing interest and research \cite{grayson_biomems_2004}. The majority of BioMEMS are focused on creating diagnostic systems that can identify diseases and properties of biogical substances. These devices usually need to treat, filter, and utilize detection methods that include electrophoresis, dielectrophoresis, surface plasmon resonance, and enzyme-linked immunosorbent assay \cite{}. In order to run diagnostics on a solution of biological material, a sample usually needs to undergo pretreatment, sample preparation, preconcentration and detection. With the miniaturization afforded by microfabrication technology, the concept of combining these steps into a single chip is now feasible. These devices are refereed to as labs on a chip or micro total analysis systems.
+ \par Using these microfabrication techniques, systems can be miniturized in precise and reproduceable packages with applications in a variety of biology related problems. MEMS applied in these fields are referred to as BioMEMS, and is an area of rapidly growing interest and research \cite{grayson_biomems_2004}. The majority of BioMEMS are focused on creating diagnostic systems that can identify diseases and properties of biogical substances. These devices usually need to treat, filter, and utilize detection methods that include electrophoresis, dielectrophoresis, surface plasmon resonance, and enzyme-linked immunosorbent assays (ELISA) \cite{foudeh_microfluidic_2012}. In order to run diagnostics on a solution of biological material, a sample needs to undergo pretreatment, sample preparation, preconcentration and detection. With the miniaturization afforded by microfabrication technology, the concept of combining these steps into a single chip is now feasible. These devices are referred to as labs on a chip or micro total analysis systems. This thesis focuses on the detection method of such a device.
  
  %%%%%%%%%%%%%%%%%%%
- % MEMS
+ % MEMS Fabrication
  %%%%%%%%%%%%%%%%%%%
- \subsection{MEMS}
+ \subsection{MEMS Fabrication}
  
  \subsection*{Photolithography}
  
- \par Photolithography is a MEMS fabrication method that patterns a thin layer of photoresist onto a substrate. Photoresist is a polymer that react to certain wavelengths of light. How the photoresist reacts determines whether the photoresist is classified as a positive or negative photoresist. Positive photoresist becomes soluble to a developer after exposure to light and negative photoresist becomes cross-linked and insoluble to the developer after light exposure. 
+ \par Photolithography is a MEMS fabrication method that patterns a thin layer of photoresist onto a substrate. Photoresist is a polymer that react to certain wavelengths of light. How the photoresist reacts determines whether the photoresist is classified as a positive or negative photoresist. Positive photoresist becomes soluble to a developer after exposure to light, and negative photoresist becomes cross-linked and insoluble to the developer after exposure. 
  
  \begin{figure}[h]
      \centering
@@ -715,9 +715,9 @@ A significant advantage of the auto-balancing bridge method, is that when used w
      \label{fig:negative_vs_positive_resist}
  \end{figure}
  
- \par Photoresist can be evenly applied to a substrate with a precise thickness through application of a spinner machine. The spinner spins the substrate at given rotation velocities to evenly distribute the photoresist and precisely control the thickness. 
+ \par Photoresist can be evenly applied to a substrate with a precise thickness through application of a spinner machine. The machine spins the substrate at given rotation velocities to evenly distribute the photoresist and precisely control the thickness. 
  
- \par The photoresist can then be exposed to ultra violet light. In order to apply a design to the surface, a contact aligner can be used to expose the substrate under a mask. The mask is a transparency sheet with the design printed on it. The mask controls where light is allowed and contact aligner controls the distance between the mask and the photoresist. The resist is then developed to reveal the patterned design. design. 
+ \par The photoresist can then be exposed to ultra violet light. In order to apply a design to the surface, a contact aligner can be used to expose the substrate under a mask. The mask is a transparency sheet with the design printed on it. The mask controls where light is allowed and the contact aligner controls the distance between the mask and the photoresist. The resist is then developed to reveal the patterned design. 
  
  \subsection*{Metal Deposition}
  
@@ -726,23 +726,23 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  \subsection*{Plasma Bonding}
  
  \par To irreversibly bond polydimethyl Siloxane (PDMS), the surface can be exposed to an air plasma. The plasma activates the PDMS surface by creating Si-OH groups that can bond to itself, glass, silicon, polystyrene, polyethylene, and silicon nitride \cite{mcdonald_polydimethylsiloxane_2002-1}.
- \par By chaining together MEMS tools, processes can be developed to create MEM structures. 
+
  
  \subsection*{Soft-lithography}
  
- \par Soft-lithography uses photolithography to create a mold of the desired structures. A material such as PDMS can be poured over the mold and then removed to create the desired structure. Soft-lithography is frequently used for the fabrication of microfluidic channels since the process is far easier and cheaper than the glass analogue \cite{whitesides_soft_2001}.
+ \par Soft-lithography uses photolithography to create a mold of the desired structures. A material such as PDMS can be poured over the mold and then removed to create the desired structure. The PDMS can be plasma bonded to a substrate to create fluid channels. Soft-lithography is frequently used for the fabrication of microfluidic channels since the process is far easier and cheaper than the alternative of glass etching \cite{whitesides_soft_2001}.
  
  \begin{figure}[h]
      \centering
      \includegraphics[width=\textwidth]{images/softLithography.png}
-     \caption{Caption}
-     \label{fig:my_label}
+     \caption{Micro-channel manufacturing flowchart with SU-8 photoresist and soft-lithography.}
+     \label{fig:soft_lithography}
  \end{figure}
  
  
  \subsection*{Lift-off Process}
  
- \par The lift-off process is a method for precise metal deposition of a pattern onto a substrate and is useful for creating micro-scale electrodes. Photolithography is first used to pattern photoresist where metal is not desired. The metal deposition of desired metals can be applied to the substrate. The sputtered substrate is then placed in photoresist remover to lift off the photoresist with the undesired metal. 
+ \par The lift-off process is a method for precise metal deposition of a pattern onto a substrate and is useful for creating micro-scale electrodes. Photolithography is first used to pattern photoresist where metal is not desired. After metal deposition of the substrate with patterned photoresist, the sputtered substrate is then placed in photoresist remover to lift off the photoresist with the undesired metal. 
  
  \begin{figure}
      \centering
@@ -757,7 +757,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  %%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{Microfluidics}
  
-\par In most BioMEMS there is fluid flow on the micrometer scale. At this scale fluid flow physics differs from fluid flow at the macro scale. Understanding and leveraging microfluidic mechanics allows the advantage of smaller reagent and sample volumes, multiplexing, and physic phenomenom that allow experiments and functions not possible at the macro scale. Microfluidics can be defined as the study and application of fluids in structures on the micrometer scale \cite{pamb}. Laminar flow, diffustion, fluidic resistance, surface area to volume, and surface tension, may not be dominant in phenomenom on the macro scale, but on the micro scale become dominant \cite{pamb-12}. 
+\par In most BioMEMS there is fluid flow on the micrometer scale. At this scale fluid flow physics differ from fluid flow at the macro scale. Understanding and leveraging microfluidic mechanics allows for smaller reagent and sample volumes, multiplexing, and physic phenomenom that allow experiments and functions not possible at the macro scale. Laminar flow, diffustion, fluidic resistance, surface area to volume, and surface tension, may not be dominant in phenomenom on the macro scale, but on the micro scale become significant \cite{pamb-12}. 
 
 \subsection*{The Navier-Stokes Equation}
 
