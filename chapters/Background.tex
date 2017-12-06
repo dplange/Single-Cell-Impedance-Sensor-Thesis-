@@ -1034,75 +1034,67 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
     C = \frac{\epsilon_o\epsilon_r}{d_H}
 \end{equation}
 
-\noindent where $\epsilon_o$ is the permittivity of the vacuum, $\epsilon_r$ is the relative permittivity of the medium, and $d_H$ is the thickness of the Helmholtz layer \cite{_gongadze.pdf_????}. The Helmholtz model neglects the thermal, concentration, and voltage dependencies that experiments have found \cite{_jes2011.pdf_????}.
+\noindent where $\epsilon_o$ is the permittivity of the vacuum, $\epsilon_r$ is the relative permittivity of the medium, and $d_H$ is the thickness of the Helmholtz layer \cite{_gongadze.pdf_????}. The Helmholtz model neglects the thermal, concentration, and voltage dependencies that experiments have confirmed \cite{_jes2011.pdf_????}.
 
-\par Guoy and Chapman expanded on the electric double layer by including the effect of thermal motion, concentration, and applied voltage \cite{chap,3}. This results in a diffuse layer that consists of counter-ions and co-ions. The distribution of ions in the diffuse layer can be described by the Boltzmann distribution:
-
+\par Guoy and Chapman expanded on the electric double layer by including the effects of thermal motion, concentration, and applied voltage \cite{chapman_li._1913,_gongadze.pdf_????}. This results in a diffuse layer that consists of counter-ions and co-ions. The distribution of ions in the diffuse layer can be described by the Boltzmann distribution:
 \begin{equation}
     n_{i\pm} = n_i^o \text{exp}\Big(\frac{ \mp z_i e\phi}{k_b T}\Big),
 \end{equation}
 
 \noindent where $n_i$ is the concentration of the ion $i$, $\phi$ is the electric potential, $T$ is the temperature, $k_b$ is the Boltzmann constant, $z_i$ is the charge number of the ion, and $e$ is the charge of an electron. The charge density can be written as the sum of all ions:
-
 \begin{equation}
     \rho(x) = e \sum_i n_i^o z_i \text{exp}\Big(\frac{-z_i e\phi}{k_b T}\Big)
 \end{equation}
 
-\par Combining Poisson's equation with the charge distribution above results in the Poisson-Boltzmann equation:
-
+\par Combining Poisson's equation with the charge distribution above, results in the Poisson-Boltzmann equation:
 \begin{equation}
     \nabla^2\phi = \frac{e}{\epsilon_o\epsilon_r} \sum_i n_i^o z_i \text{exp}\Big(\frac{-z_i e \phi}{k_b T}\Big),
+    \label{eqn:pb_equation}
 \end{equation}
 
 \noindent and then recognizing that
-
 \begin{equation}
-    \frac{d^2\phi}{dx^2} = \frac{d}{dx}\Big(\frac{d\phi}{dx}\Big)^2,
+    \frac{d^2\phi}{dx^2} = \frac{1}{2}\frac{d}{dx}\Big(\frac{d\phi}{dx}\Big)^2,
 \end{equation}
 
-\noindent then with the boundary condition for electrodes far apart, $\phi\to0$ and $\frac{d\phi}{dx}\to 0$ as $x\to\infty$,
-
+\noindent then with the boundary condition for electrodes far apart, $\phi\to0$ and $\frac{d\phi}{dx}\to 0$ as $x\to\infty$, equation \ref{eqn:pb_equation} can be integrated to
 \begin{equation}
     \Big(\frac{d\phi}{dx}\Big)^2 = \frac{2k_b T}{\epsilon_o\epsilon_r} \sum n_i^o \bigg[exp\Big(\frac{-z_i e\phi}{k_b T}\Big) - 1\bigg] 
 \end{equation}
 
-\par For a symmetrical electrolyte, the Poisson-Boltzmann equation can be expressed as
-
+\noindent For a symmetrical electrolyte, the Poisson-Boltzmann equation can be expressed as
 \begin{equation}
     \frac{d\phi}{dx} = \frac{8k_bTn^o}{\epsilon_o\epsilon_r}\sinh\Big(\frac{ze\phi}{2k_bT}\Big)
     \label{eqn:edl_efield}
 \end{equation}
 
-\par Capacitance can generally be defined as the differential capacitance:
-
+\noindent Capacitance can generally be defined as the differential capacitance:
 \begin{equation}
     C_{diff} = \frac{d\sigma}{d\phi_o}
 \end{equation}
 
 \noindent where $\sigma$ is the surface charge of the electrode and $\phi_o$ is the electric surface potential. From Gauss's law and equation \ref{eqn:edl_efield}, the charge for the electric double layer is
-
 \begin{equation}
     \sigma = \epsilon_o\epsilon_r \Big[\frac{d\phi}{dx}\Big]_{x=0} = \sqrt{8k_bTn_i^o\epsilon_o\epsilon_r}\sinh\Big(\frac{ze\phi_o}{2k_bT}\Big).
     \label{eqn:edl_surface_charge}
 \end{equation}
 
 \noindent Differentiating \ref{eqn:edl_surface_charge} with respect to surface potential gives the differential capacitance of the electric double layer:
-
 \begin{equation}
     C_{GC} = \Big(\frac{2z^2e^2n_i^o\epsilon_r\epsilon_o}{k_bT}\Big)\cosh\Big(\frac{ze\phi_o}{2k_bT}\Big)
 \end{equation}
 
-\par Stern combined the Helmholtz and the Guoy-Chapman thoeries to create a model with two layers: the inner layer known as the Stern layer which consists of the adsorbed ions on the electrode surface from the Helmholtz model, and the outer diffuse layer \cite{_jes2011.pdf_????}. The capacitance of the Stern model can be approximated by the capacitance of the Helmholtz and Guoy-Chapman models in series \cite{_gongadze.pdf_????}:
+\par Stern combined the Helmholtz and the Guoy-Chapman thoeries to create a model with two layers: the inner layer known as the Stern layer, which consists of the adsorbed ions on the electrode surface from the Helmholtz model, and the outer diffuse layer (figure \ref{fig:electric_double_layer} \cite{_jes2011.pdf_????}. The capacitance of the Stern model can be approximated by the capacitance of the Helmholtz and Guoy-Chapman models in series \cite{_gongadze.pdf_????}:
 
 \begin{equation}
     C_s = \bigg[ \frac{1}{C_H} + \frac{1}{C_{GC}}\bigg]^{-1}
 \end{equation}
 
-\par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer. Gongadze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface of properties of the electrode, electrochemical reactions, and other non-quantified phenomena in the solution. 
+\par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer capacitance. Gongadze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but the experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface properties of the electrodes, electrochemical reactions, and other non-quantified phenomena in the solution. 
 
 \subsection{Correction for Electric Double Layer}
 
-\par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, and reduced electrode strength, physical compensations do not completely bypass the electric double layer and are usually avoided \cite{ishai_assessment_2012}. 
+\par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, reduced electrode strength, and failure to completely bypass the electric double layer, physical compensations areusually avoided \cite{ishai_assessment_2012}. 
 
 \begin{figure}
     \centering
@@ -1111,8 +1103,7 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
     \label{fig:edl_cap_equiv}
 \end{figure}
 
-\par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuit models of the electric double layer is a resistor and capacitor in series (figure **) \cite{ishai-19}. The impedance of the system can be expressed as
-
+\par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuit models of the electric double layer is a resistor and capacitor in series (figure \ref{fig:edl_cap_equiv}) \cite{ishai-19}. The impedance of the system can be expressed as
 \begin{equation}[h]
     Z = 2Z_p + Z_m
 \end{equation}
