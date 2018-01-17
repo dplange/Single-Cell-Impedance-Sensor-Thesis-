@@ -1092,7 +1092,7 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer capacitance. Gongadze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but the experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface properties of the electrodes, electrochemical reactions, and other non-quantified phenomena in the solution. 
 
-\subsection{Correction for Electric Double Layer}
+\subsection{Correction for the Electric Double Layer}
 
 \par To overcome the theoretical shortcomings, devices can be designed to minimize the effect of the electric double layer and/or an empirical corrective function can be applied to data. Physical compensations include four electrode sample cells, increasing the surface area by coating the electrode in black platinum or polypyrrole polystyrenesulphonate, and high current density methods \cite{ishai_electrode_2013}. However, due to a combination of device constraints, difficulty in implementation, reduced electrode strength, and failure to completely bypass the electric double layer, physical compensations areusually avoided \cite{ishai_assessment_2012}. 
 
@@ -1103,7 +1103,7 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
     \label{fig:edl_cap_equiv}
 \end{figure}
 
-\par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuit models of the electric double layer is a resistor and capacitor in series (figure \ref{fig:edl_cap_equiv}) \cite{ishai-19}. The impedance of the system can be expressed as
+\par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuit models of the electric double layer is a resistor and capacitor in series (figure \ref{fig:edl_cap_equiv}) \cite{feldman_fractal-polarization_1998}. The impedance of the system can be expressed as
 \begin{equation}[h]
     Z = 2Z_p + Z_m
 \end{equation}
@@ -1114,34 +1114,33 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
     Z_m = \frac{R_m}{sC_mR_m+1}
 \end{equation}
 
-\noindent where $Z_p$, $C_p$, and $R_p$ are the impedance, capacitance, and resistance electric double layer respectively; and $Z_m$, $C_m$, and $R_m$ are the impedance, capacitance, and resistance of the medium respectively. $s$ is the Laplace variable, and since our interest is in the steady state behaviour, $s = iw$.
+\noindent where $Z_p$, $C_p$, and $R_p$ are the impedance, capacitance, and resistance of the electric double layer respectively; and $Z_m$, $C_m$, and $R_m$ are the impedance, capacitance, and resistance of the medium respectively. $s$ is the Laplace variable, and since our interest is in the steady state behaviour, $s = iw$.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/edl_recap_equiv.png}
     \caption{A recap equivalent circuit of the electric double layer.}
-    \label{fig:edl_cap_equiv}
+    \label{fig:edl_recap_equiv}
 \end{figure}
 
 
-\par A second equivalent circuit involves a similar system, but with the inclusion of recap elements (figure **) \cite{ishai-19}. A recap element can be modeled as 
+\par A second equivalent circuit involves a similar system, but with the inclusion of recap elements (figure \ref{fig:edl_recap_equiv}) \cite{feldman_fractal-polarization_1998-1}. A recap element can be modeled as 
 \begin{equation}
     C_v = R(RC)^{-v}s^{-v}
 \end{equation}
 
-\noindent where C is capacitance, R is resistance, and $v$ is $0<v<1$. $v$ determines the degree of capacitance or resistance behavior with $v=1$ a complete capacitor, and $v=0$ a pure resistor. The recap element is known as a type of constant phase element (CPE), which is named after its property of contributing a constant angle and describes an imperfect dielectric and is present in a wide range of electrodes \cite{ishai_electrode_2013}. To fit data to the CPE, it is useful to express the system impedance as
-
+\noindent where C is capacitance, R is resistance, and $v$ is $0<v<1$. $v$ determines the degree of capacitance or resistance behavior, with $v=1$ a complete capacitor, and $v=0$ a pure resistor. The recap element is known as a type of constant phase element (CPE), which is named after its property of contributing a constant angle and describes an imperfect dielectric. Constant phase elements are found in a wide range of electrodes and are used extensively in empirical descriptions of electrode polarization.\cite{ishai_electrode_2013}. To fit data to the CPE, it is useful to express the system impedance as
 \begin{equation}
     Z_{sys} = Z_{bulk} + Z_0\bigg(i\frac{f}{f_0}\bigg)^{-v}
 \end{equation}
 
-\noindent where $Z_{bulk}$ is the impedance of the medium, $i$ is the imaginary number, $f$ is frequency, $f_0$ is the onset frequency of the electrode polarization, and $Z_0$ is a impedance fitting term. It is convenient to find the onset frequency by looking for the characteristic tail of the CPE on a nyquist plot (figure **).
+\noindent where $Z_{bulk}$ is the impedance of the medium, $i$ is the imaginary number, $f$ is frequency, $f_0$ is the onset frequency of the electrode polarization, and $Z_0$ is a impedance fitting term. It is convenient to find the onset frequency by looking for the characteristic tail of the CPE on a nyquist plot (figure \ref{fig:nyquist_onset}).
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/nyquist_ep_onset.png}
     \caption[Electrode polarization on a Nyquist plot]{Electrode polarization on a Nyquist plot with Z' and Z'' the real and imaginary components of the impedance respectively. The onset frequency of the electrode polarization can be identified by the beginning of the characteristic CPE tail \cite{ishai_assessment_2012}.}
-    \label{fig:my_label}
+    \label{fig:nyquist_onset}
 \end{figure}
 
 

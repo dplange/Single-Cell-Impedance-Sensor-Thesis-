@@ -15,9 +15,14 @@
 \usepackage{textcomp}
 \usepackage{mathtools}
 
-\usepackage{biblatex}
+
+\usepackage[
+    style=ieee,
+]{biblatex}
 \addbibresource{testReferences.bib}
 \addbibresource{Impedance Spectroscopy.bib}
+
+\input{formatting.tex}
 
 \newcommand{\Tau}{\mathcal{T}}
 
@@ -38,7 +43,6 @@
 \date{August 2017}
 
 \begin{document}
-
 %\maketitle
 
 
@@ -68,11 +72,14 @@
 
 
 
-\chapter{Introduction}
-\input{chapters/introduction}
+%\chapter{Introduction}
+%\input{chapters/introduction}
 
-\chapter{Background}
-\input{chapters/Background}
+%\chapter{Background}
+%\input{chapters/Background}
+
+\chapter{Methods}
+\input{chapters/methods}
 
 %\chapter{Models}
 %\input{chapters/Models}
