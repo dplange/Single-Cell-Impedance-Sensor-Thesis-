@@ -115,13 +115,32 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{images/lift_off.jpg}
-    \caption{Photoresist with metal depositions removed from glass substrate with Microposit remover 1165. The remaining metal deposition will form the }
-    \label{fig:lift_solution}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{images/lift_off.jpg}
+        \caption{Sputtered wafer in Microposit remover}
+        \label{fig:lift_solution}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/electrodes.jpg}
+        \caption{Wafer with electrode post lift off}
+        \label{fig:electrode_methods}
+    \end{subfigure} 
+    \caption[Lift off]{The lift off process with metal depositions removed from the glass substrate with Microposit remover 1165 in (a) and the remaining depositions after the lift off process in (b).}
+    \label{fig:electrode_methods}
 \end{figure}
 
 \subsection{Device Assembly: Alignment and Plasma Bonding}
+
 \par To assemble the PDMS chip containing the microfluidic channels to the electrodes on the glass substrate, the components were plasma bonded to create a water-tight seal that permits optical viewing. The PDMS and the galss electrode substrate were placed device-side up in the Cal Poly Microfabrication Lab's PDC-32G plasma cleaner. After pumping the plasma cleaner down to a vacuum, the device was exposed to an atmospheric plasma for 10 seconds.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/plasma_cleaner.jpg}
+    \caption[PDC-32G plasma cleaner]{PDC-32G plasma cleaner used for plasma bonding.}
+    \label{fig:my_label}
+\end{figure}
 
 \par After plasma activation, a drop of ethanol was place don the PDMS surface before placing the PDMS onto the electrode substrate in order to create a liquid float barrier to that will prevent permanent binding for $\sim$5 minutes. The electrodes and PDMS microchannels were aligned by hand with a microscope set at 20X magnification for visual feedback. After proper alignment, the device was baked in an oven at 65$^\circ$C for an hour. 
 
@@ -130,9 +149,11 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 
 \section[IS Software]{Impedance Spectroscope Software}
+
 \par LabVIEW was used to interface with the NI-5421 function generator and the NI-5124 oscilloscope to package the circuit model, data acquisition, and data analysis into a impedance spectroscope program. The LabVIEW language was chosen due to the ease of connecting to the National Instrument hardware and the rapid development cycle. The program specifications include interfacing with the NI-hardware to run an impedance spectroscopy experiment, the ability to control the sweeping frequencies, the ability to switch circuit topologies, the ability to automatically run tests at specified intervals, the implementation of a data saving system that records the users settings for the experiment as well as the impedance spectroscopy results, and a way to view and compare data.
 
 \subsection{Software Architecture}
+
 \par The LabVIEW program was designed with an event-driven state machine architecture and is diagrammed in figure \ref{fig:event_driven_state_machine_architecture}. A state machine is a common LabVIEW coding pattern where the program exists as a set of states. Depending on user input or calculations, each state leads to a subsequent state that can potentially lead to a large network of modular decision making states. For the impedance spectroscope, the state machine is simple with most states leading to an idle state that continues to wait for user input. The state machine lives inside an event structure that listens for specific user interface (UI) interactions that triggers an event that runs code and can specify the next state in the state machine. After a specified amount of time passes without an event triggering, the time out event will trigger and run the state machine.    
 
 \begin{figure}[h]
@@ -140,6 +161,13 @@ The final step of the electrode fabrication process was to remove the photoresis
     \includegraphics[width=0.8\textwidth]{images/program_overview.png}
     \caption[Event-driven state machine architecture]{The event-driven state machine architecture used for the impedance spectroscope LabVIEW program. Events override the state of the state machine that runs inside the time out event.}
     \label{fig:event_driven_state_machine_architecture}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
 \end{figure}
 
 \par The event driven state machine architecture will allow for a responsive UI that can adapt outside of the state machine architecture while maintaining the modularity of a state machine with safe program initialization and exit. 
