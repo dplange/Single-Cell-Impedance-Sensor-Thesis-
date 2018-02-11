@@ -70,7 +70,13 @@ The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
 
 \subsection*{Metal Deposition}
 
-\par To deposit the electrode metals onto the developed-photoresist wafer, the AGS reactive ion etcher, CrC-150 chrome sputterer, and the Denton Desk V sputtering system were used to clean and sputter chromium and gold. The target metal deposition consists of three layers: a 175 \si{\angstrom} thick base chromium layer to facilitate adhesion of the electrode to glass, a 180 nm thick gold layer as the main conductor in the electrode, and a 42 \si{\angstrom} thick layer of chromium that will oxidize to an inert finish (figure ???).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/metal_deposition diagram.png}
+    \caption{Caption}
+    \label{fig:metal_deposition}
+\end{figure}
+\par To deposit the electrode metals onto the developed-photoresist wafer, the AGS reactive ion etcher, CrC-150 chrome sputterer, and the Denton Desk V sputtering system were used to clean and sputter chromium and gold. The target metal deposition consists of three layers: a 175 \si{\angstrom} thick base chromium layer to facilitate adhesion of the electrode to glass, a 180 nm thick gold layer as the main conductor in the electrode, and a 42 \si{\angstrom} thick layer of chromium that will oxidize to an inert finish (figure \ref{fig:metal_deposition}).
 
 \par To prepare the photoresist-developed wafer for metal deposition, the wafers were exposed to an oxygen plasma to volatilize and remove organic residues. The wafer was placed under vacuum in the AGS RIE system and exposed to an oxygen plasma for 30 seconds (fig. ??). The CrC-150 sputtering system was then used to deposit 175 \si{\angstrom} of chromium at a rate of 250 \si{\angstrom} per minute for 30 seconds. Using the Denton Desk 5, 180 nm of gold was deposited at a rate of 180 \si{\angstrom} per minute for 10 minutes. A final 42 \si{\angstrom} layer of chromium was deposited with the CrC-150 with a rate of 250 \si{\angstrom} per minute for 10 seconds. 
 
@@ -89,7 +95,7 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 
 
-\section[IS Software]{Impedance Spectroscope Software: LabVIEW Programming}
+\section[IS Software]{Impedance Spectroscope Software}
 \par LabVIEW was used to interface with the NI-5421 function generator and the NI-5124 oscilloscope to package the circuit model, data acquisition, and data analysis into a impedance spectroscope program. The LabVIEW language was chosen due to the ease of connecting to the National Instrument hardware and the rapid development cycle. The program specifications include interfacing with the NI-hardware to run an impedance spectroscopy experiment, the ability to control the sweeping frequencies, the ability to switch circuit topologies, the ability to automatically run tests at specified intervals, the implementation of a data saving system that records the users settings for the experiment as well as the impedance spectroscopy results, and a way to view and compare data.
 
 \subsection{Software Architecture}
@@ -98,7 +104,7 @@ The final step of the electrode fabrication process was to remove the photoresis
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{images/program_overview.png}
-    \caption{The event-driven state machine architecture used for the impedance spectroscope LabVIEW program. Events override the state of the state machine that runs inside the time out event.}
+    \caption[Event-driven state machine architecture]{The event-driven state machine architecture used for the impedance spectroscope LabVIEW program. Events override the state of the state machine that runs inside the time out event.}
     \label{fig:event_driven_state_machine_architecture}
 \end{figure}
 
