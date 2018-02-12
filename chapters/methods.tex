@@ -179,14 +179,14 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 \subsection{Impedance Spectroscopy}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/IS_gui.png}
-    \caption{}
+    \caption{Impedance spectroscopy user interface}
     \label{fig:is_gui}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -199,27 +199,80 @@ The final step of the electrode fabrication process was to remove the photoresis
         \centering
         \includegraphics[width=\textwidth]{images/labview_real_imag_graph.png}
         \caption{Real and imaginary impedance graphs}
+        \label{fig:labview_real-imag_graph}
     \end{subfigure}
-    \vspace{0.3 in}
+    \vspace{0.2in}
     \vfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/labview_nyquist_graph.png}
         \caption{Nyquist plot}
+        \label{fig:labview_nyquist_plot}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/labview_bode_phase_graph.png}
         \caption{Bode pot and phase shift plot}
+        \label{fig:labview_bode-phase_plot}
     \end{subfigure}
+    \caption{Impedance spectroscopy graphs}
     \label{fig:IS_gui}
 \end{figure}
 
 
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/labview_circuit_IV.png}
+        \caption{I-V topology}
+        \label{fig:labview_I-V_circ}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/labview_circuit_auto.png}
+        \caption{Auto-balancing bridge topology}
+        \label{fig:labview_auto_circ}
+    \end{subfigure}
+    \caption{Circuit settings}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{images/labview_freq.png}
+  \captionof{figure}{Frequency sweep options}
+  \label{fig:test1}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{images/labview_intervals.png}
+  \captionof{figure}{Interval measurement settings}
+  \label{fig:t}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/labview_data.png}
+    \caption{Example of data saving format}
+    \label{fig:labview_data}
+\end{figure}
+
 \subsection{Data Viewer}
 
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/labview_dataViewer.png}
+    \caption{Data viewer user interface}
+    \label{fig:data_viewer_gui}
+\end{figure}
 
 \section{System Implementation}
 \par To run impedance spectroscopy tests, a system was assembled to control and record experiments. The complete implementation included a function generator (NI PXI-5421), an oscilloscope (NI PXI-5124), a hardware interfacing labview program, an I-V circuit, three Harvard apparatus syringe pumps, an inverted video microscope (LabSmith SVM340), and the impedance spectroscopy microfluidic chip. Figure \ref{fig:IS_system} displays the impedance spectroscopy system. 
