@@ -150,10 +150,6 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 \par LabVIEW was used to interface with the NI-5421 function generator and the NI-5124 oscilloscope to package the circuit model, data acquisition, and data analysis into an impedance spectroscope program. The LabVIEW language was chosen due to the ease of connecting to the National Instrument hardware and the rapid development cycle. The program specifications include interfacing with the NI-hardware to run an impedance spectroscopy experiment, the ability to control the sweeping frequencies, the ability to switch circuit topologies, the ability to automatically run tests at specified intervals, the implementation of a data saving system that records the users settings for the experiment as well as the impedance spectroscopy results, and the ability to view and compare data.
 
-\subsection{Architecture}
-
-\par The LabVIEW program was designed with an event-driven state machine architecture and is diagrammed in figure \ref{fig:IS_software_design}. A state machine is a common LabVIEW coding pattern where the program exists as a set of states. Depending on user input or calculations, each state leads to a subsequent state that can potentially lead to a large network of modular decision making states. For the impedance spectroscope, the state machine is simple with most states leading to an idle state that continues to wait for user input. The state machine lives inside an event structure that listens for specific user interface (UI) interactions that triggers an event that runs code and can specify the next state in the state machine. After a specified amount of time passes without an event triggering, the time out event will trigger and run the state machine.    
-
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{\textwidth}
@@ -162,7 +158,7 @@ The final step of the electrode fabrication process was to remove the photoresis
         \caption{Event-driven state machine architecture}
         \label{fig:IS_architecture}
     \end{subfigure}
-    \vspace{0.2 in}
+    \vspace{0.1 in}
     \vfill
     \begin{subfigure}[b]{\textwidth}
         \centering
@@ -173,11 +169,16 @@ The final step of the electrode fabrication process was to remove the photoresis
     \caption[Event-driven state machine architecture]{The event-driven state machine architecture used for the impedance spectroscope LabVIEW program. Events override the state of the state machine that runs inside the time out event.}
     \label{fig:IS_software_design}
 \end{figure}
+\FloatBarrier
 
+\subsection{Architecture}
 
-\par The event driven state machine architecture will allow for a responsive UI that can adapt outside of the state machine architecture while maintaining the modularity of a state machine with safe program initialization and exit. 
+\par The LabVIEW program was designed with an event-driven state machine architecture and is diagrammed in figure \ref{fig:IS_software_design}. A state machine is a common LabVIEW coding pattern where the program exists as a set of states. Depending on user input or calculations, each state leads to a subsequent state that can potentially lead to a large network of modular decision making states. For the impedance spectroscope, the state machine is simple with most states leading to an idle state that continues to wait for user input. The state machine lives inside an event structure that listens for specific user interface (UI) interactions that triggers an event that runs code and can specify the next state in the state machine. After a specified amount of time passes without an event triggering, the time out event will trigger and run the state machine.    
+
+\par The event driven state machine architecture will allow for a responsive UI that can adapt outside of the state machine architecture while maintaining the modularity of a state machine with safe program initialization and exit. The implementation of the software resulted in two main functions: impedance spectroscopy, and the data viewer.
 
 \subsection{Impedance Spectroscopy}
+\par The impedance spectroscopy UI gives users the ability to set settings for experiments and view the results (figure \ref{fig:is_gui}). All of the gui settings are located in a set of three tabs: circuit topology, frequency parameters, and interval parameters. 
 
 \begin{figure}[h]
     \centering
@@ -185,6 +186,50 @@ The final step of the electrode fabrication process was to remove the photoresis
     \caption{Impedance spectroscopy user interface}
     \label{fig:is_gui}
 \end{figure}
+
+\par The circuit topology tab tell the software what circuit is being used and the value of the external resistor (figure \ref{fig:labview_circuit_settings}). With each circuit selection, an image below updates to display where the software expects the oscilloscope channels to be connected and the formula calculating impedance. In the current implementation, the software includes options for the I-V and auto-balancing bridge circuits. 
+
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/labview_circuit_IV.png}
+        \caption{I-V topology}
+        \label{fig:labview_I-V_circ}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/labview_circuit_auto.png}
+        \caption{Auto-balancing bridge topology}
+        \label{fig:labview_auto_circ}
+    \end{subfigure}
+    \caption{Circuit settings}
+    \label{fig:labview_circuit_settings}
+\end{figure}
+
+\par The frequency parameter tab contains the controls that determine what frequencies are swept over in the impedance spectroscopy experiment (figure \ref{fig:labview_frequency_settings}). The frequency expression shows how frequency values are calculated with x and y representing incremented values with the caveat that a value for every increment of x is generated for every one increment of y. For example, with the settings given in figure \ref{fig:labview_frequency_settings}, ten frequencies per decade with decades 1E3 to 1E7 are generated. The max input frequency truncates the frequencies generated to the specified value. In addition to frequency parameters, the tab also includes controls for the waveform amplitude, the number of cycles measured by the oscilloscope and the sample rate. 
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{images/labview_freq.png}
+  \captionof{figure}{Frequency sweep options}
+  \label{fig:labview_frequency_settings}
+\end{minipage}
+\vspace{0.2 in}
+\vfill
+\begin{minipage}[t]{.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{images/labview_intervals.png}
+  \captionof{figure}{Interval measurement settings}
+  \label{fig:labview_interval_settings}
+\end{minipage}
+\end{figure}
+
+\par The interval parameters tab contains options for running automatic experiments at timed intervals (figure \ref{fig:labview_interval_settings}). 
 
 \begin{figure}[h]
     \centering
@@ -217,65 +262,35 @@ The final step of the electrode fabrication process was to remove the photoresis
         \label{fig:labview_bode-phase_plot}
     \end{subfigure}
     \caption{Impedance spectroscopy graphs}
-    \label{fig:IS_gui}
+    \label{fig:labview_IS_graphs}
 \end{figure}
+
+\par After running an experiment, the results are visualized and then saved in a text file. The results are used to generate seven plot in four different tabs: impedance magnitude and phase, real and imaginary impedance, Nyquist plot, and a voltage bode and phase plots (figure \ref{fig:labview_IS_graphs}. With the exception of the voltage bode and phase plots, the plots are different ways of visualizing the same impedance data. The voltage bode and phase plots were primarily used in troubleshooting. 
 
 
 \begin{figure}[h]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/labview_circuit_IV.png}
-        \caption{I-V topology}
-        \label{fig:labview_I-V_circ}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/labview_circuit_auto.png}
-        \caption{Auto-balancing bridge topology}
-        \label{fig:labview_auto_circ}
-    \end{subfigure}
-    \caption{Circuit settings}
-\end{figure}
-
-
-\begin{figure}[h]
-\centering
-\begin{minipage}[t]{.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{images/labview_freq.png}
-  \captionof{figure}{Frequency sweep options}
-  \label{fig:test1}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{images/labview_intervals.png}
-  \captionof{figure}{Interval measurement settings}
-  \label{fig:t}
-\end{minipage}
-\end{figure}
-
-
-\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{images/labview_data.png}
     \caption{Example of impedance spectroscopy data file}
     \label{fig:labview_data}
 \end{figure}
 
+\par Every experiment is automatically saved in a tab delimited text file with the designated experiment name (a number is appended to a file name duplicates; i.e. no files are overwritten) with the option to generate dated folders. Each file contains a header that saves the date and time the experiment was run, the user, and user defined settings. The impedance spectroscope data is saved in labeled columns. An example of a saved experiment file is given in figure \ref{fig:labview_data}.
+\FloatBarrier
+
 \subsection{Data Viewer}
+
+\par The data viewer UI allowed users to visualize and compare previous experiments (figure \ref{fig:labview_data_viewer_gui}). The UI allows up to ten experiments to be simultaneously plotted with a legend in the top right corner and a table displaying each experiment's header information.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/labview_dataViewer.png}
     \caption{Data viewer user interface}
-    \label{fig:data_viewer_gui}
+    \label{fig:labview_data_viewer_gui}
 \end{figure}
 
 \section{System Implementation}
-\par To run impedance spectroscopy tests, a system was assembled to control and record experiments. The complete implementation included a function generator (NI PXI-5421), an oscilloscope (NI PXI-5124), a hardware interfacing labview program, an I-V circuit, three Harvard apparatus syringe pumps, an inverted video microscope (LabSmith SVM340), and the impedance spectroscopy microfluidic chip. Figure \ref{fig:IS_system} displays the impedance spectroscopy system. 
+\par To run impedance spectroscopy tests, a system was assembled to control and record experiments. The complete implementation included a function generator (NI PXI-5421), an oscilloscope (NI PXI-5124), a hardware interfacing labview program, an I-V circuit, three Harvard apparatus syringe pumps, an inverted video microscope (LabSmith SVM340) to optical feedback, and the impedance spectroscopy microfluidic chip. Figure \ref{fig:IS_system} displays the impedance spectroscopy system. 
 
 \begin{figure}[h]
     \centering
@@ -287,12 +302,28 @@ The final step of the electrode fabrication process was to remove the photoresis
 \subsection{Electrical Interface}
 
 \subsection*{NI Hardware}
-\par The NI PXI-5421 function generator and the NI PXI-5124 oscilloscope were used to load and measure the cell impedance spectroscope. The NI PXI-5421 is a 43 MHz bandwidth waveform generator with the ability to output
+\par The NI PXI-5421 function generator and the NI PXI-5124 oscilloscope were used to load and measure the impedance spectroscopy chip. The NI PXI-5421 is a 43 MHz waveform generator capable of generating user defined standard and arbitrary waveforms with a $\pm$6 V range and a 50 $\Omega$ output impedance. The signal generator was controlled with the LabVIEW program and operated to run at specified frequencies of a standard sine wave. The NI PXI-5124 is a 150 MHz 200 MS/s oscilloscope. The PXI-5124 has a 4.0 GS/s equivalent time sampling for repetitive signals, and a selectable 50 $\Omega$ or 1 M$\Omega$||29 pF input impedance. The oscilliscope was controlled with LabVIEW and configured to have a 1 M$\Omega$||29 pF input impedance.
 
 \subsection*{Electrode Interface}
+\par To establish an electrical connection to the impedance spectroscopy chip, solid core wires were soldered to to the device. Since the metal depositions were too thin for direct soldering, copper tape was placed adjacent to the soldered pads, soldered to the solid-core wire, and then a silver-based epoxy was applied to the copper tape electrode pads interface using the M6 Chemicals silver conductive pen. The epoxy has a resistivity of 1E-4 $\Omega\cdot$cm.
+
+\par Connections to the NI instruments were made with solid-core wires soldered to BNC female jacks. Since the function generator output signal was not 50 $\Omega$ terminated, the signal amplitude will be twice the selected amplitude. Wiring length to the I-V circuit was minimized. 
 
 \subsection*{I-V Circuit}
+\par An I-V circuit, with an external resistor of 3300 $\Omega$, measured the impedance of the device under testing. The circuit was discussed in detail in section \ref{sec:impedance_spectroscopy}, and the implementation is depicted in figure \ref{fig:I-V_implementation}.
+
+\par The circuit was implemented using two different methods: a system of soldered solid core wires, and using a breadboard. There was no difference noted between the two implementations sweeping up to 40 MHz. However, the breadboard should generally be avoided for high frequencies due to intercontact capacitance ($\sim$25 pF for power strips, and $\sim$2.5 pF for the remaining breadboard).
+
 
 \subsection{Microfluidics}
 
-\subsection{Data Acquisition}
+\par Three Harvard Apparatus syringe pumps driving 1 mL BD syringes were used to control fluid flow through the impedance spectroscope chip. The microfluidic network is diagrammed in figure \ref{fig:ufluidic_network}.
+
+\par The original design of the device was meant to capture a single cell in the measurement, but since this design cannont achieve single-cell isolation (section \ref{ch: introduction}), pump \#3 was used to initially flood the flush channels and then hold its syringe at a constant volume to prevent flow through the flush channels. For fluid flow, pump \#1 drove fluid at 1 $\mu$L/min and pump \#2 pulled fluid at 1 $\mu$L/min. 
+
+%The flow with water was calculated to generate an estimated pressure difference of \#\# between the inlet and outlet, and a max gauge pressure of \#\# (appendix \ref{fluid_flow_pressure}).
+
+\par Spherotech polystyrene beads (FP-2052-2) were injected into the impedance spectroscope system for proof of concept. The Spherotech beads ranged from 7 $\mu$m to 7.9 $\mu$m in diameter and had a relative permittivity of 2.5 (table \ref{tab:permittivity_table}). The beads were suspended in a DI solution by 0.1\% by mass with a single drop of Titron x-100 surfactant and then sonicated.
+
+\par The device was evaluated by making impedance measurements of DI water, 1x phosphate buffered saline solution (PBS), DI with beads, and PBS with beads. 
+
