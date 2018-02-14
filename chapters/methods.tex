@@ -58,9 +58,16 @@ The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
 
 \par The photolithography process was completed using the Cannon PLA-501FA mask aligner (figure \ref{fig:mask_aligner}). The glass wafer was placed in the aligner with a black tape backing in order to prevent light scattering and absorb radiation, and the transparency was centered over the wafer. UV light was applied to the wafer for 30 seconds for a total of 450 mJ/cm$^2$. 
 
-\par The wafer was then developed for 60-90 seconds in  ma-D 533/3 developer, and then rinsed in DI water. At this step, the wafer was examined under a microscope to ensure the photoresist is entirely removed from the substrate where the electrode is desired and that the electrode edges are sharp (figure \ref{fig:}). If not, the wafer was developed for another 10 seconds and reexamined. 
+\par The wafer was then developed for 60-90 seconds in  ma-D 533/3 developer, and then rinsed in DI water. At this step, the wafer was examined under a microscope to ensure the photoresist was entirely removed from the substrate where the electrode was desired and that the electrode edges were sharp (figure \ref{fig:photoresist_microscope}). If not, the wafer was developed for another 10 seconds and reexamined. 
 
-\par After the photoresist was fully developed, the wafer was flood-exposed (i.e. no transparency) in order to improve stability. The photoresist was exposed 3 times for 40 seconds with a five minute rest between each exposure for a total of 1800 mJ/cm$^2$ of exposure. Finally, the wafers were baked on the hotplate with a ramping temperature from 60 $^\circ$C to 100 $^\circ$C for 10 minutes, and then allowed to cool for 10 minutes. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/microscope_photoresist.png}
+    \caption[Post-developed Ma-N1420 photoresist]{Post-developed Ma-N1420 photoresist. The two outlined areas depict areas that had photoresist fully developed away.}
+    \label{fig:photoresist_microscope}
+\end{figure}
+
+\par After the photoresist was fully developed, the wafer was flood-exposed (i.e. no transparency) in order to improve stability. The photoresist was exposed 3 times for 40 seconds with a five minute rest between each exposure for a total of 1800 mJ/cm$^2$. Finally, the wafers were baked on the hotplate with a ramping temperature from 60 $^\circ$C to 100 $^\circ$C for 10 minutes, and then allowed to cool for 10 minutes. 
 
 \subsection*{Metal Deposition}
 
@@ -73,7 +80,7 @@ The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
     \label{fig:metal_deposition}
 \end{figure}
 
-\par To prepare the photoresist-developed wafer for metal deposition, the wafers were exposed to an oxygen plasma to volatilize and remove organic residues. The wafer was placed under vacuum in the AGS RIE system and exposed to an oxygen plasma for 30 seconds (figure \ref{fig:AGS-RIE}). The CrC-150 sputtering system was then used to deposit 125 \si{\angstrom} of chromium at a rate of 250 \si{\angstrom} per minute for 30 seconds. Using the Denton Desk 5, 180 nm of gold was deposited at a rate of 180 \si{\angstrom} per minute for 10 minutes. A final 42 \si{\angstrom} layer of chromium was deposited with the CrC-150 with a rate of 250 \si{\angstrom} per minute for 10 seconds (figure \ref{fig:sputterers}). 
+\par To prepare the photoresist-developed wafer for metal deposition, the wafers were exposed to an oxygen plasma to volatilize and remove organic residues. The wafer was placed under vacuum in the AGS RIE system and exposed to an oxygen plasma for 30 seconds (figure \ref{fig:AGS-RIE}). The CrC-150 sputtering system was then used to deposit 125 \si{\angstrom} of chromium at a rate of 250 \si{\angstrom} per minute for 30 seconds. Using the Denton Desk 5, 180 nm of gold was deposited at a rate of 180 \si{\angstrom} per minute for 10 minutes. A final 42 \si{\angstrom} layer of chromium was deposited with the CrC-150 at a rate of 250 \si{\angstrom} per minute for 10 seconds (figure \ref{fig:sputterers}). 
 
 \begin{figure}
     \centering
@@ -121,7 +128,7 @@ The final step of the electrode fabrication process was to remove the photoresis
         \caption{Wafer with electrode post lift off}
         \label{fig:electrode_methods}
     \end{subfigure} 
-    \caption[Lift off]{The lift off process with metal depositions removed from the glass substrate with Microposit remover 1165 in (a) and the remaining depositions after the lift off process in (b).}
+    \caption[Lift off]{(a) Metal depositions removed from the glass substrate with Microposit remover 1165. (b)The remaining depositions after the lift off process.}
     \label{fig:electrode_methods}
 \end{figure}
 
@@ -136,7 +143,7 @@ The final step of the electrode fabrication process was to remove the photoresis
     \label{fig:my_label}
 \end{figure}
 
-\par After plasma activation, a drop of ethanol was place don the PDMS surface before placing the PDMS onto the electrode substrate in order to create a liquid float barrier to that will prevent permanent binding for $\sim$5 minutes. The electrodes and PDMS microchannels were aligned by hand with a microscope set at 20X magnification for visual feedback. After proper alignment, the device was baked in an oven at 65$^\circ$C for an hour. 
+\par After plasma activation, a drop of ethanol was placed on the PDMS surface before placing the PDMS onto the electrode substrate. This created a liquid float barrier that prevented permanent binding for $\sim$5 minutes. The electrodes and PDMS microchannels were aligned by hand with a microscope set at 20X magnification for visual feedback. After proper alignment, the device was baked in an oven at 65$^\circ$C for an hour. 
 
 
 
@@ -157,7 +164,7 @@ The final step of the electrode fabrication process was to remove the photoresis
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/event_driven_SM.png}
-        \caption{Event-driven state machine code setup}
+        \caption{Event-driven state machine code}
         \label{fig:IS-base_code}
     \end{subfigure}
     \caption[Event-driven state machine architecture]{The event-driven state machine architecture used for the impedance spectroscope LabVIEW program. Events override the state of the state machine that runs inside the time out event.}
@@ -167,12 +174,12 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 \subsection{Architecture}
 
-\par The LabVIEW program was designed with an event-driven state machine architecture and is diagrammed in figure \ref{fig:IS_software_design}. A state machine is a common LabVIEW coding pattern where the program exists as a set of states. Depending on user input or calculations, each state leads to a subsequent state that can potentially lead to a large network of modular decision making states. For the impedance spectroscope, the state machine is simple with most states leading to an idle state that continues to wait for user input. The state machine lives inside an event structure that listens for specific user interface (UI) interactions that triggers an event that runs code and can specify the next state in the state machine. After a specified amount of time passes without an event triggering, the time out event will trigger and run the state machine.    
+\par The LabVIEW program was designed with an event-driven state machine architecture and is diagrammed in figure \ref{fig:IS_software_design}. A state machine is a common LabVIEW coding pattern where the program exists as a set of states. Depending on user input or calculations, each state leads to a subsequent state that can potentially lead to a large network of modular decision making code. For this program, the state machine is simple with most states leading to an idle state that continues to wait for user input. The state machine lives inside an event structure that listens for specific user interface (UI) interactions. These interactions trigger an event that runs code and can specify the next state in the state machine. After a specified amount of time passes without an event triggering, the time out event will trigger and run the state machine.    
 
-\par The event driven state machine architecture will allow for a responsive UI that can adapt outside of the state machine architecture while maintaining the modularity of a state machine with safe program initialization and exit. The implementation of the software resulted in two main functions: impedance spectroscopy, and the data viewer.
+\par The event driven state machine architecture allowed for a responsive UI that can adapt outside of the state machine architecture while maintaining the modularity of a state machine with safe program initialization and exit. The implementation of the software resulted in two main functions: impedance spectroscopy, and the data viewer.
 
 \subsection{Impedance Spectroscopy}
-\par The impedance spectroscopy UI gives users the ability to set settings for experiments and view the results (figure \ref{fig:is_gui}). All of the gui settings are located in a set of three tabs: circuit topology, frequency parameters, and interval parameters. 
+\par The impedance spectroscopy UI gives users the ability to set settings for experiments and view the results (figure \ref{fig:is_gui}). All of the impedance spectroscopy settings are located in a set of three tabs: circuit topology, frequency parameters, and interval parameters. 
 
 \begin{figure}[h]
     \centering
@@ -203,7 +210,7 @@ The final step of the electrode fabrication process was to remove the photoresis
     \label{fig:labview_circuit_settings}
 \end{figure}
 
-\par The frequency parameter tab contains the controls that determine what frequencies are swept over in the impedance spectroscopy experiment (figure \ref{fig:labview_frequency_settings}). The frequency expression shows how frequency values are calculated with x and y representing incremented values with the caveat that a value for every increment of x is generated for every one increment of y. For example, with the settings given in figure \ref{fig:labview_frequency_settings}, ten frequencies per decade with decades 1E3 to 1E7 are generated. The max input frequency truncates the frequencies generated to the specified value. In addition to frequency parameters, the tab also includes controls for the waveform amplitude, the number of cycles measured by the oscilloscope and the sample rate. 
+\par The frequency parameter tab contains the controls that determine what frequencies are swept over in the impedance spectroscopy experiment (figure \ref{fig:labview_frequency_settings}). The frequency expression shows how frequency values are calculated with x and y representing incremented values with the caveat that a value for every increment of x is generated for every one increment of y. For example, with the settings given in figure \ref{fig:labview_frequency_settings}, ten frequencies per decade with decades 1E3 to 1E7 are generated. The max input frequency truncates the frequencies generated to the specified value. In addition to frequency parameters, the tab also includes controls for the waveform amplitude, the number of cycles measured by the oscilloscope, and the sample rate. 
 
 \begin{figure}[h]
 \centering
@@ -259,7 +266,7 @@ The final step of the electrode fabrication process was to remove the photoresis
     \label{fig:labview_IS_graphs}
 \end{figure}
 
-\par After running an experiment, the results are visualized and then saved in a text file. The results are used to generate seven plot in four different tabs: impedance magnitude and phase, real and imaginary impedance, Nyquist plot, and a voltage bode and phase plots (figure \ref{fig:labview_IS_graphs}. With the exception of the voltage bode and phase plots, the plots are different ways of visualizing the same impedance data. The voltage bode and phase plots were primarily used in troubleshooting. 
+\par After running an experiment, the results are visualized and then saved in a text file. The results are used to generate seven plot in four different tabs: impedance magnitude and phase, real and imaginary impedance, Nyquist plot, and a voltage bode and phase plots (figure \ref{fig:labview_IS_graphs}. With the exception of the voltage bode and phase plots, the graphs are different ways of visualizing the impedance data. The voltage bode and phase plots were primarily used in troubleshooting. 
 
 
 \begin{figure}[h]
@@ -269,7 +276,7 @@ The final step of the electrode fabrication process was to remove the photoresis
     \label{fig:labview_data}
 \end{figure}
 
-\par Every experiment is automatically saved in a tab delimited text file with the designated experiment name (a number is appended to a file name duplicates; i.e. no files are overwritten) with the option to generate dated folders. Each file contains a header that saves the date and time the experiment was run, the user, and user defined settings. The impedance spectroscope data is saved in labeled columns. An example of a saved experiment file is given in figure \ref{fig:labview_data}.
+\par Every experiment is automatically saved in a tab delimited text file with the designated experiment name (a number is appended to a filename duplicate; i.e. no files are overwritten) with the option to generate dated folders. Each file contains a header that saves the date and time the experiment was run, the user, and user defined settings. The impedance spectroscope data is saved in labeled columns. An example of a saved experiment file is given in figure \ref{fig:labview_data}.
 \FloatBarrier
 
 \subsection{Data Viewer}
@@ -284,7 +291,7 @@ The final step of the electrode fabrication process was to remove the photoresis
 \end{figure}
 
 \section{System Implementation}
-\par To run impedance spectroscopy tests, a system was assembled to control and record experiments. The complete implementation included a function generator (NI PXI-5421), an oscilloscope (NI PXI-5124), a hardware interfacing labview program, an I-V circuit, three Harvard apparatus syringe pumps, an inverted video microscope (LabSmith SVM340) to optical feedback, and the impedance spectroscopy microfluidic chip. Figure \ref{fig:IS_system} displays the impedance spectroscopy system. 
+\par To run impedance spectroscopy tests, a system was assembled to control and record experiments. The complete implementation included a function generator (NI PXI-5421), an oscilloscope (NI PXI-5124), a hardware interfacing labview program, an I-V circuit, three Harvard apparatus syringe pumps, an inverted video microscope (LabSmith SVM340) for imaging, and the impedance spectroscopy microfluidic chip. Figure \ref{fig:IS_system} displays the impedance spectroscopy system. 
 
 \begin{figure}[h]
     \centering
@@ -296,15 +303,15 @@ The final step of the electrode fabrication process was to remove the photoresis
 \subsection{Electrical Interface}
 
 \subsection*{NI Hardware}
-\par The NI PXI-5421 function generator and the NI PXI-5124 oscilloscope were used to load and measure the impedance spectroscopy chip. The NI PXI-5421 is a 43 MHz waveform generator capable of generating user defined standard and arbitrary waveforms with a $\pm$6 V range and a 50 $\Omega$ output impedance. The signal generator was controlled with the LabVIEW program and operated to run at specified frequencies of a standard sine wave. The NI PXI-5124 is a 150 MHz 200 MS/s oscilloscope. The PXI-5124 has a 4.0 GS/s equivalent time sampling for repetitive signals, and a selectable 50 $\Omega$ or 1 M$\Omega$||29 pF input impedance. The oscilliscope was controlled with LabVIEW and configured to have a 1 M$\Omega$||29 pF input impedance.
+\par The NI PXI-5421 function generator and the NI PXI-5124 oscilloscope were used to load and measure the impedance spectroscopy chip. The NI PXI-5421 is a 43 MHz waveform generator capable of generating user defined standard and arbitrary waveforms with a $\pm$6 V range and a 50 $\Omega$ output impedance. The signal generator was controlled with the LabVIEW program and operated to run at specified frequencies of a standard sine wave. The NI PXI-5124 is a 150 MHz 200 MS/s oscilloscope. The PXI-5124 has a 4.0 GS/s equivalent time sampling rate for repetitive signals, and a selectable 50 $\Omega$ or 1 M$\Omega$||29 pF input impedance. The oscilliscope was controlled with LabVIEW and configured to have a 1 M$\Omega$||29 pF input impedance.
 
 \subsection*{Electrode Interface}
-\par To establish an electrical connection to the impedance spectroscopy chip, solid core wires were soldered to to the device. Since the metal depositions were too thin for direct soldering, copper tape was placed adjacent to the soldered pads, soldered to the solid-core wire, and then a silver-based epoxy was applied to the copper tape electrode pads interface using the M6 Chemicals silver conductive pen (figure \ref{fig:electrode_interface}). The epoxy has a resistivity of 1E-4 $\Omega\cdot$cm.
+\par To establish an electrical connection to the impedance spectroscopy chip, solid core wires were soldered to to the device. Since the metal depositions were too thin for direct soldering, copper tape was placed adjacent to the soldered pads, soldered to the solid-core wire, and then a silver-based epoxy was applied to the copper tape and electrode pads using the M6 Chemicals silver conductive pen (figure \ref{fig:electrode_interface}). The epoxy has a resistivity of 1E-4 $\Omega\cdot$cm.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/electrod_interface.jpg}
-    \caption[Electrode interface]{The electrode interface consisting of solid-core wire soldered to copper tape epoxied to electrode pads.}
+    \caption[Electrode interface]{The electrode interface consisting of solid-core wire soldered to copper tape epoxied to the electrode pads.}
     \label{fig:electrode_interface}
 \end{figure}
 
