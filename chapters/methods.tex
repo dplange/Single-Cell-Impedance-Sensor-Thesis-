@@ -305,12 +305,26 @@ The final step of the electrode fabrication process was to remove the photoresis
 \par The NI PXI-5421 function generator and the NI PXI-5124 oscilloscope were used to load and measure the impedance spectroscopy chip. The NI PXI-5421 is a 43 MHz waveform generator capable of generating user defined standard and arbitrary waveforms with a $\pm$6 V range and a 50 $\Omega$ output impedance. The signal generator was controlled with the LabVIEW program and operated to run at specified frequencies of a standard sine wave. The NI PXI-5124 is a 150 MHz 200 MS/s oscilloscope. The PXI-5124 has a 4.0 GS/s equivalent time sampling for repetitive signals, and a selectable 50 $\Omega$ or 1 M$\Omega$||29 pF input impedance. The oscilliscope was controlled with LabVIEW and configured to have a 1 M$\Omega$||29 pF input impedance.
 
 \subsection*{Electrode Interface}
-\par To establish an electrical connection to the impedance spectroscopy chip, solid core wires were soldered to to the device. Since the metal depositions were too thin for direct soldering, copper tape was placed adjacent to the soldered pads, soldered to the solid-core wire, and then a silver-based epoxy was applied to the copper tape electrode pads interface using the M6 Chemicals silver conductive pen. The epoxy has a resistivity of 1E-4 $\Omega\cdot$cm.
+\par To establish an electrical connection to the impedance spectroscopy chip, solid core wires were soldered to to the device. Since the metal depositions were too thin for direct soldering, copper tape was placed adjacent to the soldered pads, soldered to the solid-core wire, and then a silver-based epoxy was applied to the copper tape electrode pads interface using the M6 Chemicals silver conductive pen (figure \ref{fig:electrode_interface}). The epoxy has a resistivity of 1E-4 $\Omega\cdot$cm.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/electrod_interface.jpg}
+    \caption[Electrode interface]{The electrode interface consisting of solid-core wire soldered to copper tape epoxied to electrode pads.}
+    \label{fig:electrode_interface}
+\end{figure}
 
 \par Connections to the NI instruments were made with solid-core wires soldered to BNC female jacks. Since the function generator output signal was not 50 $\Omega$ terminated, the signal amplitude will be twice the selected amplitude. Wiring length to the I-V circuit was minimized. 
 
 \subsection*{I-V Circuit}
 \par An I-V circuit, with an external resistor of 3300 $\Omega$, measured the impedance of the device under testing. The circuit was discussed in detail in section \ref{sec:impedance_spectroscopy}, and the implementation is depicted in figure \ref{fig:I-V_implementation}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{I}
+    \caption[Implementation of I-V circuit]{Implementation of the I-V circuit including impedance loads of the function generator and oscilloscopes.}
+    \label{fig:I-V_implementation}
+\end{figure}
 
 \par The circuit was implemented using two different methods: a system of soldered solid core wires, and using a breadboard. There was no difference noted between the two implementations sweeping up to 40 MHz. However, the breadboard should generally be avoided for high frequencies due to intercontact capacitance ($\sim$25 pF for power strips, and $\sim$2.5 pF for the remaining breadboard).
 
