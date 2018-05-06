@@ -27,7 +27,14 @@
 
 \par The photolithography process was completed using the Cannon PLA-501FA mask aligner (figure \ref{fig:mask_aligner}). With the transparency mask centered over the wafer and the 365 nm glass-transparency filter in place, UV light was applied to the photoresist for 14 seconds with a total exposure of 140 mJ/cm$^2$. The wafer was then baked at 85 $^\circ$C for 4 minutes with a 10 minute cool down. 
 
-\par The wafer was then developed in propylene glycol monomethyl ether acetate (SU-8 developer, MicroChem) in order to remove the non-exposed SU-8 from the wafer. The wafer was placed in the SU-8 developer for 3 minutes and then hard baked for 15 minutes at 210$^\circ$C. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/su-8_mold.jpg}
+    \caption{SU-8 master mold}
+    \label{fig:SU-8_master_mold}
+\end{figure}
+
+\par The wafer was then developed in propylene glycol monomethyl ether acetate (SU-8 developer, MicroChem) in order to remove the non-exposed SU-8 from the wafer. The wafer was placed in the SU-8 developer for 3 minutes and then hard baked for 15 minutes at 210$^\circ$C. The result was a silicon wafer with SU-8 patterns that was used as a PDMS mold (figure \ref{fig:SU-8_master_mold})
 
 The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
 
@@ -54,7 +61,7 @@ The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
 \par Glass wafers were prepared for the lift-off process by cleaning the wafers in a pirahna bath for 15 minutes with a DI rinse, and then a 1 minute dip in BOE with another DI rinse before running the wafers through the SRD. The wafers were then dehydrated by baking on a hot plate for 10 minutes at 200 $^\circ$C and allowed to cool for five minutes. 
 
 
-\par The wafers were coated with ma-N1420 negative-tone photoresist on a spin coater (Laurel technologies, ws-400; figure \ref{fig:spin_coater}). The ma-N1420 photoresist is advantageous for the lift-off process since the developed photoresist has an undercut profile and the cross-linked property of negative photoresist is more durable in contrast to the "soft" positive photoresist. Before application of the ma-N1420 a primer was dispersed and then spun onto the wafer at 3000 RPM for 30 seconds to increase photoresist adhesion. Ma-N1420 was then dispersed onto the glass wafer, but before spinning, it was ensured that the photoresist spread to all edges of the wafer. The photoresist was spun at 2000 RPM for 35 seconds with a target of 2.5 micron thickness. The wafers were then soft-baked on a hotplate at 120$^\circ$C for 3 minutes to increase stability. 
+\par The wafers were coated with ma-N1420 negative-tone photoresist on a spin coater (Laurel technologies, ws-400; figure \ref{fig:spin_coater}). The ma-N1420 photoresist is advantageous for the lift-off process since the developed photoresist has an undercut profile and the cross-linked property of negative photoresist is more durable in contrast to the "soft" positive photoresist. Before application of the ma-N1420, a primer was dispersed and then spun onto the wafer at 3000 RPM for 30 seconds to increase photoresist adhesion. Ma-N1420 was then dispersed onto the glass wafer, but before spinning, it was ensured that the photoresist spread to all edges of the wafer. The photoresist was spun at 2000 RPM for 35 seconds with a target of 2.5 micron thickness. The wafers were then soft-baked on a hotplate at 120$^\circ$C for 3 minutes to increase stability. 
 
 \par The photolithography process was completed using the Cannon PLA-501FA mask aligner (figure \ref{fig:mask_aligner}). The glass wafer was placed in the aligner with a black tape backing in order to prevent light scattering and absorb radiation, and the transparency was centered over the wafer. UV light was applied to the wafer for 30 seconds for a total of 450 mJ/cm$^2$. 
 
@@ -82,7 +89,7 @@ The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
 
 \par To prepare the photoresist-developed wafer for metal deposition, the wafers were exposed to an oxygen plasma to volatilize and remove organic residues. The wafer was placed under vacuum in the AGS RIE system and exposed to an oxygen plasma for 30 seconds (figure \ref{fig:AGS-RIE}). The CrC-150 sputtering system was then used to deposit 125 \si{\angstrom} of chromium at a rate of 250 \si{\angstrom} per minute for 30 seconds. Using the Denton Desk 5, 180 nm of gold was deposited at a rate of 180 \si{\angstrom} per minute for 10 minutes. A final 42 \si{\angstrom} layer of chromium was deposited with the CrC-150 at a rate of 250 \si{\angstrom} per minute for 10 seconds (figure \ref{fig:sputterers}). 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{images/AGS_RIE.jpg}
     \caption[AGS reactive ion etcher]{The AGS reactive ion etcher used to remove organic residue with an oxygen plasma.}
@@ -136,20 +143,27 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 \par To assemble the PDMS chip containing the microfluidic channels to the electrodes on the glass substrate, the components were plasma bonded to create a water-tight seal that permits optical viewing. The PDMS and the glass electrode substrate were placed device-side up in the Cal Poly Microfabrication Lab's PDC-32G plasma cleaner. After pumping the plasma cleaner down to a vacuum, the device was exposed to an atmospheric plasma for 10 seconds.  
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/plasma_cleaner.jpg}
+    \includegraphics[width=0.7\textwidth]{images/plasma_cleaner.jpg}
     \caption[PDC-32G plasma cleaner]{PDC-32G plasma cleaner used for plasma bonding.}
-    \label{fig:my_label}
+    \label{fig:pdc_plasma_cleaner}
 \end{figure}
 
 \par After plasma activation, a drop of ethanol was placed on the PDMS surface before placing the PDMS onto the electrode substrate. This created a liquid float barrier that prevented permanent binding for $\sim$5 minutes. The electrodes and PDMS microchannels were aligned by hand with a microscope set at 20X magnification for visual feedback. After proper alignment, the device was baked in an oven at 65$^\circ$C for an hour. 
-
-
+\FloatBarrier
 
 \section[Software]{Software Interface}
 
 \par LabVIEW was used to interface with the NI-5421 function generator and the NI-5124 oscilloscope to package the circuit model, data acquisition, and data analysis into an impedance spectroscope program. The LabVIEW language was chosen due to the ease of connecting to the National Instrument hardware and the rapid development cycle. The program specifications include interfacing with the NI-hardware to run an impedance spectroscopy experiment, the ability to control the sweeping frequencies, the ability to switch circuit topologies, the ability to automatically run tests at specified intervals, the implementation of a data saving system that records the users settings for the experiment as well as the impedance spectroscopy results, and the ability to view and compare data.
+
+
+
+\subsection{Architecture}
+
+\par The LabVIEW program was designed with an event-driven state machine architecture and is diagrammed in figure \ref{fig:IS_software_design}. A state machine is a common LabVIEW coding pattern where the program exists as a set of states. Depending on user input or calculations, each state leads to a subsequent state that can potentially lead to a large network of modular decision making code. For this program, the state machine is simple with most states leading to an idle state that continues to wait for user input. The state machine lives inside an event structure that listens for specific user interface (UI) interactions. These interactions trigger an event that runs code and can specify the next state in the state machine. After a specified amount of time passes without an event triggering, the time out event will trigger and run the state machine.    
+
+\par The event driven state machine architecture allowed for a responsive UI that can adapt outside of the state machine architecture while maintaining the modularity of a state machine with safe program initialization and exit. The implementation of the software resulted in two main functions: impedance spectroscopy, and the data viewer.
 
 \begin{figure}[h]
     \centering
@@ -172,12 +186,6 @@ The final step of the electrode fabrication process was to remove the photoresis
 \end{figure}
 \FloatBarrier
 
-\subsection{Architecture}
-
-\par The LabVIEW program was designed with an event-driven state machine architecture and is diagrammed in figure \ref{fig:IS_software_design}. A state machine is a common LabVIEW coding pattern where the program exists as a set of states. Depending on user input or calculations, each state leads to a subsequent state that can potentially lead to a large network of modular decision making code. For this program, the state machine is simple with most states leading to an idle state that continues to wait for user input. The state machine lives inside an event structure that listens for specific user interface (UI) interactions. These interactions trigger an event that runs code and can specify the next state in the state machine. After a specified amount of time passes without an event triggering, the time out event will trigger and run the state machine.    
-
-\par The event driven state machine architecture allowed for a responsive UI that can adapt outside of the state machine architecture while maintaining the modularity of a state machine with safe program initialization and exit. The implementation of the software resulted in two main functions: impedance spectroscopy, and the data viewer.
-
 \subsection{Impedance Spectroscopy}
 \par The impedance spectroscopy UI gives users the ability to set settings for experiments and view the results (figure \ref{fig:is_gui}). All of the impedance spectroscopy settings are located in a set of three tabs: circuit topology, frequency parameters, and interval parameters. 
 
@@ -190,6 +198,8 @@ The final step of the electrode fabrication process was to remove the photoresis
 
 \par The circuit topology tab tell the software what circuit is being used and the value of the external resistor (figure \ref{fig:labview_circuit_settings}). With each circuit selection, an image below updates to display where the software expects the oscilloscope channels to be connected and the formula calculating impedance. In the current implementation, the software includes options for the I-V and auto-balancing bridge circuits. 
 
+
+\par The frequency parameter tab contains the controls that determine what frequencies are swept over in the impedance spectroscopy experiment (figure \ref{fig:labview_frequency_settings}). The frequency expression shows how frequency values are calculated with x and y representing incremented values with the caveat that a value for every increment of x is generated for every one increment of y. For example, with the settings given in figure \ref{fig:labview_frequency_settings}, ten frequencies per decade with decades 1E3 to 1E7 are generated. The max input frequency truncates the frequencies generated to the specified value. In addition to frequency parameters, the tab also includes controls for the waveform amplitude, the number of cycles measured by the oscilloscope, and the sample rate. 
 
 \begin{figure}[h]
     \centering
@@ -210,8 +220,6 @@ The final step of the electrode fabrication process was to remove the photoresis
     \label{fig:labview_circuit_settings}
 \end{figure}
 
-\par The frequency parameter tab contains the controls that determine what frequencies are swept over in the impedance spectroscopy experiment (figure \ref{fig:labview_frequency_settings}). The frequency expression shows how frequency values are calculated with x and y representing incremented values with the caveat that a value for every increment of x is generated for every one increment of y. For example, with the settings given in figure \ref{fig:labview_frequency_settings}, ten frequencies per decade with decades 1E3 to 1E7 are generated. The max input frequency truncates the frequencies generated to the specified value. In addition to frequency parameters, the tab also includes controls for the waveform amplitude, the number of cycles measured by the oscilloscope, and the sample rate. 
-
 \begin{figure}[h]
 \centering
 \begin{minipage}[t]{.48\textwidth}
@@ -220,8 +228,7 @@ The final step of the electrode fabrication process was to remove the photoresis
   \captionof{figure}{Frequency sweep options}
   \label{fig:labview_frequency_settings}
 \end{minipage}
-\vspace{0.2 in}
-\vfill
+\hfill
 \begin{minipage}[t]{.48\textwidth}
   \centering
   \includegraphics[width=\textwidth]{images/labview_intervals.png}
@@ -266,7 +273,7 @@ The final step of the electrode fabrication process was to remove the photoresis
     \label{fig:labview_IS_graphs}
 \end{figure}
 
-\par After running an experiment, the results are visualized and then saved in a text file. The results are used to generate seven plot in four different tabs: impedance magnitude and phase, real and imaginary impedance, Nyquist plot, and a voltage bode and phase plots (figure \ref{fig:labview_IS_graphs}. With the exception of the voltage bode and phase plots, the graphs are different ways of visualizing the impedance data. The voltage bode and phase plots were primarily used in troubleshooting. 
+\par After running an experiment, the results are visualized and then saved in a text file. The results are used to generate seven plots in four different tabs: impedance magnitude and phase, real and imaginary impedance, Nyquist plot, and a voltage bode and phase plots (figure \ref{fig:labview_IS_graphs}). With the exception of the voltage bode and phase plots, the graphs are different ways of visualizing the impedance data. The voltage bode and phase plots were primarily used in troubleshooting. 
 
 
 \begin{figure}[h]
@@ -306,7 +313,7 @@ The final step of the electrode fabrication process was to remove the photoresis
 \par The NI PXI-5421 function generator and the NI PXI-5124 oscilloscope were used to load and measure the impedance spectroscopy chip. The NI PXI-5421 is a 43 MHz waveform generator capable of generating user defined standard and arbitrary waveforms with a $\pm$6 V range and a 50 $\Omega$ output impedance. The signal generator was controlled with the LabVIEW program and operated to run at specified frequencies of a standard sine wave. The NI PXI-5124 is a 150 MHz 200 MS/s oscilloscope. The PXI-5124 has a 4.0 GS/s equivalent time sampling rate for repetitive signals, and a selectable 50 $\Omega$ or 1 M$\Omega$||29 pF input impedance. The oscilliscope was controlled with LabVIEW and configured to have a 1 M$\Omega$||29 pF input impedance.
 
 \subsection*{Electrode Interface}
-\par To establish an electrical connection to the impedance spectroscopy chip, solid core wires were soldered to to the device. Since the metal depositions were too thin for direct soldering, copper tape was placed adjacent to the soldered pads, soldered to the solid-core wire, and then a silver-based epoxy was applied to the copper tape and electrode pads using the M6 Chemicals silver conductive pen (figure \ref{fig:electrode_interface}). The epoxy has a resistivity of 1E-4 $\Omega\cdot$cm.
+\par To establish an electrical connection to the impedance spectroscopy chip, solid core wires were soldered to to the device. Since the metal depositions were too thin for direct soldering, copper tape was placed adjacent to the electrode pads, soldered to the solid-core wire, and then a silver-based epoxy was applied to the copper tape and electrode pads using the M6 Chemicals silver conductive pen (figure \ref{fig:electrode_interface}). The epoxy has a resistivity of 1E-4 $\Omega\cdot$cm.
 
 \begin{figure}[h]
     \centering
@@ -341,11 +348,11 @@ The final step of the electrode fabrication process was to remove the photoresis
     \label{fig:ufluidic_network}
 \end{figure}
 
-\par The original design of the device was meant to capture a single cell in the measurement, but since this design cannont achieve single-cell isolation (section \ref{ch: introduction}), pump \#3 was used to initially flood the flush channels and then hold its syringe at a constant volume to prevent flow through the flush channels. For fluid flow, pump \#1 drove fluid at 1 $\mu$L/min and pump \#2 pulled fluid at 1 $\mu$L/min. 
+\par The original design of the device was meant to capture a single cell in the measurement chamber, but since this design cannot achieve single-cell isolation (section \ref{ch: introduction}), pump \#3 was used to initially flood the flush channels and then hold its syringe at a constant volume to prevent flow through the flush channels. For fluid flow, pump \#1 drove fluid at 1 $\mu$L/min and pump \#2 pulled fluid at 1 $\mu$L/min. 
 
 %The flow with water was calculated to generate an estimated pressure difference of \#\# between the inlet and outlet, and a max gauge pressure of \#\# (appendix \ref{fluid_flow_pressure}).
 
-\par Spherotech polystyrene beads (FP-2052-2) were injected into the impedance spectroscope system for proof of concept. The Spherotech beads ranged from 7 $\mu$m to 7.9 $\mu$m in diameter and had a relative permittivity of 2.5 (table \ref{tab:permittivity_table}). The beads were suspended in a DI solution by 0.1\% by mass with a single drop of Titron x-100 surfactant and then sonicated.
+\par Spherotech polystyrene beads (FP-2052-2) were injected into the impedance spectroscope system for system evaluation. The Spherotech beads ranged from 7 $\mu$m to 7.9 $\mu$m in diameter and had a relative permittivity of 2.5 (table \ref{tab:permittivity_table}). The beads were mixed with a separate DI water and phosphate bufferred saline solution (PBS) at 0.1\% by mass. A single drop of Titron x-100 surfactant was added to both solutions and then sonicated.
 
-\par The device was evaluated by making impedance measurements of DI water, 1x phosphate buffered saline solution (PBS), DI with beads, and PBS with beads. 
+\par The device was evaluated by making impedance measurements of DI water, PBS, DI with beads, and PBS with beads. 
 
