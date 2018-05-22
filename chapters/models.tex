@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Modeling Chapter %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{ch: modeling}
+
+%%% Section overview
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Analytic Impedance Model %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analytic Single Cell Impedance}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% FEA Impedance Model  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Finite Element Analysis}
+
+%%% Section Overview
+\par Finite element analysis (FEA) models were developed to characterize the single cell impedance spectrum and to investigate optimal co-planar electrode configurations with the purpose to inform future designs. To accomplish this goal, four FEA models were designed:
+
+\begin{itemize}
+    \item Simple medium: a basic model that only includes electrodes and medium inside a rectangular domain.
+    \item Simple cell: a basic model inclusive of the simple medium model with the addition of a cell centered over the electrodes.
+    \item Device medium: a model that replicates the designed geometry of the Cal Poly Biofluidic Lab's impedance spectroscopy device. The model only includes electrodes and the device medium.   
+    \item Device cell: inclusive of the the device medium model with the addition of a cell centered over the electrodes. 
+\end{itemize}
+
+\par Figure \ref{fig:FEA_models} depicts the four models. The simple models will investigate the characteristics of an ideal co-planar electrode cell and provide model validation by comparison to the analytic impedance solution. The device models will provide insight into the impedance characteristics of the Cal Poly Biofluidics Lab's impedance spectroscopy device. 
+
+
+%%% Model Development
+\subsection{Model Development}
+\par The simple medium, simple cell, device medium, and device cell models were created using COMSOL Multiphyisics FEA software with the electric current physics module. Model development included the specification and implementation in COMSOL of geometry, material properties, and governing physics.
+
+\subsection*{Model Geometry}
+\par Two geometries were developed for the impedance spectroscopy models: a basic rectangular electrode cell for the simple models, and an implementation of the impedance spectroscopy device for the device models. The simple geometry is depicted in figure ## and the device geometry in figure \ref{fig:??}. The dimensions of both geometries followed the values outlined in table \ref{tab:??} with the exception of the parametric analysis and otherwise noted. In addition, a dimensioned drawing for the device geometry is included in figure \ref{fig:??}.
+
+\par In general, the simple geometry attempts to follow two of the assumptions made in the analytic impedance solution with reference to the electrode orientation given in figure \ref{fig:??}:
+\begin{enumerate}
+    \item The electrode fringe fields are allowed to expand infinitely in the $\hat{\boldsymbol\imath}$ direction (i.e. there is no horizontal insulation).
+    \item The electric field has no component in the $\hat{\boldsymbol\jmath}$ direction (i.e. geometry must be uniform in the direction parallel to the electrodes).
+\end{enumerate}
+
+\par The simple geometry approximated assumption 1 by making the sensor chamber sufficiently long. An iterative approach determined the sufficient length of the chamber by repeatedly increasing the length of the chamber until the model impedance stabilized to a constant value. At this point, any additional fringe fields permitted by an infinitely long channel was assumed to be negligible. This approach led to an optimal model length of NEED TO REPLACE WITH NUMBER(electrodeWidth*2 + electrode gap)*3. The second assumption was met by creating uniform features in the $\hat{\boldsymbol\jmath}$ direction.
+
+\par The device geometry focused on the sensor chamber of the impedance spectroscope device and assumed that the effects of the electrodes far from the chamber are negligible. 
+
+\par The cell version of both geometries includes a cell centered over the electrodes with the cell center 5 microns above the electrodes. The cell was modeled as a sphere of cytoplasm with a NEED VALUE thick membrane. 
+
+\par Additional detail in generating the geometry model is presented in appendix \ref{app: comsol_setup}.
+
+\subsection*{Material Properties}
+\par The materials used in the FEA models included the medium solution, the cell membrane, cytoplasm, and polydimethylsiloxane (PDMS). For each of these materials materials, the conductivity and relative permittivity were specified and are summarized in table \ref{tab: fea_materials}.
+
+\subsection*{Physics}
+\par The electric current COMSOL interface was to set the physical equations for the models. The governing formula is the equation of continuity:
+\begin{equation}
+    \boldsymbol\nabla \boldsymbol\cdot \boldsymbol J = -\frac{d\rho}{dt}
+\end{equation}
+
+where $-\frac{d\rho}{dt}$ is the rate of change of charge density and $\boldsymbol J$ is the current density expressed as
+\begin{equation}
+    \boldsymbol J = \sigma\boldsymbol\E + jw\boldsymbol D + \boldsymbol J_e
+\end{equation}
+
+where \boldsymbol\E is the electric field, $j$ is $\sqrt{-1}$, $w$ is the angular frequency, $\boldsymbol J_e$ is the externally generated current density, and $\boldsymbol D$ is the electric displacement field. 
+
+\par All exterior bound, except for the electrodes, are modeled as perfect insulators with the boundary condition
+\begin{equation}
+    \hat{\boldsymbol n} \boldsymbol\cdot \boldsymbol J = 0
+\end{equation}
+
+\par The cell membrane was modeled with the contact impedance condition. This is an effective alternative to meshing very thin boundaries. The condition is defined by
+\begin{equation}
+    \hat{\boldsymbol n} \boldsymbol\cdot \boldsymbol J = \frac{\Tilde{\sigma}}{d_{m}} \Delta V
+\end{equation}
+
+where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the complex conductivity expressed as
+\begin{equation}
+    \Tilde{\sigma} = \sigma + jw\epsilon 
+\end{equation}
+
+\par The contact impedance condition only allows current normal to the selected boundary and does not allow current tangentially through the boundary. The condition can be used as an effective approximation to thin and relatively non-conductive domains. In the case of the cell membrane, it is an appropriate approximation. 
+
+\par The low and high potential electrodes were set as the ground ($v=0$) and the applied voltage ($v=v_0$).
+
+\par The impedance of the system was calculated by dividing the input voltage of $v_0 = 1$V by the system system current. The system current was calculated by placing a boundary probe over the ground electrode that integrated the current density over the surface of the electrode. The calculation resulted in the phasor impedance of the electrode cell. 
+
+%%% Mesh Development
+\subsection{Mesh Development}
+\par For all four FEA models, quadratic tetrahedral meshes were generated. On each model a mesh convergence study based on impedance was run in order to determine appropriate meshes and validate that the model converges. To improve the simulation efficiency, the mesh was only refined in a region over the electrodes as depicted in figure \ref{fig: meshes??}.
+
+\par The results of the mesh refinement are presented in figure \ref{fig: meshes???} and the chosen mesh with statistics are described in figure \ref{fig:meshes?}.
+
+
+%%% Validation
+\subsection{Model Validation}
+\par The FEA models were validated by comparing the analytic impedance solutions to the results of the simple medium and simple cell models. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%  Spice Models  %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Spice}
