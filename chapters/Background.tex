@@ -453,6 +453,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
 % Maxwell's Mixture Theory
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Maxwell's Mixture Theory}
+\label{sec:maxwell_mixture_theory}
  \begin{figure}[ht]
  \centering
  \includegraphics[width=0.7\textwidth]{images/cellAndElectrodes.png}
@@ -494,14 +495,14 @@ A significant advantage of the auto-balancing bridge method, is that when used w
   
   \noindent where $\tilde{\epsilon}_i$ is the complex permittivity of the cytoplasm, $\tilde{\epsilon}_{mem}$ is the complex permittivity of the cell membrane, $R$ is the radius of the cell, and $d$ is the thickness of the cell membrane.
   
-  \par A corrected volume fraction is used to compensate for the fringe fields of the non-uniform electric field produced by the electrodes in figure \ref{fig:simplified_IS} \cite{gawad_micromachined_2001}. 
+%  \par A corrected volume fraction is used to compensate for the fringe fields of the non-uniform electric field produced by the electrodes in figure \ref{fig:simplified_IS} \cite{gawad_micromachined_2001}. 
   
-  \begin{equation}
-      \Phi = \frac{4}{3} \pi R^3 \frac{1}{G_f\text{w}h},
-      \label{eqn:corrected_vf}
-  \end{equation}
+ % \begin{equation}
+ %     \Phi = \frac{4}{3} \pi R^3 \frac{1}{G_f\text{w}h},
+ %     \label{eqn:corrected_vf}
+ % \end{equation}
   
-  \noindent where $h$ is the height of the channel, w is the width of the electrode and $G_f$ is a geometric factor dependent on the geometry of the channel and electrodes.
+ % \noindent where $h$ is the height of the channel, w is the width of the electrode and $G_f$ is a geometric factor dependent on the geometry of the channel and electrodes.
   
   \par The impedance of the mixture is
   \begin{equation}
@@ -528,7 +529,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
   % Electrode Cell Constant
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Electrode Cell Constant}
-  
+  \label{sec:electrode_cell_constant}
   \par The cell constant $\kappa$ is defined as the proportionality factor between the measured resistance $R_b$ and the resistivity $\rho$ of a material.
   \begin{equation}
       R_b = \kappa \rho
@@ -637,14 +638,9 @@ A significant advantage of the auto-balancing bridge method, is that when used w
     
     \noindent where $Z$ is the interior of a polygon in the Z-plane with vertices $Z_1,\;Z_2,\;Z_3,\; ...,Z_m$ and angles $\theta_1,\;\theta_2,\;\theta_3,\; ...,\theta_m$ which correspond to the points $T_1,\;T_2,\;T_3,\; ...,T_m$ on the real axis of the T-plane. $C_1$ and $C_2$ are integration constants. The Schwartz-Christoffel transform has three degrees of freedom, and consequently, up to three points may be chosen arbitrarily. $T_0$ is the reference and is typically chosen at the origin.
     
-    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane), and then to map the T-plane to the simplified W-plane (configuration of figure \ref{fig:parallel_capacitor}). The W-plane vastly simplifies the solution to the cell constant and the goemetric constant can be solved for with equation \ref{eqn:geometric_constant}. 
+  %  \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane), and then to map the T-plane to the simplified W-plane (configuration of figure \ref{fig:parallel_capacitor}). The W-plane vastly simplifies the solution to the cell constant and the goemetric constant can be solved for with equation \ref{eqn:geometric_constant}. 
     
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=\textwidth]{images/scmPlanes.png}
-        \caption[Diagrams of coplanar electrodes through Schwartz-Christoffel mapping]{Diagrams of coplanar electrodes through Schwartz-Christoffel mapping where the Z-plane contains the physical dimensions of the electrode configuration, the T-Plane links the Schwartz-Christoffel mappins of Z and W plane, and the W-plane represents the parallel electrodes producing a uniform electrode field.}
-        \label{fig:scm_planes}
-    \end{figure}
+ 
     
  \subsection{Cell Suspension Equivalent Circuit}
  
