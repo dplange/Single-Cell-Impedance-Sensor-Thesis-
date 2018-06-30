@@ -13,6 +13,7 @@
 %%%% Analytic Impedance Model %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Analytic Single Cell Impedance Model}
+
 \par For cell suspensions with low volume fractions, Maxwell's Mixture theory can model the electrical impedance of the system. The model is summarized in equations \ref{} to \ref{}. For a full description, see section \ref{sec:maxwell_mixture_theory} and \ref{sec:electrode_cell_constant}.
 
 \begin{equation}
@@ -233,6 +234,8 @@
     \end{figure}
 
 \subsection{Novel Volume Fraction}
+\par According to the analytic impedance solution, there are two factors that affect the impedance spectrum of a single cell suspended in an electrode system: the dielectric properties of the system, and the volume fraction. Changing the medium and that the cell is suspended in, the sensitivity and the shape of the impedance spectrum is changed. The geometry of the cell and the electrode system affects the sensitivity. However, due to the fringe fields of electrodes, calculating the volume fraction is troublesome, with most approximations being innacurate and neglecting the position of the cell within the system. In this paper, two approaches to calculating the correct volume fraction are proposed.
+
 \par The traditional method to approximate the volume fraction of a single particle suspended over coplanar electrodes is to take the ratio of the cell volume divided by the volume of the electrodes in the channel.
 
 \begin{equation}
@@ -395,6 +398,20 @@ where $f(r,\theta,\phi)$ is
 
 \subsection*{Model Geometry}
 \par Two geometries were developed for the impedance spectroscopy models: a basic rectangular electrode cell for the simple models, and an implementation of the impedance spectroscopy device for the device models. The simple geometry is depicted in figure ## and the device geometry in figure \ref{fig:??}. The dimensions of both geometries followed the values outlined in table \ref{tab:??} with the exception of the parametric analysis and otherwise noted. In addition, a dimensioned drawing for the device geometry is included in figure \ref{fig:??}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{images/channel_dimensions.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{images/electrode_dimensions.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
 
 \par In general, the simple geometry attempts to follow two of the assumptions made in the analytic impedance solution with reference to the electrode orientation given in figure \ref{fig:??}:
 \begin{enumerate}
