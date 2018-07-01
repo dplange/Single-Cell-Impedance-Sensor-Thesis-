@@ -432,6 +432,13 @@ where $f(r,\theta,\phi)$ is
 
 \begin{figure}
     \centering
+    \includegraphics[width=0.7\textwidth]{images/simple_cell_drawing_inventor.png}
+    \caption{}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}
+    \centering
     \includegraphics[width =0.7\textwidth]{images/channel_dimensions_inventor.png}
     \caption{Drawing of the geometry used in the device FEA model with dimensioned system and PDMS geometry. All dimensions of length in units of microns.}
     \label{fig:device_channel_dimensions_FEA}
@@ -458,17 +465,24 @@ where $f(r,\theta,\phi)$ is
     \item The electric field has no component in the $\hat{\boldsymbol\jmath}$ direction (i.e. geometry must be uniform in the direction parallel to the electrodes).
 \end{enumerate}
 
-\par The simple geometry approximated assumption 1 by making the sensor chamber sufficiently long. An iterative approach determined the sufficient length of the chamber by repeatedly increasing the length of the chamber until the model impedance stabilized to a constant value. At this point, any additional fringe fields permitted by an infinitely long channel was assumed to be negligible. This approach led to an optimal model length of NEED TO REPLACE WITH NUMBER(electrodeWidth*2 + electrode gap)*3. The second assumption was met by creating uniform features in the $\hat{\boldsymbol\jmath}$ direction.
+\par The simple geometry approximated assumption 1 by making the sensor chamber sufficiently long. An iterative approach determined the sufficient length of the chamber by repeatedly increasing the length of the chamber until the model impedance stabilized to a constant value. At this point, any additional fringe fields permitted by an infinitely long channel was assumed to be negligible. This approach led to an optimal model length of 38 microns. The second assumption was met by creating uniform features in the $\hat{\boldsymbol\jmath}$ direction.
 
 \par The device geometry focused on the sensor chamber of the impedance spectroscope device and assumed that the effects of the electrodes far from the chamber are negligible. 
 
 
-\par The cell version of both geometries includes a cell centered over the electrodes with the cell center 5 microns above the electrodes. The cell was modeled as a sphere of cytoplasm with a NEED VALUE thick membrane. 
+\par The cell version of both geometries includes a cell centered over the electrodes with the cell center 5 microns above the electrodes. The cell was modeled as a sphere of cytoplasm with a 7.5 nm thick membrane represented in the physics section. 
 
 \par Additional detail in generating the geometry model is presented in appendix \ref{app: comsol_setup}.
 
 \subsection*{Material Properties}
 \par The materials used in the FEA models included the medium solution, the cell membrane, cytoplasm, and polydimethylsiloxane (PDMS). For each of these materials materials, the conductivity and relative permittivity were specified and are summarized in table \ref{tab: fea_materials}.
+
+\begin{table}[]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/material properties table.png}
+    \caption{Table of material properties.}
+    \label{tab:fea_materials}
+\end{table}
 
 \subsection*{Physics}
 \par The electric current COMSOL interface was to set the physical equations for the models. The governing formula is the equation of continuity:
