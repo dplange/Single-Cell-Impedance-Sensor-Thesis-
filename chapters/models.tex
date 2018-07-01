@@ -470,16 +470,16 @@ where $f(r,\theta,\phi)$ is
 \par The device geometry focused on the sensor chamber of the impedance spectroscope device and assumed that the effects of the electrodes far from the chamber are negligible. 
 
 
-\par The cell version of both geometries includes a cell centered over the electrodes with the cell center 5 microns above the electrodes. The cell was modeled as a sphere of cytoplasm with a 7.5 nm thick membrane represented in the physics section. 
+\par The cell version of both geometries includes a cell centered over the electrodes with the cell center 5 microns above the electrodes. The cell was modeled as a 6 $\mu$m diameter sphere of cytoplasm. The 7.5 nm cell membrane is implemented in the physics. 
 
 \par Additional detail in generating the geometry model is presented in appendix \ref{app: comsol_setup}.
 
 \subsection*{Material Properties}
-\par The materials used in the FEA models included the medium solution, the cell membrane, cytoplasm, and polydimethylsiloxane (PDMS). For each of these materials materials, the conductivity and relative permittivity were specified and are summarized in table \ref{tab: fea_materials}.
+\par The materials used in the FEA models included the medium solution, the cell membrane, cytoplasm, and polydimethylsiloxane (PDMS). For each of these materials materials, the conductivity and relative permittivity were specified and are summarized in table \ref{tab:fea_materials}.
 
-\begin{table}[]
+\begin{table}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/material properties table.png}
+    \includegraphics[width=0.75\textwidth]{images/materialpropertiestable.png}
     \caption{Table of material properties.}
     \label{tab:fea_materials}
 \end{table}
@@ -520,7 +520,26 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
 
 %%% Mesh Development
 \subsection{Mesh Development}
-\par For all four FEA models, quadratic tetrahedral meshes were generated. On each model a mesh convergence study based on impedance was run in order to determine appropriate meshes and validate that the model converges. To improve the simulation efficiency, the mesh was only refined in a region over the electrodes as depicted in figure \ref{fig: meshes??}.
+\par For all four FEA models, quadratic tetrahedral meshes were generated. On each model a mesh convergence study based on impedance was run in order to determine appropriate meshes and validate that the model converges. To improve the simulation efficiency, the mesh was only refined in a region over the electrodes as depicted in figure \ref{fig:mesh_refinement_domain}.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/need_image.png}
+        \caption{Simple mesh refinement}
+        \label{fig:simple_mesh_refinement_domain}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/need_image.png}
+        \caption{Device mesh refinement}
+        \label{fig:device_mesh_refinement_domain}
+    \end{subfigure}
+    \caption{Mesh refinement domains}
+    \label{fig:mesh_refinement_domain}
+\end{figure}
 
 \par The results of the mesh refinement are presented in figure \ref{fig: meshes???} and the chosen mesh with statistics are described in figure \ref{fig:meshes?}.
 
