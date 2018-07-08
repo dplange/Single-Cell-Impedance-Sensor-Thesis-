@@ -3,21 +3,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{ch: modeling}
 
-%%% Section overview
-
-
-
-
+\par In order to understand, validate, and optimize the single cell impedance spectroscopy system, three models were implemented: an analytic impedance solution, finite element analysis simulations, and a circuit model. The analytic impedance solution was implemented to build a foundational understanding understanding of how basic IS systems behave, to optimize simple IS systems, and to validate FEA simulations. The finite element analysis expands upon the analytic solution to understand how the complex device geometry differentiates from the simple analytic impedance model geometry, and to inform optimized device designs. The circuit model was developed to validate the IS DAQ system, understand its shortcomings, and explore alternative measurement circuits.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Analytic Impedance Model %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Analytic Single Cell Impedance Model}
-
-\par For cell suspensions with low volume fractions, Maxwell's Mixture theory can model the electrical impedance of the system. The model is summarized in equations \ref{} to \ref{}. For a full description, see section \ref{sec:maxwell_mixture_theory} and \ref{sec:electrode_cell_constant}.
-
+\par For cell suspensions with low volume fractions, Maxwell's Mixture theory can model the electrical impedance of the system. The model is summarized in equations \ref{eqn: analyticImpedance} to \ref{eqn: cEpsParticle} below. 
 \begin{equation}
     \Tilde{Z}_{mix} = \frac{1}{jw\Tilde{C}}
+    \label{eqn: analyticImpedance}
 \end{equation}
 \begin{equation}
     \Tilde{C} = \Tilde{\epsilon}_{mix}G_f    
@@ -26,11 +21,42 @@
     \Tilde{\epsilon}_{mix} = \Tilde{\epsilon}_m \frac{1 + 2\phi\Tilde{f}_{cm}}{1-\phi\Tilde{f}_{cm}}
 \end{equation}
 \begin{equation}
+ \Tilde{f}_{cm} = \frac{\Tilde{\epsilon}_p - \Tilde{\epsilon}_{m}}{\Tilde{\epsilon}_p + 2\Tilde{\epsilon}_m}
 \end{equation}
+\begin{equation}
+      \tilde{\epsilon}_p = \tilde{\epsilon}_{mem} 
+      \frac{\gamma^3+2(\frac{\tilde{\epsilon}_i - \tilde{\epsilon}_{mem}}
+      {\tilde{\epsilon}_i + 2\tilde{\epsilon}_{mem}})}{\gamma^3 - (\frac{\tilde{\epsilon}_i - \tilde{\epsilon}_{mem}}{\tilde{\epsilon}_i + 2\tilde{\epsilon}_{mem}})} \;\text{  with  } 
+      \gamma = \frac{R + d}{R},
+      \label{eqn: cEpsParticle}
+\end{equation}
+
+\par An explanation of these equations are given in section \ref{sec:maxwell_mixture_theory}. The values for $G_f$ (geometric constant) and $\phi$ (volume fraction) are dependent on the geometry of the system. In the following sections, solutions to both variables will be presented for the co-planar electrode configuration in figure \ref{fig:simplified_IS_models}.
+
+
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.7\textwidth]{images/cellAndElectrodes.png}
+ \caption[Schematic diagram of simplified impedance sensor chamber.]{Schematic diagram of simplified impedance sensor chamber where w, $g$, and $l$ are the width, gap, and length of the electrodes respectively, and $h$ is the height of the chamber.}
+ \label{fig:simplified_IS_models}
+ \end{figure}
 
 \par The $d$ and $\gamma$ in equation ?? refer to the distance between and the height of the two electrodes in the ideal plate capacitor model in figure ??. To find $d$ and $\gamma$ for electrode configurations other than the ideal capacitor configuration, the configuration must be mapped to the ideal configurations. 
 
 \subsection{Coplanar Electrode Cell Constant}
+    \par The geometric constant is the inverse of the cell constant ($\kappa$). If the cell constant is thought of in terms of the resistive cell constant ($R=\kappa\rho$), then the geometric cell constant can be thought of as the capacitive cell constant ($C=G_f\epsilon$). For the ideal parallel plate capacitor in figure \ref{fig:parallelCapacitorModel}, where the electric field is uniform, the geometric constant can be expressed as
+    \begin{equation}
+        (G_f)^{-1} = \kappa = \frac{d}{l\gamma},
+    \end{equation}
+    \noindent where $d$ is the distance between the capacitors, $\gamma$ is the height of the capacitors, and $l$ is the lenght of the capacitors.
+
+   \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/capacitorNoFringe.png}
+        \caption[Uniform electric field between parallel plates]{Uniform electric field between two parallel electrodes where $\boldsymbol{E}$ is the electric field, $\phi$ is the voltage, and $\frac{d\phi}{d\boldsymbol{n}}=0$ is the boundary condition of a perfect insulator. The dimensions of the capacitor are the electrode height $\gamma$, and the distance between the electrodes $d$.}
+        \label{fig:parallelCapacitorModel}
+  \end{figure}
+
     \par Sun, Greene, et al. utilized the Schwartz-Christoffel transform to map the coplanar electrode configuration in figure \ref{fig:simplified_IS} to the configuration of parallel electrodes with uniform electrode fields in figure \ref{fig:parallel_capacitor} \cite{sun_analytical_2007}. The Schwartz-Christoffel formula is a powerful transform that allows the mapping of the upper complex T-plane ($y>0$) to the inside of a polygon. The formula is
     
     \begin{equation}
@@ -118,7 +144,7 @@
  \noindent Since equation \ref{eqn:scm_wt_int} is an integral of a rational function with a root of a quartic polynomial, the function can be rewritten as an elliptic integral \cite{i.s._gradshteyn_table_1980}.
  
  \begin{equation}
-     W = D_3F(v,k) + D_2
+     W = D_3F(\theta,q) + D_2
  \end{equation}
  \begin{equation}
     D_3 = \frac{2D_1}{\sqrt{(T_A - T_C)(T_B-T_D)}}
@@ -407,97 +433,11 @@ The analytic impedance solution described in the preceding sections was fully im
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/analyticImpedanceApp.png}
-    \caption[IS App]{The IS app GUI created in MATLAB to calculate and display the analytic impedance solution to a single cell suspension over co-planar electrodes. The IS app also includes the capability to calculate an equivalent circuit model, the electric field of the co-planar electrode system, and a mapping of the cell orthodrome to the W-plane.}
+    \caption[IS App]{The IS app GUI created in MATLAB to calculate and display the analytic impedance solution to a single cell suspension over co-planar electrodes. The impedance is displayed as magnitude-phase, real-imaginary, and Nyquist plots. The IS app also includes the capability to calculate the Clausius Mossotti spectrum, an equivalent circuit model, the electric field of the co-planar electrode system, and a mapping of the cell orthodrome to the W-plane.}
     \label{fig:matlab_IS_app}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics{IS_app_}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
 
-\begin{figure}
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/impedanceControlsFrequency.png}
-        \caption{A model so}
-        \label{fig:simple_medium_fea_model}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/impedanceControlsChamberGeoemetry.png}
-        \caption{Yet another awesome view}
-        \label{fig:simple_medium_with_cell_fea_model}
-    \end{subfigure}
-    
-    \vspace{0.2 in}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/impedanceControlsCellGeometry.png}
-        \caption{Yet another awesome view}
-        \label{fig:device_medium_fea_model}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/impedanceControlsEDL.png}
-        \caption{Yet another awesome view}
-        \label{fig:device_cell_fea_model}
-    \end{subfigure}
-    
-        \vspace{0.2 in}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/impedanceControlsDielectricProperties.png}
-        \caption{Yet another awesome view}
-        \label{fig:device_medium_fea_model}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/impedanceControlsVolumeFraction.png}
-        \caption{Yet another awesome view}
-        \label{fig:device_cell_fea_model}
-    \end{subfigure}
-    
-    \vspace{0.2 in}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/impedanceControlsPlotAndRun.png}
-        \caption{ }
-    \end{subfigure}
-    \caption{Finite element analysis models.}
-    \label{fig:}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{images/impedanceDisplayMagPhase.png}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{images/impedanceDisplayRealImaginary.png}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{images/impedanceDisplayNyquist.png}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{images/impedanceDisplayFCM.png}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/impedanceDisplayEquivCircuitV2.png}
@@ -508,7 +448,7 @@ The analytic impedance solution described in the preceding sections was fully im
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/impedanceDisplayEFieldVFs.png}
-    \caption{The IS app display for the electric field magnitude, the cell orthodrome mapping to the W-plane, and volume fractions.}
+    \caption[IS app display for calculations of an equivalent circuit model.]{The IS app display for the electric field magnitude, the cell orthodrome mapping to the W-plane, and volume fractions.}
     \label{fig:is_app}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -572,29 +512,38 @@ The analytic impedance solution described in the preceding sections was fully im
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{images/simple_cell_drawing_inventor.png}
-    \caption{}
-    \label{fig:my_label}
+    \caption[Simple FEA model geometry.]{Drawing of the Simple FEA models geometry. All units of length are in microns.}
+    \label{fig:simple_model_geometry}
 \end{figure}
 
-\begin{figure}
+
+ \begin{figure}[h]
     \centering
-    \includegraphics[width =0.7\textwidth]{images/channel_dimensions_inventor.png}
-    \caption{Drawing of the geometry used in the device FEA model with dimensioned system and PDMS geometry. All dimensions of length in units of microns.}
+    \begin{subfigure}[b]{\textwidth}
+      \centering
+    \includegraphics[width=0.6\textwidth]{images/channel_dimensions_inventor.png}
+    \caption[]{Drawing of the geometry used in the device FEA model with dimensioned system and PDMS geometry. All dimensions of length in units of microns.}
     \label{fig:device_channel_dimensions_FEA}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{electrode_dimensions_inventor}
-    \caption{Drawing of the geometry used in the Device Medium and Device Cell FEA models with dimensioned electrode geometry. All dimensions of length in units of microns.}
-    \label{fig:device_electrode_dimensions_FEA}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/particle_dimension_inventor.png}
-    \caption{Drawing of the geometry used in the Device Cell FEA model with dimensioned cell geometry. All dimensions of length in units of microns.}
-    \label{fig:device_cell_dimensions_FEA}
-\end{figure}
+    \end{subfigure}
+    \\
+    \vspace{0.2 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{electrode_dimensions_inventor}
+       \caption{Drawing of the geometry used in the Device Medium and Device Cell FEA models with dimensioned electrode geometry. All dimensions of length in units of microns.}
+        \label{fig:device_electrode_dimensions_FEA}
+    \end{subfigure} 
+    \\
+    \vspace{0.2 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.55\textwidth]{images/particle_dimension_inventor.png}
+        \caption{Drawing of the geometry used in the Device Cell FEA model with dimensioned cell geometry. All dimensions of length in units of microns.}
+        \label{fig:device_cell_dimensions_FEA}
+    \end{subfigure} 
+    \caption[Device FEA model geometry.]{Drawing of the Device FEA geometry models. All dimensions of length are in microns.}
+    \label{fig: FEA_device_geometry}
+ \end{figure}
 
 
 
@@ -730,4 +679,7 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%  Spice Models  %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Spice}
+\section{SPICE Circuit Models}
+\par  were developed in order to model and validate the I-V measurement circuit and measurement system at large, to explore alternative measurement circuit implementations, and simulate the performance of the system under the predicted impedance loads of a single cell suspension. 
+
+\par The circuit models were implemented in NGSPICE and programmatically scripted and results analyzed in MATLAB to allow for multi-variable parametric analysis and programmatic data analysis and presentation. The MATLAB code interface with NGSPICE, and the base Net files are included in appendix \ref{app: }. 
