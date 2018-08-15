@@ -17,6 +17,7 @@
 \usepackage{siunitx}
 \usepackage{placeins}
 \usepackage{dotlessi}
+\usepackage{hyperref}
 
 \usepackage[
     style=ieee,
@@ -77,8 +78,8 @@
 %\chapter{Introduction}
 %\input{chapters/introduction}
 
-\chapter{Background}
-\input{chapters/Background}
+%\chapter{Background}
+%\input{chapters/Background}
 
 %\chapter{Methods}
 %\input{chapters/methods}
@@ -86,12 +87,25 @@
 \chapter{Modeling}
 \input{chapters/models}
 
+%\chapter{Results}
+%\input{chapters/results}
 
-%\appendix
-%\chapter{Appendix Title}
-%\include{appendix}
+%\chapter{Discussion}
+%\input{chapters/discussion.tex}
 
+%\chapter{Conclusion}
+%\input{chapters/conclusion}
+
+%Bibliography
+\phantomsection 
+\addcontentsline{toc}{chapter}{Bibliography} 
 \singlespacing
 \printbibliography
+
+\appendix
+\input{chapters/SCM}
+\input{chapters/AnalyticImpedanceSolutionMATLABCode}
+\input{chapters/SpiceModels.tex}
+
 
 \end{document}
