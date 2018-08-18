@@ -503,7 +503,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
     \label{fig:is_app_Efield_volume_fraction}
 \end{figure}
 
-\par The top chart in figure \ref{fig:is_app_Efield_volume_fraction} depicts the logarithm electric field magnitude of the co-planar electrode system. Since this analytic impedance solution describes an infinitely long channel, the width of the electric field must be truncated. The user is given the ability to control the width of the data calculated with the \textit{Plot width multiplier} parameter. The parameter determines the width of calculated electric field with the following relation:
+\par The top chart in figure \ref{fig:is_app_Efield_volume_fraction} depicts the logarithm electric field magnitude of the co-planar electrode system. Since this analytic impedance solution describes an infinitely long channel, the width of the calculated electric field must be truncated. The user is given the ability to control the width of the data calculated with the \textit{Plot width multiplier} parameter. The parameter determines the width of calculated electric field with the following relation:
 
 \begin{equation*}
         \text{Data Width} = (\text{Plot width multiplier})*(2w_{electro} + g_{electro}}),
@@ -511,7 +511,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 
 where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between the electrodes. In addition, the user can specify the color bar range plotted with the \textit{Color Axis Max} and \textit{Color Axis Min} parameters. Altering these parameters is useful when the area of interest is over-saturated by the color axis extrema, or the user desires to identify where a bounded range of the electric field magnitude occurs. If the plot cell checkbox is selected, the orthodrome perimeter perimeter of the cell is plotted.
 
-\par The bottom chart in figure \ref{fig:is_app_Efield_volume_fraction} plots the transformed orthodrome perimeter of the cell to the ideal parallel plate capacitor plane (w-plane) using the SCM-derived mapping described by equation \ref{eqn: w_mapping}. The depiction of the cell orthodrome in the w-plane provides a direct
+\par The bottom chart in figure \ref{fig:is_app_Efield_volume_fraction} plots the transformed orthodrome perimeter of the cell to the ideal parallel plate capacitor plane (w-plane) using the SCM-derived mapping described by equation \ref{eqn: w_mapping}. The depiction of the cell orthodrome in the w-plane provides a direct illustration of how the position of the cell in the chamber affects its effective volume fraction. In addition, the calculated values of the traditional, power, and mapped volume fraction are provided in the bottom left corner. 
 
     
 
@@ -533,33 +533,33 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
 
 \par Figure \ref{fig:FEA_models} depicts the four models. The simple models will investigate the characteristics of an ideal co-planar electrode cell and provide model validation by comparison to the analytic impedance solution. The device models will provide insight into the impedance characteristics of the Cal Poly Biofluidics Lab's impedance spectroscopy device. 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/need_image.png}
-        \caption{A model so}
+        \includegraphics[width=\textwidth]{images/simpleMediumGeometry.png}
+        \caption{Simple medium model}
         \label{fig:simple_medium_fea_model}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/need_image.png}
-        \caption{Yet another awesome view}
+        \includegraphics[width=\textwidth]{images/simpleCellGeometry.png}
+        \caption{Simple cell model}
         \label{fig:simple_medium_with_cell_fea_model}
     \end{subfigure}
-    \\
+    \\ \vspace{0.3 in}
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/need_image.png}
-        \caption{Yet another awesome view}
+        \includegraphics[width=\textwidth]{images/deviceMediumGeometry.png}
+        \caption{Device medium model}
         \label{fig:device_medium_fea_model}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/need_image.png}
-        \caption{Yet another awesome view}
+        \includegraphics[width=\textwidth]{images/deviceCellGeometry.png}
+        \caption{Device cell model}
         \label{fig:device_cell_fea_model}
     \end{subfigure}
     \caption{Finite element analysis models.}
@@ -675,18 +675,20 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
 \subsection{Mesh Development}
 \par For all four FEA models, quadratic tetrahedral meshes were generated. On each model a mesh convergence study based on impedance was run in order to determine appropriate meshes and validate that the model converges. To improve the simulation efficiency, the mesh was only refined in a region over the electrodes as depicted in figure \ref{fig:mesh_refinement_domain}.
 
-\begin{figure}
+\par The results of the mesh refinement are presented in figure \ref{fig: meshes???} and the chosen mesh with statistics are described in figure \ref{fig:meshes?}.
+
+\begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/need_image.png}
+        \includegraphics[width=\textwidth]{images/simpleCellMesh.png}
         \caption{Simple mesh refinement}
         \label{fig:simple_mesh_refinement_domain}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/need_image.png}
+        \includegraphics[width=\textwidth]{images/deviceCellMesh.png}
         \caption{Device mesh refinement}
         \label{fig:device_mesh_refinement_domain}
     \end{subfigure}
@@ -694,52 +696,117 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
     \label{fig:mesh_refinement_domain}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/simpeMediumConvergenceNoValidation.png}
     \caption{Simple medium convergence}
     \label{fig:simple_medium_convergence}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/simpleCellConvergence.png}
     \caption{Simple Cell convergence}
     \label{fig:simple_cell_convergence}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/device_medium_convergence.png}
     \caption{Device Medium convergence}
     \label{fig:device_medium_convergence}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/device_cell_convergence.png}
     \caption{Device Cell convergence}
     \label{fig:device_cell_convergence}
 \end{figure}
 
-\par The results of the mesh refinement are presented in figure \ref{fig: meshes???} and the chosen mesh with statistics are described in figure \ref{fig:meshes?}.
+
 
 
 %%% Validation
 \subsection{Model Validation}
 \par The FEA models were validated by comparing the analytic impedance solutions to the results of the simple medium and simple cell models. 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/simpeMediumValidation.png}
     \caption{Simple medium validation}
     \label{fig:simple_medium_validation}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/simpleCellValidation.png}
     \caption{Simple Cell validation}
     \label{fig:simple_cell_validation}
 \end{figure}
 
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/simpleMediumMesh.png}
+        \caption{Simple medium mesh}
+        \label{fig:simple_medium_mesh}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/simpleCellMesh.png}
+        \caption{Simple cell mesh}
+        \label{fig:simple_cell_mesh}
+    \end{subfigure}
+    \\ \vspace{0.3 in}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/deviceMediumMesh.png}
+        \caption{Device medium mesh}
+        \label{fig:device_medium_mesh}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/deviceCellMesh.png}
+        \caption{Device cell mesh}
+        \label{fig:device_cell_mesh}
+    \end{subfigure}
+    \caption{Finite element analysis models.}
+    \label{fig:FEA_meshes}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/simpleMediumMeshStats.png}
+        \caption{Simple medium model}
+        \label{fig:simple_medium_fea_model}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/simpleCellMeshStats.png}
+        \caption{Simple cell model}
+        \label{fig:simple_medium_with_cell_fea_model}
+    \end{subfigure}
+    \\ \vspace{0.3 in}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/deviceMediumMeshStatistics.png}
+        \caption{Device medium model}
+        \label{fig:device_medium_fea_model}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/deviceCellMeshStats.png}
+        \caption{Device cell model}
+        \label{fig:device_cell_fea_model}
+    \end{subfigure}
+    \caption{Finite element analysis models.}
+    \label{fig:FEA_models}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%  Spice Models  %%%%%%%%%%%
