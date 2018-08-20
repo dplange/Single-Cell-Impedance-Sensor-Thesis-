@@ -293,6 +293,8 @@
     \label{fig:electricFieldPlots}
  \end{figure}
 
+\newpage
+
 \subsection{Novel Volume Fraction}
 \par The traditional method to approximate the volume fraction of a single spherical particle suspended over co-planar electrodes is to take the ratio of the cell volume divided by the volume of the electrodes in the channel.
 
@@ -572,7 +574,7 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
 \par The simple medium, simple cell, device medium, and device cell models were created using COMSOL Multiphyisics FEA software with the electric current physics module. Model development included the specification and implementation in COMSOL of geometry, material properties, and governing physics.
 
 \subsection*{Model Geometry}
-\par Two geometries were developed for the impedance spectroscopy models: a basic rectangular electrode cell for the simple models, and an implementation of the impedance spectroscopy device for the device models. The simple geometry is depicted in figure ## and the device geometry in figure \ref{fig:??}. The dimensions of both geometries followed the values outlined in table \ref{tab:??} with the exception of the parametric analysis and otherwise noted. In addition, a dimensioned drawing for the device geometry is included in figure \ref{fig:??}.
+\par Two geometries were developed for the impedance spectroscopy models: a basic rectangular electrode cell for the simple models, and an implementation of the impedance spectroscopy device for the device models. The simple geometry is depicted in figure \ref{fig:simple_medium_fea_model} and \ref{fig:simple_medium_with_cell_fea_model}, and the device geometry in figure \ref{fig:device_medium_fea_model} and \ref{fig:device_cell_fea_model}. Dimensioned drawings are presented in figure \ref{fig:simple_model_geometry} and figure \ref{fig: FEA_device_geometry} for the simple and device model respectively.
 
 \begin{figure}[h]
     \centering
@@ -582,7 +584,17 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
 \end{figure}
 
 
- \begin{figure}[h]
+\par In general, the simple geometry attempts to follow two of the assumptions made in the analytic impedance solution with reference to the electrode orientation given in figure \ref{fig:??}:
+\begin{enumerate}
+    \item The electrode fringe fields are allowed to expand infinitely in the $\hat{\boldsymbol\imath}$ direction (i.e. there is no horizontal insulation).
+    \item The electric field has no component in the $\hat{\boldsymbol\jmath}$ direction (i.e. geometry must be uniform in the direction parallel to the electrodes).
+\end{enumerate}
+
+
+\par The simple geometry approximated assumption 1 by making the sensor chamber sufficiently long. An iterative approach determined the sufficient length of the chamber by repeatedly increasing the length of the chamber until the model impedance stabilized to a constant value. At this point, any additional fringe fields permitted by an infinitely long channel was assumed to be negligible. This approach led to an optimal model length of 38 microns. The second assumption was met by creating uniform features in the $\hat{\boldsymbol\jmath}$ direction.
+
+
+ \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{\textwidth}
       \centering
@@ -610,15 +622,6 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
     \label{fig: FEA_device_geometry}
  \end{figure}
 
-
-
-\par In general, the simple geometry attempts to follow two of the assumptions made in the analytic impedance solution with reference to the electrode orientation given in figure \ref{fig:??}:
-\begin{enumerate}
-    \item The electrode fringe fields are allowed to expand infinitely in the $\hat{\boldsymbol\imath}$ direction (i.e. there is no horizontal insulation).
-    \item The electric field has no component in the $\hat{\boldsymbol\jmath}$ direction (i.e. geometry must be uniform in the direction parallel to the electrodes).
-\end{enumerate}
-
-\par The simple geometry approximated assumption 1 by making the sensor chamber sufficiently long. An iterative approach determined the sufficient length of the chamber by repeatedly increasing the length of the chamber until the model impedance stabilized to a constant value. At this point, any additional fringe fields permitted by an infinitely long channel was assumed to be negligible. This approach led to an optimal model length of 38 microns. The second assumption was met by creating uniform features in the $\hat{\boldsymbol\jmath}$ direction.
 
 \par The device geometry focused on the sensor chamber of the impedance spectroscope device and assumed that the effects of the electrodes far from the chamber are negligible. 
 
@@ -673,28 +676,10 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
 
 %%% Mesh Development
 \subsection{Mesh Development}
-\par For all four FEA models, quadratic tetrahedral meshes were generated. On each model a mesh convergence study based on impedance was run in order to determine appropriate meshes and validate that the model converges. To improve the simulation efficiency, the mesh was only refined in a region over the electrodes as depicted in figure \ref{fig:mesh_refinement_domain}.
 
-\par The results of the mesh refinement are presented in figure \ref{fig: meshes???} and the chosen mesh with statistics are described in figure \ref{fig:meshes?}.
+\par The FEA models were meshed with quadratic tetrahedral meshes.  Mesh convergence studies were run on all four models to determine appropriate meshes and to validate that the model is convergent. To improve the simulation efficiency, the mesh was only refined in the regions over the electrodes. 
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/simpleCellMesh.png}
-        \caption{Simple mesh refinement}
-        \label{fig:simple_mesh_refinement_domain}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/deviceCellMesh.png}
-        \caption{Device mesh refinement}
-        \label{fig:device_mesh_refinement_domain}
-    \end{subfigure}
-    \caption{Mesh refinement domains}
-    \label{fig:mesh_refinement_domain}
-\end{figure}
+\par Each convergence study was based on the calculated resistance of the system (i.e impedance at 0 hz), which requires integrating the current density over an electrode to find current. In COMSOL, the default settings using the Electric Current module only provides a discretized spatial gradient to the post-processor. When post-processing calculations use the spatial gradient, the result is highly mesh dependent and can result in greater errors. In the simple medium model, this effect manifested as with non-zero current values through perfectly insulated boundaries and the apparent break down of the continuity equation. As a result, an additional error is added to the calculated impedance and the model will require a greater number of degrees of freedom (DOFs) to converge. The effect can be mitigated by applying weak constraints on the boundaries used for post-processing flux calculations. The weak constraint setting provides the post-processor with additional variables that allow for accurate flux calculations. The effect of weak constraints is illustrated in the convergence study of the simple medium model depicted in figure \ref{fig:simple_medium_convergence}. Weak constraints were used in the simple models, but due to complicated geometry over the electrodes in the device models, COMSOL was unable to compile the simulation with weak constraints and the non-weak constraints were used keeping this shortcoming in mind.
 
 \begin{figure}[h]
     \centering
@@ -702,45 +687,28 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
     \caption{Simple medium convergence}
     \label{fig:simple_medium_convergence}
 \end{figure}
+
+
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/simpleCellConvergence.png}
+    \includegraphics[width=0.9\textwidth]{images/simpleCellConvergence.png}
     \caption{Simple Cell convergence}
     \label{fig:simple_cell_convergence}
 \end{figure}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/device_medium_convergence.png}
+    \includegraphics[width=0.9\textwidth]{images/device_medium_convergence.png}
     \caption{Device Medium convergence}
     \label{fig:device_medium_convergence}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/device_cell_convergence.png}
+    \includegraphics[width=0.9\textwidth]{images/device_cell_convergence.png}
     \caption{Device Cell convergence}
     \label{fig:device_cell_convergence}
 \end{figure}
 
-
-
-
-%%% Validation
-\subsection{Model Validation}
-\par The FEA models were validated by comparing the analytic impedance solutions to the results of the simple medium and simple cell models. 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/simpeMediumValidation.png}
-    \caption{Simple medium validation}
-    \label{fig:simple_medium_validation}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/simpleCellValidation.png}
-    \caption{Simple Cell validation}
-    \label{fig:simple_cell_validation}
-\end{figure}
+\par The results of the convergence studies are presented in figures \ref{fig:simple_medium_convergence}, \ref{fig:simple_cell_convergence}, \ref{fig:device_medium_convergence}, and \ref{fig:device_cell_convergence}. The meshes corresponding to 2.18E5, 2.785E5, 8.45E5, and 8.33E5 degrees of freedom were chosen for the simple medium, simple cell, device medium, and device cell respectively. The chosen meshes are depicted in figure \ref{fig:FEA_meshes} with mesh descriptions in table \ref{tab: meshStats}. 
 
 \begin{figure}[h]
     \centering
@@ -774,51 +742,50 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
     \caption{Finite element analysis models.}
     \label{fig:FEA_meshes}
 \end{figure}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/simpleMediumMeshStats.png}
-        \caption{Simple medium model}
-        \label{fig:simple_medium_fea_model}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/simpleCellMeshStats.png}
-        \caption{Simple cell model}
-        \label{fig:simple_medium_with_cell_fea_model}
-    \end{subfigure}
-    \\ \vspace{0.3 in}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/deviceMediumMeshStatistics.png}
-        \caption{Device medium model}
-        \label{fig:device_medium_fea_model}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/deviceCellMeshStats.png}
-        \caption{Device cell model}
-        \label{fig:device_cell_fea_model}
-    \end{subfigure}
-    \caption{Finite element analysis models.}
-    \label{fig:FEA_models}
-\end{figure}
-
-\begin{figure}
+\begin{table}[h]
     \centering
     \includegraphics[width=\textwidth]{images/meshStats.png}
     \caption{Caption}
     \label{tab: meshStats}
+\end{table}
+
+
+
+%%% Validation
+\subsection{Model Validation}
+\par The FEA models were validated by comparing the analytic impedance solutions to the results of the simple medium and the simple cell models. The analytic solutions were calculated using the the dimensions of the figure \ref{fig:simple_model_geometry}, the material properties in table \ref{tab:fea_materials}, direct current, and utilizing both the traditional and power fractions. The results of the analytic impedance solutions were overlayed on the simple model convergence studies and presented in figure \ref{fig:simple_medium_validation} and \ref{fig:simple_cell_validation}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/simpeMediumValidation.png}
+    \caption{Simple medium validation}
+    \label{fig:simple_medium_validation}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/simpleCellValidation.png}
+    \caption{Simple Cell validation}
+    \label{fig:simple_cell_validation}
+\end{figure}
+
+
+\par A percent error of 0.368\% was calculated for the medium comparison and percent errors of 2.524\% and 0.00990\% were calculated using the traditional and the power volume fraction for the single cell suspension comparisons respectively. By taking the difference of the medium and the single cell suspension impedance, a value more closely related to the cell impedance can be obtained. Percent errors of 58.2\% and 0.148\% were calculated for the traditional and power volume fraction respectively for the difference comparisons.
+
+\par These results validate the simple FEA models and provides strong evidence that extensions of these models (i.e. parametric analysis, frequency sweeps, and the device models) will provide accurate results. In additions, these results highlight how the use of the the adjusted volume fractions are significantly more accurate than the traditional volume fraction (error with power fraction: 0.148\% vs. error with traditional volume fraction: 58.2\%). 
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%  Spice Models  %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SPICE Circuit Models}
-\par  Circuit simulations were developed to model and validate the I-V measurement circuit and measurement system at large, to explore alternative measurement circuit implementations, and simulate the performance of the system under the predicted impedance loads of a single cell suspension. 
+\par  Circuit simulations were developed to validate the IS DAQ system, understand its shortcomings, and explore the I-V and alternative measuremtent circuits. 
 
-\par The circuit models were implemented in NGSPICE and programmatically scripted and results analyzed in MATLAB to allow for multi-variable parametric analysis and programmatic data analysis and presentation. The MATLAB code interface with NGSPICE, and the base Net files are included in appendix \ref{app:spiceModels}. 
+\par The circuit models were simulated by leveraging the NGSPICE circuit simulator and interfaced to MATLAB to script model execution and analyze results. By interfacing MATLAB to NGSPICE, greater flexibility allowed for multi-variable parametric analysis, programmatic data analysis, and result presentation. The MATLAB code interface with NGSPICE, and the base Net files are included in appendix \ref{app:spiceModels}. 
+
+
+$\hat{z}$
