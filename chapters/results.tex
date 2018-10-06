@@ -162,6 +162,24 @@
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
+        \includegraphics[width=\textwidth]{images/reproducibility_PBS_mag_phase.png}
+        \caption{Sensor chamber fluid filled}
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/reproducibility_PBS_real_imag.png}
+        \caption{Sensor chamber 7$\mu$m }
+    \end{subfigure}
+    \caption{Impedance spectroscopy reproducibility demonstrated with repeated measurement of phosphate buffered solution over a span of three days.}
+    \label{fig:IS_data_reproducibility}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
         \includegraphics[width=\textwidth]{images/raw_IS_data_mag_phase.png}
         \caption{Sensor chamber fluid filled}
     \end{subfigure}
@@ -173,20 +191,71 @@
         \caption{Sensor chamber 7$\mu$m }
     \end{subfigure}
     \\
+%    \vspace{0.1 in}
+%    \begin{subfigure}[b]{\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{images/raw_IS_%data_nyquist.png}
+%        \caption{Jammed}
+%    \end{subfigure}
+    \caption[PBS, DI, microbead IS data comparison.]{Comparison of impedance spectroscopy results from measurements of phosphate buffered solution, de-ionized water, and the chamber saturated with 7 $\mu$m polystyrene beads.}
+    \label{fig:IS_data_beads_pbs_DI_comp}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/IS_data_clean_mag_phase.png}
+        \caption{Sensor chamber fluid filled}
+    \end{subfigure}
+    \\
     \vspace{0.1 in}
     \begin{subfigure}[b]{\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/raw_IS_data_nyquist.png}
+        \includegraphics[width=\textwidth]{images/IS_data_clean_real_imag.png}
+        \caption{Sensor chamber 7$\mu$m }
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/IS_data_clean_nyquist.png}
         \caption{Jammed}
     \end{subfigure}
-    \caption{IS device sensor region images.}
-    \label{fig:IS_data_raw}
+    \caption[PBS, PBS saturated with micro-beads, and the phasor difference.]{Comparison of impedance spectroscopy results from measurements of phosphate buffered solution, phosphate buffered solution saturated with 7 $\mu$m polystyrene beads, and the phasor difference between the two. The phase data was cleaned and the real and imaginary impedance was re-calculated.}
+    \label{fig:IS_data_pbs_pbsBeads_difference}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_truncated_mag_phase.png}
+        \caption{Sensor chamber fluid filled}
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_truncated_real_imag.png}
+        \caption{Sensor chamber 7$\mu$m }
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_nyquist.png}
+        \caption{Jammed}
+    \end{subfigure}
+    \caption[Truncated phasor difference between PBS, and micro-bead saturated PBS.]{Phasor difference between the PBS solution, and PBS solution saturated with 7$\mu$m microbeads. The data was truncated to the reliable frequency range of $10^4$ to $3x10^6$ hz.}
+    \label{fig:IS_data_beads_pbs_DI_comp}
 \end{figure}
 
 
 \FloatBarrier
 
 \section{Modeling}
+
 
 
 \section{Spice Model/Measurement analysis}
