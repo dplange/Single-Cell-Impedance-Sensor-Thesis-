@@ -3,21 +3,19 @@
 
 \subsection{PDMS channels}
 
-\begin{figure}[h]
+\par Due to the limitations of using the 20,000 DPI photo-plotting service of CAD/Art Services Inc, the produced transparency is only accurate to 8 microns. Consequently, while widths and lengths remained largely unaffected, features, such as square corners on the resolution of microns, were lost. The produced mask largely matched the CAD drawing with the exception of the rectangular cell capture/measurement chamber, which was reduced to a diamond shape. This effect was expected and replicated the results of Josh Fadriquela \cite{fadriquela_design_2009-1}. Increased accuracy and resolution can be achieved using chrome masks, but at a premium cost that is outside the scope of this project and unnecessary for its goals. 
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/su8_results.png}
+    \includegraphics[width=0.8\textwidth]{images/su8_results.png}
     \caption{SU-8 photoresist on the master mold.}
     \label{fig:su8_results}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/PDMS_channels.png}
-    \caption{PDMS cast from the master mold.}
-    \label{fig:pdms_results}
-\end{figure}
+\par The SU-8 master mold created through photolithography with the transparency mask, matched the transparency and the designed mold height closely. A representative SU-8 mold is depicted in figure \ref{fig:su8_results}. The dimensions of the SU-8 mold was verified using the Ambios Xp-1 profilometer. The SU-8 surface profile measured by the profilometer are presented in figure \ref{fig:profilometer_300um_channel} and \ref{fig:profilometer_10um_channel_100um_sideways}. 
 
-\begin{figure}[h]
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{images/300umWideChannel.png}
     \caption[Surface profile of a 300 micron wide channel on the SU-8 master mold.]{Surface profile of a 300 micron wide channel on the SU-8 master mold. The profile was captured with the Ambios XP-1 profilometer. The profilometer recorded a channel height of 9.6 microns.}
@@ -27,50 +25,61 @@
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/10umWideAndSidewaysThrough100umWide.png}
-    \caption[Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold.]{Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold. The profile was captured with the Ambios XP-1 profilometer. The data depicts the 100 micron channel as about 140 microns wide since it crossed the channel at 45$^\circ$ The profilometer recorded a channel height of 9 and 9.6 microns for the 10 micron and 100 micron channels respectively.}
+    \caption[Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold.]{Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold. The profile was captured with the Ambios XP-1 profilometer. The data depicts the 100 micron channel as about 140 microns wide since it crossed the channel at 45$^\circ$. The profilometer recorded a channel height of 9 and 9.6 microns for the 10 micron and 100 micron channels respectively.}
     \label{fig:profilometer_10um_channel_100um_sideways}
 \end{figure}
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/PDMS_channels.png}
+    \caption{PDMS cast from the master mold.}
+    \label{fig:pdms_results}
+\end{figure}
 
 \FloatBarrier
 
 
 \subsection{Electrode Fabrication}
 
+\par Prior to this thesis, the micro-electrode fabrication process at Cal Poly was undeveloped and was developed through the course of this thesis. As a result, the fabrication process turned into an iterative approach of tuning process parameters and was met with many failures.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/adhesion_issues.jpg}
-    \caption{Electrode fabrication failure demonstrating two modes of failure: the ?? photoresist failed to properly adhere to the glass surface manifesting as two anomalous flower patterns, and poor adhesion of the deposited gold to the first chrome layer as evident by gold-stripped leads.}
+    \caption{Electrode fabrication failure demonstrating two modes of failure: the Ma-N1420 photoresist failed to properly adhere to the glass surface manifesting as two anomalous flower patterns, and poor adhesion of the deposited gold to the first chrome layer as evident by gold-stripped leads.}
     \label{fig:failed_electrode_macro}
 \end{figure}
+
+\par Once the photolithography process was tuned, processed electrodes were met with three main modes of failure: poor photoresist adhesion, poor gold adhesion, and thin cracks or scrapes. 
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/electrodeFailureChunkBreak.png}
-        \caption{Impedance magnitude and phase}
+        \caption{Break in electrode due to delamination of gold strip.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/electrodeFailureChunkBreakZoomed.png}
-        \caption{Real and imaginary impedance}
+        \caption{Depiction of chromium deposition at site of electrode delamination highlights failure of gold adhesion to chromium layer.}
     \end{subfigure}
     \\
     \vspace{0.1 in}
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/electrodeFailureThinBreak.png}
-        \caption{Nyquist plot}
+        \caption{Thin crack in electrode.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/electrodeFailureSlide.png}
-        \caption{Clausius Mossotti Factor}
+        \caption{Gold elctrode strips sliding off chrome adhesions layer}
     \end{subfigure}
-    \caption{Example plots depicting results of the analytic impedance solution generated by the IS App.}
+    \caption{Depictions of common electrode fabrication failures.}
     \label{fig:failed_elecftrodes_micro}
 \end{figure}
 
@@ -404,6 +413,8 @@ Discuss the calculated device inefficiency.
 
 \subsection{optimization}
 
+
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -605,3 +616,28 @@ Discuss the calculated device inefficiency.
 \FloatBarrier
 
 \section{Spice Model/Measurement analysis}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/spice-measured-comp_mag-phase.png}
+        \caption{spice measured comp mag-phase}
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
+        \caption{measured comp bode}
+    \end{subfigure}
+    \caption[measured comp]{measured comp}
+    \label{fig:analytic_sensitivity}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/measurementError.png}
+    \caption{Log log percent error plot.}
+\end{figure}
