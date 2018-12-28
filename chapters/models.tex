@@ -423,6 +423,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 
 \begin{equation}
     S_{Sun} = \frac{| |\Tilde{Z}_{mix}| - |\Tilde{Z}_m| |}{|\Tilde{Z}_m|} \;\;\;\;\; \cite{sun_analytical_2007}.
+    \label{eqn:Sun_sensitivity}
 \end{equation}
 
 \par Sun's definition has the advantage of taking into account the dielectric properties of the suspension. However, his calculations used the standard method of determining the volume fraction, which does not account for the non-uniformity of the electric field local to the position of the particle. 
@@ -531,6 +532,7 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
 %%%%%% FEA Impedance Model  %%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Finite Element Analysis}
+\label{sec: FEA}
 
 %%% Section Overview
 \par Finite element analysis (FEA) models were developed to characterize the single cell impedance spectrum and to investigate optimal co-planar electrode configurations with the purpose to inform future designs. To accomplish this goal, four FEA models were designed:
@@ -790,7 +792,7 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
 %%%%%%%%  Spice Models  %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SPICE Circuit Models}
-\par  Circuit simulations were developed to validate the IS DAQ system, understand its shortcomings, and explore the I-V and alternative measuremtent circuits. 
+\par  Circuit simulations were developed to validate the IS DAQ system and investigate its shortcomings.
 
 \par The circuit models were simulated by leveraging the NGSPICE circuit simulator and interfaced to MATLAB to script model execution and analyze results. By interfacing MATLAB to NGSPICE, greater flexibility allowed for multi-variable parametric analysis, programmatic data analysis, and result presentation. The MATLAB code interface with NGSPICE, and the base Net files are included in appendix \ref{app:spiceModels}. 
 
