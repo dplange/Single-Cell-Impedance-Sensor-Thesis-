@@ -29,6 +29,7 @@
     \label{fig:profilometer_10um_channel_100um_sideways}
 \end{figure}
 
+\par PDMS casts were successfully fabricated from the SU-8 molds and operational validation was successfully performed by plasma bonding the casts to glass blanks, and verifying channel flow with no leaks or clogs. Figure \ref{fig:pdms_results} displays a typical PDMS cast.
 
 \begin{figure}[H]
     \centering
@@ -51,7 +52,7 @@
     \label{fig:failed_electrode_macro}
 \end{figure}
 
-\par Once the photolithography process was tuned, processed electrodes were met with three main modes of failure: poor photoresist adhesion, poor gold adhesion, and thin cracks or scrapes. 
+\par Once the photolithography process was tuned, processed electrodes were met with three main modes of failure: poor photoresist adhesion, poor gold adhesion, and thin cracks or scrapes. Figure \ref{fig:failed_electrode_macro} and \ref{fig:failed_elecftrodes_micro}  depict these failure modes at macro and micro scales respectively.
 
 \begin{figure}[h]
     \centering
@@ -71,7 +72,7 @@
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/electrodeFailureThinBreak.png}
-        \caption{Thin crack in electrode.}
+        \caption{Thin crack in electrode and gold.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.45\textwidth}
@@ -83,11 +84,15 @@
     \label{fig:failed_elecftrodes_micro}
 \end{figure}
 
+\par The poor durability of the electrodes was attributed to an overall ineffectiveness of the chromium adhesion layer meant to glue the gold to the glass substrate. The process step of transferring the chromium sputtered wafer from the CrC-150 to the Denton Desk 5 sputtering system for gold deposition was identified as a likely candidate for the poor chromium-gold adhesion and hypothesized that the formation of chromium oxide during the wafer's exposure to atmosphere was the poor-adhesion culprit. In a short-term fix, the wafers were held in vacuum until they were quickly transported to the Denton Desk 5. Future microelectrode fabrication processes should take advantage of dual-target sputtering system that can sputter chromium and gold sequentially while maintaining vacuum.  
+
+\par With a remedied procedure, two additional sets of electrodes were fabricated. Figure \ref{fig:good_electrodes} depicts representative results fabrication results. Overall, both sets of electrodes appeared with no initially visible cracking or delamination. However, as discussed in the following section, a set of electrodes still had adhesion issues and we only successfully fabricated one viable set of electrodes.
+
 \begin{figure}[h]
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/electrodes_real.jpg}
-        \caption{Successful fabrication of device electrodes}
+        \caption{Successful fabrication of device electrodes.}
     \end{subfigure}
     \\
     \vspace{0.1 in}
@@ -95,15 +100,16 @@
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/goodElectrode.png}
-        \caption{Impedance magnitude and phase}
+        \caption{Integral crack-prone segment.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/goodElectrodeCloseUp.png}
-        \caption{Real and imaginary impedance}
+        \caption{Image of the electrode gap.}
     \end{subfigure}
     \caption{Integral electrodes with no breaks in sputtered gold layer. The successful results were realized by minimizing the exposure of the chromium adhesion layer to air and reducing the formation chromium oxide.}
+    \label{fig:good_electrodes}
 \end{figure}
 
 
@@ -111,6 +117,11 @@
 
 \subsection{Device Bonding}
 
+\par By the end of the electrode fabrication process, we had what appeared like two well-adhered and integral electrode chips. 
+
+\par Alignment for bonding was completed by hand and needed to be corrrectly aligned on the order of microns. 
+
+The first attempt for device alignment resulted in a delamination of gold from the chromium adhesion layer. Although non-functional, the bonding process for the device was continued to completion. The result of the alignment and bonding is depicted figure \ref{fig:bad_device}. The device exhibited good glass-PDMS adhesion, and was later used to test microfluidics operations and particle capture with good results.
 
 \begin{figure}[h]
     \centering
@@ -119,6 +130,7 @@
     \label{fig:bad_device}
 \end{figure}
 
+\par The second attempt resulted in a successful alignment and bonding. Figure \ref{fig:good_device} displays the alignment and bonding results for device 2. There is a rotational device misalignment, but is centered on the sensor chamber where the electrodes are very nearly perfectly aligned. This rotational misalignment is expected to have no effect on the recorded impedance spectra. The electrodes survived the alignment process with no delamination or cracks. Plasma bonding produced  strong PDMS-glass adhesion. 
 
 \begin{figure}[h]
     \centering
@@ -127,16 +139,34 @@
     \label{fig:good_device}
 \end{figure}
 
+\par The micro-fabrication results gave us one viable impedance spectroscopy device, and a procedure for creating new viable chips.
+
 \FloatBarrier
 
 \section{Impedance Spectroscopy System}
+
+\par To characterize and evaluate the current of the impedance spectroscopy system, three overarching tests were executed: validation, reproducibility, and performance.
+
+\subsection{Microfluidic Evaluation}
+
+\par As expected and discussed previously, the current microfluidic design is not capable of isolating a single cell. This is largely due to the tolerances of the transparency masks. Chromium transparencies allow for tighter dimensions, but at a premium cost. 
+
+\par However, the device was evaluated on the basis of flowing solutions, and 
+
+\par Validation and device performance were performed simultaneously by observing the bead suspension saturating the sensor region. 
+
+\par The microfluidic system did fail reproducibility, due to systemic channel debris. Future fabrication of the device should keep a keen eye for channel debris, and if neccessary, revisit and revise process procedures. 
+
+\par See figure \ref{fig:assembled_good_device} for the fully assembled impedance spectroscopy chip.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/device_22.jpg}
     \caption{Successfully assembled cell impedance spectroscopy device.}
-    \label{fig:my_label}
+    \label{fig:assembled_good_device}
 \end{figure}
+
+\par Unfortunately, our single viable chip was littered with debris. Using the the Harvard Apparatus syringe pumps, PBS and DI water was successfully pumped into impedance spectroscopy chip. However, the introduction of polystyrene beads initiated debris flow. With a careful application of alternating flow, we succeeded in testing the device over several days and testing the device with DI water, PBS, and a saturated chamber of 7 micron polystyrene beads. The device was ultimately jammed and delaminated.
 
 \begin{figure}[h]
     \centering
@@ -149,7 +179,7 @@
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/IS_particle_saturation.jpg}
-        \caption{Sensor chamber saturated with7$\mu$m polystyrene beads.}
+        \caption{Sensor chamber saturated with 7$\mu$m polystyrene beads.}
     \end{subfigure}
     \\
     \vspace{0.1 in}
@@ -168,6 +198,120 @@
     \label{fig:IS_sensor_reigon_measurement}
 \end{figure}
 
+\par Fortuneately, a sizable, but limited, body of data was collected. The following section describes the collected data and characterizes the device response to deionized water, phosphate buffered solution, and a suspension of polystyrene beads.
+
+\FloatBarrier
+
+\subsection{Impedance Spectroscopy System Validation}
+
+\par The validation of the impedance spectroscopy system focused on the data acquisition system and the impedance calculating circuit. Operation utilizing the cell impedance chip was reserved for the reproducibility and performance studies
+
+
+
+\par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit} was physically implemented and tested, and simulated in SPICE with and without oscilloscopes. As illustrated in the bode plot of figure \ref{fig:test_circuit_bode} and the impedance spectra of \ref{fig:test_circuit_impedance_spectra}, the measured data and the SPICE model with scopes data largely matched. However, there were large deviations from the ideal SPICE model without any of the limitations of a DAQ system. This demonstrates how the application of passive oscilloscopes with the I-V method can cause large errors that grow with higher frequencies. Rerffering to figure \ref{fig:IS_DAQ_test_circuit}, oscilloscope 1 attached to V1 has very little effects on the I-V results, however, part of the I-V method is the assumption that all current flowing through the DUT is also flowing through the external resistor $R_{EXT}$. With the connection of oscilloscope 2 to node V2, this is no longer true, and as the applied frequency increases, non-negligible current leaks through the oscilloscope's capacitance. The percent error of the in figure \ref{fig:test_circuit_bode}. Although it is true that the error increases with frequency, part of this exponential growth is due to the ideal spectrum approaching 0, and causing the \% difference to approach an asymptote.  
+
+\par Figure \ref{fig:test_circ_measurement_error} also demonstrates, that although the modelled limitations of the passive probes used accounts for a significant amount of the IS DAQ error, there are unaccounted effect. At low frequencies, the recorded data reports an error on the magnitude of 10\% whereas the oscilloscope simulation reported an error on the magnitude of 3\%. In addition, starting at frequencies of 6 MHz, the measured data depicts further deviations. The low frequency errors may be attributed to a myriad of reason including the parasitic capacitance of the breadboard, and deviations in the actual versus reported values of the oscilloscope's, external resistor's, and test capacitor's capacitance and resistance. The high frequency deviations may be due to parasitic inductance in the system that is unaccounted for in the SPICE models.
+
+\par With this empirical confirmation, a corrective term can be derived to adjust the measured impedance spectra to a corrected impedance spectra. Revisiting the impedance solution for I-V method we have 
+\begin{equation}
+    Z_{DUT} = \frac{V_1 - V_2}{I}.
+\end{equation}
+
+\par In ideal scenarios, we would assume all current flows through the external resistor and then $I = V_2 / R_{EXT}$. However, we know that is not true: the non-ideal properties allows current to flow through our attached oscilloscopes and this current must be accounted for. 
+\begin{equation}
+    Z_{DUT} = \bigg(\frac{V_1 - V_2}{V_2}\bigg)Z_{EXT},
+    \label{eqn:corrected_IV}
+\end{equation}
+\noindent where
+\begin{equation}
+    Z_{EXT} = \bigg(\frac{1}{Z_{scope}}+\frac{1}{R_{EXT}}\bigg)^{-1}.
+    \label{eqn:corrected_Rext}
+\end{equation}
+
+\par We now know the limitations of our Impedance Spectroscopy DAQ circuit, an equation describing the bulk of the error, and
+
+\par Future impedance spectra can be calculated with equations \ref{eqn:corrected_IV} and \ref{eqn:corrected_Rext}, or non-corrected I-V impedance spectra can be corrected as follows:
+
+\begin{equation}
+    Z_{DUT} = Z_{NC}\bigg(\frac{Z_{EXT}}{R_{EXT}}\bigg),
+\end{equation}
+
+\noindent Where $Z_{NC}$ is the non-corrected I-V impedance spectra.
+
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
+    \caption{Bode plot of the ratio of the voltage out of the DUT to the voltage in.}
+    \label{fig:test_circuit_bode}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/awesome_view.jpg}
+        \caption{Ideal test circuit}
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/awesome_view.jpg}
+        \caption{Implemented test circuit}
+    \end{subfigure}
+    \caption{Circuit measured and modeled. Need to include parameter values. Consider moving to the models section.}
+    \label{fig:IS_DAQ_test_circuit}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/spice-measured-comp_mag-phase.png}
+        \caption{Impedance spectra in polar form.}
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
+        \caption{Bode plot of the ratio of the voltage out of the DUT to the voltage in.}
+    \end{subfigure}
+    \caption[Comparison of measured and simulated response of test circuit.]{A comparison of the measured data, ideal simulation, and simulation with non-ideal scopes. The simulations implemented spice to calculate the test capacitor with I-V method. The measured and modeled test circuit is described in figure \ref{}}
+    \label{fig:test_circuit_impedance_spectra}
+\end{figure}
+
+\par NOTE: Should go back and look at assumption for EDL values for micro electrodes and calculate what the equivalent capacitor. Compare to the DUT capacitor used. Answer: Using the experimentally determined EDL capacitance for titanium electrodes of 6$\mu$F/cm$^2$, as determined by Gongadze \cite{_gongadze.pdf_????}, and assuming that each electrode has fluid contact area of 11.5$\mu$m by 15$\mu$m, eachn electrode would have a capacitance of 10.35 pF, and system EDL capacitance of 5.175 pF. Using a capacitor of 10 pF is well within the margin of error and should model device response. 
+
+\par NOTE: should add IS data to an circuit overlay. May be similar curve and confirm our assumption.
+
+\par Furthermore, our EDL capacitance assumption is further validated by the overlay of the buffer empirical data.
+
+\par NOTE: Consider error caused by oscilloscopes and compensate real data. In addition, attempt to subtract theoretical capacitance from data.
+
+\par NOTE: Consider adding rectangular impedance data. Illustrates how the oscilliscopes create a phantom resistor that 
+
+\par NOTE: Should validate circuit model is correct by running in spice.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/measurementError.png}
+    \caption{The percent error of the recorded data and the spice model with scopes with respect to the ideal spice model. (Reconsider inclusion. Replace with data post correction and another displaying the error due to the oscilloscopes and error to empirical data)}
+    \label{fig:test_circ_measurement_error}
+\end{figure}
+
+\subsection{Impedance Spectroscopy Reproducibility}
+
+\par To characterize and assess the operation of the impedance spectroscopy chip, PBS medium samples were tested over the of three consecutive days to examine the reproducibility of the device, and deionized water, PBS medium, and PBS with 7 $\mu$m beads were tested to characterize device response to multiple solutions and to attempt a measurement of particles.
+
+\par Figure \ref{fig:IS_data_reproducibility} displays the impedance spectra of PBS over three consecutive days and figure \ref{fig:IS_data_reproducibility_SD} shows the standard deviation of the sample set. Although a larger sample set covering more days would be desirable, the repeated impedance spectra behaviour and tight standard deviation imparts confidence of reproducibility.
+
+\par With all the recorded data, signals became incoherent at low frequencies with high impedance loads. Data became , the data will gibberish the impedance magnitude will sometimes flatline, and 
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{\textwidth}
@@ -185,6 +329,10 @@
     \caption{Reproducibility of the demonstrated with repeated measurement of phosphate buffered solution over a span of three days.}
     \label{fig:IS_data_reproducibility}
 \end{figure}
+
+\subsection{Impedance Spectroscopy Performance}
+
+\par Impedance spectra for DI water, PBS, and 7 $\mu$m beads suspended in PBS were acquired and representive samples are displayed in figure \ref{fig:IS_data_beads_pbs_DI_comp}. The collected data met the expectations set by the material properties (NOTE: include table of material properties somewhere. methods? intro?). Deionized water exhibited the highest impedance with its low conductance, the conductive PBS responded with a significantly lower impedance, and the polystyrene beads suspended in PBS exhibited a larger capacitive load than the PBS by itself. However, as mentioned previously in the reproducibility 
 
 \begin{figure}[h]
     \centering
@@ -207,7 +355,7 @@
 %        \includegraphics[width=\textwidth]{images/raw_IS_%data_nyquist.png}
 %        \caption{Jammed}
 %    \end{subfigure}
-    \caption[PBS, DI, microbead IS Raw data comparison.]{Comparison of impedance spectroscopy results using raw measurements of phosphate buffered solution, de-ionized water, and the chamber saturated with 7 $\mu$m polystyrene beads.}
+    \caption[PBS, DI, microbead IS Raw data comparison.]{Comparison of impedance spectroscopy results using raw measurements of phosphate buffered solution, de-ionized water, and the chamber saturated with 7 $\mu$m polystyrene beads suspended in PBS.}
     \label{fig:IS_data_beads_pbs_DI_comp}
 \end{figure}
 
@@ -236,6 +384,10 @@
     \label{fig:IS_data_pbs_pbsBeads_difference}
 \end{figure}
 
+\par NOTE: Should include simulation to match empirical IS results.
+
+\par NOTE: Consider rearranging order of results. Device fabrication -> IS DAQ validation -> Modeling -> Impedance Spectroscopy results -> simulations to match results (If possible)
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{\textwidth}
@@ -257,10 +409,15 @@
     %    \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_nyquist.png}
     %    \caption{Jammed}
     %\end{subfigure}
-    \caption[Truncated phasor difference between PBS, and micro-bead saturated PBS.]{Phasor difference between the PBS solution, and PBS solution saturated with 7$\mu$m microbeads. The data was truncated to the reliable frequency range of $10^4$ to $3x10^6$ hz.}
+    \caption[Truncated phasor difference between PBS, and micro-bead saturated PBS.]{Phasor difference between the PBS solution, and PBS solution saturated with 7$\mu$m microbeads. The data was truncated to the reliable frequency range of $10^4$ to $3$x$10^6$ hz.}
     \label{fig:IS_data_beads_pbs_DI_comp}
 \end{figure}
 
+
+
+\FloatBarrier
+
+\subsection{Corrected Impedance Spectra}
 
 \FloatBarrier
 
@@ -268,7 +425,11 @@
 
 \subsection{Impedance Spectroscopy Results}
 
-\begin{figure}[h]
+\par Imepedance response for the analytic solution, the simple FEA model, and the device model were calculated for medium saturation and a single cell suspension. The analytic solution utilized the power volume fraction discussed in section \ref{sec:novelVolumeFraction}. For details on the material properties used see table \ref{tab:fea_materials}. Additional information on the analytic solution is available in section \ref{sec:maxwell_mixture_theory} and details on the FEA model are available in section \ref{sec: FEA}. 
+
+\par The results for the medium impedance spectra are given in figure \ref{fig:medium_model_IS_data}. As expected, the impedance behaves as a resistor capacitor elements in parallel configuration with a single relaxation starting around 100 Mhz, wich is governed by the medium dielectric properties. In reality, there would be an additional (and much larger) relaxation governed by polarization at the electrode-medium interface--the electric double layer. For these simulations the electric double layer phenomenon was excluded and addressed seperately.
+
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
@@ -293,7 +454,9 @@
     \label{fig:medium_model_IS_data}
 \end{figure}
 
-\begin{figure}[h]
+\par With the inclusion of a single cell in the medium, the impedance spectra develops new features. The simulated impedance spectras are depicted in figure \ref{fig:single_cell_model_IS_data}. The effect of the single cell is small, but can be readily identified as a small relaxation starting around 10 Mhz. The small size of the characteristic single cell suspension in comparison to the medium impedance spectrum highlights the importance sensitivity optimization. The device model, which features a smaller device sensitivity, generated data with a significantly less identifiable cell suspension effect. 
+
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
@@ -318,20 +481,20 @@
     \label{fig:single_cell_model_IS_data}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/IS_model_difference_mag_phase.png}
-        \caption{Impedance spectra in polar form.}
-    \end{subfigure}
-    \\
-    \vspace{0.1 in}
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/IS_model_difference_real_imag.png}
-        \caption{Impedance spectra in rectangular form.}
-    \end{subfigure}
+%\begin{figure}[h]
+%    \centering
+%    \begin{subfigure}[b]{\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{images/IS_model_difference_mag_phase.png}
+%        \caption{Impedance spectra in polar form.}
+%    \end{subfigure}
+%    \\
+%    \vspace{0.1 in}
+%    \begin{subfigure}[b]{\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{images/IS_model_difference_real_imag.png}
+%        \caption{Impedance spectra in rectangular form.}
+%    \end{subfigure}
 %    \\
 %    \vspace{0.1 in}
 %    \begin{subfigure}[b]{\textwidth}
@@ -339,9 +502,12 @@
 %        \includegraphics[width=\textwidth]{images/IS_model_difference_nyquist.png}
 %        \caption{Jammed}
 %    \end{subfigure}
-    \caption[Phasor difference between model mixture and medium impedance spectrum.]{Phasor difference between model mixture and medium impedance spectrum generated by the analytic impedance solution, the simple FEA model, and the device FEA model.}
-    \label{fig:single_cell_model_IS_data}
-\end{figure}
+%    \caption[Phasor difference between model mixture and medium impedance spectrum.]{Phasor difference between model mixture and medium impedance spectrum generated by the analytic impedance solution, the simple FEA model, and the device FEA model.}
+%    \label{fig:single_cell_model_IS_data}
+%\end{figure}
+
+
+\par To somewhat isolate the effect of the simulated cell, the difference between the single cell suspension and medium impedance spectra were generated. Figure \ref{fig:IS_model_difference_fcm_overlay}
 
 \begin{figure}[h]
     \centering
@@ -361,6 +527,8 @@
     \caption[Clausius Mossotti factor overlaid on IS model data.]{Clausius Mossotti factor overlaid on phasor difference between mixture and medium impedance spectrum model data generated from the analytic solution, the simple FEA model, and the device FEA model. It is clearly depicted how the impedance spectra tracks Clausius Mossotti factor, and illustrates how the impedance responds to cell-medium dielectric dispersions.}
     \label{fig:IS_model_difference_fcm_overlay}
 \end{figure}
+
+
 
 \begin{figure}[h]
     \centering
@@ -408,13 +576,21 @@
     \label{fig:device_current_denisty plot}
 \end{figure}
 
-Discuss the calculated device inefficiency.
+\par One thing to note is the impedance magnitude for the device model is significantly smaller than the simple model. As depicted in figure \ref{fig:device_current_denisty plot}, it can be seen that the overlap of a flush channel and an electrode opens up an additional current path. To measure the designed device inefficiency, a surface integration of current density of the electrode region overlapping with the flush channel was calculated. 27.53\% and 29.29\% of the system current flowed through the flush channel electrode region without and with a cell in the sensor region respectively. The side channel inefficiency will effectively decrease the system cell constant and the effective volume fraction with the net effect of decreasing the device sensitivity.
 
 \FloatBarrier
 
-\subsection{optimization}
+\subsection{Solution Optimization}
+
+\par An important take away from figure \ref{fig:IS_model_difference_fcm_overlay} is at what locations dielectric dispersions and Maxwell relaxation is occuring. For the parameters chosen in our single cell impedance spectroscopy models, dielectric relaxations occur above 40 MHz, the high frequency limit of our current impedance spectroscopy system. This is a strong impetus for us to revisit our IS DAQ and increase our operational frequency limit. There is another solution, albeit its flexibility is severely limited: changing the properties of the medium. The driving parameters in Clausius Mossotti factor are the dielectric properties of the medium and the particle. Given that we are to determine to measure said particle, that leaves us with altering the medium properties. Figure \ref{fig:FCM at different mediums } and \ref{fig: maxwell-wagner relaxation} depict how the frequencies of interest change as a function of medium properties. However, this method may be limited (or even non-available) depending on the application and the sensitivity of the target particle to the surrounding medium. For instance, the use of a hypotonic solution could lead to the swelling or rupture of cells such as erythrocytes.
+
+\par NOTE: Include charts for FCM with different mediums and chart for maxwell-wagner. Should ensure proper discussion and equations occur in modeling and/or background section
 
 
+\subsection{Device Optimization}
+
+
+\subsection*{FEA Sensitivity Curves}
 
 \begin{figure}[h]
     \centering
@@ -453,6 +629,11 @@ Discuss the calculated device inefficiency.
 
 \par It should be noted that the sensitivity curve for the FEA models is significantly "noisier" than the difference curves. This is likely due to "mesh noise". COMSOL generates a new mesh for each simulation in the parametric study. What is referred to as "mesh noise" is the accumulation of effects on results caused by differences in meshes. The appearance of "mesh noise" is a clear signal that the meshing scheme needs to revisited, as the purpose of mesh refinement is to remove the effect of meshes from the model. In this case, the mesh refinement was limited by system running COMSOL, but is definitely an area of future improvement. The sensitivity curves appear noisier due to the magnification of mesh noise from the extra operation on the results.
 
+\par Although the mesh noise for the device model is severe, two are apparent in both the simple and device model.
+
+\par The electrode gap is optimized at ?? around 5 microns. An intuitive reason behind this optimal electrode gap becomes apparent by observing the impedance difference curve. The impedance difference increases with the impedance gap. This is because as the electrode gap increases, the power felt by the cell increases. Likewise, the actual affect of the electrode width appears to be small, but even appears to increase the sensitivity with increased width. By widening the electrodes we are decreasing the cell constant (i.e. allowing more current flow) while the channels that the current must flow through decreases, at least until a certain point where a limit appears to be reached when current flowing from the electrode extremities is met with very high resistance. However, if the electric double layer was included in the model, and modeled as distributed capacitance over the electrodes, the wider the electrode the better since increased surface area would increase the capacitance and thus decrease impedance contributed by the electric double layer. 
+\par With a smaller electrode gap the, more current travels the small distance between the electrodes an
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -483,6 +664,8 @@ Discuss the calculated device inefficiency.
     \label{fig:device_sensitivity}
 \end{figure}
 
+\par Figure \ref{fig:device_sensitivity_average} attempts to clarify the electrode and and width sensitivity trends by averaging over countour lines.
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -499,6 +682,18 @@ Discuss the calculated device inefficiency.
     \caption[Device sensitivity average]{Device sensitivity average}
     \label{fig:device_sensitivity_average}
 \end{figure}
+
+\par Electrode optimization was further clarified by using the analytic impedance solution to generate a higher resolution difference and sensitivity curves within a small fraction of the time required to generate the FEA derived results. 
+
+\par Without any mesh noise, the effect of electrode geometry on the device sensitivity is clear. 
+
+\par As the electrode gap increases, the amount of power felt by the cell increases, although the benefit of the increasing electrode gap begins to taper off. At the same time, the amount of medium the current travels through increases with the electrode gap increase. The balance between where the tapering power of the cell balances with the steadily increasing power of the medium is the optimal electrode location.
+
+\par Although we did find an optimal electrode geometry for the 
+
+\par Taking into account the channel height, the smaller the channel height the better. More current is forced to travel 
+
+\subsection{Analytic Solution Sensitivity Curves}
 
 \begin{figure}[h]
     \centering
@@ -621,100 +816,3 @@ Discuss the calculated device inefficiency.
     \label{fig:analytic_sensitivity}
 \end{figure}
 
-\FloatBarrier
-
-\section{IS DAQ Validation and Measurement Analysis}
-
-\par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit} was physically implemented and tested, and simulated in SPICE with and without oscilloscopes. As illustrated in the bode plot of figure \ref{fig:test_circuit_bode} and the impedance spectra of \ref{fig:test_circuit_impedance_spectra}, the measured data and the SPICE model with scopes data largely matched. However, there were large deviations from the ideal SPICE model without any of the limitations of a DAQ system. This demonstrates how the application of passive oscilloscopes with the I-V method can cause large errors that grow with higher frequencies. Rerffering to figure \ref{fig:IS_DAQ_test_circuit}, oscilloscope 1 attached to V1 has very little effects on the I-V results, however, part of the I-V method is the assumption that all current flowing through the DUT is also flowing through the external resistor $R_{EXT}$. With the connection of oscilloscope 2 to node V2, this is no longer true, and as the applied frequency increases, non-negligible current leaks through the oscilloscope's capacitance. The percent error of the in figure \ref{fig:test_circuit_bode}. Although it is true that the error 
-
-\par Figure \ref{fig:test_circ_measurement_error} also demonstrates, that although the modelled limitations of the passive probes used accounts for a significant amount of the IS DAQ error, there are unaccounted effect. At low frequencies, the recorded data reports an error on the magnitude of 10\% whereas the oscilloscope simulation reported an error on the magnitude of 3\%. In addition, starting at frequencies of 6 MHz, the measured data depicts further deviations. The low frequency errors may be attributed to a myriad of reason including the parasitic capacitance of the breadboard, and deviations in the actual versus reported values of the oscilloscope's, external resistor's, and test capacitor's capacitance and resistance. The high frequency deviations may be due to parasitic inductance in the system that is unaccounted for in the SPICE models.
-
-\par With this empirical confirmation, a corrective term can be derived to adjust the measured impedance spectra to a corrected impedance spectra. Revisiting the impedance solution for I-V method we have 
-\begin{equation}
-    Z_{DUT} = \frac{V_1 - V_2}{I}.
-\end{equation}
-
-\par In ideal scenarios, we would assume all current flows through the external resistor and then $I = V_2 / R_{EXT}$. However, we know that is not true: the non-ideal properties allows current to flow through our attached oscilloscopes and this current must be accounted for. 
-\begin{equation}
-    Z_{DUT} = \bigg(\frac{V_1 - V_2}{V_2}\bigg)Z_{EXT},
-    \label{eqn:corrected_IV}
-\end{equation}
-\noindent where
-\begin{equation}
-    Z_{EXT} = \bigg(\frac{1}{Z_{scope}}+\frac{1}{R_{EXT}}\bigg)^{-1}.
-    \label{eqn:corrected_Rext}
-\end{equation}
-
-\par Future impedance spectra can be calculated with equations \ref{eqn:corrected_IV} and \ref{eqn:corrected_Rext}, or non-corrected I-V impedance spectra can be corrected as follows:
-
-\begin{equation}
-    Z_{DUT} = Z_{NC}\bigg(\frac{Z_{EXT}}{R_{EXT}}\bigg),
-\end{equation}
-
-\noindent Where $Z_{NC}$ is the non-corrected I-V impedance spectra.
-
-
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
-    \caption{Bode plot of the ratio of the voltage out of the DUT to the voltage in.}
-    \label{fig:test_circuit_bode}
-\end{figure}
-
-
-
-\begin{figure}[H]
-\centering
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/awesome_view.jpg}
-        \caption{Ideal test circuit}
-    \end{subfigure}
-    \\
-    \vspace{0.1 in}
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/awesome_view.jpg}
-        \caption{Implemented test circuit}
-    \end{subfigure}
-    \caption{Circuit measured and modeled. Need to include parameter values. Consider moving to the models section.}
-    \label{fig:IS_DAQ_test_circuit}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/spice-measured-comp_mag-phase.png}
-        \caption{Impedance spectra in polar form.}
-    \end{subfigure}
-    \\
-    \vspace{0.1 in}
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
-        \caption{Bode plot of the ratio of the voltage out of the DUT to the voltage in.}
-    \end{subfigure}
-    \caption[Comparison of measured and simulated response of test circuit.]{A comparison of the measured data, ideal simulation, and simulation with non-ideal scopes. The simulations implemented spice to calculate the test capacitor with I-V method. The measured and modeled test circuit is described in figure \ref{}}
-    \label{fig:test_circuit_impedance_spectra}
-\end{figure}
-
-\par NOTE: Should go back and look at assumption for EDL values for micro electrodes and calculate what the equivalent capacitor. Compare to the DUT capacitor used. Answer: Using the experimentally determined EDL capacitance for titanium electrodes of 6$\mu$F/cm$^2$, as determined by Gongadze \cite{_gongadze.pdf_????}, and assuming that each electrode has fluid contact area of 11.5$\mu$m by 15$\mu$m, eachn electrode would have a capacitance of 10.35 pF, and system EDL capacitance of 5.175 pF. Using a capacitor of 10 pF is well within the margin of error and should model device response. 
-
-\par NOTE: should add IS data to an circuit overlay. May be similar curve and confirm our assumption.
-
-\par Furthermore, our EDL capacitance assumption is further validated by the overlay of the buffer empirical data.
-
-\par NOTE: Consider error caused by oscilloscopes and compensate real data. In addition, attempt to subtract theoretical capacitance from data.
-
-\par NOTE: Consider adding rectangular impedance data. Illustrates how the oscilliscopes create a phantom resistor that 
-
-\par NOTE: Should validate circuit model is correct by running in spice.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/measurementError.png}
-    \caption{The percent error of the recorded data and the spice model with scopes with respect to the ideal spice model. (Reconsider inclusion)}
-    \label{fig:test_circ_measurement_error}
-\end{figure}

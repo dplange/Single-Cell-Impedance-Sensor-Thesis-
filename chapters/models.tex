@@ -518,7 +518,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 \par The top chart in figure \ref{fig:is_app_Efield_volume_fraction} depicts the logarithm electric field magnitude of the co-planar electrode system. Since this analytic impedance solution describes an infinitely long channel, the width of the calculated electric field must be truncated. The user is given the ability to control the width of the data calculated with the \textit{Plot width multiplier} parameter. The parameter determines the width of calculated electric field with the following relation:
 
 \begin{equation*}
-        \text{Data Width} = (\text{Plot width multiplier})*(2w_{electro} + g_{electro}}),
+        \text{Data Width} = (\text{Plot width multiplier})*(2w_{electro} + g_{electro}),
 \end{equation*}
 
 where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between the electrodes. In addition, the user can specify the color bar range plotted with the \textit{Color Axis Max} and \textit{Color Axis Min} parameters. Altering these parameters is useful when the area of interest is over-saturated by the color axis extrema, or the user desires to identify where a bounded range of the electric field magnitude occurs. If the plot cell checkbox is selected, the orthodrome perimeter of the cell is plotted.
@@ -762,6 +762,7 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
 
 %%% Validation
 \subsection{Model Validation}
+\label{sec:model_validation}
 \par The FEA models were validated by comparing the analytic impedance solutions to the results of the simple medium and the simple cell models. The analytic solutions were calculated using the the dimensions of the figure \ref{fig:simple_model_geometry}, the material properties in table \ref{tab:fea_materials}, direct current, and utilizing both the traditional and power fractions. The results of the analytic impedance solutions were overlayed on the simple model convergence studies and presented in figure \ref{fig:simple_medium_validation} and \ref{fig:simple_cell_validation}.
 
 \begin{figure}[h]
