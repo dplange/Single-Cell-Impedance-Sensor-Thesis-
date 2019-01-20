@@ -693,7 +693,19 @@ The first attempt for device alignment resulted in a delamination of gold from t
 
 \par Taking into account the channel height, the smaller the channel height the better. More current is forced to travel 
 
+\FloatBarrier
+
 \subsection{Analytic Solution Sensitivity Curves}
+
+\par There are three main advantages to using the analytic impedance solution for optimization over finite element methods:
+
+\begin{enumerate}
+	\item significantly faster run time, allowing for far higher resolutions over far greater ranges.
+	\item General solution that isolates the effect of the electrode out from more complicated geometries.
+	\item No mesh noise. Parametric analysis does not bring in the effects of remeshing and effectively removes the effect of mesh artifacts from the simulation.
+\end{enumerate}
+
+\par To explore device behavior and optimization, the analytic solution is used to calculate the device sensitivity with Sun's method and the power volume over the same range as the FEA parametric analysis to compare results. The more efficient power volume method is then used to significantly expand the domain of the sensitivity analysis, by exploring increased ranges in electrode gap and width, channel height, and particle location and size. 
 
 \begin{figure}[h]
     \centering
