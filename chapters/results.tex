@@ -1,13 +1,16 @@
 
-\section{Device Frabrication}
+\section{Device Fabrication}
 
-\subsection{PDMS channels}
+\par A functional impedance spectroscopy chip was successfully fabricated. To create the chip, a PDMS cast was successfully fabricated and validated; a microelectrode fabrication process was developed, and a viable electrode set was created; and the PDMS cast and electrodes were successfully aligned and bonded.
+
+\subsection{PDMS Cast}
+\label{sec:PDMS_cast_fabrication}
 
 \par Due to the limitations of using the 20,000 DPI photo-plotting service of CAD/Art Services Inc, the produced transparency is only accurate to 8 microns. Consequently, while widths and lengths remained largely unaffected, features, such as square corners on the resolution of microns, were lost. The produced mask largely matched the CAD drawing with the exception of the rectangular cell capture/measurement chamber, which was reduced to a diamond shape. This effect was expected and replicated the results of Josh Fadriquela \cite{fadriquela_design_2009-1}. Increased accuracy and resolution can be achieved using chrome masks, but at a premium cost that is outside the scope of this project and unnecessary for its goals. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/su8_results.png}
+    \includegraphics[width=0.7\textwidth]{images/su8_results.png}
     \caption{SU-8 photoresist as the master mold for PDMS micro-fluidic channels.}
     \label{fig:su8_results}
 \end{figure}
@@ -17,23 +20,23 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/300umWideChannel.png}
+    \includegraphics[width=0.8\textwidth]{images/300umWideChannel.png}
     \caption[Surface profile of a 300 micron wide channel on the SU-8 master mold.]{Surface profile of a 300 micron wide channel on the SU-8 master mold. The profile was captured with the Ambios XP-1 profilometer. The profilometer recorded a channel height of 9.6 microns.}
     \label{fig:profilometer_300um_channel}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/10umWideAndSidewaysThrough100umWide.png}
+    \includegraphics[width=0.8\textwidth]{images/10umWideAndSidewaysThrough100umWide.png}
     \caption[Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold.]{Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold. The profile was captured with the Ambios XP-1 profilometer. The data depicts the 100 micron channel as about 140 microns wide since it crossed the channel at 45$^\circ$. The profilometer recorded a channel height of 9 and 9.6 microns for the 10 micron and 100 micron channels respectively.}
     \label{fig:profilometer_10um_channel_100um_sideways}
 \end{figure}
 
-\par PDMS casts were successfully fabricated from the SU-8 molds and operational validation was successfully performed by plasma bonding the casts to glass blanks, and verifying channel flow with no leaks or clogs. Figure \ref{fig:pdms_results} displays a typical PDMS cast.
+\par PDMS casts were successfully fabricated from the SU-8 molds and operation was validated by successfully plasma bonding the casts to glass blanks and verifying channel flow with no leaks or clogs. Figure \ref{fig:pdms_results} displays a typical PDMS cast.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/PDMS_channels.png}
+    \includegraphics[width=0.7\textwidth]{images/PDMS_channels.png}
     \caption{PDMS cast from the master mold. Once bonded to a glass substrate, the cast will form the micro-fluidic channels of the device.}
     \label{fig:pdms_results}
 \end{figure}
@@ -43,7 +46,7 @@
 
 \subsection{Electrode Fabrication}
 
-\par Prior to this thesis, the micro-electrode fabrication process at Cal Poly was undeveloped and was developed through the course of this thesis. As a result, the fabrication process turned into an iterative approach of tuning process parameters and was met with many failures.
+\par The micro-electrode fabrication process was developed with Dr. Ben Hawkins and Jack Foley through the course of this thesis. The fabrication process was developed with an iterative approach of tuning process parameters and was met with many failures.
 
 \begin{figure}[h]
     \centering
@@ -84,9 +87,9 @@
     \label{fig:failed_elecftrodes_micro}
 \end{figure}
 
-\par The poor durability of the electrodes was attributed to an overall ineffectiveness of the chromium adhesion layer meant to glue the gold to the glass substrate. The process step of transferring the chromium sputtered wafer from the CrC-150 to the Denton Desk 5 sputtering system for gold deposition was identified as a likely candidate for the poor chromium-gold adhesion and hypothesized that the formation of chromium oxide during the wafer's exposure to atmosphere was the poor-adhesion culprit. In a short-term fix, the wafers were held in vacuum until they were quickly transported to the Denton Desk 5. Future microelectrode fabrication processes should take advantage of dual-target sputtering system that can sputter chromium and gold sequentially while maintaining vacuum.  
+\par The poor durability of the electrodes was attributed to an overall ineffectiveness of the chromium adhesion layer meant to glue the gold to the glass substrate. The process step of transferring the chromium sputtered wafer from the CrC-150 to the Denton Desk 5 sputtering system for gold deposition was identified as a likely candidate for the poor chromium-gold adhesion and hypothesized that the formation of chromium oxide during the wafer's exposure to atmosphere was the poor-adhesion culprit. In a short-term fix, the wafers were held in vacuum until they were quickly transported to the Denton Desk 5. Future microelectrode fabrication processes should take advantage of a dual-target sputtering system that can sputter chromium and gold in series while maintaining vacuum.  
 
-\par With a remedied procedure, two additional sets of electrodes were fabricated. Figure \ref{fig:good_electrodes} depicts representative results fabrication results. Overall, both sets of electrodes appeared with no initially visible cracking or delamination. However, as discussed in the following section, a set of electrodes still had adhesion issues and we only successfully fabricated one viable set of electrodes.
+\par With a remedied procedure, two additional sets of electrodes were fabricated. Figure \ref{fig:good_electrodes} depicts representative fabrication results. Overall, both sets of electrodes appeared with no initially visible cracking or delamination. However, as discussed in the following section, a set of electrodes still had adhesion issues and we only successfully fabricated one viable set of electrodes.
 
 \begin{figure}[h]
     \begin{subfigure}[b]{\textwidth}
@@ -117,11 +120,7 @@
 
 \subsection{Device Bonding}
 
-\par By the end of the electrode fabrication process, we had what appeared like two well-adhered and integral electrode chips. 
-
-\par Alignment for bonding was completed by hand and needed to be corrrectly aligned on the order of microns. 
-
-The first attempt for device alignment resulted in a delamination of gold from the chromium adhesion layer. Although non-functional, the bonding process for the device was continued to completion. The result of the alignment and bonding is depicted figure \ref{fig:bad_device}. The device exhibited good glass-PDMS adhesion, and was later used to test microfluidics operations and particle capture with good results.
+\par By the end of the electrode fabrication process, we had what appeared like two well-adhered and integral electrode chips. Alignment for bonding was completed by hand. The first attempt of device alignment resulted in delamination of gold from the chromium adhesion layer. Although non-functional, the bonding process for the device was continued to completion. The result of the alignment and bonding is depicted figure \ref{fig:bad_device}. The device exhibited good glass-PDMS adhesion, and was later used to test microfluidics operations and particle capture with good results.
 
 \begin{figure}[h]
     \centering
@@ -130,7 +129,7 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \label{fig:bad_device}
 \end{figure}
 
-\par The second attempt resulted in a successful alignment and bonding. Figure \ref{fig:good_device} displays the alignment and bonding results for device 2. There is a rotational device misalignment, but is centered on the sensor chamber where the electrodes are very nearly perfectly aligned. This rotational misalignment is expected to have no effect on the recorded impedance spectra. The electrodes survived the alignment process with no delamination or cracks. Plasma bonding produced  strong PDMS-glass adhesion. 
+\par The second attempt resulted in a successful alignment and bonding. Figure \ref{fig:good_device} displays the alignment and bonding results for device 2. There is a rotational device misalignment, but is centered on the sensor chamber where the electrodes are nearly perfectly aligned. This rotational misalignment is expected to have no effect on the recorded impedance spectra. The electrodes survived the alignment process with no delamination or cracks. Plasma bonding produced  strong PDMS-glass adhesion. 
 
 \begin{figure}[h]
     \centering
@@ -145,19 +144,11 @@ The first attempt for device alignment resulted in a delamination of gold from t
 
 \section{Impedance Spectroscopy System}
 
-\par To characterize and evaluate the current of the impedance spectroscopy system, three overarching tests were executed: validation, reproducibility, and performance.
+\par To characterize and evaluate the impedance spectroscopy system, the microfluidic performance of the IS chip was evaluated, the impedance spectroscopy measurement system was validated, and the performance of impedance spectroscopy with the IS chip was analyzed. 
 
-\subsection{Microfluidic Evaluation}
+\subsection{Microfluidic Performance Evaluation}
 
-\par As expected and discussed previously, the current microfluidic design is not capable of isolating a single cell. This is largely due to the tolerances of the transparency masks. Chromium transparencies allow for tighter dimensions, but at a premium cost. 
-
-\par However, the device was evaluated on the basis of flowing solutions, and 
-
-\par Validation and device performance were performed simultaneously by observing the bead suspension saturating the sensor region. 
-
-\par The microfluidic system did fail reproducibility, due to systemic channel debris. Future fabrication of the device should keep a keen eye for channel debris, and if neccessary, revisit and revise process procedures. 
-
-\par See figure \ref{fig:assembled_good_device} for the fully assembled impedance spectroscopy chip.
+\par As expected and discussed in chapter \ref{ch: introduction}, the current microfluidic design is not capable of isolating a single cell. This is largely due to the tolerances of the transparency masks as discussed in section \ref{sec:PDMS_cast_fabrication}. However, the device was evaluated on its ability to flow solutions, saturate the sensor chamber with beads, and clear the sensor chamber of beads. See figure \ref{fig:assembled_good_device} for the fully assembled impedance spectroscopy chip under testing. 
 
 \begin{figure}[h]
     \centering
@@ -166,7 +157,7 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \label{fig:assembled_good_device}
 \end{figure}
 
-\par Unfortunately, our single viable chip was littered with debris. Using the the Harvard Apparatus syringe pumps, PBS and DI water was successfully pumped into impedance spectroscopy chip. However, the introduction of polystyrene beads initiated debris flow. With a careful application of alternating flow, we succeeded in testing the device over several days and testing the device with DI water, PBS, and a saturated chamber of 7 micron polystyrene beads. The device was ultimately jammed and delaminated.
+\par Using the the Harvard Apparatus syringe pumps, PBS and DI water were successfully pumped into impedance spectroscopy chip. However, the introduction of 7 $\mu$m polystyrene beads initiated debris flow. With a careful application of alternating flow, we succeeded in saturating and flushing the sensor region of polystyrene beads over several days. The device was ultimately jammed and delaminated under applied pressure.
 
 \begin{figure}[h]
     \centering
@@ -198,15 +189,13 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \label{fig:IS_sensor_reigon_measurement}
 \end{figure}
 
-\par Fortuneately, a sizable, but limited, body of data was collected. The following section describes the collected data and characterizes the device response to deionized water, phosphate buffered solution, and a suspension of polystyrene beads.
+\par Fortunately, a sizable, but limited, body of data was collected. The following section describes the collected data and characterizes the device response to deionized water, phosphate buffered solution, and a suspension of polystyrene beads.
 
 \FloatBarrier
 
-\subsection{Impedance Spectroscopy System Validation}
+\subsection{Impedance Spectroscopy Measurement System Validation}
 
-\par The validation of the impedance spectroscopy system focused on the data acquisition system and the impedance calculating circuit. Operation utilizing the cell impedance chip was reserved for the reproducibility and performance studies
-
-
+\par The validation of the impedance spectroscopy system focused on the data acquisition system and the impedance calculating circuit. Operation utilizing the cell impedance chip was reserved for the following section.
 
 \par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit} was physically implemented and tested, and simulated in SPICE with and without oscilloscopes. As illustrated in the bode plot of figure \ref{fig:test_circuit_bode} and the impedance spectra of \ref{fig:test_circuit_impedance_spectra}, the measured data and the SPICE model with scopes data largely matched. However, there were large deviations from the ideal SPICE model without any of the limitations of a DAQ system. This demonstrates how the application of passive oscilloscopes with the I-V method can cause large errors that grow with higher frequencies. Rerffering to figure \ref{fig:IS_DAQ_test_circuit}, oscilloscope 1 attached to V1 has very little effects on the I-V results, however, part of the I-V method is the assumption that all current flowing through the DUT is also flowing through the external resistor $R_{EXT}$. With the connection of oscilloscope 2 to node V2, this is no longer true, and as the applied frequency increases, non-negligible current leaks through the oscilloscope's capacitance. The percent error of the in figure \ref{fig:test_circuit_bode}. Although it is true that the error increases with frequency, part of this exponential growth is due to the ideal spectrum approaching 0, and causing the \% difference to approach an asymptote.  
 
@@ -332,7 +321,9 @@ The first attempt for device alignment resulted in a delamination of gold from t
 
 \subsection{Impedance Spectroscopy Performance}
 
-\par Impedance spectra for DI water, PBS, and 7 $\mu$m beads suspended in PBS were acquired and representive samples are displayed in figure \ref{fig:IS_data_beads_pbs_DI_comp}. The collected data met the expectations set by the material properties (NOTE: include table of material properties somewhere. methods? intro?). Deionized water exhibited the highest impedance with its low conductance, the conductive PBS responded with a significantly lower impedance, and the polystyrene beads suspended in PBS exhibited a larger capacitive load than the PBS by itself. However, as mentioned previously in the reproducibility 
+\par Impedance spectra for DI water, PBS, and 7 $\mu$m beads suspended in PBS were acquired and representive samples are displayed in figure \ref{fig:IS_data_beads_pbs_DI_comp}. The collected data met the expectations set by the material properties (NOTE: include table of material properties somewhere. methods? intro?). Deionized water exhibited the highest impedance with its low conductance, the conductive PBS responded with a significantly lower impedance, and the polystyrene beads suspended in PBS exhibited a larger capacitive load than the PBS by itself. However, as mentioned in the reproducibility study, low-frequency-high impedance loads continued to generate nonsense results and limit our viable frequency range.
+
+\par In an attempt to isolate the effect of suspended polystyren beads in the PBS solution, the raw phase data was corrected, and the real and imaginary impedance spectra was recalculated, and then the difference between pbs-bead suspension and the pbs solution was calculated. The results are depicted in figure \ref{fig:clean_IS_data_beads_PBS_DI_comp}.
 
 \begin{figure}[h]
     \centering
@@ -372,6 +363,7 @@ The first attempt for device alignment resulted in a delamination of gold from t
         \centering
         \includegraphics[width=\textwidth]{images/IS_data_clean_real_imag.png}
         \caption{IS results in rectangular form.}
+        \label{fig:clean_IS_data_beads_PBS_DI_comp}
     \end{subfigure}
     \\
     \vspace{0.1 in}
@@ -425,11 +417,13 @@ The first attempt for device alignment resulted in a delamination of gold from t
 
 \subsection{Impedance Spectroscopy Results}
 
-\par Imepedance response for the analytic solution, the simple FEA model, and the device model were calculated for medium saturation and a single cell suspension. The analytic solution utilized the power volume fraction discussed in section \ref{sec:novelVolumeFraction}. For details on the material properties used see table \ref{tab:fea_materials}. Additional information on the analytic solution is available in section \ref{sec:maxwell_mixture_theory} and details on the FEA model are available in section \ref{sec: FEA}. 
+\par Impedance response for the analytic solution, the simple FEA model, and the device model were calculated for medium saturation and a single cell suspension. The analytic solution utilized the power volume fraction discussed in section \ref{sec:novelVolumeFraction}. For details on the material properties used see table \ref{tab:fea_materials}. Additional information on the analytic solution is available in section \ref{sec:maxwell_mixture_theory} and details on the FEA model are available in section \ref{sec: FEA}. 
 
-\par The results for the medium impedance spectra are given in figure \ref{fig:medium_model_IS_data}. As expected, the impedance behaves as a resistor capacitor elements in parallel configuration with a single relaxation starting around 100 Mhz, wich is governed by the medium dielectric properties. In reality, there would be an additional (and much larger) relaxation governed by polarization at the electrode-medium interface--the electric double layer. For these simulations the electric double layer phenomenon was excluded and addressed seperately.
+\par The results for the medium impedance spectra are given in figure \ref{fig:medium_model_IS_data}.The medium impedance spectra behaves as resistor and capacitor elements in parallel with a single relaxation starting around 100 Mhz, which is governed by the medium dielectric properties. In practice, an additional relaxation, governed by the polarization at the electrode-medium inteface (i.e. the EDL), would occur and largely mask the medium and cell relaxations. For these simulations the electric double layer phenomenon was excluded and addressed separately.
 
-\begin{figure}[H]
+\par By comparing the three model results depicted in figure \ref{fig:medium_model_IS_data}, it can be noted that the device model has a significantly smaller impedance response than the analytic solution and the simple FEA model. This difference can be attributed to geometry and will be further explored later in this section. In addition, the analytic and simple model spectra are nearly identical, as expected since they model identical geometries.
+
+\begin{figure}[h]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
@@ -454,7 +448,7 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \label{fig:medium_model_IS_data}
 \end{figure}
 
-\par With the inclusion of a single cell in the medium, the impedance spectra develops new features. The simulated impedance spectras are depicted in figure \ref{fig:single_cell_model_IS_data}. The effect of the single cell is small, but can be readily identified as a small relaxation starting around 10 Mhz. The small size of the characteristic single cell suspension in comparison to the medium impedance spectrum highlights the importance sensitivity optimization. The device model, which features a smaller device sensitivity, generated data with a significantly less identifiable cell suspension effect. 
+\par With the inclusion of a single cell in the medium, the impedance spectra developed new dielectric dispersions. The simulated impedance spectra are depicted in figure \ref{fig:single_cell_model_IS_data}. According Pauly and Schwan, the addition of the single shelled cell into the system is expected to add two new relaxations to the impedance spectra: the Maxwell-Wagner relaxation that occurs from the polarization of the cell membrane with the medium, and the relaxation from polarization of the cytoplasm and medium at high frequencies when the cell membrane capacitance has been short-circuited \cit{paul&schwan},\cite{sun}. Refer to equations \ref{} and \ref{}, for the Pauly and Schwan description of these relaxations. The effect of the single cell is small, but can be readily identified as a small relaxation starting around 10 Mhz. However, the two distinct relaxations of the single shelled cell can't be distinguished among the large relaxation of the medium. The small size of the characteristic single cell suspension in comparison to the medium impedance spectrum highlights the importance of sensitivity optimization. The device model, which features a smaller device sensitivity, generated data with a significantly smaller relaxations due to the cell suspension. 
 
 \begin{figure}[H]
     \centering
@@ -506,15 +500,13 @@ The first attempt for device alignment resulted in a delamination of gold from t
 %    \label{fig:single_cell_model_IS_data}
 %\end{figure}
 
-
-\par To somewhat isolate the effect of the simulated cell, the difference between the single cell suspension and medium impedance spectra were generated. Figure \ref{fig:IS_model_difference_fcm_overlay}
-
-\begin{figure}[h]
+\begin{figure}[t!]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/IS_model_difference_mag_phase_CM_overlay.png}
         \caption{Clausius Mossotti factor overlaid on difference impedance in polar form.}
+        \label{fig:IS_model_difference_fcm_overlay_a}
     \end{subfigure}
     \\
     \vspace{0.1 in}
@@ -528,7 +520,23 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \label{fig:IS_model_difference_fcm_overlay}
 \end{figure}
 
+\par To isolate the effect of the simulated cell, the difference between the single cell suspension and medium impedance spectra were generated and are displayed in figure \ref{fig:IS_model_difference_fcm_overlay}. The spectra in figure \ref{fig:IS_model_difference_fcm_overlay} are ideal results that could be obtained from using two differential sets of electrodes, where one pair measures the single cell suspension, and the second identical pair measures a chamber of only medium. This is a powerful configuration for bypassing the overbearing presence of the electric double layer in the impedance data and to distinguish the effects of the single cell. With the effects of the cell isolated the two characteristic cell relaxations can be easily identified near 10 MHz and 100 MHz.
 
+\par In addition to the differential spectra, figure \ref{fig:IS_model_difference_fcm_overlay} also overlays the Clausius Mossotti factor. The Clausius Mossotti factor predicts the frequencies of dielectric dispersions, and can be used as a tool in system design and optimization. This application is further discussed in section \ref{sec:solution_optimization}.
+
+\par As similarly noted in the medium and mixture impedance spectra results, the difference device impedance is significantly less pronounced. However, there are now discrepancies between the analytic solution and the simple FEA spectra. The differences begin to manifest at the onset of the Maxwell-Wagner relaxation at 10 MHz. Although the frequency positions of the dispersions coincide, the magnitude and shape of their spectra differ. This is most notable in the impedance magnitude chart in figure \ref{fig:IS_model_difference_fcm_overlay_a}. Since the analytic solution, device model, and the Clausius Mossotti spectra share the same shape, the simple model is suspected to contain errors. It is important to consider that FEA difference spectra are a small fraction of the impedance of the medium and mixture models from which it is derived, and that error can be magnified in the difference spectra. The simple FEA model should be revisited in future works.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/deviceCellCurrent1Hz.png}
+    \caption[Current density plot of the FEA device model.]{Current density plot of the FEA device model at DC. The color mapping depicts the logarithm of the current density magnitude.}
+    \label{fig:device_current_denisty plot}
+\end{figure}
+
+\par One thing to note is the impedance magnitude for the device model is significantly smaller than the simple model. As depicted in figure \ref{fig:device_current_denisty plot}, it can be seen that the overlap of a flush channel and an electrode opens up an additional current path. To measure the designed device inefficiency, a surface integration of current density of the electrode region overlapping with the flush channel was calculated. 27.53\% and 29.29\% of the system current flowed through the flush channel electrode region without and with a cell in the sensor region respectively. The side channel inefficiency will effectively decrease the system cell constant and the effective volume fraction with the net effect of decreasing the device sensitivity.
+
+\par To aid in visualizing how the impedance spectra develop as a function of frequency, figure \ref{fig:single_cell_model_EZ_plots} plots the electric field lines and magnitude of the center cross-section of the FEA simple model at characteristic frequencies.
 
 \begin{figure}[h]
     \centering
@@ -569,18 +577,11 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \label{fig:single_cell_model_EZ_plots}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/deviceCellCurrent1Hz.png}
-    \caption[Current density plot of the FEA device model.]{Current density plot of the FEA device model at DC. The color mapping depicts the logarithm of the current density magnitude.}
-    \label{fig:device_current_denisty plot}
-\end{figure}
-
-\par One thing to note is the impedance magnitude for the device model is significantly smaller than the simple model. As depicted in figure \ref{fig:device_current_denisty plot}, it can be seen that the overlap of a flush channel and an electrode opens up an additional current path. To measure the designed device inefficiency, a surface integration of current density of the electrode region overlapping with the flush channel was calculated. 27.53\% and 29.29\% of the system current flowed through the flush channel electrode region without and with a cell in the sensor region respectively. The side channel inefficiency will effectively decrease the system cell constant and the effective volume fraction with the net effect of decreasing the device sensitivity.
 
 \FloatBarrier
 
 \subsection{Solution Optimization}
+\label{sec:solution_optimization}
 
 \par An important take away from figure \ref{fig:IS_model_difference_fcm_overlay} is at what locations dielectric dispersions and Maxwell relaxation is occuring. For the parameters chosen in our single cell impedance spectroscopy models, dielectric relaxations occur above 40 MHz, the high frequency limit of our current impedance spectroscopy system. This is a strong impetus for us to revisit our IS DAQ and increase our operational frequency limit. There is another solution, albeit its flexibility is severely limited: changing the properties of the medium. The driving parameters in Clausius Mossotti factor are the dielectric properties of the medium and the particle. Given that we are to determine to measure said particle, that leaves us with altering the medium properties. Figure \ref{fig:FCM at different mediums } and \ref{fig: maxwell-wagner relaxation} depict how the frequencies of interest change as a function of medium properties. However, this method may be limited (or even non-available) depending on the application and the sensitivity of the target particle to the surrounding medium. For instance, the use of a hypotonic solution could lead to the swelling or rupture of cells such as erythrocytes.
 
@@ -610,9 +611,6 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \begin{subfigure}[t]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/comsol_simple_gapXsensitivity.png}
-        
-        
-        
         \caption{Sensitivity vs. gap.}
     \end{subfigure}
     \hfill
@@ -624,6 +622,10 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \caption[Simple FEA model sensitivity]{Parametric study on device sensitivity using the Simple FEA model. The study varied the electrode width and gap from 5 $\mu$m to 15 $\mu$m and 1 $\mu$m to 10 $\mu$m respectively. The Simple FEA model held a channel height of 10 $\mu$m and a cell centered between the two electrodes with a center height of 5 $\mu$m. The sensitivity was calculated with equation \ref{eqn:Sun_sensitivity}. See section \ref{sec: FEA} for additional details on the Simple FEA model.} 
     \label{fig:simple_sensitivity}
 \end{figure}
+
+\par To optimize the geometry of the device, a parametric analysis based on the electrode gap and width were run on the simple and device FEA models at DC. For each model the electrode width and gap were varied from 5 $\mu$m 15 $\mu$m and 1 $\mu$m to 10 $\mu$m respectively. All other geometry remained unchanged. Further details on the FEA models can be found in section \ref{sec: FEA}.
+
+\par To better understand the results, the parametric curves are presented as the difference between the medium and cell suspension impedance, the sensitivity as defined by Sun in equation \ref{eqn:Sun_sensitivity}, the sensitivity curve projected onto the sensitivity-electrode gap plane, and the sensitivity projected onto the sensitivity-electrode width plane. The parametric study of the simple and device FEA model are presented in figure \ref{fig:simple_sensitivity} and \ref{fig:device_sensitivity} respectively.
 
 \par (better for the discussion?) The impedance difference plot was included to show that although there is a peak for the maximum sensitivity, the impedance difference plateaus to a maximum as the electrode gap increases. The impedance difference and Sun's sensitivity tell us two different things: where the sensitivity is a ratio of the difference impedance to the medium impedance, the simple difference impedance gives us insight into the amount of non-relative amount of signal is from the cell. Depending on designer's goal, it may make sense to maximize your signal instead of your sensitivity, or to find a mixture of the two. 
 
@@ -664,7 +666,7 @@ The first attempt for device alignment resulted in a delamination of gold from t
     \label{fig:device_sensitivity}
 \end{figure}
 
-\par Figure \ref{fig:device_sensitivity_average} attempts to clarify the electrode and and width sensitivity trends by averaging over countour lines.
+\par Figure \ref{fig:device_sensitivity_average} attempts to clarify the electrode and and width sensitivity trends by averaging over contour lines.
 
 \begin{figure}[h]
     \centering
@@ -693,6 +695,16 @@ The first attempt for device alignment resulted in a delamination of gold from t
 
 \par Taking into account the channel height, the smaller the channel height the better. More current is forced to travel 
 
+\par However, the fails to answer several additional questions relating to device optimization:
+\begin{itemize}
+    \item Does cell location change the optimized geometry?
+    \item Does chamber height change the optimized geometry?
+    \item What are the limits of our sensitivity curve?
+    \item What is the effect of the electric double layer on the sensitivity curve?
+\end{itemize}
+
+\par Due to the time-consuming nature of COMSOL and its time-consuming nature, these questions were further explored using the analytic impedance solution and our novel power fraction.
+
 \FloatBarrier
 
 \subsection{Analytic Solution Sensitivity Curves}
@@ -702,10 +714,11 @@ The first attempt for device alignment resulted in a delamination of gold from t
 \begin{enumerate}
 	\item significantly faster run time, allowing for far higher resolutions over far greater ranges.
 	\item General solution that isolates the effect of the electrode out from more complicated geometries.
-	\item No mesh noise. Parametric analysis does not bring in the effects of remeshing and effectively removes the effect of mesh artifacts from the simulation.
+	\item No mesh noise. Parametric analysis does not bring in the effects of re-meshing and effectively removes the effect of mesh artifacts from the simulation.
 \end{enumerate}
 
-\par To explore device behavior and optimization, the analytic solution is used to calculate the device sensitivity with Sun's method and the power volume over the same range as the FEA parametric analysis to compare results. The more efficient power volume method is then used to significantly expand the domain of the sensitivity analysis, by exploring increased ranges in electrode gap and width, channel height, and particle location and size. 
+\par To validate the analytic parametric studies, the simple FEA model, the analytic sensitivity calculated with Sun's definition and the power fraction, and the power fraction used as a sensitivity metric. To explore device behaviour and optimization, the more efficient power fraction is used to significantly expand the domain of the sensitivity analysis by exploring increased ranges in electrode gap, electrode height, channel height, particle location, and particle size. 
+
 
 \begin{figure}[h]
     \centering
