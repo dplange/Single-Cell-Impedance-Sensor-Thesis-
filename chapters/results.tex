@@ -227,7 +227,23 @@
 
 \noindent Where $Z_{NC}$ is the non-corrected I-V impedance spectra.
 
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/CorrectedImpedanceMag.png}
+    \caption{}
+\end{subfigure}
 
+\begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/CorrectedImpedancePhase.png}
+    \caption{}
+\end{subfigure}
+
+\caption{}
+\label{}
+\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -238,7 +254,7 @@
 
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
@@ -256,23 +272,6 @@
     \label{fig:IS_DAQ_test_circuit}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/spice-measured-comp_mag-phase.png}
-        \caption{Impedance spectra in polar form.}
-    \end{subfigure}
-    \\
-    \vspace{0.1 in}
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
-        \caption{Bode plot of the ratio of the voltage out of the DUT to the voltage in.}
-    \end{subfigure}
-    \caption[Comparison of measured and simulated response of test circuit.]{A comparison of the measured data, ideal simulation, and simulation with non-ideal scopes. The simulations implemented spice to calculate the test capacitor with I-V method. The measured and modeled test circuit is described in figure \ref{}}
-    \label{fig:test_circuit_impedance_spectra}
-\end{figure}
 
 \par NOTE: Should go back and look at assumption for EDL values for micro electrodes and calculate what the equivalent capacitor. Compare to the DUT capacitor used. Answer: Using the experimentally determined EDL capacitance for titanium electrodes of 6$\mu$F/cm$^2$, as determined by Gongadze \cite{_gongadze.pdf_????}, and assuming that each electrode has fluid contact area of 11.5$\mu$m by 15$\mu$m, eachn electrode would have a capacitance of 10.35 pF, and system EDL capacitance of 5.175 pF. Using a capacitor of 10 pF is well within the margin of error and should model device response. 
 
@@ -286,9 +285,9 @@
 
 \par NOTE: Should validate circuit model is correct by running in spice.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/measurementError.png}
+    \includegraphics[width=\textwidth]{images/percentError.png}
     \caption{The percent error of the recorded data and the spice model with scopes with respect to the ideal spice model. (Reconsider inclusion. Replace with data post correction and another displaying the error due to the oscilloscopes and error to empirical data)}
     \label{fig:test_circ_measurement_error}
 \end{figure}
