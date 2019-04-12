@@ -197,7 +197,32 @@
 
 \par The validation of the impedance spectroscopy system focused on the data acquisition system and the impedance calculating circuit. Operation utilizing the cell impedance chip was reserved for the following section.
 
+\begin{figure}[h]
+\centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/I-VMethod.png}
+        \caption{The idealized test circuit.}
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/method_I-V.png}
+        \caption{The implemented test circuit.}
+    \end{subfigure}
+    \caption{The idealized and implemented I-V circuits. For the validation tests, a 10 pF capacitor was used in place of the IS chip or DUT, and a 33 k$\Omega$ resistor was used as the external resistor.}
+    \label{fig:IS_DAQ_test_circuit}
+\end{figure}
+
 \par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit} was physically implemented and tested, and simulated in SPICE with and without oscilloscopes. As illustrated in the bode plot of figure \ref{fig:test_circuit_bode} and the impedance spectra of \ref{fig:test_circuit_impedance_spectra}, the measured data and the SPICE model with scopes data largely matched. However, there were large deviations from the ideal SPICE model without any of the limitations of a DAQ system. This demonstrates how the application of passive oscilloscopes with the I-V method can cause large errors that grow with higher frequencies. Rerffering to figure \ref{fig:IS_DAQ_test_circuit}, oscilloscope 1 attached to V1 has very little effects on the I-V results, however, part of the I-V method is the assumption that all current flowing through the DUT is also flowing through the external resistor $R_{EXT}$. With the connection of oscilloscope 2 to node V2, this is no longer true, and as the applied frequency increases, non-negligible current leaks through the oscilloscope's capacitance. The percent error of the in figure \ref{fig:test_circuit_bode}. Although it is true that the error increases with frequency, part of this exponential growth is due to the ideal spectrum approaching 0, and causing the \% difference to approach an asymptote.  
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
+    \caption{Bode plot of the ratio of the voltage out of the DUT to the voltage in.}
+    \label{fig:test_circuit_bode}
+\end{figure}
 
 \par Figure \ref{fig:test_circ_measurement_error} also demonstrates, that although the modelled limitations of the passive probes used accounts for a significant amount of the IS DAQ error, there are unaccounted effect. At low frequencies, the recorded data reports an error on the magnitude of 10\% whereas the oscilloscope simulation reported an error on the magnitude of 3\%. In addition, starting at frequencies of 6 MHz, the measured data depicts further deviations. The low frequency errors may be attributed to a myriad of reason including the parasitic capacitance of the breadboard, and deviations in the actual versus reported values of the oscilloscope's, external resistor's, and test capacitor's capacitance and resistance. The high frequency deviations may be due to parasitic inductance in the system that is unaccounted for in the SPICE models.
 
@@ -227,51 +252,31 @@
 
 \noindent Where $Z_{NC}$ is the non-corrected I-V impedance spectra.
 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/percentError.png}
+    \caption{Comparison of the calculated percent error due to the oscilloscopes and the measured percent error.}
+    \label{fig:test_circ_measurement_error}
+\end{figure}
+
 \begin{figure}[h]
 \centering
 \begin{subfigure}[b]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{images/CorrectedImpedanceMag.png}
-    \caption{}
+    \caption{Plot of the measured, ideal, and corrected measured impedance magnitude.}
 \end{subfigure}
 
 \begin{subfigure}[b]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{images/CorrectedImpedancePhase.png}
-    \caption{}
+    \caption{Plot of the measured, ideal, and corrected measured impedance phase.}
 \end{subfigure}
 
-\caption{}
-\label{}
+\caption{Impedance plot in polar form of the measured circuit, the ideal circuit, and the measured circuit with the applied correction function.}
+\label{fig:IS_validation_corrected_spectra_comp}
 \end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/spice-measured-comp.png}
-    \caption{Bode plot of the ratio of the voltage out of the DUT to the voltage in.}
-    \label{fig:test_circuit_bode}
-\end{figure}
-
-
-
-\begin{figure}[h]
-\centering
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/awesome_view.jpg}
-        \caption{Ideal test circuit}
-    \end{subfigure}
-    \\
-    \vspace{0.1 in}
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/awesome_view.jpg}
-        \caption{Implemented test circuit}
-    \end{subfigure}
-    \caption{Circuit measured and modeled. Need to include parameter values. Consider moving to the models section.}
-    \label{fig:IS_DAQ_test_circuit}
-\end{figure}
-
 
 \par NOTE: Should go back and look at assumption for EDL values for micro electrodes and calculate what the equivalent capacitor. Compare to the DUT capacitor used. Answer: Using the experimentally determined EDL capacitance for titanium electrodes of 6$\mu$F/cm$^2$, as determined by Gongadze \cite{_gongadze.pdf_????}, and assuming that each electrode has fluid contact area of 11.5$\mu$m by 15$\mu$m, eachn electrode would have a capacitance of 10.35 pF, and system EDL capacitance of 5.175 pF. Using a capacitor of 10 pF is well within the margin of error and should model device response. 
 
@@ -285,12 +290,7 @@
 
 \par NOTE: Should validate circuit model is correct by running in spice.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/percentError.png}
-    \caption{The percent error of the recorded data and the spice model with scopes with respect to the ideal spice model. (Reconsider inclusion. Replace with data post correction and another displaying the error due to the oscilloscopes and error to empirical data)}
-    \label{fig:test_circ_measurement_error}
-\end{figure}
+
 
 \subsection{Impedance Spectroscopy Reproducibility}
 
