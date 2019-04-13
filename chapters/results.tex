@@ -1,7 +1,7 @@
 
 \section{Device Fabrication}
 
-\par A functional impedance spectroscopy chip was successfully fabricated. To create the chip, a PDMS cast was successfully fabricated and validated; a microelectrode fabrication process was developed, and a viable electrode set was created; and the PDMS cast and electrodes were successfully aligned and bonded.
+\par A functional impedance spectroscopy chip was successfully created. To create the chip, a PDMS cast was successfully fabricated and validated; a microelectrode fabrication process was developed, and a viable electrode set was created; and the PDMS cast and electrodes were successfully aligned and bonded.
 
 \subsection{PDMS Cast}
 \label{sec:PDMS_cast_fabrication}
@@ -193,6 +193,9 @@
 
 \FloatBarrier
 
+
+\clearpage
+
 \subsection{Impedance Spectroscopy Measurement System Validation}
 
 \par The validation of the impedance spectroscopy system focused on the data acquisition system and the impedance calculating circuit. Operation utilizing the cell impedance chip was reserved for the following section.
@@ -203,6 +206,7 @@
         \centering
         \includegraphics[width=0.5\textwidth]{images/I-VMethod.png}
         \caption{The idealized test circuit.}
+        \label{fig:IS_DAQ_test_circuit_ideal}
     \end{subfigure}
     \\
     \vspace{0.1 in}
@@ -210,12 +214,15 @@
         \centering
         \includegraphics[width=0.9\textwidth]{images/method_I-V.png}
         \caption{The implemented test circuit.}
+        \label{fig:IS_DAQ_test_circuit_implemented}
     \end{subfigure}
     \caption{The idealized and implemented I-V circuits. For the validation tests, a 10 pF capacitor was used in place of the IS chip or DUT, and a 33 k$\Omega$ resistor was used as the external resistor.}
     \label{fig:IS_DAQ_test_circuit}
 \end{figure}
 
-\par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit} was physically implemented and tested, and simulated in SPICE with and without oscilloscopes. As illustrated in the bode plot of figure \ref{fig:test_circuit_bode} and the impedance spectra of \ref{fig:test_circuit_impedance_spectra}, the measured data and the SPICE model with scopes data largely matched. However, there were large deviations from the ideal SPICE model without any of the limitations of a DAQ system. This demonstrates how the application of passive oscilloscopes with the I-V method can cause large errors that grow with higher frequencies. Rerffering to figure \ref{fig:IS_DAQ_test_circuit}, oscilloscope 1 attached to V1 has very little effects on the I-V results, however, part of the I-V method is the assumption that all current flowing through the DUT is also flowing through the external resistor $R_{EXT}$. With the connection of oscilloscope 2 to node V2, this is no longer true, and as the applied frequency increases, non-negligible current leaks through the oscilloscope's capacitance. The percent error of the in figure \ref{fig:test_circuit_bode}. Although it is true that the error increases with frequency, part of this exponential growth is due to the ideal spectrum approaching 0, and causing the \% difference to approach an asymptote.  
+\par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit_implemented} was physically implemented and tested with the IS system. The results were compared to simulations of the implemented circuit and the ideal circuit in figure \ref{fig:IS_DAQ_test_circuit_ideal}. A 10 pF capacitor was used as the device under testing. The use of the capacitor was justified by noting that the electric double layer will be the largest impedance contributor, and using Gongadze's experimentally determined EDL capacitance of 6$\mu$F/cm$^2$ for titanium electrodes \cite{_gongadze.pdf_????}, and assuming each electrode has a fluid contact area of 11.5 $\mu$m by 15 $\mu$m, the capacitance of the EDL for our electrodes can be very roughly estimated as 5.2 pF. Using a capacitor of 10 pF as the DUT is well within the margin of error.  
+
+\par As illustrated in the bode plot of figure \ref{fig:test_circuit_bode}, the measured data and the implemented circuit simulation with scopes largely matched, but there were large deviations from the idealized simulation. The I-V method assumes that all current flowing through the DUT is also flowing through the external resistor $R_{EXT}$, but with the application of oscilloscope 1, this is no longer the case. All current that leaks through oscilloscope 1 will inflate the calculated impedance of the DUT.  
 
 \begin{figure}[h]
     \centering
@@ -224,41 +231,46 @@
     \label{fig:test_circuit_bode}
 \end{figure}
 
-\par Figure \ref{fig:test_circ_measurement_error} also demonstrates, that although the modelled limitations of the passive probes used accounts for a significant amount of the IS DAQ error, there are unaccounted effect. At low frequencies, the recorded data reports an error on the magnitude of 10\% whereas the oscilloscope simulation reported an error on the magnitude of 3\%. In addition, starting at frequencies of 6 MHz, the measured data depicts further deviations. The low frequency errors may be attributed to a myriad of reason including the parasitic capacitance of the breadboard, and deviations in the actual versus reported values of the oscilloscope's, external resistor's, and test capacitor's capacitance and resistance. The high frequency deviations may be due to parasitic inductance in the system that is unaccounted for in the SPICE models.
-
-\par With this empirical confirmation, a corrective term can be derived to adjust the measured impedance spectra to a corrected impedance spectra. Revisiting the impedance solution for I-V method we have 
+\par Revisiting the impedance solution using the I-V method, we have
 \begin{equation}
     Z_{DUT} = \frac{V_1 - V_2}{I}.
 \end{equation}
 
-\par In ideal scenarios, we would assume all current flows through the external resistor and then $I = V_2 / R_{EXT}$. However, we know that is not true: the non-ideal properties allows current to flow through our attached oscilloscopes and this current must be accounted for. 
+\noindent In ideal scenarios, we would assume all current flows through the external resistor and then $I = V_2 / R_{EXT}$. However, we know this is not true: the non-ideal properties allows current to flow through our attached oscilloscopes. This additional current flow can be compensated by replacing $R_{EXT}$ with $Z_{EXT}$ which accounts for the impedance of the oscilloscope and the external resistor. 
+
 \begin{equation}
-    Z_{DUT} = \bigg(\frac{V_1 - V_2}{V_2}\bigg)Z_{EXT},
+    Z_{DUT} = \bigg(\frac{V_1 - V_2}{V_2}\bigg)Z_{EXT}.
     \label{eqn:corrected_IV}
 \end{equation}
-\noindent where
+
+\par Given the equivalent circuit of the oscilloscope, $Z_{EXT}$ can be expressed as
+
 \begin{equation}
-    Z_{EXT} = \bigg(\frac{1}{Z_{scope}}+\frac{1}{R_{EXT}}\bigg)^{-1}.
+    Z_{EXT} = \bigg(jwC_{s}+\frac{1}{R_{s}}+\frac{1}{R_{EXT}}\bigg)^{-1},
     \label{eqn:corrected_Rext}
 \end{equation}
-
-\par We now know the limitations of our Impedance Spectroscopy DAQ circuit, an equation describing the bulk of the error, and
-
-\par Future impedance spectra can be calculated with equations \ref{eqn:corrected_IV} and \ref{eqn:corrected_Rext}, or non-corrected I-V impedance spectra can be corrected as follows:
-
+\noindent where $C_{s}$ and $R_{s}$ are the capacitance and resistance of the oscilloscope respectively. For data that is calculated with the uncorrected I-V formula, the data can be corrected as follows:
 \begin{equation}
     Z_{DUT} = Z_{NC}\bigg(\frac{Z_{EXT}}{R_{EXT}}\bigg),
 \end{equation}
+\noindent where $Z_{NC}$ is the non-corrected data. 
 
-\noindent Where $Z_{NC}$ is the non-corrected I-V impedance spectra.
+\par The error associated by attaching the oscilloscope can be quantified as
+\begin{equation}
+    \pmb{\%} \textbf{Error} = 100 \cdot \bigg| 1 - \frac{R_{EXT}}{Z_{EXT}}\bigg|.
+    \label{eqn:oscilloscope_error}
+\end{equation}
 
+\par Figure \ref{fig:test_circ_measurement_error} displays the measured percent error and the error calculated from equation \ref{eqn:oscilloscope_error} due to the attached oscilloscope. Although there is a significant amount of unaccounted error in the noisy low frequencies and frequencies above 25 MHz, the error due to the attached oscilloscope appears to account for the majority of the error over the applied frequency range.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{images/percentError.png}
+    \includegraphics[width=0.85\textwidth]{images/percentError.png}
     \caption{Comparison of the calculated percent error due to the oscilloscopes and the measured percent error.}
     \label{fig:test_circ_measurement_error}
 \end{figure}
+
+\par The correction function, equation \ref{eqn:corrected_IV}, was applied to the measured data and the results are presented in figure \ref{fig:IS_validation_corrected_spectra_comp}. The residual error is displayed in figure \ref{fig:IS_residual_error}. Between 3 kHz and 25 MHz, the percent error does not increase beyond 30\%, a significant improvement over the exponential error of the uncorrected data. The unaccounted residual error may be attributed to parasitic capacitance in the breadboard and system at large; deviations in reported values in the external resistor, the oscilloscope, and the test capacitor; and high frequency parasitic inductance.
 
 \begin{figure}[h]
 \centering
@@ -267,29 +279,23 @@
     \includegraphics[width=\textwidth]{images/CorrectedImpedanceMag.png}
     \caption{Plot of the measured, ideal, and corrected measured impedance magnitude.}
 \end{subfigure}
-
 \begin{subfigure}[b]{\textwidth}
     \centering
     \includegraphics[width=\textwidth]{images/CorrectedImpedancePhase.png}
     \caption{Plot of the measured, ideal, and corrected measured impedance phase.}
 \end{subfigure}
-
 \caption{Impedance plot in polar form of the measured circuit, the ideal circuit, and the measured circuit with the applied correction function.}
 \label{fig:IS_validation_corrected_spectra_comp}
 \end{figure}
 
-\par NOTE: Should go back and look at assumption for EDL values for micro electrodes and calculate what the equivalent capacitor. Compare to the DUT capacitor used. Answer: Using the experimentally determined EDL capacitance for titanium electrodes of 6$\mu$F/cm$^2$, as determined by Gongadze \cite{_gongadze.pdf_????}, and assuming that each electrode has fluid contact area of 11.5$\mu$m by 15$\mu$m, eachn electrode would have a capacitance of 10.35 pF, and system EDL capacitance of 5.175 pF. Using a capacitor of 10 pF is well within the margin of error and should model device response. 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{images/residualPercentError.png}
+    \caption{Residual percent error of impedance spectra after applying the correction function. Between 3 kHz and 25 MHz, the residual error does not exceed 30$\%$.}
+    \label{fig:IS_residual_error}
+\end{figure}
 
-\par NOTE: should add IS data to an circuit overlay. May be similar curve and confirm our assumption.
-
-\par Furthermore, our EDL capacitance assumption is further validated by the overlay of the buffer empirical data.
-
-\par NOTE: Consider error caused by oscilloscopes and compensate real data. In addition, attempt to subtract theoretical capacitance from data.
-
-\par NOTE: Consider adding rectangular impedance data. Illustrates how the oscilliscopes create a phantom resistor that 
-
-\par NOTE: Should validate circuit model is correct by running in spice.
-
+\FloatBarrier
 
 
 \subsection{Impedance Spectroscopy Reproducibility}
@@ -317,6 +323,8 @@
     \caption{Reproducibility of the demonstrated with repeated measurement of phosphate buffered solution over a span of three days.}
     \label{fig:IS_data_reproducibility}
 \end{figure}
+
+
 
 \subsection{Impedance Spectroscopy Performance}
 
