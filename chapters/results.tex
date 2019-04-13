@@ -324,6 +324,23 @@
     \label{fig:IS_data_reproducibility}
 \end{figure}
 
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/reproducibility_mean_std.png}
+        \caption{The mean and 2x standard deviation of the impedance magnitude of the repeatability studies.}
+    \end{subfigure}
+    \\
+    \vspace{0.1 in}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/reproducibility_CV.png}
+        \caption{The \% coefficient of variation of the impedance magnitude calculated from the repeatability studies.}
+    \end{subfigure}
+    \caption{Measured variability of the repeatability studies expressed as the standard deviation and the coefficient of variation.}
+    \label{fig:IS_data_variation}
+\end{figure}
 
 
 \subsection{Impedance Spectroscopy Performance}
@@ -387,30 +404,30 @@
 
 \par NOTE: Consider rearranging order of results. Device fabrication -> IS DAQ validation -> Modeling -> Impedance Spectroscopy results -> simulations to match results (If possible)
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_truncated_mag_phase.png}
-        \caption{Impedance spectra phasor difference in polar form.}
-    \end{subfigure}
-    \\
-    \vspace{0.1 in}
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_truncated_real_imag.png}
-        \caption{Impedance spectra phasor difference in rectangular form.}
-    \end{subfigure}
-    \\
+%\begin{figure}[h]
+%    \centering
+%    \begin{subfigure}[b]{\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_truncated_mag_phase.png}
+%        \caption{Impedance spectra phasor difference in polar form.}
+%    \end{subfigure}
+%    \\
+%    \vspace{0.1 in}
+%    \begin{subfigure}[b]{\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_truncated_real_imag.png}
+%        \caption{Impedance spectra phasor difference in rectangular form.}
+%    \end{subfigure}
+%    \\
     %\vspace{0.1 in}
     %\begin{subfigure}[b]{\textwidth}
     %    \centering
     %    \includegraphics[width=\textwidth]{images/IS_data_beads-PBS_nyquist.png}
     %    \caption{Jammed}
     %\end{subfigure}
-    \caption[Truncated phasor difference between PBS, and micro-bead saturated PBS.]{Phasor difference between the PBS solution, and PBS solution saturated with 7$\mu$m microbeads. The data was truncated to the reliable frequency range of $10^4$ to $3$x$10^6$ hz.}
-    \label{fig:IS_data_beads_pbs_DI_comp}
-\end{figure}
+%    \caption[Truncated phasor difference between PBS, and micro-bead saturated PBS.]{Phasor difference between the PBS solution, and PBS solution saturated with 7$\mu$m microbeads. The data was truncated to the reliable frequency range of $10^4$ to $3$x$10^6$ hz.}
+%    \label{fig:IS_data_beads_pbs_DI_comp}
+%\end{figure}
 
 
 
@@ -523,7 +540,7 @@
         \caption{Clausius Mossotti factor overlaid on difference impedance in rectangular form.}
     \end{subfigure}
 
-    \caption[Clausius Mossotti factor overlaid on IS model data.]{Clausius Mossotti factor overlaid on phasor difference between mixture and medium impedance spectrum model data generated from the analytic solution, the simple FEA model, and the device FEA model. It is clearly depicted how the impedance spectra tracks Clausius Mossotti factor, and illustrates how the impedance responds to cell-medium dielectric dispersions.}
+    \caption[Clausius Mossotti factor overlaid on IS model data.]{Clausius Mossotti factor overlaid on phasor difference between mixture and medium impedance spectrum model data generated from the analytic solution, the simple FEA model, and the device FEA model. It is clearly depicted how the impedance spectra tracks the Clausius Mossotti factor, and illustrates how the impedance responds to cell-medium dielectric dispersions.}
     \label{fig:IS_model_difference_fcm_overlay}
 \end{figure}
 
