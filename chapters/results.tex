@@ -762,7 +762,7 @@
         \includegraphics[width=\textwidth]{images/SunVsSimplePercentDiff.png}
         \caption{Percent difference between the Sun and Simple FEA Sensitivity.}
     \end{subfigure}
-    \caption{Comparison of Sun Sensitivity calculated with the power fraction, and the Simple FEA sensitivity.}
+    \caption{Comparison of Sun Sensitivity calculated with the power fraction, and the Simple FEA sensitivity. The Sun sensitivity found a maximum of 0.0684 at an electrode width and gap of 15 $\mu$m and 5 $\mu$m respectively. This is compared to the simple FEA maximum sensitivity of 0.0762 at an electrode width and gap of 14 $\mu$m and 4 $\mu$m respectively. The maximum percent difference is 52.88\%.}
     \label{fig:sunVsSimpleSensitivity}
 \end{figure}
 
@@ -775,31 +775,25 @@
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.7\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/analytic_difference.png}
-        \caption{Difference}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/analytic_sun_surface.png}
-        \caption{Sensitivity}
+        \includegraphics[width=\textwidth]{images/hiResPowerSensitivity.png}
+        \caption{High resolution power fraction curve.}
     \end{subfigure}
     \\
     \vspace{0.1 in}
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/analytic_sun_gapXsensitivity.png}
-        \caption{gap}
+        \includegraphics[width=\textwidth]{images/hiResPowerVsGap.png}
+        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode gap plane.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/analytic_sun_widthXsensitivity.png}
-        \caption{width}
+        \includegraphics[width=\textwidth]{images/hiResPowerVsWidth.png}
+        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode width plane.}
     \end{subfigure}
-    \caption[Analytic Sensitivity]{Analytic Sensitivity}
+    \caption[Analytic Sensitivity]{A high resolution power fraction curve on a with the electrode width spanning 5 $\mu$m to 20 $\mu$m, and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. Curve has a resolution of 0.1 $\mu$m. The study found a maximum power fraction of 0.0438 at electrode width 20 $\mu$m and a electrode gap of 4.8 $\mu$m.}
     \label{fig:analytic_sensitivity}
 \end{figure}
 
