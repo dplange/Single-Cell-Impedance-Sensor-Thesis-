@@ -730,12 +730,13 @@
     \item Does cell location change the optimized geometry?
     \item Does chamber height change the optimized geometry?
     \item What are the limits of our sensitivity curve?
-    \item What is the effect of the electric double layer on the sensitivity curve?
+
 \end{itemize}
 
 \par Due to the time-consuming nature of COMSOL and its time-consuming nature, these questions were further explored using the analytic impedance solution and our novel power fraction.
 
 \FloatBarrier
+\clearpage
 
 \subsection{Analytic Solution Sensitivity Curves}
 
@@ -802,28 +803,28 @@
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/analytic_sun_difference_expanded.png}
-        \caption{Difference}
+        \caption{The impedance difference between the single cell suspension and the medium.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/analytic_sun_surface_expanded.png}
-        \caption{Sensitivity}
+        \includegraphics[width=\textwidth]{images/expandedPowerSensitivity.png}
+        \caption{The power fraction sensitivity curve. \\ \vspace{0.15 in}}
     \end{subfigure}
     \\
     \vspace{0.1 in}
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/analytic_sun_gapXsensitivity_extended.png}
-        \caption{gap}
+        \includegraphics[width=\textwidth]{images/expandedPowerVsGap.png}
+        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode gap plane.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{images/analytic_sun_widthXsensitivity_extended.png}
-        \caption{width}
+        \includegraphics[width=\textwidth]{images/expandedPowerVsWidth.png}
+        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode width plane.}
     \end{subfigure}
-    \caption[Analytic Sensitivity]{Analytic Sensitivity}
+    \caption[Analytic Sensitivity]{Expanded sensitivity study that varied the electrode width and gap from 1 $\mu$m to 40 $\mu$m with a resolution of 0.5 $\mu$m. The study found a maximum power fraction of 0.0438 with an electrode gap and width of 5 $\mu$m  and 40 $\mu$m  respectively. A 2.26\% increase in power fraction was found by increasing the electrode gap from 10 $\mu$m to 20 $\mu$m. A 0.091\% increase in power fraction was found by increasing the electrode gap from 20 $\mu$m to 40 $\mu$m.}
     \label{fig:analytic_sensitivity}
 \end{figure}
 
@@ -863,26 +864,26 @@
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/analytic_vertical_power.png}
-        \caption{Power Surface}
+        \caption{Power fraction curves for several cell height positions centered over the electrodes.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/analytic_horizontal_power.png}
-        \caption{GapXpower by width}
+        \caption{Power fraction curves for several horizontal cell positions at a height of 5 $\mu$m.}
     \end{subfigure}
     \\
     \vspace{0.1 in}
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/analytic_vertical_power_width20.png}
-        \caption{width x power by height}
+        \caption{Projection of power fraction curves for several cell height positions onto the power fraction - electrode gap plane. The electrode width is 20 $\mu$m.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/analytic_horizontal_power_20width.png}
-        \caption{height x power by gap}
+        \caption{Projection of power fraction curves for several horizontal cell positions onto the power fraction - electrode gap plane. The electrode width is 20 $\mu$m.}
     \end{subfigure}
     \caption[power comp]{power comp}
     \label{fig:analytic_sensitivity}
