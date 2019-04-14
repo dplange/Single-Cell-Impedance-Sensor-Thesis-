@@ -297,14 +297,11 @@
 
 \FloatBarrier
 
+\clearpage
 
 \subsection{Impedance Spectroscopy Reproducibility}
 
-\par To characterize and assess the operation of the impedance spectroscopy chip, PBS medium samples were tested over the of three consecutive days to examine the reproducibility of the device, and deionized water, PBS medium, and PBS with 7 $\mu$m beads were tested to characterize device response to multiple solutions and to attempt a measurement of particles.
-
-\par Figure \ref{fig:IS_data_reproducibility} displays the impedance spectra of PBS over three consecutive days and figure \ref{fig:IS_data_reproducibility_SD} shows the standard deviation of the sample set. Although a larger sample set covering more days would be desirable, the repeated impedance spectra behaviour and tight standard deviation imparts confidence of reproducibility.
-
-\par With all the recorded data, signals became incoherent at low frequencies with high impedance loads. Data became , the data will gibberish the impedance magnitude will sometimes flatline, and 
+\par To characterize the reproducibility of the impedance spectroscopy chip, PBS medium samples were tested over three consecutive days. Prior to each measurement, the chip was flushed with DI water and then saturated with PBS. Figure \ref{fig:IS_data_reproducibility} displays the measured impedance spectra, and figure \ref{fig:IS_data_variation} depicts the variation of the sample set. 
 
 \begin{figure}[h]
     \centering
@@ -324,30 +321,33 @@
     \label{fig:IS_data_reproducibility}
 \end{figure}
 
+\par As apparent in figure \ref{fig:IS_data_variation}, there is a considerable amount of variation from 1 kHz to 5 kHZ. This low frequency "noise" consistently occurs throughout all of our recorded IS data. After 5 kHz, the impedance spectra becomes less variable with a coefficient of variability that fluctuates between 5\% and 10\%. Although a larger study involving more days of testing, additional solutions, and mixtures, is needed to make a definitive assessment, the current data indicates that impedance spectra measured from 10 kHz to 40 MHz are reproducible.
+
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/reproducibility_mean_std.png}
-        \caption{The mean and 2x standard deviation of the impedance magnitude of the repeatability studies.}
+        \caption{The mean and 2x standard deviation of the impedance magnitude of the reproducibility studies.}
     \end{subfigure}
     \\
     \vspace{0.1 in}
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/reproducibility_CV.png}
-        \caption{The \% coefficient of variation of the impedance magnitude calculated from the repeatability studies.}
+        \caption{The \% coefficient of variation of the impedance magnitude calculated from the reproducibility studies.}
     \end{subfigure}
-    \caption{Measured variability of the repeatability studies expressed as the standard deviation and the coefficient of variation.}
+    \caption{Measured variability of the reproducibility studies expressed as the standard deviation and the coefficient of variation.}
     \label{fig:IS_data_variation}
 \end{figure}
 
 
 \subsection{Impedance Spectroscopy Performance}
 
-\par Impedance spectra for DI water, PBS, and 7 $\mu$m beads suspended in PBS were acquired and representive samples are displayed in figure \ref{fig:IS_data_beads_pbs_DI_comp}. The collected data met the expectations set by the material properties (NOTE: include table of material properties somewhere. methods? intro?). Deionized water exhibited the highest impedance with its low conductance, the conductive PBS responded with a significantly lower impedance, and the polystyrene beads suspended in PBS exhibited a larger capacitive load than the PBS by itself. However, as mentioned in the reproducibility study, low-frequency-high impedance loads continued to generate nonsense results and limit our viable frequency range.
 
-\par In an attempt to isolate the effect of suspended polystyren beads in the PBS solution, the raw phase data was corrected, and the real and imaginary impedance spectra was recalculated, and then the difference between pbs-bead suspension and the pbs solution was calculated. The results are depicted in figure \ref{fig:clean_IS_data_beads_PBS_DI_comp}.
+
+\par To evaluate the performance of the impedance spectroscopy system, impedance spectra for DI water, PBS, and 7 $\mu$m polystyrene beads suspended in PBS were acquired. Representative samples are displayed in figure \ref{fig:IS_data_beads_pbs_DI_comp}. 
 
 \begin{figure}[h]
     \centering
@@ -373,6 +373,12 @@
     \caption[PBS, DI, microbead IS Raw data comparison.]{Comparison of impedance spectroscopy results using raw measurements of phosphate buffered solution, de-ionized water, and the chamber saturated with 7 $\mu$m polystyrene beads suspended in PBS.}
     \label{fig:IS_data_beads_pbs_DI_comp}
 \end{figure}
+
+
+\par The collected data met the expectations set by the material properties (NOTE: include table of material properties somewhere. methods? intro?). Deionized water exhibited the highest impedance with its low conductance, the conductive PBS responded with a significantly lower impedance, and the polystyrene beads suspended in PBS exhibited a larger capacitive load than the PBS by itself. However, as mentioned in the reproducibility study, low-frequency-high impedance loads continued to generate nonsense results and limit our viable frequency range.
+
+\par In an attempt to isolate the effect of suspended polystyrene beads in the PBS solution, the raw phase data was corrected, and the real and imaginary impedance spectra was recalculated, and then the difference between pbs-bead suspension and the pbs solution was calculated. The results are depicted in figure \ref{fig:clean_IS_data_beads_PBS_DI_comp}.
+
 
 \begin{figure}[h]
     \centering
@@ -743,7 +749,7 @@
 
 \par To validate the analytic parametric studies, the simple FEA model, the analytic sensitivity calculated with Sun's definition and the power fraction, and the power fraction used as a sensitivity metric. To explore device behaviour and optimization, the more efficient power fraction is used to significantly expand the domain of the sensitivity analysis by exploring increased ranges in electrode gap, electrode height, channel height, particle location, and particle size. 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
@@ -756,10 +762,16 @@
         \includegraphics[width=\textwidth]{images/SunVsSimplePercentDiff.png}
         \caption{Percent difference between the Sun and Simple FEA Sensitivity.}
     \end{subfigure}
-    \caption{Comparison of Sun Sensitivity calculated with the power fraction, and the Simple FEA Sensitivity.}
+    \caption{Comparison of Sun Sensitivity calculated with the power fraction, and the Simple FEA sensitivity.}
     \label{fig:sunVsSimpleSensitivity}
 \end{figure}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/normalizedSensitivityComp.png}
+    \caption{Comparison of power fraction, Sun, and simple FEA sensitivity curves normalized to their max sensitivity. The mean absolute error between the power fraction vs. Sun, the power fraction vs. the simple FEA, and Sun vs the simple FEA are 0.0039, 0.0471, and 0.0486 respectively.}
+    \label{fig:my_label}
+\end{figure}
 
 \begin{figure}[h]
     \centering
