@@ -444,9 +444,9 @@
 
 \par Impedance response for the analytic solution, the simple FEA model, and the device model were calculated for medium saturation and a single cell suspension. The analytic solution utilized the power volume fraction discussed in section \ref{sec:novelVolumeFraction}. For details on the material properties used see table \ref{tab:fea_materials}. Additional information on the analytic solution is available in section \ref{sec:maxwell_mixture_theory} and details on the FEA model are available in section \ref{sec: FEA}. 
 
-\par The results for the medium impedance spectra are given in figure \ref{fig:medium_model_IS_data}.The medium impedance spectra behaves as resistor and capacitor elements in parallel with a single relaxation starting around 100 Mhz, which is governed by the medium dielectric properties. In practice, an additional relaxation, governed by the polarization at the electrode-medium inteface (i.e. the EDL), would occur and largely mask the medium and cell relaxations. For these simulations the electric double layer phenomenon was excluded and addressed separately.
+\par The results for the medium impedance spectra are given in figure \ref{fig:medium_model_IS_data}. The medium impedance spectra behaves as a resistor and capacitor elements in parallel with a single relaxation starting around 100 Mhz. In practice, an additional relaxation, governed by the polarization at the electrode-medium inteface (i.e. the EDL), would occur and largely mask the medium and cell relaxations. For these simulations the electric double layer phenomenon was excluded.
 
-\par By comparing the three model results depicted in figure \ref{fig:medium_model_IS_data}, it can be noted that the device model has a significantly smaller impedance response than the analytic solution and the simple FEA model. This difference can be attributed to geometry and will be further explored later in this section. In addition, the analytic and simple model spectra are nearly identical, as expected since they model identical geometries.
+\par By comparing the three model results depicted in figure \ref{fig:medium_model_IS_data}, it can be noted that the device model has a significantly smaller impedance response than the analytic solution and the simple FEA model. This difference can be attributed to geometry and will be further explored later in this section. In addition, the analytic and simple model spectra are nearly identical. This was expected since they model identical geometries.
 
 \begin{figure}[h]
     \centering
@@ -768,7 +768,8 @@
 \noindent The analytic sensitivity was calculated with Sun's definition using the power fraction, and the power fraction by itself. 
 
 \par Sun's sensitivity and the simple FEA sensitivity are compared in figure \ref{fig:sunVsSimpleSensitivity}. Sun's method found a maximum sensitivity of 0.0684 at an electrode width and gap of 15 $\mu$m and 5 $\mu$m respectively, compared to the simple FEA maximum sensitivity of 0.0762 at an electrode width and gap of 14 $\mu$m and 4 $\mu$m respectively. The curves largely tracked each other except for electrode gap values less than 4 $\mu$m where the analytic solution shows the sensitivity steeply drop. This is where the maximum percent difference of 52.88\% is recorded. 
-\par Since the power fraction does not share the same scale as Sun's and the simple FEA sensivity, all three studies were normalized by their maximum and compared in figure \ref{fig:sun-simple-powerFrac-comp}. The maximum power fraction was found at an electrode width and gap of 15 $\mu$m and 5 $\mu$m. The mean absolute error between the power fraction vs. Sun, the power fraction vs. the simple FEA, and Sun vs the simple FEA sensitivity curves are 0.0039, 0.0471, and 0.0486 respectively. This indicates that while the all three sensitivity studies track each other well, the Sun sensitivity and power fraction track each other very closely. This is supported by how all three studies predict nearly the same optimal electrode gap and width values inside the tested domain. 
+\par Since the power fraction does not share the same scale as Sun's and the simple FEA sensivity, all three studies were normalized by their maximum and compared in figure \ref{fig:sun-simple-powerFrac-comp}. The maximum power fraction was found at an electrode width and gap of 15 $\mu$m and 5 $\mu$m. The mean absolute error between the power fraction vs. Sun, the power fraction vs. the simple FEA, and Sun vs the simple FEA sensitivity curves are 0.0039, 0.0471, and 0.0486 respectively. This indicates that while the all three sensitivity studies track each other well, th Sun sensitivity and power fraction track each other very closely. This is supported by how all three studies predict nearly the same optimal electrode gap and width values inside the tested domain. 
+
 
 %\par To validate the analytic parametric studies, the simple FEA model, the analytic sensitivity calculated with Sun's definition and the power fraction, and the power fraction used as a sensitivity metric. To explore device behaviour and optimization, the more efficient power fraction is used to significantly expand the domain of the sensitivity analysis by exploring increased ranges in electrode gap, electrode height, channel height, particle location, and particle size. 
 
@@ -796,6 +797,10 @@
     \label{fig:sun-simple-powerFrac-comp}
 \end{figure}
 
+\par The power fraction was used to calculate a high resolution sensitivity curve, perform a parametric study over an expanded domain, and to explore the effects of cell position on sensitivity. 
+
+\par The high resolution power fraction curve is depicted in figure \ref{fig:high_resolution_power_fraction}. The study found a maximum power fraction of 0.0438 at an electrode width of 20 $\mu$m and an electrode gap of 4.8 $\mu$m to a precision of 0.1$\mu$m. The study was was performed over an electrode length spanning 5 $\mu$m to 20 $\mu$m and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. 
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.7\textwidth}
@@ -816,9 +821,11 @@
         \includegraphics[width=\textwidth]{images/hiResPowerVsWidth.png}
         \caption{Projection of high resolution power fraction curve onto the power fraction - electrode width plane.}
     \end{subfigure}
-    \caption[Analytic Sensitivity]{A high resolution power fraction curve on a with the electrode width spanning 5 $\mu$m to 20 $\mu$m, and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. Curve has a resolution of 0.1 $\mu$m. The study found a maximum power fraction of 0.0438 at an electrode width 20 $\mu$m and a electrode gap of 4.8 $\mu$m.}
-    \label{fig:analytic_sensitivity}
+    \caption[Analytic Sensitivity]{A high resolution power fraction curve calculated over the electrode width spanning 5 $\mu$m to 20 $\mu$m, and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. The curve has a resolution of 0.1 $\mu$m. The study found a maximum power fraction of 0.0438 at an electrode width 20 $\mu$m and a electrode gap of 4.8 $\mu$m.}
+    \label{fig:high_resolution_power_fraction}
 \end{figure}
+
+\par The expanded sensitivity study calculated the electrode width and gap from 1 $\mu$m to 40 $\mu$m with a resolution of 0.5 $\mu$m and is presented in figure \ref{fig:expanded_power_sensitivity}. The study found a maximum power fraction of 0.0438 with an electrode gap and width of 5 $\mu$m and 40 $\mu$m respectively.  
 
 \begin{figure}[h]
     \centering
@@ -826,6 +833,7 @@
         \centering
         \includegraphics[width=\textwidth]{images/analytic_sun_difference_expanded.png}
         \caption{The impedance difference between the single cell suspension and the medium.}
+        \label{fig:expanded_impedance_difference}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
@@ -838,17 +846,23 @@
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/expandedPowerVsGap.png}
-        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode gap plane.}
+        \caption{Projection of the high resolution power fraction curve onto the power fraction - electrode gap plane.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/expandedPowerVsWidth.png}
-        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode width plane.}
+        \caption{Projection of the high resolution power fraction curve onto the power fraction - electrode width plane.}
     \end{subfigure}
     \caption[Analytic Sensitivity]{Expanded sensitivity study that varied the electrode width and gap from 1 $\mu$m to 40 $\mu$m with a resolution of 0.5 $\mu$m. The study found a maximum power fraction of 0.0438 with an electrode gap and width of 5 $\mu$m  and 40 $\mu$m  respectively. A 2.26\% increase in power fraction was found by increasing the electrode gap from 10 $\mu$m to 20 $\mu$m. A 0.091\% increase in power fraction was found by increasing the electrode gap from 20 $\mu$m to 40 $\mu$m.}
-    \label{fig:analytic_sensitivity}
+    \label{fig:expanded_power_sensitivity} 
 \end{figure}
+
+\par The calculated impedance difference between the mixture and medium was also calculated and is presented in figure \ref{fig:expanded_impedance_difference}. By observing the impedance difference and the , impedance difference maximizes and plateaus at a low electrode gap. By increasing the electrode gap, power is distributed more evenly and progressively higher up in the center of the channel. Up to a certain point, this will increase the power in the region of a cell suspended above the channel. At the same time, increasing the electrode gap also continually increases the measured medium impedance even after the impedance of the cell is maximized. This leads to the characteristic "crest" of our sensitivity curve which designates the optimized electrode geometry.
+
+\par  Increasing the electrode width over 10 $\mu$m found diminishing returns in optimizing the sensitivity. A 2.26\% increase in power fraction was found by increasing the electrode gap from 10 $\mu$m to 20 $\mu$m. A 0.091\% increase in power fraction was found by increasing the electrode gap from 20 $\mu$m to 40 $\mu$m.
+
+\par Both the limiting values of the electrode gap and width are strongly effected by the channel height. With a small channel height, larger electrode gaps and widths are restricted from producing power in regions far above the cell, instead the power is focused into the small channel containing the cell. 
 
 %\begin{figure}[h]
 %    \centering
@@ -880,6 +894,7 @@
 %    \label{fig:analytic_sensitivity}
 %\end{figure}
 
+\par The results presented in figure \ref{fig:cell_position_sensitivity} studied the effects of cell position on the sensitivity curve. As expected and depicted in figure \ref{fig:horizontal_cell_position_sensitivty}, the power fraction is maximized for a cell centered between  the electrodes. It should be noted that by sacrificing maximum sensitivity, increasing the electrode gap can increase the effective sensor zone of the device and decreases the variability within that zone.
 
 \begin{figure}[h]
     \centering
@@ -887,12 +902,14 @@
         \centering
         \includegraphics[width=\textwidth]{images/analytic_vertical_power.png}
         \caption{Power fraction curves for several cell height positions centered over the electrodes.}
+        \label{fig:vertical_cell_position_sensitivity}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/analytic_horizontal_power.png}
         \caption{Power fraction curves for several horizontal cell positions with the cell centered at a height of 5 $\mu$m. }
+        \label{fig:horizontal_cell_position_sensitivty}
     \end{subfigure}
     \\
     \vspace{0.1 in}
@@ -908,5 +925,7 @@
         \caption{Projection of power fraction curves for several horizontal cell positions onto the power fraction - electrode gap plane. The electrode width is 20 $\mu$m.}
     \end{subfigure}
     \caption[power comp]{The effect of cell position on the power sensitivity curves. Graphs (c) and (d) are calculated with an electrode width of 20 $\mu$m.}
-    \label{fig:analytic_sensitivity}
+    \label{fig:cell_position_sensitivity}
 \end{figure}
+
+\par Figure \ref{fig:vertical_cell_position_sensitivity} tells a similar story. The sensitivity is maximized the closer that the cell is to the plane of the electrodes. However, at the expense of sensitivity, the electrode gap can be increased to decrease the effect cell height on the sensitivity. By increasing the electrode gap, the fringe effects of the electric field become smaller relative to the effective sensor zone and the power dissipation becomes increasingly homogeneous in region between the electrodes. 
