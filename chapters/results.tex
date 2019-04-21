@@ -444,9 +444,9 @@
 
 \subsection{Impedance Spectroscopy Results}
 
-\par Impedance response for the analytic solution, the simple FEA model, and the device model were calculated for medium saturation and a single cell suspension. The analytic solution utilized the power volume fraction discussed in section \ref{sec:novelVolumeFraction}. For details on the material properties used see table \ref{tab:fea_materials}. Additional information on the analytic solution is available in section \ref{sec:maxwell_mixture_theory} and details on the FEA model are available in section \ref{sec: FEA}. 
+\par The impedance response for the analytic solution, the simple FEA model, and the device model were calculated for medium saturation and a single cell suspension. The analytic solution utilized the power volume fraction discussed in section \ref{sec:novelVolumeFraction}. For details on the material properties used see table \ref{tab:fea_materials}. Additional information on the analytic solution is available in section \ref{sec:maxwell_mixture_theory} and details on the FEA model are available in section \ref{sec: FEA}. 
 
-\par The results for the medium impedance spectra are given in figure \ref{fig:medium_model_IS_data}. The medium impedance spectra behaves as a resistor and capacitor elements in parallel with a single relaxation starting around 100 Mhz. In practice, an additional relaxation, governed by the polarization at the electrode-medium inteface (i.e. the EDL), would occur and largely mask the medium and cell relaxations. For these simulations the electric double layer phenomenon was excluded.
+\par The results for the medium impedance spectra are given in figure \ref{fig:medium_model_IS_data}. The medium impedance spectra behaves as a bulk resistor and capacitor element in parallel with a single relaxation starting around 100 Mhz. In practice, an additional relaxation, governed by the polarization at the electrode-medium inteface (i.e. the EDL), would occur and largely mask the medium and cell relaxations. For these simulations the electric double layer phenomenon was excluded.
 
 \par By comparing the three model results depicted in figure \ref{fig:medium_model_IS_data}, it can be noted that the device model has a significantly smaller impedance response than the analytic solution and the simple FEA model. This difference can be attributed to geometry and will be further explored later in this section. In addition, the analytic and simple model spectra are nearly identical. This was expected since they model identical geometries.
 
@@ -475,7 +475,7 @@
     \label{fig:medium_model_IS_data}
 \end{figure}
 
-\par With the inclusion of a single cell in the medium, the impedance spectra developed new dielectric dispersions. The simulated impedance spectra are depicted in figure \ref{fig:single_cell_model_IS_data}. According Pauly and Schwan, the addition of the single shelled cell into the system is expected to add two new relaxations to the impedance spectra: the Maxwell-Wagner relaxation that occurs from the polarization of the cell membrane with the medium, and the relaxation from polarization of the cytoplasm and medium at high frequencies when the cell membrane capacitance has been short-circuited \cite{pauly_uber_1959,sun_single-cell_2010}. The effect of the single cell is small, but can be readily identified as a small relaxation starting around 10 Mhz. However, the two distinct relaxations of the single shelled cell can't be distinguished among the large relaxation of the medium. The small size of the characteristic single cell suspension in comparison to the medium impedance spectrum highlights the importance of sensitivity optimization. The device model, which features a smaller device sensitivity, generated data with a significantly smaller cell suspension relaxations. 
+\par With the inclusion of a single cell in the medium, the impedance spectra developed new dielectric dispersions. The simulated impedance spectra are depicted in figure \ref{fig:single_cell_model_IS_data}. According to Pauly and Schwan, the addition of the single-shelled cell into the system is expected to add two new relaxations to the impedance spectra: the Maxwell-Wagner relaxation that occurs from the polarization of the cell membrane with the medium, and the relaxation from polarization of the cytoplasm and medium at high frequencies when the cell membrane capacitance has been short-circuited \cite{pauly_uber_1959,sun_single-cell_2010}. The effect of the single cell is small, but can be readily identified as a small relaxation starting around 10 Mhz. However, the two distinct relaxations of the single shelled cell can't be distinguished among the large relaxation of the medium. The small size of the characteristic single cell suspension in comparison to the medium impedance spectrum highlights the importance of sensitivity optimization. The device model, which features a smaller device sensitivity, generated data with a significantly smaller cell suspension relaxations. 
 
 \begin{figure}[H]
     \centering
@@ -543,7 +543,7 @@
         \caption{Clausius Mossotti factor overlaid on difference impedance in rectangular form.}
     \end{subfigure}
 
-    \caption[Clausius Mossotti factor overlaid on IS model data.]{Clausius Mossotti factor overlaid on phasor difference between mixture and medium impedance spectrum model data generated from the analytic solution, the simple FEA model, and the device FEA model. It is clearly depicted how the impedance spectra tracks the Clausius Mossotti factor, and illustrates how the impedance responds to cell-medium dielectric dispersions.}
+    \caption[Clausius Mossotti factor overlaid on IS model data.]{Clausius Mossotti factor overlaid on the phasor difference between mixture and medium impedance spectra model data generated from the analytic solution, the simple FEA model, and the device FEA model. The Clausius Mossotti factor overlay illustrates how the impedance responds to cell-medium polarization.}
     \label{fig:IS_model_difference_fcm_overlay}
 \end{figure}
 
@@ -551,19 +551,19 @@
 
 \par In addition to the differential spectra, figure \ref{fig:IS_model_difference_fcm_overlay} overlays the Clausius Mossotti factor. The Clausius Mossotti factor predicts the frequencies of dielectric dispersions, and can be used as a tool in system design and optimization. This application is further discussed in section \ref{sec:solution_optimization}.
 
-\par As similarly noted in the medium and mixture impedance spectra results, the difference device impedance is significantly less pronounced. However, there are now discrepancies between the analytic solution and the simple FEA spectra. The differences begin to manifest at the onset of the Maxwell-Wagner relaxation at 10 MHz. Although the frequency positions of the dispersions coincide, the magnitude and shape of their spectra differ. This is most notable in the impedance magnitude chart in figure \ref{fig:IS_model_difference_fcm_overlay_a}. Since the analytic solution and the device model share the same shape, the simple model is suspected to contain errors. It is important to consider that impedance difference spectra are a small fraction of the impedance of the medium and mixture models from which it is derived, and that errors can be compounded.
+\par As similarly noted in the medium and mixture impedance spectra results, the difference device impedance is significantly less pronounced. In addition, there are now discrepancies between the analytic solution and the simple FEA spectra. The differences begin to manifest at the onset of the Maxwell-Wagner relaxation at 10 MHz. Although the frequency positions of the dispersions coincide, the magnitude and shape of their spectra differ. This is most notable in the impedance magnitude chart in figure \ref{fig:IS_model_difference_fcm_overlay_a}. Since the analytic solution and the device model share the same shape, the simple model is suspected to contain errors. It is important to consider that the impedance difference spectra are a small fraction of the impedance of the medium and mixture models from which it is derived, and that errors can be compounded.
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/deviceCellCurrent1Hz.png}
+    \includegraphics[width=0.6\textwidth]{images/deviceCellCurrent1Hz.png}
     \caption[Current density plot of the FEA device model.]{Current density plot of the FEA device model at DC. The color mapping depicts the logarithm of the current density magnitude.}
     \label{fig:device_current_denisty plot}
 \end{figure}
 
-\par Throughout the device model results, the device FEA model produced a smaller smaller impedance than the analytic or simple FEA models. As depicted in figure \ref{fig:device_current_denisty plot}, it can be seen that the overlap of a flush channel and an electrode opens up an additional current path. To measure the designed device inefficiency, a surface integration of current density of the electrode region overlapping with the flush channel was calculated. 27.53\% and 29.29\% of the system current flowed through the flush channel electrode region without and with a cell in the sensor region respectively. The side channel inefficiency will effectively decrease the system cell constant and the effective volume fraction with the net effect of decreasing the device sensitivity.
+\par Throughout the device model results, the device FEA model produced a smaller impedance than the analytic or simple FEA models. As depicted in figure \ref{fig:device_current_denisty plot}, it can be seen that the overlap of a flush channel and an electrode opens up an additional current path. To measure the designed device inefficiency, a surface integration of current density over the electrode region overlapping with the flush channel was calculated. 27.53\% and 29.29\% of the system current flowed through the flush channel electrode region without and with a cell in the sensor region respectively. The side channel inefficiency will decrease the system cell constant and the effective volume fraction with the net effect of decreasing the device sensitivity.
 
-\par To aid in visualizing how the impedance spectra develop as a function of frequency, figure \ref{fig:single_cell_model_EZ_plots} plots the electric field lines and magnitude of the center cross-section of the FEA simple model at characteristic frequencies.
+\par To aid in visualizing how the impedance spectra develops as a function of frequency, figure \ref{fig:single_cell_model_EZ_plots} plots the electric field lines and magnitude of the center cross-section of the FEA simple model.
 
 \begin{figure}[h]
     \centering
@@ -610,7 +610,7 @@
 \subsection{Solution Optimization}
 \label{sec:solution_optimization}
 
-\par As demonstrated in figure \ref{fig:IS_model_difference_fcm_overlay}, the Clausius Mossotti factor can be used to determine at which frequencies dielectric dispersions occur. Measuring these dispersions is an important goal of single-cell impedance spectroscopy and provides significant insight about the cell under testing. As can be seen in equation \ref{eqn:fcm_background}, the Clausius Mossotti factor is largely driven by the dielectric properties of the medium and the particle. By tuning the properties of the medium, we can exercise some control over that frequencies dielectric dispersions occur and optimize the solution for our IS system. 
+\par As demonstrated in figure \ref{fig:IS_model_difference_fcm_overlay}, the Clausius Mossotti factor can be used to determine at which frequencies dielectric dispersions occur. Measuring these dispersions is an important goal of single-cell impedance spectroscopy and provides significant insight about the cell under testing. As can be seen in equation \ref{eqn:fcm_background}, the Clausius Mossotti factor is largely driven by the dielectric properties of the medium and the particle. By tuning the properties of the medium, we can exercise some control over the frequency location of dielectric relaxations and optimize the solution for our IS system. 
 
 \begin{figure}[h]
     \centering
@@ -631,9 +631,9 @@
     \label{fig:solutionConductivityOptimizeFCM}
 \end{figure}
 
-\par The effect on the Clausius Mossotti factor of altering the medium conductance and permittivity are presented in figure \ref{fig:solutionConductivityOptimizeFCM} and \ref{fig:solutionPermittivityOptimizeFCM} respectively. As demonstrated in figure \ref{fig:solutionConductivityOptimizeFCM}, by decreasing the conductivity of the medium, dielectric dispersions shit to lower frequencies. Furthermore, figure \ref{fig:solutionPermittivityOptimizeFCM} shows how the permittivity of the medium has little effect on the frequency of that the dispersions occurs at. 
+\par The effect on the Clausius Mossotti factor of altering the medium conductance and permittivity are presented in figure \ref{fig:solutionConductivityOptimizeFCM} and \ref{fig:solutionPermittivityOptimizeFCM} respectively. As demonstrated in figure \ref{fig:solutionConductivityOptimizeFCM}, decreasing the conductivity of the medium shifts dielectric relaxations to lower frequencies. In contrast, figure \ref{fig:solutionPermittivityOptimizeFCM} shows how the permittivity of the medium has little effect on the frequency of relaxations. 
 
-\par For application with the IS system of this thesis, the conductivity of the solution should be minimized as much as possible as our system has a high frequency limit of 40 MHz. It should be noted that there are significant limits to this approach. Hypotonic solutions can lead to cell swelling and death and small quantities of contaminates can severely increase the conductivity of DI water. 
+\par For application with the IS system of this thesis, the conductivity of the solution should be minimized as much as possible since our system has a high frequency limit of 40 MHz. It should be noted that there are significant limits to this approach. Hypotonic solutions can lead to cell swelling and death and small quantities of contaminates can severely increase the conductivity of DI water. 
 
 \begin{figure}[h]
     \centering
@@ -692,13 +692,15 @@
         \caption{Projection of the sensitivity curve onto the sensitivity - electrode width plane.}
         \label{fig:simple_sensitivity_width}
     \end{subfigure}
-    \caption[Simple FEA model sensitivity]{Parametric study sensitivity using the Simple FEA model. The study varied the electrode width and gap from 5 $\mu$m to 15 $\mu$m and 1 $\mu$m to 10 $\mu$m respectively. The Simple FEA model held a channel height of 10 $\mu$m and a cell centered between the two electrodes with a center height of 5 $\mu$m. The sensitivity was calculated with equation \ref{eqn:Sun_sensitivity}. See section \ref{sec: FEA} for additional details on the Simple FEA model.} 
+    \caption[Simple FEA model sensitivity]{Parametric study on sensitivity using the Simple FEA model. The study varied the electrode width and gap from 5 $\mu$m to 15 $\mu$m and 1 $\mu$m to 10 $\mu$m respectively. The Simple FEA model held a channel height of 10 $\mu$m and a cell centered between the two electrodes with a center height of 5 $\mu$m. The sensitivity was calculated with equation \ref{eqn:Sun_sensitivity}. See section \ref{sec: FEA} for additional details on the Simple FEA model.} 
     \label{fig:simple_sensitivity}
 \end{figure}
 
-\par To better understand the results, the parametric curves are presented as the difference between the medium and cell suspension impedance, the sensitivity as defined by Sun in equation \ref{eqn:Sun_sensitivity}, the sensitivity curve projected onto the sensitivity-electrode gap plane, and the sensitivity projected onto the sensitivity-electrode width plane. The parametric study of the simple and device FEA model are presented in figure \ref{fig:simple_sensitivity} and \ref{fig:device_sensitivity} respectively.
+\newpage
 
-\par The simple FEA parametric study identified a max sensitivity of 0.0762 with an electrode width of 14 $\mu$m and an electrode gap of 4 $\mu$m. The study found that the electrode gap had larger effect than the electrode width and formed an optimal electrode gap "ridge" around 4-5 $\mu$m. 
+\par The parametric studies are presented as the difference between the medium and cell suspension impedance, the sensitivity as defined by Sun in equation \ref{eqn:Sun_sensitivity}, the sensitivity curve projected onto the sensitivity-electrode gap plane, and the sensitivity projected onto the sensitivity-electrode width plane. The parametric study of the simple and device FEA model are presented in figure \ref{fig:simple_sensitivity} and \ref{fig:device_sensitivity} respectively.
+
+\par The simple FEA parametric study identified a max sensitivity of 0.0762 with an electrode width of 14 $\mu$m and an electrode gap of 4 $\mu$m. The study found that the electrode gap had large effect on sensitivity and formed an optimal electrode gap "ridge" around 4-5 $\mu$m on the sensitivity curve. The effect of the electrode width was small with slight increases in sensitivity with increased width.
 
 
 %\par The electrode gap is optimized at ?? around 5 microns. An intuitive reason behind this optimal electrode gap becomes apparent by observing the impedance difference curve. The impedance difference increases with the impedance gap. This is because as the electrode gap increases, the power felt by the cell increases. Likewise, the actual affect of the electrode width appears to be small, but even appears to increase the sensitivity with increased width. By widening the electrodes we are decreasing the cell constant (i.e. allowing more current flow) while the channels that the current must flow through decreases, at least until a certain point where a limit appears to be reached when current flowing from the electrode extremities is met with very high resistance. However, if the electric double layer was included in the model, and modeled as distributed capacitance over the electrodes, the wider the electrode the better since increased surface area would increase the capacitance and thus decrease impedance contributed by the electric double layer. 
@@ -733,15 +735,19 @@
         \caption{The electrode gap average of the sensitivity curve projected onto the sensitivity - electrode width plane.}
         \label{fig:device_sensitivity_average_gap}
     \end{subfigure}
-    \caption[Device sensitivity]{Parametric study sensitivity using the device FEA model. The study varied the electrode width and gap from 5 $\mu$m to 15 $\mu$m and 1 $\mu$m to 10 $\mu$m respectively. The device FEA model held a channel height of 10 $\mu$m and a cell centered between the two electrodes with a center height of 5 $\mu$m. The sensitivity was calculated with equation \ref{eqn:Sun_sensitivity}. See section \ref{sec: FEA} for additional details on the device FEA model. In an attempt to identify trends through the mesh noise apparent in (b), the width and gap averages are presented in (c) and (d) respectively.}
+    \caption[Device sensitivity]{Parametric study on sensitivity using the device FEA model. The study varied the electrode width and gap from 5 $\mu$m to 15 $\mu$m and 1 $\mu$m to 10 $\mu$m respectively. The device FEA model held a channel height of 10 $\mu$m and a cell centered between the two electrodes with a center height of 5 $\mu$m. The sensitivity was calculated with equation \ref{eqn:Sun_sensitivity}. See section \ref{sec: FEA} for additional details on the device FEA model. In an attempt to identify trends through the mesh noise apparent in (b), the width and gap averages are presented in (c) and (d) respectively.}
     \label{fig:device_sensitivity}
 \end{figure}
 
-\par The device FEA parametric study identified a max sensitivity of 0.059 with an electrode gap of 6 $\mu$m and an electrode width of 6 $\mu$m. However, as apparent in figure \ref{fig:device_sensitivity_curve}, there is significant "noise" which disqualifies confidence in the accuracy of the sensitivity curve. Figure \ref{fig:device_sensitivity_average_width} and \ref{fig:device_sensitivity_average_gap} average over the electrode width and gap in an attempt to make out. The averaged trends do share a semblance to the simple model in figure \ref{fig:simple_sensitivity_gap} and \ref{fig:simple_sensitivity_width}. 
+\par The device FEA parametric study identified a max sensitivity of 0.059 with an electrode gap of 6 $\mu$m and an electrode width of 6 $\mu$m. However, as apparent in figure \ref{fig:device_sensitivity_curve}, there is significant "noise" which is indicative of low accuracy results. Figure \ref{fig:device_sensitivity_average_width} and \ref{fig:device_sensitivity_average_gap} depict the average trends over the electrode width and gap.
+
+%The averaged trends do share a semblance to the simple model in figure \ref{fig:simple_sensitivity_gap} and \ref{fig:simple_sensitivity_width}. 
 
 %\par (better for the discussion?) The impedance difference plot was included to show that although there is a peak for the maximum sensitivity, the impedance difference plateaus to a maximum as the electrode gap increases. The impedance difference and Sun's sensitivity tell us two different things: where the sensitivity is a ratio of the difference impedance to the medium impedance, the simple difference impedance gives us insight into the amount of non-relative amount of signal is from the cell. Depending on designer's goal, it may make sense to maximize your signal instead of your sensitivity, or to find a mixture of the two. 
 
-\par In both the device and, to a lesser extent, the simple FEA results, there is apparent "mesh noise". COMSOL generates a new mesh for each simulation in the parametric study. What is referred to as "mesh noise" is the accumulation of effects on results caused by differences in meshes. Any mesh noise from the medium and mixture FEA studies are amplified through the calculations for sensitivity. The severity of "mesh noise" in the device FEA sensitivity is a clear signal that the meshing scheme needs to revisited, as the effect of the mesh is not within the tolerance required for the sensitivity curve. 
+\par In both the device and, to a lesser extent, the simple FEA results, there is apparent "mesh noise". COMSOL generates a new mesh for each simulation in the parametric study. What is referred to as "mesh noise" is the accumulation of effects caused by the differences in meshes. Any mesh noise from the medium and mixture FEA studies are amplified through the calculations for sensitivity. The severity of "mesh noise" in the device FEA sensitivity is a clear signal that the meshing scheme needs to revisited.
+
+%, as the effect of the mesh is not within the tolerance required for the sensitivity curve. 
 
 \par To clarify and to expand upon the FEA parametric studies, the next section takes an analytic approach to sensitivity.
 
@@ -778,8 +784,8 @@
 
 \noindent The analytic sensitivity was calculated with Sun's definition using the power fraction, and the power fraction by itself. 
 
-\par Sun's sensitivity and the simple FEA sensitivity are compared in figure \ref{fig:sunVsSimpleSensitivity}. Sun's method found a maximum sensitivity of 0.0684 at an electrode width and gap of 15 $\mu$m and 5 $\mu$m respectively, compared to the simple FEA maximum sensitivity of 0.0762 at an electrode width and gap of 14 $\mu$m and 4 $\mu$m respectively. The curves largely tracked each other except for electrode gap values less than 4 $\mu$m where the analytic solution shows the sensitivity steeply drop. This is where the maximum percent difference of 52.88\% is recorded. 
-\par Since the power fraction does not share the same scale as Sun's and the simple FEA sensivity, all three studies were normalized by their maximum and compared in figure \ref{fig:sun-simple-powerFrac-comp}. The maximum power fraction was found at an electrode width and gap of 15 $\mu$m and 5 $\mu$m. The mean absolute error between the power fraction vs. Sun, the power fraction vs. the simple FEA, and Sun vs the simple FEA sensitivity curves are 0.0039, 0.0471, and 0.0486 respectively. This indicates that while the all three sensitivity studies track each other well, the Sun sensitivity and power fraction track each other very closely. This is supported by how all three studies predict nearly the same optimal electrode gap and width values inside the tested domain. 
+\par Sun's sensitivity and the simple FEA sensitivity are compared in figure \ref{fig:sunVsSimpleSensitivity}. Sun's method found a maximum sensitivity of 0.0684 at an electrode width and gap of 15 $\mu$m and 5 $\mu$m respectively, compared to the simple FEA maximum sensitivity of 0.0762 at an electrode width and gap of 14 $\mu$m and 4 $\mu$m respectively. The curves largely tracked each other except for electrode gap values less than 4 $\mu$m where the analytic sensitivity drops. This is where the maximum percent difference of 52.88\% is recorded. 
+\par Since the power fraction does not share the same scale as Sun's method and the simple FEA sensivity, all three studies were normalized by their maximum and compared in figure \ref{fig:sun-simple-powerFrac-comp}. The maximum power fraction was found at an electrode width and gap of 15 $\mu$m and 5 $\mu$m. The mean absolute error between the power fraction vs. Sun's method, the power fraction vs. the simple FEA, and Sun's method vs the simple FEA sensitivity curves are 0.0039, 0.0471, and 0.0486 respectively. This indicates that while the all three sensitivity studies track each other well, Sun's sensitivity and the power fraction track each other very closely. This is supported by how all three studies predict nearly the same optimal electrode gap and width values inside the tested domain. 
 
 
 %\par To validate the analytic parametric studies, the simple FEA model, the analytic sensitivity calculated with Sun's definition and the power fraction, and the power fraction used as a sensitivity metric. To explore device behaviour and optimization, the more efficient power fraction is used to significantly expand the domain of the sensitivity analysis by exploring increased ranges in electrode gap, electrode height, channel height, particle location, and particle size. 
@@ -797,16 +803,18 @@
         \includegraphics[width=\textwidth]{images/SunVsSimplePercentDiff.png}
         \caption{Percent difference between the Sun and Simple FEA Sensitivity.}
     \end{subfigure}
-    \caption{Comparison of Sun Sensitivity calculated with the power fraction, and the Simple FEA sensitivity. The Sun sensitivity found a maximum of 0.0684 at an electrode width and gap of 15 $\mu$m and 5 $\mu$m respectively. This is compared to the simple FEA maximum sensitivity of 0.0762 at an electrode width and gap of 14 $\mu$m and 4 $\mu$m respectively. The maximum percent difference is 52.88\%.}
+    \caption{Comparison of Sun's Sensitivity calculated with the power fraction, and the simple FEA sensitivity. Sun's sensitivity found a maximum of 0.0684 at an electrode width and gap of 15 $\mu$m and 5 $\mu$m respectively. This is compared to the simple FEA maximum sensitivity of 0.0762 at an electrode width and gap of 14 $\mu$m and 4 $\mu$m respectively. The maximum percent difference is 52.88\%.}
     \label{fig:sunVsSimpleSensitivity}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.53\textwidth]{images/normalizedSensitivityComp.png}
-    \caption{Comparison of power fraction, Sun, and simple FEA sensitivity curves normalized to their max sensitivity. The mean absolute error between the power fraction vs. Sun, the power fraction vs. the simple FEA, and Sun vs the simple FEA are 0.0039, 0.0471, and 0.0486 respectively.}
+    \caption{Comparison of power fraction, Sun's, and the simple FEA sensitivity curves normalized to their max sensitivity. The mean absolute error between the power fraction vs. Sun's method, the power fraction vs. the simple FEA, and Sun's method vs the simple FEA are 0.0039, 0.0471, and 0.0486 respectively.}
     \label{fig:sun-simple-powerFrac-comp}
 \end{figure}
+
+\newpage
 
 \par The power fraction was used to calculate a high resolution sensitivity curve, perform a parametric study over an expanded domain, and to explore the effects of cell position on sensitivity. 
 
@@ -814,7 +822,7 @@
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.7\textwidth}
+    \begin{subfigure}[b]{0.6\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/hiResPowerSensitivity.png}
         \caption{High resolution power fraction curve.}
@@ -824,15 +832,15 @@
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/hiResPowerVsGap.png}
-        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode gap plane.}
+        \caption{Projection of the high resolution power fraction curve onto the power fraction - electrode gap plane.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/hiResPowerVsWidth.png}
-        \caption{Projection of high resolution power fraction curve onto the power fraction - electrode width plane.}
+        \caption{Projection of the high resolution power fraction curve onto the power fraction - electrode width plane.}
     \end{subfigure}
-    \caption[Analytic Sensitivity]{A high resolution power fraction curve calculated over the electrode width spanning 5 $\mu$m to 20 $\mu$m, and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. The curve has a resolution of 0.1 $\mu$m. The study found a maximum power fraction of 0.0438 at an electrode width 20 $\mu$m and a electrode gap of 4.8 $\mu$m.}
+    \caption[Analytic Sensitivity]{A high resolution power fraction curve calculated over the electrode width spanning 5 $\mu$m to 20 $\mu$m and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. The curve has a resolution of 0.1 $\mu$m. The study found a maximum power fraction of 0.0438 at an electrode width 20 $\mu$m and a electrode gap of 4.8 $\mu$m.}
     \label{fig:high_resolution_power_fraction}
 \end{figure}
 
@@ -857,23 +865,23 @@
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/expandedPowerVsGap.png}
-        \caption{Projection of the high resolution power fraction curve onto the power fraction - electrode gap plane.}
+        \caption{Projection of the power fraction curve onto the power fraction - electrode gap plane.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/expandedPowerVsWidth.png}
-        \caption{Projection of the high resolution power fraction curve onto the power fraction - electrode width plane.}
+        \caption{Projection of the power fraction curve onto the power fraction - electrode width plane.}
     \end{subfigure}
     \caption[Analytic Sensitivity]{Expanded sensitivity study that varied the electrode width and gap from 1 $\mu$m to 40 $\mu$m with a resolution of 0.5 $\mu$m. The study found a maximum power fraction of 0.0438 with an electrode gap and width of 5 $\mu$m  and 40 $\mu$m  respectively. A 2.26\% increase in power fraction was found by increasing the electrode gap from 10 $\mu$m to 20 $\mu$m. A 0.091\% increase in power fraction was found by increasing the electrode gap from 20 $\mu$m to 40 $\mu$m.}
     \label{fig:expanded_power_sensitivity} 
 \end{figure}
 
-\par The calculated impedance difference between the mixture and medium was also calculated and is presented in figure \ref{fig:expanded_impedance_difference}. By observing the impedance difference and the , impedance difference maximizes and plateaus at a low electrode gap. By increasing the electrode gap, power is distributed more evenly and progressively higher up in the center of the channel. Up to a certain point, this will increase the power in the region of a cell suspended above the channel. At the same time, increasing the electrode gap also continually increases the measured medium impedance even after the impedance of the cell is maximized. This leads to the characteristic "crest" of our sensitivity curve which designates the optimized electrode geometry.
+\par The impedance difference between the mixture and medium is presented in figure \ref{fig:expanded_impedance_difference}. The impedance difference maximizes and plateaus at a low electrode gap value. By increasing the electrode gap, power is distributed more evenly and progressively higher up in the center of the channel. Up to a certain point, this will increase the power in the region of a cell suspended above the channel. At the same time, increasing the electrode gap increases the measured medium impedance. The balance of these trends leads to the characteristic "ridge" of the sensitivity curve which designates the optimized electrode geometry.
 
 \par  Increasing the electrode width over 10 $\mu$m found diminishing returns in optimizing the sensitivity. A 2.26\% increase in power fraction was found by increasing the electrode gap from 10 $\mu$m to 20 $\mu$m. A 0.091\% increase in power fraction was found by increasing the electrode gap from 20 $\mu$m to 40 $\mu$m.
 
-\par Both the limiting values of the electrode gap and width are strongly effected by the channel height. With a small channel height, larger electrode gaps and widths are restricted from producing power in regions far above the cell, instead the power is focused into the small channel containing the cell. 
+\par The limiting effects of the electrode gap and width are strongly affected by the channel height. With a small channel height, larger electrode gaps and widths are restricted from producing power in regions far above the cell, instead the power is focused into the small region containing the cell. 
 
 %\begin{figure}[h]
 %    \centering
@@ -939,4 +947,4 @@
     \label{fig:cell_position_sensitivity}
 \end{figure}
 
-\par Figure \ref{fig:vertical_cell_position_sensitivity} tells a similar story. The sensitivity is maximized the closer that the cell is to the plane of the electrodes. However, at the expense of sensitivity, the electrode gap can be increased to decrease the effect cell height on the sensitivity. By increasing the electrode gap, the fringe effects of the electric field become smaller relative to the effective sensor zone and the power dissipation becomes increasingly homogeneous in region between the electrodes. 
+\par Figure \ref{fig:vertical_cell_position_sensitivity} tells a similar story. The sensitivity is maximized the closer the cell is to the plane of the electrodes. However, at the expense of sensitivity, the electrode gap can be increased to decrease the effect of cell height on the sensitivity. By increasing the electrode gap, the fringe effects of the electric field become smaller relative to the effective sensor zone and the power dissipation becomes increasingly homogeneous in the region between the electrodes. 
