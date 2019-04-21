@@ -18,7 +18,7 @@
  % The Cell Membrane
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{The Cell Membrane}
- \par The cell membrane is an essential component of the cell that is necessary for signalling, extracellular interaction, and maintaining equilibrium. The membrane is primarily composed of the lipid bilayer which is a semi-permeable barrier constructed from phospholipids. A phospholipid has a hydrophilic head group and a hydrophobic tail group. When exposed to an aqueous environment, phospholipids join together in a configuration that leaves the head groups exposed to the aqueous solution and the tail group surrounded by other non-polar tail groups. In the case of a cell, the phospholipids take the form of a spherical bilayer membrane (figure \ref{fig:cell_membrane}). The membrane forms a semi-permeable membrane that allows for restricted diffusion of certain molecules. 
+ \par The cell membrane is an essential component of the cell that is necessary for signalling, extracellular interaction, and maintaining equilibrium. The membrane is primarily composed of the lipid bilayer which is a semi-permeable barrier constructed from phospholipids. A phospholipid has a hydrophilic head group and a hydrophobic tail group. When exposed to an aqueous environment, phospholipids join together in a configuration that leaves the head groups exposed to the aqueous solution and the tail group surrounded by other non-polar tail groups. In the case of a cell, the phospholipids take the form of a spherical bilayer membrane (figure \ref{fig:cell_membrane}). The membrane forms a semi-permeable barrier that allows for restricted diffusion of certain molecules. 
  
  \par In addition to phospholipids, the cell membrane is packed with proteins that are critical for a range of functions. Of interest to this thesis, are channel and transport proteins that allow controlled passage of molecules through the membrane. 
  
@@ -35,7 +35,7 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Electrical Model of the Cell}
 
-\par The state of a cell directly affects the cell electrical properties and measuring these properties provides insight into the cell state, type, and afflictions. A common model of the bulk electrical model of a cell is presented in figure \ref{fig:electric_model_cell}. As a bulk electrical element, the cell membrane can be modeled as a leaky capacitor that can accumulate a charge differential, but also leaks charges across the membrane. This behaviour can be modeled as a resistor and capacitor in parallel. The membrane capacitance is supplemented by the formation of an electric double layer (EDL). A biological cell carries a net negative charge which results in the development of a 10-100 nm thick electric double layer surrounding the cell in electrolyte solutions \cite{swaminathan_effect_2009}. The electric double layer contributes to the capacitance of the cell membrane. The EDL will be described in further detail in section \ref{sec:the_electric_double_layer}. The bulk electrical properties of the cytoplasm are often modeled as a RC series circuit with a relatively large capacitance. 
+\par The state of a cell directly affects its electrical properties. Measuring these properties provides insight into the cell state, type, and afflictions. A common representation of the bulk electrical model of a cell is presented in figure \ref{fig:electric_model_cell}. As a bulk electrical element, the cell membrane can be modeled as a leaky capacitor that can accumulate a charge differential, but also leaks charges across the membrane. This behaviour can be modeled as a resistor and capacitor in parallel. The membrane capacitance is supplemented by the formation of an electric double layer (EDL). A biological cell carries a net negative charge which results in the development of a surrounding 10-100 nm thick electric double layer in electrolyte solutions \cite{swaminathan_effect_2009}. The electric double layer contributes to the capacitance of the cell membrane. The EDL will be described in further detail in section \ref{sec:the_electric_double_layer}. The bulk electrical properties of the cytoplasm are often modeled as a RC series circuit with a relatively large capacitance. 
 
 \begin{figure}
     \centering
@@ -51,9 +51,9 @@
 
  % Read into articles and provide more details
  
- \par The dielectric properties of cells have been investigated since 1910 when H\"{o}ber showed the existence of the cell membrane by measuring the conductivity of erythrocytes (red blood cells) at high and low frequencies \cite{hober_r_methode_1910}. The field of study further developed with Fricke's application of Maxwell's equations to measure the capacitance and thickness of the cell membrane from 1924 to 1925 \cite{james_clerk_maxwell_treatise_1892, fricke_h_mathematical_1924, fricke_h_electric_1924, fricke_h_electric_1931}. 
+ \par The dielectric properties of cells have been investigated since 1910 when H\"{o}ber showed the existence of the cell membrane by measuring the conductivity of erythrocytes at high and low frequencies \cite{hober_r_methode_1910}. The field of study further developed with Fricke's application of Maxwell's equations to measure the capacitance and thickness of the cell membrane from 1924 to 1925 \cite{james_clerk_maxwell_treatise_1892, fricke_h_mathematical_1924, fricke_h_electric_1924, fricke_h_electric_1931}. 
  
- \par Then in 1998, Cole used Maxwell's mixture equation to derive the complex impedance of a single shelled cell model and developed equations to describe the Cole-Cole plot \cite{cole_electric_1928}. And with Curtis, Cole made the first single cell measurements on a Nitella cell (a large bacteria cell that ranges from 20 to 60 mm in length) \cite{curtis_transverse_1937}. 
+ \par In 1928, Cole used Maxwell's mixture equation to derive the complex impedance of a single shelled cell model and developed equations to describe the Cole-Cole plot \cite{cole_electric_1928}. And with Curtis, Cole made the first single cell measurements on a Nitella cell (a large bacteria cell that ranges from 20 to 60 mm in length) \cite{curtis_transverse_1937}. 
  
  \par From 1957-1968 Schwan used broadband electric impedance spectroscopy to identify $\alpha$, $\beta$, and $\gamma$ dispersions of a cell \cite{schwan_h_p_electrical_1957,schwan_h_p_electrical_1963,schwan_electrical_1994}. A dielectric dispersion is a frequency range with a large change in permittivity with respect to frequency. The permittivity of a material is the resistance to forming an electric field over a medium. In general the effects of a source charge can be described as the polarization of surrounding medium and the residual electric field over the resisting polarized medium. For a dielectric material, the electric field may be thought of as having two components: the electric displacement vector $\boldsymbol{D}$ that accounts for the electric field generated from separated free electrical charges, and the polarization $\boldsymbol{P}$ which accounts for the bound polarization charges in a dielectric material. The effect of $\boldsymbol{P}$ is to attenuate of the electric field. This relationship can be observed by rearranging the definition of electric displacement.
  \begin{equation}
@@ -76,7 +76,7 @@
     \boldsymbol{D} = \epsilon_o(1+\chi)\boldsymbol{E} = \epsilon_o \epsilon_r \boldsymbol{E}=\epsilon\boldsymbol{E},
  \end{equation}
  
- \noindent where $\epsilon = \epsilon_o\epsilon_r$ is the permittivity and $\epsilon_r = 1 + \chi$ is the relative permittivity of a medium. For the case of isotropic materials, $\chi$ and $\epsilon$ reduce to scalar values, but for anisotropic materials, they are expressed as second order tensors. The susceptibility of a material describes how a material polarizes under an electric field and the permittivity describes the resistance to forming an electric field over that material. For dielectrics, the permittivity and susceptibility are closely related, but due to the resistance to forming an electric field over a vacuum, the two quantities are subtly different. The permittivity of a dielectric can be viewed as the sum of resistance to forming an electric field over a vacuum and the effect of polarizing a material.  Figure \ref{tab:permittivity_table} list the permittivity and susceptibility of some common materials.
+ \noindent where $\epsilon = \epsilon_o\epsilon_r$ is the permittivity and $\epsilon_r = 1 + \chi$ is the relative permittivity of a medium. For the case of isotropic materials, $\chi$ and $\epsilon$ reduce to scalar values, but for anisotropic materials, they are expressed as second order tensors. The susceptibility describes how a material polarizes under an electric field, and the permittivity describes the resistance to forming an electric field over that material. For dielectrics, the permittivity and susceptibility are closely related, but due to the resistance to forming an electric field over a vacuum, the two quantities are subtly different. The permittivity of a dielectric can be viewed as the sum of resistance to forming an electric field over a vacuum and the effect of polarizing a material.  Figure \ref{tab:permittivity_table} list the permittivity and susceptibility of some common materials.
  
  \begin{table}[h]
      \centering
@@ -94,7 +94,7 @@
  \label{fig:schwan_dispersions}
  \end{figure}
  
- \par $\beta$ dispersions occurs up to 10 Mhz and is caused by the relaxation of the cell membrane. For lower frequencies, the membrane has enough time to charge and provide resistance to the electric field, but at frequencies greater than about 10 Mhz, the membrane does not have sufficient time to fully charge and provides little resistance to the electric field. $\gamma$ dispersion is related to the relaxation of water molecules. Instead of a charging membrane, $\gamma$ dispersion is due to the dipole rotation of the of water molecules and the biomolecules that water is bound to. The source of $\alpha$ dispersion is undetermined, but current theories include the surface reactance of the electric double layer near the charged cell, the impedance of the sarcoplasmic recticulum (for muscle fibers), or the frequency dependent conductance of ionic membrane channels as predicted by the Hodgkin-Huxley equations \cite{schwan_electrical_1994}.
+ \par $\beta$ dispersions occurs up to 10 Mhz and is caused by the relaxation of the cell membrane. For lower frequencies, the membrane has enough time to charge and provide resistance to the electric field, but at frequencies greater than about 10 Mhz, the membrane does not have sufficient time to fully charge and provides little resistance to the electric field. $\gamma$ dispersion is related to the relaxation of water molecules. Instead of a charging membrane, $\gamma$ dispersion is due to the dipole rotation of the water molecules and the biomolecules that water is bound to. The source of $\alpha$ dispersion is undetermined, but current theories include the surface reactance of the electric double layer near the charged cell, the impedance of the sarcoplasmic recticulum (for muscle fibers), or the frequency dependent conductance of ionic membrane channels as predicted by the Hodgkin-Huxley equations \cite{schwan_electrical_1994}.
  
  
  \par These developments laid the foundations for the following techniques for measuring the dielectric properties of single cells. 
@@ -106,14 +106,14 @@
  \par The dielectrophoretic force (DEP) is the force generated on a particle suspended in a solution by the interaction of an applied nonuniform electric field and an induced dipole moment developed through Maxwell-Wagner polarization (a build up of charges at dielectric boundaries). Peter Debye and Herbert A. Pohl were among the first to develop dielectrophoresis and demonstrated how particles could be moved with nonuniform electric fields \cite{muller_potential_2003}. With an applied AC electric field, the average DEP force on a spherical particle is expressed as \cite{morgan_single_2007, green_dielectrophoresis_1999}
  
  \begin{equation}
-     \big< F_{DEP} \big> = \pi \epsilon_m R^3 \text{Re}[\tilde{f}_{CM}] \nabla |\textbf{E}|^2 
+     \big< F_{DEP} \big> = \pi \epsilon_m R^3 \text{Re}[\tilde{f}_{CM}] \nabla |\textbf{E}|^2, 
      \label{eqn:dep_force}
  \end{equation}
  
  \noindent with
  
  \begin{equation}
-     \tilde{f}_{CM} = \frac{\tilde{\epsilon}_p - \tilde{\epsilon}_m}{\tilde{\epsilon}_p + 2\tilde{\epsilon}_m} 
+     \tilde{f}_{CM} = \frac{\tilde{\epsilon}_p - \tilde{\epsilon}_m}{\tilde{\epsilon}_p + 2\tilde{\epsilon}_m}, 
      \label{eqn:fcm_background}
  \end{equation}
  
@@ -133,7 +133,7 @@
  \label{fig:freq_crossover}
 \end{figure}
  
- \par To extract dielectric properties of cells using dielectric forces, the DEP crossover frequency can be experimentally determined and compared to theoretical values \cite{morgan_single_2007}. The crossover frequency occurs at the frequency when the real part of the Clausius-Mossotti factor equals zero and is where the DEP force switches from a positive to a negative DEP force (or \textit{vice versa}). Experimentally, this can be determined by the observation of a stationary cell in a non-uniform electric field. Theoretically, the crossover frequency can be described as
+ \par To extract dielectric properties of cells using dielectric forces, the DEP crossover frequency can be experimentally determined and compared to theoretical values \cite{morgan_single_2007}. The crossover frequency occurs when the real part of the Clausius-Mossotti factor equals zero and is where the DEP force switches from a positive to a negative DEP force (or \textit{vice versa}). Experimentally, this can be determined by the observation of a stationary cell in a non-uniform electric field. Theoretically, the crossover frequency can be described as
  
  \begin{equation}
      f_{cross} = \frac{1}{2 \pi}\sqrt{\frac{(\sigma_m-\sigma_p)(\sigma_p+2\sigma_m)}{(\epsilon_p-\epsilon_m)(\epsilon_p+2\epsilon_m)}},
@@ -172,7 +172,7 @@
  
  \par The average torque exerted on a spherical particle can be expressed as \cite{morgan_single_2007}
  \begin{equation}
-    \Tau_{\text{ROT}} = -4\pi \epsilon_m R^3 \text{Im}\big[\tilde{f}_{CM}\big]|\textbf{E}|^2
+    \Tau_{\text{ROT}} = -4\pi \epsilon_m R^3 \text{Im}\big[\tilde{f}_{CM}\big]|\textbf{E}|^2,
     \label{eqn:ROT_torque}
  \end{equation}
  
@@ -186,10 +186,10 @@
  
  \par By combining dielectrophoretic and electrorotation spectroscopy techniques, significant details of the dielectric properties can be obtained. Since dielectrophoretic spectroscopy determines the real Clausius-Mossotti factor spectrum, and electrorotation determines the imaginary Clausius-Mossotti factor, the full $\tilde{f}_{CM}$ spectrum can deduced from which dielectric properties can be extracted. Separating the real and imaginary components of the Clausius-Mossotti factor, the following expressions are obtained \cite{hober_zweites_1912, morgan_single_2007}.
  \begin{equation}
-     \text{Re}\big[\tilde{f}_{\text{CM}}\big] = \frac{(\sigma_p - \sigma_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\sigma_p + 2\sigma_m)} + \frac{\omega^2\tau^2_{\text{MW}}(\epsilon_p-\epsilon_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\epsilon_p+2\epsilon_m)}
+     \text{Re}\big[\tilde{f}_{\text{CM}}\big] = \frac{(\sigma_p - \sigma_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\sigma_p + 2\sigma_m)} + \frac{\omega^2\tau^2_{\text{MW}}(\epsilon_p-\epsilon_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\epsilon_p+2\epsilon_m)},
  \end{equation}
  \begin{equation}
-     \text{Im}\big[\tilde{f}_{\text{CM}} \big] = \frac{3\omega\tau_{\text{MW}}(\epsilon_p\sigma_m-\epsilon_m\sigma_p)}{(1+\omega^2\tau^2_{\text{MW}})(\epsilon_p+2\epsilon_m)(\sigma_p+2\sigma_m)}
+     \text{Im}\big[\tilde{f}_{\text{CM}} \big] = \frac{3\omega\tau_{\text{MW}}(\epsilon_p\sigma_m-\epsilon_m\sigma_p)}{(1+\omega^2\tau^2_{\text{MW}})(\epsilon_p+2\epsilon_m)(\sigma_p+2\sigma_m)}.
  \end{equation}
  \par A major shortcoming of the previously discussed techniques is the long time needed for measurements. An electrorotaion assay could potentially take up to several seconds per test and limit the number of cells tested. An alternative approach, electric impedance spectroscopy, allows for rapid dielectric spectroscopy, and with flow-through designs, allows dielectric spectroscopy of every cell in a sample. 
  
@@ -201,29 +201,29 @@
  \subsection*{Impedance}
  \par Electrical Impedance is defined as the total opposition of a system to the flow of an alternating current (AC). If a sinusoidal voltage is applied to an arbitrary system, then the voltage and current can be expressed as
  \begin{equation}
-    V(w) = |V|\cos(wt-\theta_V)
+    V(w) = |V|\cos(wt-\theta_V),
     \label{eqn:V(w)}
  \end{equation}
  \begin{equation}
-    I(w) = |I|\cos(wt - \theta_I)
+    I(w) = |I|\cos(wt - \theta_I),
     \label{eqn:I(w)}
  \end{equation}
  \noindent where $w$ is the angular frequency, $t$ is the time in seconds, and $\theta_V$ and $\theta_I$ are the phase of $V$ and $I$ respectively. Using Euler's formula, equations \ref{eqn:V(w)} and \ref{eqn:I(w)} can be recognized as the real part of the following:
  \begin{equation}
-    \hat{V}(w) = |V|e^{j(wt-\theta_V)}
+    \hat{V}(w) = |V|e^{j(wt-\theta_V)},
  \end{equation}
  \begin{equation}
-     \hat{I}(w) = |I|e^{j(wt-\theta_I)}
+     \hat{I}(w) = |I|e^{j(wt-\theta_I)}.
  \end{equation}
  
  \noindent Applying Ohm's law, the impedance of the system can be expressed as
  
  \begin{equation}
-    Z = \frac{|V|}{|I|}e^{j(\theta_I-\theta_V)}
+    Z = \frac{|V|}{|I|}e^{j(\theta_I-\theta_V)},
  \end{equation}
  \noindent or as 
  \begin{equation}
-     Z = |Z|e^{j\theta}
+     Z = |Z|e^{j\theta},
      \label{eqn:impedance_euler}
  \end{equation}
  \noindent where $\theta$ is the difference in phase of the voltage from the current after the current passes through the system. Equation \ref{eqn:impedance_euler} sets the interpretation of impedance to be a vector that lives on the complex plane where $|Z|$ is the length of the vector, and $\theta$ is the angle of the vector from the positive real axis (figure \ref{fig:Impedance_diagram}).
@@ -241,7 +241,7 @@
  \end{equation}
  \noindent where $R$ and $X$ are the real and imaginary components of the impedance vector, 
  \begin{equation}
-     Z = |Z| \angle \theta
+     Z = |Z| \angle \theta,
      \label{eqn:z_polar}
  \end{equation}
  \noindent where $|Z|$ is the magnitude of the impedance vector and $\theta$ is the angle of the vector from the positive real axis. Given an AC applied signal, Ohm's law can then be expressed as
@@ -260,35 +260,35 @@
  
  \par The rectangular form and polar form of the impedance are related as follows:
  \begin{equation}
-     |Z| = \sqrt{R^2 + X^2}
+     |Z| = \sqrt{R^2 + X^2},
  \end{equation}
  \begin{equation}
-    \theta = \text{arctan}\Big(\frac{X}{R}\Big)
+    \theta = \text{arctan}\Big(\frac{X}{R}\Big),
  \end{equation}
  \begin{equation}
-    R = |Z|\cos\theta
+    R = |Z|\cos\theta,
  \end{equation}
  \begin{equation}
-     X = |Z|\sin\theta
+     X = |Z|\sin\theta.
  \end{equation}
  
  \par The impedance of a system can be represented by a combination of elementary circuit components: resistors, capacitors, and inductors. The voltage response of these elements in the time domain can be expressed as
  \begin{alignat}{2}
-    &\text{Resistor:} \quad  &&V = IR \label{eqn:ohms_law}\\
-    &\text{Capacitor:} \quad &&V = C \frac{dV}{dt}\\
-    &\text{Inductor:} \quad  &&V = L \frac{dI}{dt}
+    &\text{Resistor:} \quad  &&V = IR, \label{eqn:ohms_law}\\
+    &\text{Capacitor:} \quad &&V = C \frac{dV}{dt},\\
+    &\text{Inductor:} \quad  &&V = L \frac{dI}{dt},
  \end{alignat}
- \noindent where $V(t)$ and $I(t)$ are the voltage and current as a function of time, $R$ is the resistance, $C$ is the capacitance, $L$ is the inductance. After applying Laplace transforms, the frequency dependent impedance of each element can be obtained as
+ \noindent where $V(t)$ and $I(t)$ are the voltage and current as a function of time, $R$ is the resistance, $C$ is the capacitance, and $L$ is the inductance. After applying Laplace transforms, the frequency dependent impedance of each element can be obtained as
   \begin{alignat}{2}
-    &\text{Resistor:} \quad  &&Z(w) = R \;\;\;\\
-    &\text{Capacitor:} \quad &&Z(w) = \frac{1}{sC}\\
-    &\text{Inductor:} \quad  &&Z(w) = sL
+    &\text{Resistor:} \quad  &&Z(w) = R, \;\;\;\\
+    &\text{Capacitor:} \quad &&Z(w) = \frac{1}{sC},\\
+    &\text{Inductor:} \quad  &&Z(w) = sL,
  \end{alignat}
  
  \noindent where $s=jw$ for steady state solutions.
 
 \subsection*{Impedance Spectroscopy: Coulter Counter}
-\par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chamber connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Measuring the resistance over time, pulses of increased resistance mark a particles flowing through the aperture, and the magnitude of the resistance pulse relates to the size of the particle. 
+\par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chambers connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Measuring the resistance over time, pulses of increased resistance mark a particles flowing through the aperture, and the magnitude of the resistance pulse relates to the size of the particle. 
 
 
 \begin{figure}[ht]
@@ -314,7 +314,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
 \noindent where $\phi$ is the volume fraction, $\rho_m$ is the resistivity of the conductivity, and $\rho_p$ is the resistivity of the particle. This approximation is only valid with the assumption that the particle diameter is small relative to the aperture. The volume fraction of a spherical particle in a tube is
 
 \begin{equation}
-    \phi = \frac{2d_p^3}{3d^2_tL}
+    \phi = \frac{2d_p^3}{3d^2_tL},
 \end{equation}
 
 \noindent where $d_p$ is the diameter of the particle.
@@ -329,15 +329,15 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
 \par Since 2000, Coulter counters have been fabricated on the micro scale and has allowed increased sensitivity and adaptability, leading to nanopore devices capable of analyzing single molecules \cite{sun_single-cell_2010}.
  
  \subsection*{Impedance Spectroscopy: Microfluidic Impedance Cytometry}
- \par Instead of electrodes on either side of an aperture, as in Coulter counter designs, microfluidic impedance cytometry designs electrodes directly onto the walls of the test volume. The test volume is the region that contains the particle and fluid with significant current density. The impedance of the test volume can be approximated as 
+ \par Instead of electrodes on either side of an aperture, as in Coulter counter designs, microfluidic impedance cytometry designs electrodes directly onto the walls of the test volume. The test volume is the region that contains the particle and fluid with significant current density. The impedance of the test volume can be approximated as leaky capacitor:
  \begin{equation}
-       \tilde{Z}_{mix} = \frac{1}{jw\tilde{C}_{mix}}
+       \tilde{Z}_{mix} = \frac{1}{jw\tilde{C}_{mix}},
     \label{eqn:impedance_with_cap}
  \end{equation}
  
  \noindent where $\tilde{C}_{mix}$ is the complex capacitance of the test volume, and can be expressed as
  \begin{equation}
-     \tilde{C}_{mix} = \tilde{\epsilon}_{mix}G_f
+     \tilde{C}_{mix} = \tilde{\epsilon}_{mix}G_f,
  \end{equation}
  
  \noindent where $\tilde{\epsilon}_{mix}$ is the complex permittivity derived from Maxwell's mixture law and $G_f$ is the geometric factor that accounts for fringing electric fields. Further details are provided in section \ref{sec:theory_impedance_cytometry}.
@@ -349,7 +349,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
      \label{fig:parallel_electrodes}
  \end{figure}
  
- \par Common electrode configurations are parallel facing electrodes and coplanar electrodes (figure \ref{fig:parallel_electrodes} and \ref{fig:coplanar_electrodes}). Coplanar electrodes are easier to fabricate than parallel facing electrodes, but come at the cost of diminished sensitivity and accuracy \cite{sun_analytical_2007}. Parallel electrode systems produce smaller variations in the electric field compared to coplanar electrodes. As a result the signal variation be greater for coplanar configurations. This results in a loss of accuracy, unless the vertical placement of the cell in the test volume can be controlled. In addition, parallel facing electrodes designs generally have larger volume fractions, and therefore, are more sensitive than coplanar electrodes. This can be observed by noting that given an electrode width, channel height, and channel depth, the coplanar test volume will be over twice that of parallel electrodes configurations.
+ \par Common electrode configurations are parallel facing coplanar (figure \ref{fig:parallel_electrodes} and \ref{fig:coplanar_electrodes}). Coplanar electrodes are easier to fabricate than parallel facing electrodes, but come at the cost of diminished sensitivity and accuracy \cite{sun_analytical_2007}. Parallel electrode systems produce smaller variations in the electric field compared to coplanar electrodes. As a result the signal variation be greater for coplanar configurations. This results in a loss of accuracy, unless the vertical placement of the cell in the test volume can be controlled. In addition, parallel facing electrodes designs generally have larger volume fractions, and therefore, are more sensitive than coplanar electrodes. This can be observed by noting that given an electrode width, channel height, and channel depth, the coplanar test volume will be over twice that of parallel electrodes configurations.
   
  
  \begin{figure}[ht]
@@ -359,16 +359,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
      \label{fig:coplanar_electrodes}
  \end{figure}
  
- \par In microfluidic impedance cytometry, alternating currents at a series of frequencies are applied to the system to see the impedance response over a range of frequencies. From this impedance spectrum, the frequency dependent complex response can be depicted as magnitude-phase plots, real-imamginary vs frequency plots, and nyquist plots in order to gain insight into the behaviour for the impedance response (figure \ref{fig:impedance_diagrams}). 
- 
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.3\textwidth]{images/exampleCircuit.png}
-    \caption{Example circuit used in impedance diagrams}
-    \label{fig:example_circuit}
-\end{figure} 
- 
+ \par In microfluidic impedance cytometry, alternating currents at a series of frequencies are applied to the system to measure the impedance response. From this impedance spectrum, the frequency dependent response can be depicted as magnitude-phase plots, real-imamginary plots, and nyquist plots in order to gain insight into the behaviour of the system (figure \ref{fig:impedance_diagrams}). 
  
  \begin{figure}
     \centering
@@ -395,19 +386,26 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
     \label{fig:impedance_diagrams}
 \end{figure}
 
-\par The 
- 
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/exampleCircuit.png}
+    \caption{Example circuit used in impedance diagrams}
+    \label{fig:example_circuit}
+\end{figure} 
+\newpage 
+
  \subsection*{Circuit Implementation}
  \par The general process of impedance spectroscopy involves the application of a voltage or current signal, and the measurement of the signal response over a range of frequencies to obtain an impedance spectrum of the device under testing (DUT). The resulting spectrum provides insight into the dielectric properties of the DUT. 
  
- \par The simplest system for measuring impedance is the I-V method (figure \ref{fig:IV_impedance_measurement}). The I-V method determines the impedance of a DUT by measuring the voltage drop over the DUT and a high precision resistor in series. The current through the system can be calculated with Ohm's law at the high precision resistor. The impedance of the DUT for the I-V method can be expressed as 
+ \par The simplest circuit for measuring impedance is based on the I-V method (figure \ref{fig:IV_impedance_measurement}). The I-V method determines the impedance of a DUT by measuring the voltage drop over the DUT and a high precision resistor in series. The current through the system can be calculated with Ohm's law at the high precision resistor. The impedance of the DUT for the I-V method can be expressed as 
  
  \begin{equation}
-     Z_{DUT} = \frac{\Delta V_{DUT}}{I} = \frac{V_1 - V_2}{V_2}R
+     Z_{DUT} = \frac{\Delta V_{DUT}}{I} = \frac{V_1 - V_2}{V_2}R,
      \label{eqn:IV_Z}
  \end{equation}
  
- \noindent where $V_1$, $V_2$, and $R$ correspond to values of elements in figure \ref{fig:IV_impedance_measurement}. An important disadvantage of this configuration, is that the accuracy of the impedance values relies on the precision of the resistor value, the extent of the parasitic capacitance in the system, and quality of the probes measuring $V1$ and $V2$ which can be challenged under a large DUT impedance and high frequencies. If the I-V method is used, coaxial cables will result in inaccuracies.
+ \noindent where $V_1$, $V_2$, and $R$ correspond to values of elements in figure \ref{fig:IV_impedance_measurement}. An important disadvantage of this configuration, is that the accuracy of the impedance values relies on the precision of the resistor value, the extent of the parasitic capacitance in the system, and quality of the probes measuring $V1$ and $V2$ which can be challenged under a large DUT impedance and high frequencies. If the I-V method is used, coaxial cables will result in inaccuracies and should not be used.
  
  \begin{table}[ht]
     \centering
@@ -423,7 +421,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
     \label{fig:IV_impedance_measurement}
 \end{figure}
 
-\par Another circuit configuration to measure impedance is the auto-balancing bridge method (figure \ref{fig:auto-balancing_bridge}) \cite{keysight_technologies_impedance_2015}. The auto-balancing bridge method works as an extension of the I-V method. Instead of measuring the current directly, the potential on the low side of the DUT is driven to a virtual ground by an op-amp, and an equivalent current is measured. By applying Kirchoff's current law to virtual ground node, the impedance of the DUT for auto-balancing bridge can be expressed as
+\par Another circuit configuration to measure impedance is the auto-balancing bridge method (figure \ref{fig:auto-balancing_bridge}) \cite{keysight_technologies_impedance_2015}. The auto-balancing bridge method works as an extension of the I-V method. Instead of measuring the current directly, the potential on the low side of the DUT is driven to a virtual ground by an op-amp, and an equivalent current is measured. By applying Kirchoff's current law to the virtual ground node, the impedance of the DUT for using the auto-balancing bridge method can be expressed as
 
 \begin{equation}
     \frac{V_1}{Z_{DUT}} - \frac{V_2}{R} = 0
@@ -457,7 +455,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  \begin{figure}[ht]
  \centering
  \includegraphics[width=0.7\textwidth]{images/cellAndElectrodes.png}
- \caption[Schematic diagram of simplified impedance sensor chamber.]{Schematic diagram of simplified impedance sensor chamber where w, $g$, and $l$ are the width, gap, and length of the electrodes respectively, and $h$ is the height of the chamber.}
+ \caption[Schematic diagram of simplified impedance sensor chamber.]{Diagram of the simplified impedance sensor chamber where w, $g$, and $l$ are the width, gap, and length of the electrodes respectively, and $h$ is the height of the chamber.}
  \label{fig:simplified_IS}
  \end{figure}
  
@@ -485,7 +483,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  \label{fig:single_shell}
  \end{figure}
 
-  \par The permittivity of the single shelled cell in figure \ref{fig:single_shell}, can be modelled as
+  \par The permittivity of the single-shelled cell in figure \ref{fig:single_shell}, can be modelled as
   \begin{equation}
       \tilde{\epsilon}_p = \tilde{\epsilon}_{mem} 
       \frac{\gamma^3+2(\frac{\tilde{\epsilon}_i - \tilde{\epsilon}_{mem}}
@@ -510,7 +508,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
     \label{eqn:impedance_with_cap}
   \end{equation}
   
-  \noindent where $w$ is the angular frequency and $\tilde{C}_{mix}$ is the complex capacitance of the mixture and can be expressed as
+  \noindent where $w$ is the angular frequency and $\tilde{C}_{mix}$ is the complex capacitance of the mixture which can be expressed as
   \begin{equation}
       \tilde{C}_{mix} = \tilde{\epsilon}_{mix} G_f.
       \label{eqn:capacitance_mix}
@@ -530,17 +528,17 @@ A significant advantage of the auto-balancing bridge method, is that when used w
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Electrode Cell Constant}
   \label{sec:electrode_cell_constant}
-  \par The cell constant $\kappa$ is defined as the proportionality factor between the measured resistance $R_b$ and the resistivity $\rho$ of a material.
+  \par The cell constant $\kappa$ is defined as the proportionality factor between the measured resistance $R_b$ and the resistivity $\rho$ of a material:
   \begin{equation}
-      R_b = \kappa \rho
+      R_b = \kappa \rho.
       \label{eqn:cell_constant_proportionality}
   \end{equation}
   
-  \noindent  Olthius related the measured resistance to capacitance in order to derive an analytic solution to cell constant \cite{olthuis_theoretical_1995}. 
+  \noindent  Olthius related the measured resistance to capacitance in order to derive an analytic solution to the cell constant \cite{olthuis_theoretical_1995}. 
   
-  \par To find $R_b$ for two electrodes with an interspatial material, the measured resistance can be related to capacitance via Ohm's law and Maxwell's equation.
+  \par To find $R_b$ for two electrodes with an interspatial material, the measured resistance can be related to capacitance via Ohm's law and Maxwell's equation:
   \begin{equation}
-      RC = \frac{\oiint \epsilon \boldsymbol{E} \cdot d\boldsymbol{S}}{\oiint \sigma\boldsymbol{E}\cdot d\boldsymbol{S}}
+      RC = \frac{\oiint \epsilon \boldsymbol{E} \cdot d\boldsymbol{S}}{\oiint \sigma\boldsymbol{E}\cdot d\boldsymbol{S}},
       \label{eqn:RC_integral}
   \end{equation}
   
@@ -548,13 +546,13 @@ A significant advantage of the auto-balancing bridge method, is that when used w
   
   \par If the interspatial material is homogeneous and isotropic, then equation \ref{eqn:RC_integral} can be reduced to
   \begin{equation}
-      RC = \frac{\epsilon}{\sigma}
+      RC = \frac{\epsilon}{\sigma}.
       \label{eqn:RC}
   \end{equation}
   
-  \par If we take $R_b = R$, we can combine equation \ref{eqn:RC} and \ref{eqn:cell_constant_proportionality} to express the cell constant in terms of capacitance.
+  \par If we take $R_b = R$, we can combine equation \ref{eqn:RC} and \ref{eqn:cell_constant_proportionality} to express the cell constant in terms of capacitance:
   \begin{equation}
-      \kappa = \frac{\epsilon}{C}
+      \kappa = \frac{\epsilon}{C}.
       \label{eqn:cell_constant_C}
   \end{equation}
   
@@ -567,25 +565,25 @@ A significant advantage of the auto-balancing bridge method, is that when used w
   
   \par The capacitance of the two parallel plates with a uniform electrode field in figure \ref{fig:parallel_capacitor} is
   \begin{equation}
-      C = \frac{\epsilon A}{d}
+      C = \frac{\epsilon A}{d},
       \label{eqn:capacitor}
   \end{equation}
   
   \noindent where $A$ the area of the plate, and $d$ is the distance between the plates. Since $A = l\gamma$, where $l$ is the width, and $\gamma$ is the height of the electrode, the capacitance per unit width can be written as
   \begin{equation}
-      C_l = \frac{\epsilon\gamma}{d} \;\;\;\text{where} \;\; C =l\, C_l
+      C_l = \frac{\epsilon\gamma}{d} \;\;\;\text{where} \;\; C =l\, C_l.
       \label{eqn:specific_capacitance}
   \end{equation}
   
   \par Returning to equation \ref{eqn:cell_constant_C}, and substituting equation \ref{eqn:specific_capacitance}, the cell constant can be expressed as 
   \begin{equation}
-      \kappa = \frac{d}{\gamma \, l}
+      \kappa = \frac{d}{\gamma \, l}.
       \label{eqn:cell_constant}
   \end{equation}
   
   \noindent The geometric factor is related to the cell constant by 
   \begin{equation}
-       G_f = \kappa \,l
+       G_f = \kappa \,l.
        \label{geometric_cell}
   \end{equation}
 
@@ -638,13 +636,17 @@ A significant advantage of the auto-balancing bridge method, is that when used w
     
     \noindent where $Z$ is the interior of a polygon in the Z-plane with vertices $Z_1,\;Z_2,\;Z_3,\; ...,Z_m$ and angles $\theta_1,\;\theta_2,\;\theta_3,\; ...,\theta_m$ which correspond to the points $T_1,\;T_2,\;T_3,\; ...,T_m$ on the real axis of the T-plane. $C_1$ and $C_2$ are integration constants. The Schwartz-Christoffel transform has three degrees of freedom, and consequently, up to three points may be chosen arbitrarily. $T_0$ is the reference and is typically chosen at the origin.
     
+    \par The solution and application of the Schwartz-Christoffel transform to co-planar electrodes will be further explored in chapter \ref{ch: modeling}.
+    
+    \FloatBarrier
+    
   %  \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane), and then to map the T-plane to the simplified W-plane (configuration of figure \ref{fig:parallel_capacitor}). The W-plane vastly simplifies the solution to the cell constant and the goemetric constant can be solved for with equation \ref{eqn:geometric_constant}. 
     
  
     
  \subsection{Cell Suspension Equivalent Circuit}
  \label{sec: cell_suspension_equiv_circ}
- \par With a solution to the impedance of the system, an equivalent circuit of the cell and medium can be used to approximate discrete components of the medium and cell. A simple equivalent circuit was described by Foster and Schwan that describes the cell as a capacitor and resistor in series (figure \ref{fig:simple_equiv_circuit_cell_medium}) \cite{schwan_electrical_1994}. The model assumes that the resistance of the cell membrane is far greater and is shorted by the membrane reactance and can be shorted. Similarly, it is assumed that the reactance of the cytoplasm is much smaller than the cytoplasm resistance and can be neglected.
+ \par With a solution to the impedance of the system, an equivalent circuit of the cell and medium can be used to approximate discrete components. A simple equivalent circuit was described by Foster and Schwan that describes the cell as a capacitor and resistor in series (figure \ref{fig:simple_equiv_circuit_cell_medium}) \cite{schwan_electrical_1994}. The model assumes that the resistance of the cell membrane is far greater than its reactance and can be expressed as a capacitor. Similarly, it is assumed that the cytoplasm resistance is far greater than its capacitance and can be modeled as a resistor.
  
  \begin{figure}
      \centering
@@ -693,7 +695,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  
  \par Microelectromechanical systems (MEMS) are devices on the order of microns, and are often smaller than the diameter of a human hair (about 100 microns). MEMS evolved from the manufacturing processes used to fabricate integrated circuits and ink jet cartridges \cite{xia_soft_1998-1}. Using silicon based microfabrication techniques such as photolithography, etching, and metal deposition; mechanical and electrically driven micro-sized pumps, cantilevers, and sensors can be fabricated \cite{wang_bio-mems:_2006}. 
  
- \par Using these microfabrication techniques, systems can be miniturized in precise and reproduceable packages with applications in a variety of biology related problems. MEMS applied in these fields are referred to as BioMEMS, and is an area of rapidly growing interest and research \cite{grayson_biomems_2004}. The majority of BioMEMS are focused on creating diagnostic systems that can identify diseases and properties of biogical substances. These devices usually need to treat, filter, and utilize detection methods that include electrophoresis, dielectrophoresis, surface plasmon resonance, and enzyme-linked immunosorbent assays (ELISA) \cite{foudeh_microfluidic_2012}. In order to run diagnostics on a solution of biological material, a sample needs to undergo pretreatment, sample preparation, preconcentration and detection. With the miniaturization afforded by microfabrication technology, the concept of combining these steps into a single chip is now feasible. These devices are referred to as labs on a chip or micro total analysis systems. This thesis focuses on the detection method of such a device.
+ \par Using these microfabrication techniques, systems can be miniturized in precise and reproduceable packages with applications in a variety of biology related problems. MEMS applied in these fields are referred to as BioMEMS. The majority of BioMEMS are focused on creating diagnostic systems that can identify diseases and properties of biogical substances. These devices usually need to treat, filter, and utilize detection methods that include electrophoresis, dielectrophoresis, surface plasmon resonance, and enzyme-linked immunosorbent assays (ELISA) \cite{foudeh_microfluidic_2012}. In order to run diagnostics on a solution of biological material, a sample needs to undergo pretreatment, sample preparation, preconcentration, and detection. With the miniaturization afforded by microfabrication technology, the concept of combining these steps into a single chip is now feasible. These devices are referred to as labs on a chip or micro total analysis systems. This thesis focuses on the detection method of such a device.
  
  %%%%%%%%%%%%%%%%%%%
  % MEMS Fabrication
@@ -702,7 +704,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  
  \subsection*{Photolithography}
  
- \par Photolithography is a MEMS fabrication method that patterns a thin layer of photoresist onto a substrate. Photoresist is a polymer that react to certain wavelengths of light. How the photoresist reacts determines whether the photoresist is classified as a positive or negative photoresist. Positive photoresist becomes soluble to a developer after exposure to light, and negative photoresist becomes cross-linked and insoluble to the developer after exposure. 
+ \par Photolithography is a MEMS fabrication method that patterns a thin layer of photoresist onto a substrate. Photoresist is a polymer that reacts to certain wavelengths of light. How the photoresist reacts determines whether the photoresist is classified as a positive or negative photoresist. Positive photoresist becomes soluble to a developer after exposure to light, and negative photoresist becomes cross-linked and insoluble to the developer after exposure. 
  
  \begin{figure}[h]
      \centering
@@ -711,41 +713,35 @@ A significant advantage of the auto-balancing bridge method, is that when used w
      \label{fig:negative_vs_positive_resist}
  \end{figure}
  
- \par Photoresist can be evenly applied to a substrate with a precise thickness through application of a spinner machine. The machine spins the substrate at given rotation velocities to evenly distribute the photoresist and precisely control the thickness. 
+ \par Photoresist can be applied to a substrate with a precise thickness through application of a spinner machine. The machine spins the substrate at given rotation velocities to evenly distribute the photoresist and precisely control the thickness. 
  
  \par The photoresist can then be exposed to ultra violet light. In order to apply a design to the surface, a contact aligner can be used to expose the substrate under a mask. The mask is a transparency sheet with the design printed on it. The mask controls where light is allowed and the contact aligner controls the distance between the mask and the photoresist. The resist is then developed to reveal the patterned design. 
  
+ \subsection*{Soft-lithography}
+ 
+ \par Soft-lithography uses photolithography to create a mold of the desired structures. A material such as PDMS can be cast on the mold and then removed to create the desired structure. The PDMS can be plasma bonded to a substrate to create fluid channels. Soft-lithography is frequently used for the fabrication of microfluidic channels since the process is far easier and cheaper than the alternative of glass etching \cite{whitesides_soft_2001}.
+ 
+
+ 
  \subsection*{Metal Deposition}
  
- \par One of several methods for MEMS metal deposition is sputtering. Sputtering ejects metal ions onto the target surface. The target substrate is placed on the anode with the desired metal the cathode. An argon plasma bombards the metal plate and ejects metal ions that are attracted to the anode and deposit on the target substrate. 
+ \par One of several methods for MEMS metal deposition is sputtering. Sputtering ejects metal ions onto the target surface. The target substrate is placed on the anode with the desired metal used as the cathode. An argon plasma bombards the metal plate and ejects metal ions that are attracted to the anode and deposit on the target substrate. 
+ 
+
+ 
+  \subsection*{Lift-off Process}
+ 
+ \par The lift-off process is a method for precise metal deposition of a pattern onto a substrate and is useful for creating micro-scale electrodes. Photolithography is first used to pattern photoresist where metal is not desired. After metal deposition of the substrate with patterned photoresist, the sputtered substrate is then placed in photoresist remover to lift off the photoresist with the undesired metal.
+
  
  \subsection*{Plasma Bonding}
  
  \par To irreversibly bond polydimethyl Siloxane (PDMS), the surface can be exposed to an air plasma. The plasma activates the PDMS surface by creating Si-OH groups that can bond to itself, glass, silicon, polystyrene, polyethylene, and silicon nitride \cite{mcdonald_polydimethylsiloxane_2002-1}.
 
- \begin{figure}[h]
-     \centering
-     \includegraphics[width=\textwidth]{images/softLithography.png}
-     \caption{Micro-channel manufacturing flowchart with SU-8 photoresist and soft-lithography.}
-     \label{fig:soft_lithography}
- \end{figure}
+
  
+
  
- \subsection*{Soft-lithography}
- 
- \par Soft-lithography uses photolithography to create a mold of the desired structures. A material such as PDMS can be poured over the mold and then removed to create the desired structure. The PDMS can be plasma bonded to a substrate to create fluid channels. Soft-lithography is frequently used for the fabrication of microfluidic channels since the process is far easier and cheaper than the alternative of glass etching \cite{whitesides_soft_2001}.
- 
- 
- \subsection*{Lift-off Process}
- 
- \par The lift-off process is a method for precise metal deposition of a pattern onto a substrate and is useful for creating micro-scale electrodes. Photolithography is first used to pattern photoresist where metal is not desired. After metal deposition of the substrate with patterned photoresist, the sputtered substrate is then placed in photoresist remover to lift off the photoresist with the undesired metal. 
- 
- \begin{figure}
-     \centering
-     \includegraphics[width=\textwidth]{images/electrodeFabrication.png}
-     \caption{Electrode fabrication flowchart through the lift off process.}
-     \label{fig:lift_off}
- \end{figure}
  
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -757,9 +753,9 @@ A significant advantage of the auto-balancing bridge method, is that when used w
 
 \subsection*{The Navier-Stokes Equation}
 
-\par The Navier-Stokes formula is a partial differential equation that describes the fluid velocity given a set of boundary conditions. The Navier-Stokes equation is derived from applying the Newton's second law to an infinitesimally small arbitrary control volume:
+\par The Navier-Stokes formula is a partial differential equation that describes the fluid velocity given a set of boundary conditions. The Navier-Stokes equation is derived from applying Newton's second law to an infinitesimally small arbitrary control volume:
 \begin{equation}
-    \rho \frac{\text{D}\textbf{u}}{\text{D}t} = \sum \textbf{f}
+    \rho \frac{\text{D}\textbf{u}}{\text{D}t} = \sum \textbf{f},
     \label{eqn:cons_momentum}
 \end{equation}
 
@@ -782,28 +778,28 @@ or in index notation as
 
 \par Surface forces are present in many fluid systems and generally arise from pressure driven flow and viscous properties of the fluid. In general, the surface forces are expressed as the divergence of the stress tensor:
 \begin{equation}
-    \textbf{f}_s = \boldsymbol{\nabla} \cdot \Tau
+    \textbf{f}_s = \boldsymbol{\nabla} \cdot \Tau,
 \end{equation}
 \begin{equation}
-    \textbf{f}_s = \frac{d\tau_{ij}}{dx_i}
+    \textbf{f}_s = \frac{d\tau_{ij}}{dx_i},
 \end{equation}
 
 \noindent where $\textbf{f}_s$ is the surface force, and $\Tau$ and $\tau_{ij}$ are the second order stress tensor which is dependent on the type of fluid and the driving forces. For pressure driven inviscid fluids, the stress tensor and surface forces can be expressed as 
 \begin{equation}
-    \tau_{ij} = -p\delta_{ij}
+    \tau_{ij} = -p\delta_{ij},
 \end{equation}
 \begin{equation}
-    \textbf{f}_s = - \frac{dp}{dx_j}
+    \textbf{f}_s = - \frac{dp}{dx_j},
 \end{equation}
 
 \noindent where p is the pressure. 
 
 \par For a viscid Newtonian fluid, the stress tensor and surface force can be expressed as \cite{probstein_physicochemical_2005}
 \begin{equation}
-    \tau_{ij} = -p\delta_{ij} + 2\mu(\epsilon_{ij} - \frac{1}{3}\epsilon_{kk}\delta_{ij})
+    \tau_{ij} = -p\delta_{ij} + 2\mu(\epsilon_{ij} - \frac{1}{3}\epsilon_{kk}\delta_{ij}),
 \end{equation}
 \begin{equation}
-    \textbf{f}_s = \frac{dp}{dx_i} + \mu \frac{d}{dx_j}(\frac{du_i}{dx_j} + \frac{du_j}{dx_i} - \frac{2}{3}\delta_{ij}\frac{du_k}{dx_k})
+    \textbf{f}_s = \frac{dp}{dx_i} + \mu \frac{d}{dx_j}(\frac{du_i}{dx_j} + \frac{du_j}{dx_i} - \frac{2}{3}\delta_{ij}\frac{du_k}{dx_k}),
     \label{eqn:viscid_newt_force}
 \end{equation}
 
@@ -869,7 +865,6 @@ or in index notation as
 \noindent where $\rho$ is the fluid density, $v$ is the characteristic fluid velocity, $\mu$ is the fluid viscosity, and $L$ is the characteristic length. In many cases, the characteristic length is the hydraulic diameter ($D_h$). The hydraulic diameter is used for fluid calculations in non-circular conduits by relating the conduit to a circular geometry in a proportion that maintains the conservation of momentum of the original conduit \cite{david_j._beebe_physics_2002}.
 
 \par The hydraulic diameter can be expressed as ratio of cross-sectional area to conduit perimeter:
-
 \begin{equation}
     D_h = 4 \frac{A}{P},
     \label{eqn:hydraulic_diameter}
@@ -884,7 +879,7 @@ or in index notation as
 
 \par In general, flow conditions with a Reynolds number much larger than 2300 exhibit turbulent behaviours, and flow conditions with a Reynolds number much smaller than 2300 exhibit laminar flow behaviours. The laminar-turbulent transition number of 2300 is reportedly accurate for microfluidics as well \cite{david_j._beebe_physics_2002}.
 
-\par Referring back to equation \ref{eqn:hydraulic_diameter}, since the product of characteristic length and velocity for microfluidic systems, most microfluidic flows are considered laminar. An important consequence is that separate streams that come in contact will not mix via convection, but only through diffusion. This phenomenom can be quantified with the dimensionless P\'eclet number (Pe), which is defined as the ratio of convection transport to diffusion transport \cite{nguyen_micromixersreview_2005}. The P\'eclet number can be expressed as 
+\par Referring back to equation \ref{eqn:hydraulic_diameter}, since the product of characteristic length and velocity for microfluidic systems, most microfluidic flows are considered laminar. An important consequence is that separate streams that come in contact will not mix via convection, but primarily through diffusion. This phenomenom can be quantified with the dimensionless P\'eclet number (Pe), which is defined as the ratio of convection transport to diffusion transport \cite{nguyen_micromixersreview_2005}. The P\'eclet number can be expressed as 
 \begin{equation}
     \text{Pe} = \frac{vL}{D}
 \end{equation}
@@ -894,17 +889,17 @@ or in index notation as
     Pe = \text{Re}\;\text{Sc}
 \end{equation}
 
-\noindent where Sc is the dimensionless Schmidt number and describes the ratio of momentum diffusivity and and mass diffusivity. The Schmidt can be calculated as
+\noindent where Sc is the dimensionless Schmidt number and describes the ratio of momentum diffusivity and and mass diffusivity. The Schmidt number can be calculated as
 \begin{equation}
     \text{Sc} = \frac{\mu}{\rho D}
 \end{equation}
 
-\par For fluid systems where Pe is much larger than 1, the system is convection dominated and when Pe is much smaller than 1, the system is diffusion dominated. Again, the product of the characteristic velocity and length in microfluidic systems is usually very small so in most BioMEMS, the system is diffusion dominated and cannot rely on convective mixing. To facilitate mixing in microfluidic systems, the device should be designed to create large surface areas between streams to expedite the diffusion process, or stimulate turbulent flow to create convective transport.
+\par For fluid systems where Pe is much larger than 1, the system is convection dominated and when Pe is much smaller than 1, the system is diffusion dominated. Again, the product of the characteristic velocity and length in microfluidic systems is usually very small so in BioMEMS, the system is diffusion dominated and cannot rely on convective mixing. To facilitate mixing in microfluidic systems, the device should be designed to create large surface areas between streams to expedite the diffusion process, or stimulate turbulent flow to create convective transport.
 
 
 \subsection*{Diffusion}
 
-\par Since microfluidic flow is almost always laminar, mixing will mainly occur via diffusion (figure \ref{fig:diffusion_ilustration}) \cite{david_j._beebe_physics_2002}. Diffusion is the phenomenon where a concentration will average over a volume by Brownian motion. Fick's laws give a quantitative description of diffusion. The first law states that the molar flux of a dissolved species is proportional to the concentration gradient of that species and can be expressed as 
+\par Since microfluidic flow is almost always laminar, mixing will mainly occur via diffusion (figure \ref{fig:diffusion_ilustration}) \cite{david_j._beebe_physics_2002}. Diffusion is the phenomenon where a concentration will average over a volume by Brownian motion. Fick's laws gives a quantitative description of diffusion. The first law states that the molar flux of a dissolved species is proportional to the concentration gradient of that species and can be expressed as 
 \begin{equation}
     \boldsymbol{J} = -D \boldsymbol{\nabla}C,
     \label{eqn:ficks_first}
@@ -969,13 +964,13 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \subsection*{Hydraulic Resistance}
 
-\par Fluid resistance is a powerful analogy of fluid flow to Ohm's law where pressure is analagous to electric potential, and volumetric flow rate ($Q$) is analagous to electrical current. 
+\par Fluid resistance is a powerful analogy of fluid flow to Ohm's law where pressure is analagous to electric potential, and volumetric flow rate ($Q$) is analagous to electrical current: 
 \begin{equation}
-    \Delta V = I R
+    \Delta V = I R,
     \label{eqn:ohm_analogy}
 \end{equation}
 \begin{equation}
-    \Delta P = Q R
+    \Delta P = Q R.
     \label{eqn:ohm_fluid}
 \end{equation}
 
@@ -1001,7 +996,7 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
     R = \frac{12 \mu L}{wh^3} 
 \end{equation}
 
-\par The Ohm's law analogy of fluid flow can be expanded to other circuit techniques such as equivalent parallel and series resistors, and Krichoff's current and voltage laws. This analogy allows the design of complicated fluid networks at the system level.
+\par The Ohm's law analogy of fluid flow can be expanded to other circuit techniques such as equivalent parallel and series resistors, and Krichoff's current and voltage laws. This analogy allows for the design of complicated fluid networks at the system level.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The Electric Double Layer
@@ -1027,7 +1022,7 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 \par Helmholtz was the first to describe the electric double layer and modeled it as a single layer of ions adsorbed to the surface of the electrode \cite{ishai_electrode_2013}. If the ions are treated as point charges, the Helmholtz model can be interpreted as a parallel capacitor with a distance $d_H$ between the plates that represents the distance between the center of the ion and the surface of the electrode. The capacitance per unit area can be approximated as
 
 \begin{equation}
-    C = \frac{\epsilon_o\epsilon_r}{d_H}
+    C = \frac{\epsilon_o\epsilon_r}{d_H},
 \end{equation}
 
 \noindent where $\epsilon_o$ is the permittivity of the vacuum, $\epsilon_r$ is the relative permittivity of the medium, and $d_H$ is the thickness of the Helmholtz layer \cite{_gongadze.pdf_????}. The Helmholtz model neglects the thermal, concentration, and voltage dependencies that experiments have confirmed \cite{_jes2011.pdf_????}.
@@ -1039,7 +1034,7 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \noindent where $n_i$ is the concentration of the ion $i$, $\phi$ is the electric potential, $T$ is the temperature, $k_b$ is the Boltzmann constant, $z_i$ is the charge number of the ion, and $e$ is the charge of an electron. The charge density can be written as the sum of all ions:
 \begin{equation}
-    \rho(x) = e \sum_i n_i^o z_i \text{exp}\Big(\frac{-z_i e\phi}{k_b T}\Big)
+    \rho(x) = e \sum_i n_i^o z_i \text{exp}\Big(\frac{-z_i e\phi}{k_b T}\Big).
 \end{equation}
 
 \par Combining Poisson's equation with the charge distribution above, results in the Poisson-Boltzmann equation:
@@ -1055,12 +1050,12 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \noindent then with the boundary condition for electrodes far apart, $\phi\to0$ and $\frac{d\phi}{dx}\to 0$ as $x\to\infty$, equation \ref{eqn:pb_equation} can be integrated to
 \begin{equation}
-    \Big(\frac{d\phi}{dx}\Big)^2 = \frac{2k_b T}{\epsilon_o\epsilon_r} \sum n_i^o \bigg[exp\Big(\frac{-z_i e\phi}{k_b T}\Big) - 1\bigg] 
+    \Big(\frac{d\phi}{dx}\Big)^2 = \frac{2k_b T}{\epsilon_o\epsilon_r} \sum n_i^o \bigg[exp\Big(\frac{-z_i e\phi}{k_b T}\Big) - 1\bigg].
 \end{equation}
 
 \noindent For a symmetrical electrolyte, the Poisson-Boltzmann equation can be expressed as
 \begin{equation}
-    \frac{d\phi}{dx} = \frac{8k_bTn^o}{\epsilon_o\epsilon_r}\sinh\Big(\frac{ze\phi}{2k_bT}\Big)
+    \frac{d\phi}{dx} = \frac{8k_bTn^o}{\epsilon_o\epsilon_r}\sinh\Big(\frac{ze\phi}{2k_bT}\Big).
     \label{eqn:edl_efield}
 \end{equation}
 
@@ -1077,13 +1072,13 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \noindent Differentiating \ref{eqn:edl_surface_charge} with respect to surface potential gives the differential capacitance of the electric double layer:
 \begin{equation}
-    C_{GC} = \Big(\frac{2z^2e^2n_i^o\epsilon_r\epsilon_o}{k_bT}\Big)\cosh\Big(\frac{ze\phi_o}{2k_bT}\Big)
+    C_{GC} = \Big(\frac{2z^2e^2n_i^o\epsilon_r\epsilon_o}{k_bT}\Big)\cosh\Big(\frac{ze\phi_o}{2k_bT}\Big).
 \end{equation}
 
 \par Stern combined the Helmholtz and the Guoy-Chapman thoeries to create a model with two layers: the inner layer known as the Stern layer, which consists of the adsorbed ions on the electrode surface from the Helmholtz model, and the outer diffuse layer (figure \ref{fig:electric_double_layer} \cite{_jes2011.pdf_????}. The capacitance of the Stern model can be approximated by the capacitance of the Helmholtz and Guoy-Chapman models in series \cite{_gongadze.pdf_????}:
 
 \begin{equation}
-    C_s = \bigg[ \frac{1}{C_H} + \frac{1}{C_{GC}}\bigg]^{-1}
+    C_s = \bigg[ \frac{1}{C_H} + \frac{1}{C_{GC}}\bigg]^{-1}.
 \end{equation}
 
 \par Unfortunately, these models do not fully describe the electric double layer and significantly overestimates the electric double layer capacitance. Gongadze et al. measured the capacitance of the electric double layer in a phosphate-buffered electrolyte solution with titanium electrodes. Using theory, the electric double layer capacitance was calculated as 231.7 $\mu$F/cm$^2$, 77.16 $\mu$F/cm$^2$, and 57.92 $\mu$F/cm$^2$ for the Helmholtz, Guoy-Chapman, and Stern model respectively, but the experimental capacitance was 6 $\mu$F/cm$^2$ \cite{_gongadze.pdf_????}. Predicting the electric double layer is convoluted by the surface properties of the electrodes, electrochemical reactions, and other non-quantified phenomena in the solution. 
@@ -1100,14 +1095,14 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 \end{figure}
 
 \par Empirical recalculations involve fitting a reference measurement to a function or equivalent circuit. One of the more common equivalent circuit models of the electric double layer is a resistor and capacitor in series (figure \ref{fig:edl_cap_equiv}) \cite{feldman_fractal-polarization_1998}. The impedance of the system can be expressed as
-\begin{equation}[h]
-    Z = 2Z_p + Z_m
+\begin{equation}
+    Z = 2Z_p + Z_m,
 \end{equation}
 \begin{equation}
-    Z_p = \frac{1 + sC_pR_p}{sC_p}
+    Z_p = \frac{1 + sC_pR_p}{sC_p},
 \end{equation}
 \begin{equation}
-    Z_m = \frac{R_m}{sC_mR_m+1}
+    Z_m = \frac{R_m}{sC_mR_m+1},
 \end{equation}
 
 \noindent where $Z_p$, $C_p$, and $R_p$ are the impedance, capacitance, and resistance of the electric double layer respectively; and $Z_m$, $C_m$, and $R_m$ are the impedance, capacitance, and resistance of the medium respectively. $s$ is the Laplace variable, and since our interest is in the steady state behaviour, $s = iw$.
@@ -1122,15 +1117,15 @@ and is known as the Stokes-Einstein equation. For spheroid particles where the r
 
 \par A second equivalent circuit involves a similar system, but with the inclusion of recap elements (figure \ref{fig:edl_recap_equiv}) \cite{feldman_fractal-polarization_1998-1}. A recap element can be modeled as 
 \begin{equation}
-    C_v = R(RC)^{-v}s^{-v}
+    C_v = R(RC)^{-v}s^{-v},
 \end{equation}
 
-\noindent where C is capacitance, R is resistance, and $v$ is $0<v<1$. $v$ determines the degree of capacitance or resistance behavior, with $v=1$ a complete capacitor, and $v=0$ a pure resistor. The recap element is known as a type of constant phase element (CPE), which is named after its property of contributing a constant angle and describes an imperfect dielectric. Constant phase elements are found in a wide range of electrodes and are used extensively in empirical descriptions of electrode polarization.\cite{ishai_electrode_2013}. To fit data to the CPE, it is useful to express the system impedance as
+\noindent where C is capacitance, R is resistance, and $v$ is $0<v<1$. $v$ determines the degree of capacitance or resistance behavior, with $v=1$ a complete capacitor, and $v=0$ a pure resistor. The recap element is known as a type of constant phase element (CPE), which is named after its property of contributing a constant angle and describes an imperfect dielectric. Constant phase elements are found in a wide range of electrodes and are used extensively in empirical descriptions of electrode polarization \cite{ishai_electrode_2013}. To fit data to the CPE, it is useful to express the system impedance as
 \begin{equation}
-    Z_{sys} = Z_{bulk} + Z_0\bigg(i\frac{f}{f_0}\bigg)^{-v}
+    Z_{sys} = Z_{bulk} + Z_0\bigg(j\frac{f}{f_0}\bigg)^{-v}
 \end{equation}
 
-\noindent where $Z_{bulk}$ is the impedance of the medium, $i$ is the imaginary number, $f$ is frequency, $f_0$ is the onset frequency of the electrode polarization, and $Z_0$ is a impedance fitting term. It is convenient to find the onset frequency by looking for the characteristic tail of the CPE on a nyquist plot (figure \ref{fig:nyquist_onset}).
+\noindent where $Z_{bulk}$ is the impedance of the medium, $j$ is the imaginary number, $f$ is frequency, $f_0$ is the onset frequency of the electrode polarization, and $Z_0$ is a impedance fitting term. It is convenient to find the onset frequency by looking for the characteristic tail of the CPE on a nyquist plot (figure \ref{fig:nyquist_onset}).
 
 \begin{figure}[h]
     \centering

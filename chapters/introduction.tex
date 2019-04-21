@@ -17,12 +17,12 @@
     \label{fig:josh-steph_functional_diagram}
 \end{figure}
 
-\par The impedance sensor was designed with two parallel 11.5 micron wide electrodes with a 5 micron offset that lays under a 15 by 15 micron target measurement area. The device isolates a cell by activating flush and suction channels once a cell from the sample inlet wanders into the test chamber with the purpose of keeping the cell in the test chamber and other cells out (figure \ref{fig:josh-steph_functional_diagram}). Once the device captures a cell, voltage signals over a range of frequencies are applied through the electrodes and the impedance can be calculated from current response.  Figure \ref{fig:josh-steph_sim} depicts the simulated electric fields lines around a cell with desired device behaviour (the development of the COMSOL model is described in section \ref{}). However, the device could not accomplish single-cell isolation and impedance measurements were taken on a suspension of cells (figure \ref{fig:stephanie_impedance_data}).
+\par The impedance sensor was designed with two parallel 11.5 micron wide electrodes with a 5 micron offset that lays under a 15 by 15 micron target measurement area. The device isolates a cell by activating flush and suction channels once a cell from the sample inlet wanders into the test chamber. (figure \ref{fig:josh-steph_functional_diagram}). Once the device captures a cell, voltage signals over a range of frequencies are applied through the electrodes, and the impedance can be calculated from current response.  Figure \ref{fig:josh-steph_sim} depicts the simulated electric fields lines around a cell with desired device behaviour (the development of the COMSOL model is described in section \ref{sec: FEA}). However, the device could not accomplish single-cell isolation and impedance measurements were taken on a suspension of cells (figure \ref{fig:stephanie_impedance_data}).
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{images/josh_steph_sim.png}
-    \caption[Example of desired device behaviour using a COMSOL simulation of electric field lines through a cell.]{Example of desired device behaviour using a COMSOL simulation of electric field lines through a cell. A detailed description of the COMSOL model is presented in section \ref{}}
+    \caption[Example of desired device behaviour using a COMSOL simulation of electric field lines through a cell.]{Example of desired device behaviour using a COMSOL simulation of electric field lines through a cell. A detailed description of the COMSOL model is presented in section \ref{sec: FEA}}
     \label{fig:josh-steph_sim}
 \end{figure}
 
@@ -62,4 +62,4 @@
     \item Can a device be manufactured at Cal Poly to validate the device design and analysis?
 \end{enumerate}
 
-\noindent By answering these guiding question, this thesis characterized and enhanced the Biofluidic's Lab's cell impedance spectroscope and provided model validated designs for future IS systems. 
+\noindent By answering these guiding question, this thesis characterized and enhanced the Biofluidic's Lab's cell impedance spectroscope and developed a model based design framework for future IS systems. 
