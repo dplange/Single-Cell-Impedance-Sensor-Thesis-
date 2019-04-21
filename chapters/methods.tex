@@ -4,10 +4,17 @@
 \subsection{PDMS Channel Fabrication}
 \par The device microchannels were fabricated by pouring polydimethysiloxane (PDMS) over a silicon wafer master mold. Through photolithography, a master mold was created by patterning a silicon wafer with SU-8 photoresist in  a process known as soft lithography. A 6"x6" 20,000 DPI negative transparency mask was ordered from CAD/Art Services Inc. with the emulsion face down. A general process flow is depicted in figure \ref{fig:soft_lithography}.
 
+ \begin{figure}[h]
+     \centering
+     \includegraphics[width=\textwidth]{images/softLithography.png}
+     \caption{Micro-channel manufacturing flowchart with SU-8 photoresist and soft-lithography.}
+     \label{fig:soft_lithography}
+ \end{figure}
 
 \subsection*{SU-8 Master Mold}
 
-\par Before photolithography, silicon wafers were cleaned in a Piranha bath (mixture of sulfuric acid and hydrogen peroxide) for 15 minutes with a DI (deionized) water rinse, and then dipped in BOE solution (buffered oxide etchant; mixture of buffer and concentrated hydrofluoric acid) for 5 minutes with another DI rinse. The wafers were then washed and dried in the SRD (spin rinse dry) machine. The wafers were baked at 205$^\circ$C for 10 minutes and then allowed to cool for 10 minutes. This dehydration bake ensured that moisture was evaporated from the silicon surface.
+\par Before photolithography, silicon wafers were cleaned in a piranha bath (mixture of sulfuric acid and hydrogen peroxide) for 15 minutes with a deionized (DI) water rinse, and dipped in a BOE solution (buffered oxide etchant; mixture of buffer and concentrated hydrofluoric acid) for 5 minutes with another DI rinse. The wafers were washed and dried in the SRD (spin rinse dry) machine. The wafers were baked at 205$^\circ$C for 10 minutes and allowed to cool for 10 minutes. This dehydration bake ensured that moisture was evaporated from the silicon surface.
+
 
 \begin{figure}[h]
     \centering
@@ -16,7 +23,7 @@
     \label{fig:spin_coater}
 \end{figure}
 
-\par The wafers were coated with SU-8 (a negative tone photoresist) on a spin coater (Laurel Technologies, ws-400; figure \ref{fig:spin_coater}). The spin coater rotates at a series of angular velocities in order to coat the wafer with the desired thickness of photoresist. About 4 mL of SU-8 2007 (\#07110769, MicroChem) was placed on the center of the wafer, spun at 400 RPM for 20 seconds to disperse the SU-8, and then at 1500 RPM for 35 seconds to spread the photoresist to a 10 $\mu$m thickness. After spin-coating, the wafer was soft-baked at 85$^\circ$C for 3 minutes and allowed to cool for 4 minutes.
+\par The wafers were coated with SU-8 (negative tone photoresist) on a spin coater (Laurel Technologies, ws-400; figure \ref{fig:spin_coater}). The spin coater rotates at a series of angular velocities in order to coat the wafer with the desired thickness of photoresist. About 4 mL of SU-8 2007 (\#07110769, MicroChem) was placed on the center of the wafer, spun at 400 RPM for 20 seconds to disperse the SU-8, and then at 1500 RPM for 35 seconds to spread the photoresist to a 10 $\mu$m thickness. After spin-coating, the wafer was soft-baked at 85$^\circ$C for 3 minutes and allowed to cool for 4 minutes.
 
 \begin{figure}[h]
     \centering
@@ -25,25 +32,27 @@
     \label{fig:mask_aligner}
 \end{figure}
 
-\par The photolithography process was completed using the Cannon PLA-501FA mask aligner (figure \ref{fig:mask_aligner}). With the transparency mask centered over the wafer and the 365 nm glass-transparency filter in place, UV light was applied to the photoresist for 14 seconds with a total exposure of 140 mJ/cm$^2$. The wafer was then baked at 85 $^\circ$C for 4 minutes with a 10 minute cool down. 
+\par The photolithography process was completed using the Cannon PLA-501FA mask aligner (figure \ref{fig:mask_aligner}). With the transparency mask centered over the wafer and the 365 nm glass-transparency filter in place, UV light was applied to the photoresist for 14 seconds with a total exposure of 140 mJ/cm$^2$. The wafer was baked at 85 $^\circ$C for 4 minutes with a 10 minute cool down. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/su-8_mold.jpg}
+    \includegraphics[width=0.8\textwidth]{images/su-8_mold.jpg}
     \caption{SU-8 master mold}
     \label{fig:SU-8_master_mold}
 \end{figure}
 
-\par The wafer was then developed in propylene glycol monomethyl ether acetate (SU-8 developer, MicroChem) in order to remove the non-exposed SU-8 from the wafer. The wafer was placed in the SU-8 developer for 3 minutes and then hard baked for 15 minutes at 210$^\circ$C. The result was a silicon wafer with SU-8 patterns that was used as a PDMS mold (figure \ref{fig:SU-8_master_mold})
+\par The wafer was developed in propylene glycol monomethyl ether acetate (SU-8 developer, MicroChem) in order to remove the non-exposed SU-8 from the wafer. The wafer was placed in the SU-8 developer for 3 minutes and then hard baked for 15 minutes at 210$^\circ$C. The result was a SU-8 patterned silicon wafer mold (figure \ref{fig:SU-8_master_mold}).
 
-The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
+
 
 \subsection*{Soft Lithography}
-\par The PDMS was obtained by purchasing a Dow Corning 184 Sylgard kit through Ellsworth adhesives. The kit comes with a base and a curing agent that cross-links the PDMS and increases the polymer's stiffness. The PDMS was prepared by mixing the base and the curing agent at a 10:1 ratio. The mixture was then degassed under vacuum until the PDMS was free of bubbles (figure \ref{fig:pdms_vacuum}). The PDMS was then poured directly onto the SU-8 master mold until the PDMS covered the wafer with approximately 1/4" depth. The PDMS-covered master mold was baked at 65$^\circ$C for atleast an hour in order to cure the PDMS. The PDMS chips were cut from the master mold with a scalpel and peeled off the wafer. 
+\par The Dow Corning 184 Sylgard kit was purchased through Ellsworth adhesives for the PDMS supply. The kit comes with a base and a curing agent that cross-links the PDMS and increases the polymer's stiffness. The PDMS was prepared by mixing the base and the curing agent at a 10:1 ratio. The mixture was then degassed under vacuum until the PDMS was free of bubbles (figure \ref{fig:pdms_vacuum}). The PDMS was then poured directly onto the SU-8 master mold until the PDMS covered the wafer with approximately 1/4" of depth. The PDMS-covered master mold was baked at 65$^\circ$C for at least an hour in order to cure the PDMS. The PDMS chips were cut from the master mold with a scalpel and peeled off the wafer. 
+ 
+
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.65\textwidth]{images/pdms_in_vacuum.jpg}
+    \includegraphics[width=0.4\textwidth]{images/pdms_in_vacuum.jpg}
     \caption{Degassing PDMS mixture under vacuum.}
     \label{fig:pdms_vacuum}
 \end{figure}
@@ -56,12 +65,19 @@ The detailed procedure steps are provided in appendix \ref{app: su-8_photolith}.
 
 \par The device electrodes were fabricated onto a glass substrate using the lift-off process (section \ref{sec: lift_off}). The process utilized a 6"x6", 20,000 DPI transparency mask ordered from CAD/art services Inc. A flow chart of the overall process is depicted in figure \ref{fig:lift_off}.
 
+  \begin{figure}
+     \centering
+     \includegraphics[width=\textwidth]{images/electrodeFabrication.png}
+     \caption{Electrode fabrication flowchart through the lift off process.}
+     \label{fig:lift_off}
+ \end{figure}
+
 \subsection*{Photolithography}
 
 \par Glass wafers were prepared for the lift-off process by cleaning the wafers in a pirahna bath for 15 minutes with a DI rinse, and then a 1 minute dip in BOE with another DI rinse before running the wafers through the SRD. The wafers were then dehydrated by baking on a hot plate for 10 minutes at 200 $^\circ$C and allowed to cool for five minutes. 
 
 
-\par The wafers were coated with ma-N1420 negative-tone photoresist on a spin coater (Laurel technologies, ws-400; figure \ref{fig:spin_coater}). The ma-N1420 photoresist is advantageous for the lift-off process since the developed photoresist has an undercut profile and the cross-linked property of negative photoresist is more durable in contrast to the "soft" positive photoresist. Before application of the ma-N1420, a primer was dispersed and then spun onto the wafer at 3000 RPM for 30 seconds to increase photoresist adhesion. Ma-N1420 was then dispersed onto the glass wafer, but before spinning, it was ensured that the photoresist spread to all edges of the wafer. The photoresist was spun at 2000 RPM for 35 seconds with a target of 2.5 micron thickness. The wafers were then soft-baked on a hotplate at 120$^\circ$C for 3 minutes to increase stability. 
+\par The wafers were coated with ma-N1420 negative-tone photoresist on a spin coater (Laurel technologies, ws-400; figure \ref{fig:spin_coater}). The ma-N1420 photoresist is advantageous for the lift-off process since the developed photoresist has an undercut profile, and the cross-linked property of the negative photoresist is more durable than the "soft" positive photoresist. Before application of the ma-N1420, a primer was dispersed and then spun onto the wafer at 3000 RPM for 30 seconds to increase photoresist adhesion. Ma-N1420 was then dispersed onto the glass wafer, but before spinning, it was ensured that the photoresist spread to all edges of the wafer. The photoresist was spun at 2000 RPM for 35 seconds with a target of 2.5 micron thickness. The wafers were then soft-baked on a hotplate at 120$^\circ$C for 3 minutes to increase stability. 
 
 \par The photolithography process was completed using the Cannon PLA-501FA mask aligner (figure \ref{fig:mask_aligner}). The glass wafer was placed in the aligner with a black tape backing in order to prevent light scattering and absorb radiation, and the transparency was centered over the wafer. UV light was applied to the wafer for 30 seconds for a total of 450 mJ/cm$^2$. 
 
