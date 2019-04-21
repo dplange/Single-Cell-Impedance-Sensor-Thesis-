@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{ch: modeling}
 
-\par In order to understand, validate, and optimize the single cell impedance spectroscopy system, three models were implemented: an analytic impedance solution, finite element analysis simulations, and a circuit model. The analytic impedance solution was implemented to build a foundational understanding of basic IS systems, to optimize simple IS systems, and to validate FEA simulations. The finite element analysis expands upon the analytic solution to understand how the complex device geometry differentiates from the simple analytic impedance model geometry, and to inform optimized device designs. The circuit model was developed to validate the IS DAQ system, understand its shortcomings, and explore alternative measurement circuits.
+\par In order to understand, validate, and optimize the single cell impedance spectroscopy system, three models were implemented: an analytic impedance solution, finite element analysis simulations, and a circuit model. The analytic impedance solution was implemented to build a foundational understanding of basic IS systems, to optimize simple IS systems, and to validate FEA simulations. The finite element analysis expands upon the analytic solution to understand how the complex device geometry differentiates from the simple analytic impedance model geometry, and to inform optimized device designs. The circuit model was developed to validate the IS DAQ system and understand its shortcomings.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Analytic Impedance Model %%%%%
@@ -37,7 +37,7 @@
  \begin{figure}[ht]
  \centering
  \includegraphics[width=0.7\textwidth]{images/singleCellSuspensionModelWithCoordinateSystem.png}
- \caption[Diagram of the simplified impedance sensor chamber.]{Schematic diagram of simplified impedance sensor chamber where $w$, $g$, and $l$ are the width, gap, and length of the electrodes respectively. $h$ is the height of the chamber.}
+ \caption[Diagram of the simplified impedance sensor chamber.]{Diagram of a simplified impedance sensor chamber where $w$, $g$, and $l$ are the width, gap, and length of the electrodes respectively. $h$ is the height of the chamber.}
  \label{fig:simplified_IS_models}
  \end{figure}
 
@@ -46,13 +46,13 @@
 \label{sec: coplanarElectrodeCellConstant}
     \par The geometric constant is the inverse of the cell constant ($\kappa$). If the cell constant is thought of in terms of the resistive cell constant ($R=\kappa\rho$), then the geometric cell constant can be thought of as the capacitive cell constant ($C=G_f\epsilon$). If equations \ref{eqn: analyticImpedance} to \ref{eqn: cEpsParticle} were expressed in terms of complex conductivities rather than complex permittivities, the impedance of the mixture could be expressed as $\Tilde{Z}_{mix}=\frac{\kappa}{\Tilde{\sigma}}$. For the ideal parallel plate capacitor in figure \ref{fig:parallelCapacitorModel}, where the electric field is uniform, the geometric constant can be expressed as
     \begin{equation}
-        (G_f)^{-1} = \kappa = \frac{d}{l\gamma},
+        G_f = (\kappa)^{-1} = \frac{\gamma l}{d},
         \label{eqn: cellConstants}
     \end{equation}
     \noindent where $d$ is the distance between the electrodes, $\gamma$ is the height of the electrodes, and $l$ is the length of the electrodes. This relation is discussed in further detail in section \ref{sec:electrode_cell_constant}. If the co-planar electrode geometry is mapped to the ideal parallel plate capacitor configuration, the ratio of $d$ and $\gamma$ can be derived. 
 
 
-    \par Sun, Greene, et al. utilized the Schwartz-Christoffel transform to map the coplanar electrode configuration in figure \ref{fig:simplified_IS_models} to the configuration of parallel electrodes with uniform electrode fields in figure \ref{fig:parallelCapacitorModel} \cite{sun_analytical_2007}. The Schwartz-Christoffel formula is a powerful transform that allows the mapping of the upper complex T-plane ($y>0$) to the inside of a polygon. The formula is
+    \par Sun, Greene, et al. utilized the Schwartz-Christoffel transform to map the coplanar electrode configuration in figure \ref{fig:simplified_IS_models} to the configuration of parallel electrodes with uniform electrode fields in figure \ref{fig:parallelCapacitorModel} \cite{sun_analytical_2007}. The Schwartz-Christoffel formula is a powerful transform that allows the mapping of the upper complex T-plane ($y>0$) to the inside of a polygon and can be expressed as
     
     \begin{equation}
         Z = C_1 \int_{T_0}^T \prod^m_{r=1} (T - T_r)^{(\theta_r/\pi - 1)} dT + C_2,
@@ -69,7 +69,7 @@
     
     \par A brief solution for the co-planar electrode system is covered in the following section with the complete step-by-step solution included in appendix \ref{app: complete_scm}.
     
-    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map half of the co-planar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to half of the ideal parallel plate geometry. The W-plane vastly simplifies the solution to the cell constant and will allow the direct calculation of the ratio $\gamma$ to $d$. Figure \ref{fig:scm_planes_models} diagrams the three mapped planes. 
+    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map half of the co-planar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to half of the ideal parallel plate geometry (W-plane). The W-plane vastly simplifies the solution to the cell constant and will allow the direct calculation of the ratio $\gamma$ to $d$. Figure \ref{fig:scm_planes_models} diagrams the three mapped planes. 
   \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{images/scmPlanes.png}
@@ -113,10 +113,10 @@
     \label{fig:T_to_Z_mapping}
  \end{figure}
 
-\par The mapping of the Z-plane to the T-plane can be found by solving for the inverse of equation \ref{eqn:TZ}.
+\par The mapping of the Z-plane to the T-plane can be found by solving for the inverse of equation \ref{eqn:TZ}:
 
 \begin{equation}
-     T = \cosh^2\bigg(\frac{z\pi}{2h}\bigg)
+     T = \cosh^2\bigg(\frac{Z\pi}{2h}\bigg)
      \label{eqn:ZT}
  \end{equation}
 
@@ -135,7 +135,7 @@
         \includegraphics[width=\textwidth]{images/ZtoT_map.png}
         \caption{Mapping of part of the polygon in the Z-plane to the T-plane.}
     \end{subfigure} 
-    \caption[Mapping of the open polygon in the Z-Plane to the T-plane.]{Mapping of the open polygon in the Z-Plane outlined by the points $F$, $C$, $D$, and $E$ to the T-plane. Equation \ref{eqn:ZT} is the mapping function.} 
+    \caption[Mapping of the open polygon in the Z-Plane to the T-plane.]{Mapping of the open polygon in the Z-Plane outlined by the points $F$, $C$, $D$, and $E$. Equation \ref{eqn:ZT} is the mapping function.} 
     \label{fig:Z_to_T_mapping}
  \end{figure}
 
@@ -199,7 +199,7 @@
     \label{eqn:d gamma relationship}
 \end{equation}
 
-\noindent and then substituting equation \ref{eqn:d gamma relationship} into equation \ref{eqn: cellConstants}, and recognizing that $\delta$ in the w-plane only represents half of the actual parallel plate distance ($d$), we find that the cell constant and geometric factor for co-planar electrodes are 
+\noindent and then substituting equation \ref{eqn:d gamma relationship} into equation \ref{eqn: cellConstants}, and recognizing that $\delta$ in the W-plane only represents half of the actual parallel plate distance ($d$), we find that the cell constant and geometric factor for co-planar electrodes are 
 
 \begin{equation}
     \kappa = \frac{2K(k)}{lK(k')}
@@ -304,7 +304,7 @@
     \phi = \frac{\frac{4}{3}\pi R^3}{(2w+g)hl},
 \end{equation}
 
-\noindent where $R$ is the particle radius, $w$ is the electrode width, $g$ is the gap between the coplanar electrodes, $h$ is the height of the channel, and $l$ is the length of the electrodes in the channel. This approximation assumes that the fringe fields outside the boundaries of the electrodes is negligible, and that the electric field magnitude is uniform inside the boundaries of the electrodes. However, for most co-planar electrode geometries used in impedance spectroscopy, the electric field is highly non-uniform. Figure \ref{fig:electricFieldPlots} depicts the non-uniformity of an electric field produced by co-planar electrodes. In this section, two alternative approaches to calculating the correct volume fraction, are proposed. 
+\noindent where $R$ is the particle radius, $w$ is the electrode width, $g$ is the gap between the coplanar electrodes, $h$ is the height of the channel, and $l$ is the length of the electrodes in the channel. This approximation assumes that the fringe fields outside the boundaries of the electrodes is negligible, and that the electric field magnitude is uniform inside the boundaries of the electrodes. However, for most co-planar electrode geometries used in impedance spectroscopy, the electric field is highly non-uniform. Figure \ref{fig:electricFieldPlots} depicts the non-uniformity of an electric field produced by co-planar electrodes. In this section, two alternative approaches to calculating the correct volume fraction are proposed. 
 
 \subsection*{Mapping Particle Volume to the W-Plane}
 \par To calculate the effective volume fraction, it is necessary to calculate the ratio of effective volumes:
@@ -312,13 +312,13 @@
 \begin{equation}
     \phi ' = \frac{V_p'}{V_{sys}'},
 \end{equation}
-\noindent where $\phi '$ and $V_p '$ and $V_{sys}'$ denotes the effective volume fraction, effective volume of the particle, and effective volume of the system respectively. When considering a particle suspended in the Z-plane, it is difficult to determine the effective volume for the system or the particle due to the non-uniform electric field. However, the electric field is uniform when the system is mapped to the w-plane. The effective volume fraction can be expressed as
+\noindent where $\phi '$ and $V_p '$ and $V_{sys}'$ denotes the effective volume fraction, effective volume of the particle, and effective volume of the system respectively. When considering a particle suspended in the Z-plane, it is difficult to determine the effective volume for the system or the particle due to the non-uniform electric field. However, the electric field is uniform when the system is mapped to the W-plane. The effective volume fraction can be expressed as
 \begin{equation}
     \phi ' = \frac{V^w_p}{V^w_{sys}}
 \end{equation}
-\noindent where $w$ denotes volumes in the w-plane.
+\noindent where $w$ denotes volumes in the W-plane.
 
-\par By referring to the ideal capacitor geometry in figure \ref{fig:parallelCapacitorModel}, the system volume in the w-plane can be expressed as 
+\par By referring to the ideal capacitor geometry in figure \ref{fig:parallelCapacitorModel}, the system volume in the W-plane can be expressed as 
 \begin{equation}
     V^w_{sys} = \gamma d l,    
 \end{equation}
@@ -332,22 +332,22 @@
     V^w_p = \frac{4}{3}\pi r_z r_{w1} r_{w2},
     \label{eqn:Vwp radii}
 \end{equation}
-\noindent where $r_z$ is the radius of the spherical particle in the z-plane, and $r_{w1}$ and $r_{w2}$ are the principle radii of the "ellipsoid-like" mapping of the particle orthodrome to the w-plane. Equation \ref{eqn:Vwp radii} can be rewritten as 
+\noindent where $r_z$ is the radius of the spherical particle in the Z-plane, and $r_{w1}$ and $r_{w2}$ are the principle radii of the "ellipsoid-like" mapping of the particle orthodrome to the W-plane. Equation \ref{eqn:Vwp radii} can be rewritten as 
 \begin{equation}
     V^w_p = \frac{4}{3} r_z \iint_{A_w} dA,
     \label{eqn: Vwp}
 \end{equation}
-\noindent where the integral represents the area of the particle orthodrome mapped to the w-plane. 
+\noindent where the integral represents the area of the particle orthodrome mapped to the W-plane. 
 
 \par Combining equations equations \ref{eqn: Vwsys} and \ref{eqn: Vwp}, we can approximate the effective volume fraction as
 \begin{equation}
-    \phi_w = \frac{2}{3} \frac{r_z \iint_{A_w} dA}{K(k)K(k')l}
+    \phi_w = \frac{2}{3} \frac{r_z \iint_{A_w} dA}{K(k)K(k')l}.
 \end{equation}
 
-\par The major shortcoming of this method is operating under the assumption that the mapped particle cross-sections are circle or ellipsoid-like. From empirical tests, many particle-electrode configurations result in mapped particle cross-sections that do appear circular or ellipse-like, but there will be an associated error that will often grow with the degree of the non-uniformity. Compared to the traditional volume fraction, the error is minimal. The w-plane volume fraction accounts for fringe field effects and the local non-uniformity of the electric field, allowing for the calculation of the volume fraction for a particle located anywhere in the system. 
+\par The major shortcoming of this method is operating under the assumption that the mapped particle cross-sections are circle or ellipsoid-like. From empirical tests, many particle-electrode configurations result in mapped particle cross-sections that do appear circular or ellipse-like, but there will be an associated error that will often grow with the degree of the non-uniformity. Compared to the traditional volume fraction, the error is minimal. The W-plane volume fraction accounts for fringe field effects and the local non-uniformity of the electric field, allowing for the calculation of the volume fraction for a particle located anywhere in the system. 
 
 \subsection*{Power Volume Fraction}
-\par In the w-plane, which represents the ideal parallel plate electrode model depicted in figure \ref{fig:parallelCapacitorModel}, the electric field is uniform inside the valid domain, and as a direct result, the power density is uniform throughout the domain of the w-plane. By interpreting that the effective volume fraction as the ratio of volumes in the w-plane, we arrive at the following relationship:
+\par In the W-plane, which represents the ideal parallel plate electrode model depicted in figure \ref{fig:parallelCapacitorModel}, the electric field is uniform inside the valid domain, and as a direct result, the power density is uniform throughout the domain of the w-plane. By interpreting the effective volume fraction as the ratio of volumes in the W-plane, we arrive at the following relationship:
 \begin{equation}
     \phi ' = \frac{V_p'}{V_{sys}'} = \frac{V^w_p}{V^w_{sys}} = \frac{P_p}{P_{sys}}.
     \label{eqn: effectiveVolumeFractions}
@@ -367,9 +367,9 @@
 \begin{equation}
     P_{sys} = \frac{4V^2}{\rho\kappa}.
 \end{equation}
-\noindent By substituting equation \ref{eqn: cellConstantSolution}, for the cell constant, the power of the system is expressed as 
+\noindent By substituting equation \ref{eqn: cellConstantSolution} for the cell constant, the power of the system is expressed as 
 \begin{equation}
-    P_{sys} = \frac{2V^2K(k')l}{\rho K(k)}
+    P_{sys} = \frac{2V^2K(k')l}{\rho K(k)}.
     \label{eqn: powerSystem}
 \end{equation}
 
@@ -388,7 +388,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
     \phi_p = \frac{\pi^2 }{8h^2K(k)K(k')l}\iiint_V \bigg|\bigg(\frac{T_A-T_C}{T-T_A}\bigg)\bigg(\frac{T_B-T_D}{T-T_B}\bigg)\bigg| \;dV
 \end{equation}
 
-\par If the particle is a sphere, the integral can conveniently be expressed in spherical coordinates:
+\par If the particle is a sphere, the integral can be conveniently expressed in spherical coordinates:
 \begin{equation}
     \phi_p(Z_c,R) = 2C\int_{0}^\frac{pi}{2}\int_0^{2\pi}\int_0^R r^2 \sin(\phi)F(r,\theta,\phi,Z_c)dr\,d\theta\,d\phi,
 \end{equation}
@@ -417,7 +417,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 
 \noindent The Linderholm definition of sensitivity takes into account the non-uniformity of the electric field, but does not include the particle size and dielectric properties of the particle and the medium.
 
-\par If instead of taking the ratio of power density at a specific point to the power of the system, the ratio of power in the region of the particle to the power of the system is calculated, we arrive at the power fraction described in equation \ref{eqn: powerVolumeFraction_initial}. The power fraction, as a measure of sensitivity, extends Linderholm's sensitivity to account for the size of the particle, and provides a more accurate measure if the size and shape of the particle is generally known.
+\par If instead of taking the ratio of power density at a specific point to the power of the system, the ratio of power in the region of the particle to the power of the system is calculated, we arrive at the power fraction described in equation \ref{eqn: powerVolumeFraction_initial}. The power fraction, as a measure of sensitivity, extends Linderholm's sensitivity to account for the size and shape of the particle.
 
 \par Sun proposed an alternative sensitivity definition as the ratio of relative impedance to the impedance of the medium:
 
@@ -426,7 +426,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
     \label{eqn:Sun_sensitivity}
 \end{equation}
 
-\par Sun's definition has the advantage of taking into account the dielectric properties of the suspension. However, his calculations used the standard method of determining the volume fraction, which does not account for the non-uniformity of the electric field local to the position of the particle. 
+\par Sun's definition has the advantage of taking into account the dielectric properties of the suspension. However, his calculations used the standard method of determining the volume fraction, which does not account for the non-uniformity of the electric field local and the position of the particle. 
 
 \par By using the power volume fraction with Sun's definition of sensitivity, we get the advantages of both sensitivity definitions: the ability to account for dielectric properties, and local non-uniformity in the power density over the region of the particle.
 
@@ -441,7 +441,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 
 \subsection{Analytic Impedance Modeling Tool}
 
-\par The analytic impedance solution for co-planar electrode systems was implemented in the MATLAB programming language. The code for the simulations is provided in appendix \ref{app: IS_code}. To facilitate simulation and exploration of the analytice impedance solution, the MATLAB application, the IS App, was created. The IS App collated the analytic impedance solution into a single program with a graphical user interface. The main page of the application is displayed in figure \ref{fig:matlab_IS_app}. The IS App is split into three sections: impedance spectroscopy, equivalent circuit values, and the electric field and volume fraction analysis. 
+\par The analytic impedance solution for co-planar electrode systems was implemented in the MATLAB programming language. To facilitate simulation and exploration of the analytic impedance solution, the IS App was created. The IS App collated the analytic impedance solution into a single program with a graphical user interface. The main page of the application is displayed in figure \ref{fig:matlab_IS_app}. The IS App is split into three sections: impedance spectroscopy, equivalent circuit values, and the electric field and volume fraction analysis. 
 
 \begin{figure}[h]
     \centering
@@ -459,8 +459,6 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 \par The electric double layer capacitance parameter determines the effect of the EDL on the model. The model takes the simplest approach to the EDL and represents its as two capacitors in series to the analytic impedance solution. The capacitance is calculated by finding the product of the capacitance per unit area and with the area of the electrodes. Implementation of sophisticated EDL models should be considered for further development of the IS App. 
 
 \par The checkmarks under the \textit{Impedance Data to Plot} subsection dictates what data sets will be plotted and saved after running the simulation. The \textit{mixture}, \textit{medium}, and \textit{difference} option denote the impedance solution of the single cell suspension, no-cell solution, and the difference between the single cell suspension and the no-cell solution impedance respectively. The \textit{EDL}, $\phi$V, and $\phi$p options calculates the analytic impedance solution with the electric double layer, the traditional volume fraction, and the power fraction respectively.
-
-\par Need to include a discussion of how the data is saved.
 
 \begin{figure}[h]
     \centering
@@ -515,7 +513,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
     \label{fig:is_app_Efield_volume_fraction}
 \end{figure}
 
-\par The top chart in figure \ref{fig:is_app_Efield_volume_fraction} depicts the logarithm electric field magnitude of the co-planar electrode system. Since this analytic impedance solution describes an infinitely long channel, the width of the calculated electric field must be truncated. The user is given the ability to control the width of the data calculated with the \textit{Plot width multiplier} parameter. The parameter determines the width of calculated electric field with the following relation:
+\par The top chart in figure \ref{fig:is_app_Efield_volume_fraction} depicts the logarithm electric field magnitude of the co-planar electrode system. Since this analytic impedance solution describes an infinitely long channel, the width of the calculated electric field must be truncated. The user is given the ability to control the width of the data calculated with the \textit{Plot width multiplier} parameter. The parameter determines the width of the calculated electric field with the following relation:
 
 \begin{equation*}
         \text{Data Width} = (\text{Plot width multiplier})*(2w_{electro} + g_{electro}),
@@ -523,7 +521,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 
 where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between the electrodes. In addition, the user can specify the color bar range plotted with the \textit{Color Axis Max} and \textit{Color Axis Min} parameters. Altering these parameters is useful when the area of interest is over-saturated by the color axis extrema, or the user desires to identify where a bounded range of the electric field magnitude occurs. If the plot cell checkbox is selected, the orthodrome perimeter of the cell is plotted.
 
-\par The bottom chart in figure \ref{fig:is_app_Efield_volume_fraction} plots the transformed orthodrome perimeter of the cell to the ideal parallel plate capacitor plane (w-plane) using the SCM-derived mapping described by equation \ref{eqn: w_mapping}. The depiction of the cell orthodrome in the w-plane provides a direct illustration of how the position of the cell in the chamber affects its effective volume fraction. In addition, the calculated values of the traditional, power, and mapped volume fraction are provided in the bottom left corner. 
+\par The bottom chart in figure \ref{fig:is_app_Efield_volume_fraction} plots the transformed orthodrome perimeter of the cell to the ideal parallel plate capacitor plane (W-plane) using the SCM-derived mapping described by equation \ref{eqn: w_mapping}. The depiction of the cell orthodrome in the W-plane provides a direct illustration of how the position of the cell in the chamber affects its effective volume fraction. In addition, the calculated values of the traditional, power, and mapped volume fraction are provided in the bottom left corner. 
 
     
 
@@ -589,7 +587,7 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
 
 \par In general, the simple geometry attempts to follow two of the assumptions made in the analytic impedance solution with reference to the electrode orientation given in figure \ref{fig:simplified_IS_models}:
 \begin{enumerate}
-    \item The electrode fringe fields are allowed to expand infinitely in the $\hat{\boldsymbol\imath}$ direction (i.e. there are no vertical bounds).
+    \item The electrode fringe fields are allowed to expand infinitely in the $\hat{\boldsymbol\imath}$ direction (i.e. there are no horizontal bounds).
     \item The electric field has no component in the $\hat{\boldsymbol\jmath}$ direction (i.e. geometry must be uniform in the direction parallel to the electrodes).
 \end{enumerate}
 
@@ -607,7 +605,7 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
     \begin{subfigure}[b]{\textwidth}
       \centering
     \includegraphics[width=0.6\textwidth]{images/channel_dimensions_inventor.png}
-    \caption[]{Drawing of the geometry used in the device FEA model with dimensioned system and PDMS geometry. All dimensions of length in units of microns.}
+    \caption[]{Drawing of the geometry used in the device FEA model with dimensioned system and PDMS geometry. All dimensions of length are in units of microns.}
     \label{fig:device_channel_dimensions_FEA}
     \end{subfigure}
     \\
@@ -615,7 +613,7 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.4\textwidth]{electrode_dimensions_inventor}
-       \caption{Drawing of the geometry used in the Device Medium and Device Cell FEA models with dimensioned electrode geometry. All dimensions of length in units of microns.}
+       \caption{Drawing of the geometry used in the Device Medium and Device Cell FEA models with dimensioned electrode geometry. All dimensions of length are in units of microns.}
         \label{fig:device_electrode_dimensions_FEA}
     \end{subfigure} 
     \\
@@ -623,7 +621,7 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.55\textwidth]{images/particle_dimension_inventor.png}
-        \caption{Drawing of the geometry used in the Device Cell FEA model with dimensioned cell geometry. All dimensions of length in units of microns.}
+        \caption{Drawing of the geometry used in the Device Cell FEA model with dimensioned cell geometry. All dimensions of length are in units of microns.}
         \label{fig:device_cell_dimensions_FEA}
     \end{subfigure} 
     \caption[Device FEA model geometry.]{Drawing of the Device FEA geometry models. All dimensions of length are in microns.}
@@ -675,11 +673,11 @@ where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the co
     \Tilde{\sigma} = \sigma + jw\epsilon ,
 \end{equation}
 
-\par The contact impedance condition allows current normal to the selected boundary, but does not allow current tangential flow through the boundary. The condition can be used as an effective approximation to thin and relatively non-conductive domains. In the case of the cell membrane, it is an appropriate approximation. 
+\par The contact impedance condition allows current normal to the selected boundary, but does not allow tangential current flow through the boundary. The condition can be used as an effective approximation to thin and relatively non-conductive domains. In the case of the cell membrane, it is an appropriate approximation. 
 
 \par The low and high potential electrodes were set as the ground ($v=0$) and the applied voltage ($v=v_0$).
 
-\par The impedance of the system was calculated by dividing the input voltage of $v_0 = 1$V by the system system current. The system current was calculated by placing a boundary probe over the ground electrode that integrated the current density over the surface of the electrode. The calculation resulted in the phasor impedance of the electrode cell. 
+\par The impedance of the system was calculated by dividing the input voltage of $v_0 = 1$V by the system current. The system current was calculated by placing a boundary probe over the ground electrode that integrated the current density over the surface of the electrode. The calculation resulted in the phasor impedance of the electrode cell. 
 
 %%% Mesh Development
 \subsection{Mesh Development}
