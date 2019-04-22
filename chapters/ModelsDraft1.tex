@@ -2,7 +2,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Analytical Impedance Solution
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Analytical Impedance Solution} \label{sec: analytical_impedance_solution}
+\label{app:analytic_impedance_solution}
+%\section{Analytical Impedance Solution} 
 
 \par Impedance is a measurement of the dielectric properties of a system and is related to the complex permittivity of the materials which is expressed as
 
@@ -24,7 +25,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Maxwell's Mixture Theory
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Maxwell's Mixture Theory}
+\section{Maxwell's Mixture Theory}
  
  Maxwell's equation for the complex permittivity of a mixture is
   
@@ -98,7 +99,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Electrode Cell Constant
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection{Electrode Cell Constant}
+  \section{Electrode Cell Constant}
   
   \par The cell constant $\kappa$ is defined as the proportionality factor between the measured resistance $R_b$ and the resistivity $\rho$ of a material.
   
@@ -162,14 +163,14 @@
   \noindent The geometric factor is related to the cell constant by 
   
   \begin{equation}
-       G_f = \kappa \,l
+       G_f = (\kappa)^{-1}
        \label{geometric_cell}
   \end{equation}
 
   \noindent By combining equations \ref{eqn:cell_constant} and \ref{geometric_cell}, the geometric factor can be expressed as
   
   \begin{equation}
-      G_f = \frac{d}{\gamma}
+      G_f = \frac{\gamma l}{d}
       \label{eqn:geometric_constant}
   \end{equation}
   
@@ -179,7 +180,8 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%
   % Conformal Mapping
   %%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection{Conformal Transformations}
+  \section{Conformal Transformations}
+  \label{app:conformal_mapping}
   
   \begin{figure}[h]
   \centering
@@ -226,7 +228,7 @@
     \end{figure}
     
     
-\subsection*{Schwartz-Christoffel Transform: T to Z Mapping}
+\subsection{Schwartz-Christoffel Transform: T to Z Mapping}
 
   \par Mapping the T-plane to the Z-plane, point $C$ and $D$ will be chosen as the polygon corners with angles of $\pi/2$.  
   
@@ -363,7 +365,7 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
     \label{fig:Z_to_T_mapping}
  \end{figure}
 
-\subsection*{Schwartz-Christoffel Transform: W to T Mapping}
+\subsection{Schwartz-Christoffel Transform: W to T Mapping}
  
  \par Mapping the T-plane to the W-Plane, points $A$, $B$, $C$, and $D$, will be chosen as the polygon corners with angles of $\pi/2$.
  \begin{equation}
@@ -414,22 +416,22 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  
  \noindent For point $B$, $W_B = j\gamma$ and $\lim_{T\to ^-T_B} v = \arcsin{(i\infty)}$
  \begin{flalign*}
- j\gamma &= D_3F(i\infty, k)&\\
- D_3 &= \frac{F(i\infty,k)}{j\gamma}&
+ j\gamma &= D_3F(j\infty, k)&\\
+ D_3 &= \frac{F(j\infty,k)}{j\gamma}&
  \end{flalign*}
  
  \noindent Equating the two solutions for $D_3$, the Geometric factor (equation \ref{eqn:geometric_constant}) in the W-Plane can be mapped to T-plane and, using equation \ref{eqn:ZT}, mapped to the Z-plane.
  
  \begin{equation}
-     D_3 = \frac{d}{K(k)} = \frac{j\gamma}{\lim_{v\to i\infty}F(v,k)} 
+     D_3 = \frac{d}{K(k)} = \frac{j\gamma}{\lim_{v\to j\infty}F(v,k)} 
      \label{eqn:prep_D3}
  \end{equation}
  \begin{equation}
-     G_f = \frac{2\,d}{\gamma} = \frac{j\,2\,K(k)}{\lim_{v\to i\infty}F(v,k)}
+     G_f = \frac{\gamma l}{2\,d} = \frac{\lim_{v\to i\infty}F(v,k)l}{j\,2\,K(k)}
      \label{eqn:geometric_constant_mapping}
  \end{equation}
  
- \noindent A constant of two appears in the numerator of \ref{eqn:geometric_constant_mapping} since the conformal mapping takes advantage of symmetry and only accounts for half of the disance between the electrodes in the W-plane (figure \ref{fig:scm_planes}).
+ \noindent A constant of two appears in the denominator of \ref{eqn:geometric_constant_mapping} since the conformal mapping takes advantage of symmetry and only accounts for half of the disance between the electrodes in the W-plane (figure \ref{fig:scm_planes}).
  
 
  \par However, the expression $\lim_{v \to i\infty}F(v,k)$ is difficult to handle, but by using the imaginary-argument transform, it can be shown that $\lim_{v\to j\infty} F(v,k) = iK(k')$. 
@@ -526,7 +528,8 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
      \label{eqn:Gf}
  \end{equation}
  
- \subsection*{Solution to the Electric Field}
+ \section{Solution to the Electric Field}
+ \label{app:analytic_electric_field}
  
  \par Now with Z-T and T-W mappings, the solution of the electric field in the W-plane can be mapped to the Z-plane. The mapping of the electric field can be expressed as 
  

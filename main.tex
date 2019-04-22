@@ -1,6 +1,8 @@
 \documentclass[12pt]{report}
 %\documentclass[12pt,twoside]{report}
 \usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{tabularx}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage[a4paper,left=1.5in,right=1in,top=1in,bottom=1in]{geometry}
@@ -21,9 +23,11 @@
 \usepackage{hyperref}
 \usepackage{float}
 
-\usepackage[
-    style=ieee,
-]{biblatex}
+
+\usepackage[toc,page]{appendix}
+%\usepackage[titletoc]{appendix}
+
+\usepackage[style=ieee,]{biblatex}
 \addbibresource{testReferences.bib}
 \addbibresource{Impedance Spectroscopy.bib}
 
@@ -36,28 +40,29 @@
 \DeclareMathOperator{\arctanh}{arctanh}
 \DeclareMathOperator{\Log}{Log}
 
+
 \setcounter{secnumdepth}{3}
 
 \pagenumbering{roman}
 
-\title{
-        {Single Cell Impedance Sensor}\\
-        {\large Cal Poly}
-}
+\title{Single Cell Impedance Spectroscopy}
 \author{David Lange}
-\date{August 2017}
+\date{April 2019}
 
 \begin{document}
-%\maketitle
+%\input{titlePage.tex}
 
+%\input{copyright.tex}
 
-%\chapter*{Committee Membership}
+%\chapter*{COMMITTEE MEMBERSHIP}
 %\input{chapters/committeemebership}
 
-%\chapter*{Abstract}
+
+
+%\chapter*{ABSTRACT}
 %\input{chapters/abstract}
 
-%\chapter*{Acknowledgements}
+%\chapter*{ACKNOWLEDGEMENTS}
 %\input{chapters/acknowledgements}
 
 \tableofcontents
@@ -90,25 +95,31 @@
 %\chapter{Modeling}
 %\input{chapters/models}
 
-\chapter{Results}
-\input{chapters/results}
+%\chapter{Results}
+%\input{chapters/results}
 
-%\chapter{Discussion}
-%\input{chapters/discussion.tex}
+\chapter{Discussion}
+\input{chapters/discussion.tex}
 
 %\chapter{Conclusion}
 %\input{chapters/conclusion}
 
-%Bibliography
-%\phantomsection 
-%\addcontentsline{toc}{chapter}{Bibliography} 
-%\singlespacing
-%\printbibliography
+%\begin{appendices}
 
-%\appendix
+%\chapter{Microfluidics}
+%\input{chapters/microfluidics.tex}
+
 %\input{chapters/SCM}
 %\input{chapters/AnalyticImpedanceSolutionMATLABCode}
 %\input{chapters/SpiceModels.tex}
+%\chapter[Analytic IS]{Detailed Analytic Impedance Solution}
+%\input{chapters/ModelsDraft1.tex}
+%\end{appendices}
 
+%Bibliography
+\phantomsection 
+\addcontentsline{toc}{chapter}{Bibliography} 
+\singlespacing
+\printbibliography
 
 \end{document}

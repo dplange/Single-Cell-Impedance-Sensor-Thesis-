@@ -1,5 +1,50 @@
 \label{ch: discussion}
 
-\par The optimal device sensitivity changes with the sensor chamber height, width, cell size, and location.
+%\par The optimal device sensitivity changes with the sensor chamber height, width, cell size, and location.
 
-\par When chamber height is restricted, a wider electrode becomes helpful, if not negligible. When the electrodes widen more current  is allowed to flow through the higher regions of the chamber and include . However, this has diminishing returns
+%\par When chamber height is restricted, a wider electrode becomes helpful, if not negligible. When the electrodes widen more current  is allowed to flow through the higher regions of the chamber and include . However, this has diminishing returns
+
+%\par The purpose of this thesis is to reevaluate and optimize the Cal Poly Biofluidic Lab's cell impedance spectroscopy system. To accomplish this, the following questions were answered:
+To reiterate the thesis objectives set out in chapter \ref{ch: introduction}, the purpose of this thesis was re-evaluate and optimize the Cal Poly Biofluidic Lab's cell impedance spectroscopy system by exploring the following questions:
+
+\begin{enumerate}
+    \item Are there aspects of the impedance spectroscope that need redesign or optimization?
+    \item Is the hardware implementation correct?
+    \item Can the correct circuit model and desired data acquisition and analysis be packaged and incorporated in a device interface computer program?
+    \item Can model based design be applied to characterize and optimize electric fields and impedance to inform future designs?
+    \item Can a device be manufactured at Cal Poly to validate the device design and analysis?
+\end{enumerate}
+
+\par To address these questions, the following was accomplished throughout the scope the thesis:
+\begin{itemize}
+    \item Fabrication of a micro-scale impedance spectroscopy chip.
+    \item Design and implementation of a software interface to drive, measure, calculate, and compare impedance spectroscopy data in LabVIEW.
+    \item Re-evaluation and validation of the impedance spectroscopy measurement circuit and requisite hardware
+    \item Development and calculation of single cell impedance spectroscopy models with numerical and analytic methods. 
+    \item The development of a novel volume fraction to fully account for cell geometry and finge fields.
+    \item The simulation of single-cell impedance spectroscopy to optimize and inform device design. 
+\end{itemize}
+
+\par To answer our guiding questions listed above, the findings from the aforementioned works are discussed and recommendations for future work are made.
+    
+
+
+\section{Micro-fabrication}
+
+\par A fully-functional impedance spectroscopy chip was fabricated in the Cal Poly micro-fabrication lab. The microfluidic channels of the previous generation of the Biofluidic Lab's impedance spectroscopy chip was fabricated at Cal Poly, but the manufacturing of the micro-electrodes were outsourced to the UC Santa Barbara micro-fabrication lab. In this thesis, in addition to recreating the PDMS microfluidic channels, a process for micro-electrode fabrication was developed and demonstrated the capability to fabricate the complete impedance spectroscopy chip at Cal Poly.
+
+\subsection{Future Work for Device Manufacturing}
+
+\par There is a need for an alignment device to align the PDMS and the electrodes during glass bonding. The current solution is to align the device components by hand while observing the sensor region under a microscope. Making this alignment by hand is difficult and nearly impossible without adding ethanol to act as lubricant and provide about 10 minutes before bonding. It is possible that the rough process of hand alignment is responsible for some of the particulate generation that eventually led to the jamming and delamination of the IS chip. 
+
+\par This thesis demonstrated the ability to create microelectrodes at the Cal Poly microfabrication lab; however, the process is fraught with risks that can destroy the electrodes and has a very high scrap rate. A huge improvement in the electrode manufacturing process could be realized by utilizing a dual target sputtering tool. Such a tool could allow the deposition of chromium and gold while keeping the substrate under vacuum. This is expected to prevent the formation of chromium oxide before the deposition of gold and significantly increase its adhesion. The process needs to refinement to minimize scrap rate. 
+
+
+\section{Impedance Spectroscopy Software Implementation}
+
+
+\subsection{Future Work for IS Software}
+
+\par If a flow-through impedance spectroscopy is developed, techniques to measure the desired impedance spectra range quickly as cells flow through the sensor region must be implemented. The currently implemented NI PXI-5421 function generator is capable of being programmed to output arbitrary waveforms. The function generator could be  that can be designed and applied to cover a range of frequencies and the recorded frequency response can be recorded. In theory, the NI PXI-5421 can be programmed to apply a broadband signal and the frequency response can be analyzed with the Fast Fourier Transform. However, the power distribution of the broadband signal, the short measurement time, and noise complicate the implementation \cite{sun_digital_2009,sun_broadband_2007,min_broadband_2010}. 
+
+\par The current implementation of the IS software is built with the ability to incorporate new modules to allow for future features to be added to the program without affecting existing functions. These additions can be made adding new states or state flows to the program. However, a large draw back to the current architecture is its limited ability of concurrency. If the need arises to make significant changes to the IS software, it is highly recommended to consider the implementation of a queued message handler architecture (QMH). The QMH encourages parallel programming while also fortifying low-coupling practices with code modules that can co-exist and execute independently. It allows for a more responsive, faster, extendable, and maintainable program. Although likely overkill for this application, but the object-oriented analogue to QMH, the ACTOR framework can also be considered, wich ships standard with LabVIEW and its implementation can build a powerful architecture for medium to large applications.
