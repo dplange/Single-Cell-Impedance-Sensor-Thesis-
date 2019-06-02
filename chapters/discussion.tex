@@ -5,7 +5,7 @@
 %\par When chamber height is restricted, a wider electrode becomes helpful, if not negligible. When the electrodes widen more current  is allowed to flow through the higher regions of the chamber and include . However, this has diminishing returns
 
 %\par The purpose of this thesis is to reevaluate and optimize the Cal Poly Biofluidic Lab's cell impedance spectroscopy system. To accomplish this, the following questions were answered:
-To reiterate the thesis objectives set out in chapter \ref{ch: introduction}, the purpose of this thesis was re-evaluate and optimize the Cal Poly Biofluidic Lab's cell impedance spectroscopy system by exploring the following questions:
+Revisiting the thesis objectives set out in chapter \ref{ch: introduction}, the purpose of this thesis is to re-evaluate and optimize the Cal Poly Biofluidic Lab's cell impedance spectroscopy system by exploring the following questions:
 
 \begin{enumerate}
     \item Are there aspects of the impedance spectroscope that need redesign or optimization?
@@ -15,14 +15,15 @@ To reiterate the thesis objectives set out in chapter \ref{ch: introduction}, th
     \item Can a device be manufactured at Cal Poly to validate the device design and analysis?
 \end{enumerate}
 
-\par To address these questions, the following was accomplished throughout the scope the thesis:
+\par To investigate these questions, the following was accomplished throughout the scope the thesis:
 \begin{itemize}
     \item Fabrication of a micro-scale impedance spectroscopy chip.
     \item Design and implementation of a software interface to drive, measure, calculate, and compare impedance spectroscopy data in LabVIEW.
-    \item Re-evaluation and validation of the impedance spectroscopy measurement circuit and requisite hardware
-    \item Development and calculation of single cell impedance spectroscopy models with numerical and analytic methods. 
-    \item The development of a novel volume fraction to fully account for cell geometry and finge fields.
-    \item The simulation of single-cell impedance spectroscopy to optimize and inform device design. 
+    \item Re-evaluation and validation of the impedance spectroscopy measurement circuit and requisite hardware.
+    \item Evaluation of the impedance spectroscopy system by measuring impedance spectra of DI water, PBS, and a suspension of 7 $\mu$m polystyrene beads.
+    \item Innovation of a novel volume fraction to fully account for cell geometry and fringe fields.
+    \item Implementation of single-cell impedance spectroscopy models with numerical and analytic methods to investigate IS behaviour and optimization.
+    \item Development of a graphical user interface for the analytic impedance solution to aid in model-based design.
 \end{itemize}
 
 \par To answer our guiding questions listed above, the findings from the aforementioned works are discussed and recommendations for future work are made.
@@ -33,18 +34,95 @@ To reiterate the thesis objectives set out in chapter \ref{ch: introduction}, th
 
 \par A fully-functional impedance spectroscopy chip was fabricated in the Cal Poly micro-fabrication lab. The microfluidic channels of the previous generation of the Biofluidic Lab's impedance spectroscopy chip was fabricated at Cal Poly, but the manufacturing of the micro-electrodes were outsourced to the UC Santa Barbara micro-fabrication lab. In this thesis, in addition to recreating the PDMS microfluidic channels, a process for micro-electrode fabrication was developed and demonstrated the capability to fabricate the complete impedance spectroscopy chip at Cal Poly.
 
-\subsection{Future Work for Device Manufacturing}
+\subsection*{Future Work for Device Manufacturing}
 
-\par There is a need for an alignment device to align the PDMS and the electrodes during glass bonding. The current solution is to align the device components by hand while observing the sensor region under a microscope. Making this alignment by hand is difficult and nearly impossible without adding ethanol to act as lubricant and provide about 10 minutes before bonding. It is possible that the rough process of hand alignment is responsible for some of the particulate generation that eventually led to the jamming and delamination of the IS chip. 
+\par Although a complete BioMEMS impedance spectroscopy chip was successfully fabricated at Cal Poly, there is significant room for improvement to increase reliability and to decrease the scrap rate. There is a need for an alignment device to align the PDMS and the electrodes during glass bonding. The current solution is to align the device components by hand while observing the sensor region under a microscope. Making this alignment by hand is difficult and nearly impossible without adding ethanol to act as lubricant to provide about 10 minutes before bonding. It is possible that the rough process of hand alignment is responsible for some of the particulate generation that eventually led to the jamming and delamination of the IS chip. 
 
-\par This thesis demonstrated the ability to create microelectrodes at the Cal Poly microfabrication lab; however, the process is fraught with risks that can destroy the electrodes and has a very high scrap rate. A huge improvement in the electrode manufacturing process could be realized by utilizing a dual target sputtering tool. Such a tool could allow the deposition of chromium and gold while keeping the substrate under vacuum. This is expected to prevent the formation of chromium oxide before the deposition of gold and significantly increase its adhesion. The process needs to refinement to minimize scrap rate. 
-
-
-\section{Impedance Spectroscopy Software Implementation}
+\par This thesis demonstrated the ability to create microelectrodes at the Cal Poly microfabrication lab; however, the process is fraught with risks that can destroy the electrodes and has a very high scrap rate. A huge improvement in the electrode manufacturing process could be realized by utilizing a dual target sputtering tool. Such a tool could allow the deposition of chromium and gold while keeping the substrate under vacuum. This is expected to prevent the formation of chromium oxide before the deposition of gold and significantly increase its adhesion.  
 
 
-\subsection{Future Work for IS Software}
+\section{IS Software}
+\par To drive, measure, and calculate impedance spectroscopy experiments, a software interface was programmed in LabVIEW. The software is capable of making measurement from an I-V or auto-balancing bridge circuit; performing single IS experiments or timed IS runs at intervals of seconds to days; and features the the ability to compare previously recorded experiments. However, for the application of continuous IS measurements on the scale required for flow-through devices, there are significant updates required. 
+
+\subsection*{Future Work}
 
 \par If a flow-through impedance spectroscopy is developed, techniques to measure the desired impedance spectra range quickly as cells flow through the sensor region must be implemented. The currently implemented NI PXI-5421 function generator is capable of being programmed to output arbitrary waveforms. The function generator could be  that can be designed and applied to cover a range of frequencies and the recorded frequency response can be recorded. In theory, the NI PXI-5421 can be programmed to apply a broadband signal and the frequency response can be analyzed with the Fast Fourier Transform. However, the power distribution of the broadband signal, the short measurement time, and noise complicate the implementation \cite{sun_digital_2009,sun_broadband_2007,min_broadband_2010}. 
 
-\par The current implementation of the IS software is built with the ability to incorporate new modules to allow for future features to be added to the program without affecting existing functions. These additions can be made adding new states or state flows to the program. However, a large draw back to the current architecture is its limited ability of concurrency. If the need arises to make significant changes to the IS software, it is highly recommended to consider the implementation of a queued message handler architecture (QMH). The QMH encourages parallel programming while also fortifying low-coupling practices with code modules that can co-exist and execute independently. It allows for a more responsive, faster, extendable, and maintainable program. Although likely overkill for this application, but the object-oriented analogue to QMH, the ACTOR framework can also be considered, wich ships standard with LabVIEW and its implementation can build a powerful architecture for medium to large applications.
+\par The current implementation of the IS software is built with the ability to incorporate new modules to allow for future features to be added to the program without affecting existing functions. These additions can be made adding new states or state flows to the program. However, a large draw back to the current architecture is its limited ability of concurrency. If the need arises to make significant changes to the IS software, it is highly recommended to consider the implementation of a queued message handler architecture (QMH). The QMH encourages parallel programming while also fortifying low-coupling practices with code modules that can co-exist and execute independently. It allows for a more responsive, faster, extendable, and maintainable program. Although likely overkill for this application, but the object-oriented analogue to QMH, the ACTOR framework can also be considered, which ships standard with LabVIEW and its implementation can build a powerful architecture for medium to large applications.
+
+\section{Impedance Measurement Hardware}
+
+\par As described in section ??? the impedance was validated against a test circuit and the majority of the error accounted for and quantified as current leaking through the oscilloscope connected between the DUT and the external resistor. An established range of ?? to ?? was found to result in low error after applying the correction function of equation ???.
+
+\par In the current hardware implementation, the use of coaxial cables should be avoided. Coaxial cables are great for signal transmission featuring low attenuation and a shielding to noise. However, the leaky impedance between the signal core and the grounded shield can cause significant measurement error when used with the I-V method, which demands high impedance probes. Furthermore, it is important that the oscilloscopes are set to their high impedance settings rather than the 50 Ohm input used for avoiding reflectance with coaxial cable. However, if the auto-balancing bridge method is utilized, the cable can be used with great success. With the auto-balancing bridge method, the measurement circuit is protected from extra current draw by an operational amplifier (or equivalent) that maintains a virtual ground after the DUT. 
+
+\par For the current implementation, insulated solid core wire was connected to the impedance spectroscopy chip, and the length of the wire was minimized to reduce noise. A breadboard was used for making and organizing connections. Although no differences were noticed between data measured with and without the the use of a breadboard, future implementations should move away from using a breadboard due do its inherent capacitance.
+
+\subsection*{Future Work}
+
+\par High input FET active probes used with the system to reduce oscilloscope bias error. 
+
+\par The more accurate and less susceptible to noise of the auto-balancing bridge method should be considered. Complicated to implement in an accurate and broadband way although some have had success creating a digital impedance measuring system with this method \cite{li_high-speed_2013}.
+
+\par Consider purchasing Agilent impendance analyzer.
+
+\section{IS System Evaluation}
+
+\par In this thesis we implemented an impedance spectroscopy system and measured the impedance spectra of DI water, PBS, and 6$\mu$m polystyrene beads suspended in PBS. Unfortunately, once the bead suspension was added to the device, debris began to flow and ultimately clogged the device and led to its delamination. However, enough data was captured to investigate the impedance spectroscopy reproducibility and performance. 
+
+\par The reproducibility studies analyzed in figure \ref{fig:IS_data_reproducibility} indicated that experimental data from 10 kHz to 40 MHz can largely be reproduced. Frequencies up to 10 kHz showed significant variation. However, this low frequency range persistently performed poorly across all experiments. Although tests were not performed to validate the idea, one possibility for the low frequency "noise" may be due to reaching the mininum voltage threshold set by the resolutino of the Oscilliscopes. The NI PXI-5124 12-bit resolution.
+
+\par The performance of the device was evaluated by measuring and comparing DI water, PBS, and 6$\mu$m polystyrene beads suspended in PBS. For all three test samples low quality data was recorded until around 10 kHz. However, the overall results met expectations based on the material properties of the samples and validated in large strokes the behaviour of the device.
+
+\subsection*{Future Work}
+
+\par Although experiments largely appeared promising and demonstrated a functioning impedance spectroscopy device, there is a significant amount of remaining work to bring a fully completed, reliable and robust device on-line. First and foremost the manufacturing process should be revisited and refined with an emphasis on particulate reduction. Particles on the order of 10 $\mu$m will significantly reduce the life-span of the device. 
+
+\par The investment in higher resolution photolithography masks will likely be required to obtain single-cell impedance spectroscopy cell-capture devices. Alternatively, a flow-through design will be easier to accomplish with lower resolution masks. However, this will require additional changes to the software and data post-processing if a range of frequencies still need to be explored. It is also reccommended to consider the additoin of a second set of electrodes to make differential measurements. The idea behind this is to subtract out the effect of the electric double layer to increase the sensitivity fo single cells. 
+
+\par The low frequency noise must also be further explored. There may be a chance that the impedance load is reaching the resolution limit of the scope, the voltage is reading a voltage offset level, or a noise wall. 
+
+\par With the validated methods of removing the electric double layer from the data, and the capability to isolate singe particles in the sensor region, single-shelled cells should be tested and the data validated against analytic and FEA models.
+
+\section{Impedance Spectroscopy Modeling}
+
+\par To investigate and optimize the single cell impedance spectroscopy system an analytic and finite element model was developed. 
+
+\par By following the work of sun \cite{}, an analytic solution of co-planar electrodes was developed through application of Maxwell's Mixture Theorem and conformal mapping. Part of this solution required the use of the volume fraction. Previously used volume fractions were calculated as the ration of the cell volume to the volume over the electrodes, however, this method neglects the position of the cell and the non-uniformity of the electric field. To address this, the effective volume fraction based on conformal mapped volumes and dissipated power were developed. These methods increased the accuracy of the analytic impedance solution and allowed for the quantification of the effect o f the cell position. 
+
+\par The finite element model found results with percent error as low as 0.01\% compared to the analytic solution. The finite element solution found that the device geometry had ??\% lower sensitivity due tot the overlap of the electrode with the microfluidic channel.
+
+\par In section ??? we found that by increasing the electrode width, small to negligible gains to the sensitivity were found. However, this i was one of the more important realizations of the optimization studies: there is little benefit to fabricating skinny electrodes. It is optimal to design wider electrodes. Although the benefits to the sensitivity is meager, wide electrodes are far easier to manufacture, are more resilient to non-contiguous causing defects and should decrease the overall scrap-rate. In addition, the wider electrodes will have a lower inherent impedance load. Another interesting benefit, is the effect of wider electrodes on the impedance load of the electric double layer. If the EDL behaves somewhat similar to a distributed capacitance over the fluid-contact electrodes, wider electrodes will work in our favor towards minimizing the effect of the EDL. It should also be noted that the channel height has a strong effect on the effect of electrode width. By increasing the channel height, the electrode extremities can start passing additional current that flows parallel to our cell by providing parallel current paths.
+
+\par Where wider better for electrode width, the wider electrode gap sensitivity maximization was highly dependent on the cell size, height in the channel, and the cell location. For maximizing the electrode gap for our current device with a 6 $\mu$m diameter cell assumed to be at half height, we are already maximized at a gap of 5 $\mu$m. However, figure \ref{fig:expanded_power_sensitivity} but you can begin to develop an area of uniform power dissipation that can be extremely useful in flow through designs where the latency??(retention) time is critical, or for removing the effect of cell position. 
+
+\par Although many prefer parallel facing electrodes, this study has demonstrated some power benefits of co-planar electrodes. To increase the sensor region for parallel electrodes, the width needs to be increased. By increasing the electrode width, the sensitivity drops. This is due to the opening of parallel current paths to bypass the particle. The sensitivity is dropping because the actual magnitude of cell impedance is dropping. If the impedance is dropping. IF the impedance difference was examined, it would be shrinking.
+
+\par To increase the measurement area with co-planar electrodes, the electrode gap is increased, and similarly the sensitivity would decrease. However, there are no parallel paths opening, rather there is just more medium to dissipate power and resist flow. As depicted in figure \ref{fig:expanded_impedance_difference}, the actual cell impedance due plateaus and does not change.
+
+\par In addition, by focusing cells closer to the electrode plane and decreasing the electrode gap, the sensitivity can be made to significantly surpass parallel electrodes.
+
+\subsection*{Future Work}
+
+\par Although the effect of the electric double layer is effectively cancelled out, the large impedance load of the electric double layer can be a challenge in impedance spectroscopy may wish to be considered in device optimization. As discussed in section \ref{sec:the_electric_double_layer}, analytic solutions to the EDL can be inaccurate by a few orders of magnitude. However, it may be beneficial in considering the solution electrolyte concentration, the electrode material and surface finish, and the applied voltage among other parameters. 
+
+\par Since the EDL can be modeled as a distributed capacitance over the electrodes, it may be tempting to conclude that by increasing that the wider the electrodes the lower the EDL impedance in our system. And while that is true, it's effects rapidly decreases. This is because the effect of the EDL distributed capacitance is tied to the geometric constant ($G_f$) and more specifically $\gamma$ in the in w-plane. For any given height, the increase in effective capacitance due to the EDL from increases in the electrode width will taper off. If the channel height is increased, the EDL capacitance can be further increased by increased electrode width. And this makes sense, by increasing the channel height, additional parallel current paths open to further extremities of the electrode. However, as the channel becomes saturated with power at a specified height, increasing the electrode width. To decrease the impedance load of the EDL, the distributed capacitance must be increased. 
+
+\section{A Framework for Model-Based Design}
+
+\par As previously discussed there is no optional design for all cases. To the end, a model-based design framework using the simulations and tools developed in this thesis is presented. The IS app presented in chapter \ref{ch: modeling} contains many of the tools required for design calculations in the following steps.
+
+\begin{enumerate}
+    \item \underline{Identify Functional Requirements}
+    \par Prior to device design or fabrication, the functional requirements of the device should be identified. These functional requirements will drive design in the following steps. The type of experiment to be run should be determined, where individually measuring a large quantity is more appropriate for flow-through devices and time-dependent studies of fewer cells is more appropriate for cell-capture devices. The type of cells to be measured and their required mediums should be identified along with their respective electric properties. The properties of the cell to be measured should identified.
+    
+    \item \underline{Determine Required Frequency Range}
+    \par The required frequency range of the impedance spectroscopy system should be determined by the functional requirements identified in step 1. Cell counting or cell size can be determined with a DC or low-frequency applied signal. However, if information regarding the cell membrane or internals is required, a broadband frequency range will be required. A useful tool to determine the required frequency range is the Clausius Mossotti factor. By using the literature values of the dielectric properties of the cell to be measured and the dielectric medium, theoretical values of dielectric relaxations of the suspensions can be identified and used to inform a required frequency range.
+    
+    \item \underline{Model and Optimize Simple Device Design}
+    \par The purpose of this step is to use the simple model of co-planar electrode single-cell impedance spectroscopy to inform initial design and electrode optimization. If the cell will be focused to a specific height, the electrodes can be optimized, but if the resonance time needs to be optimized, the electrodes can be optimized to create a region of uniform electric field with equal sensitivity at the cost of maximum sensitivity. If the fluid dynamics requires a channel geometry that differs significantly from the simple model, a FEA simulation can quantify the “device” impedance and sensitivity.  However, it is still recommended to optimize the system with the system model as mesh changes throughout a parametric analysis can introduce “mesh noise” into the optimization curve. 
+
+    
+    \item \underline{Design Impedance Spectroscopy Measurement Hardware}
+    \par With an estimate of the required frequency range, an estimate of the impedance load, and if the device will be a flow-through or cell capture device type, the impedance measurement system can be selected or designed. For measurement circuits, this thesis focused on the simplest I-V circuit and discussed the auto-balancing bridge method, but there are other methods that range in complexity and are more acceptable for different frequency and impedance loads. See section ?? for a short discussion of I-V and auto-balancing circuits and “Agilent article” for a more in-depth discussion of a wider range of measurement circuits. The ability of the signal generator should be determined by the required frequency range and if the device is flow-through and requires a broadband applied frequency. Depending on the type of the measurement circuit and impedance load, close attention should be made to the input impedance of the oscilloscope or the ADC and how this will affect measurement readings. 
+\end{enumerate}
