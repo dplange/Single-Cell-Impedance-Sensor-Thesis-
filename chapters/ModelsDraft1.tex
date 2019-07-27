@@ -62,15 +62,7 @@
   \end{equation}
   
   \noindent where $\tilde{\epsilon}_i$ is the complex permittivity of the cytoplasm, $\tilde{\epsilon}_{mem}$ is the complex permittivity of the cell membrane, $R$ is the radius of the cell, and $d$ is the thickness of the cell membrane.
-  
-  \par A corrected volume fraction is used to compensate for the fringe fields of the non-uniform electric field produced by the electrodes in figure \ref{fig:simplified_IS} \cite{gawad_micromachined_2001}. 
-  
-  \begin{equation}
-      \Phi = \frac{4}{3} \pi R^3 \frac{1}{G_f\text{w}h}
-      \label{eqn:corrected_vf}
-  \end{equation}
-  
-  \noindent where $h$ is the height of the channel, w is the width of the electrode and $G_f$ is a geometric factor dependent on the geometry of the channel and electrodes.
+
   
   The impedance of the mixture is
   
@@ -93,7 +85,7 @@
     \label{eqn:impedance_with_Gf}
   \end{equation}
   
-  \par To find the value of the geometric factor $G_f$, the cell constant of electrodes must be determined.
+  \par To find the value of the geometric factor $G_f$, the cell constant of the electrodes must be determined.
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -146,7 +138,7 @@
       \label{eqn:capacitor}
   \end{equation}
   
-  \noindent where $A$ the area of the plate and $d$ is the distance between the plates. Since $A = l\gamma$, where $l$ is the width, and $\gamma$ is the height of the electrode, the capacitance per unit width can be written as
+  \noindent where $A$ is the area of the plate and $d$ is the distance between the plates. Since $A = l\gamma$, where $l$ is the width, and $\gamma$ is the height of the electrode, the capacitance per unit width can be written as
   
   \begin{equation}
       C_l = \frac{\epsilon\gamma}{d} \;\;\;\text{where} \;\; C =l\, C_l
@@ -218,7 +210,7 @@
     
     \noindent where $Z$ is the interior of a polygon in the Z-plane with vertices $Z_1,\;Z_2,\;Z_3,\; ...,Z_m$ and angles $\theta_1,\;\theta_2,\;\theta_3,\; ...,\theta_m$ which correspond to the points $T_1,\;T_2,\;T_3,\; ...,T_m$ on the real axis of the T-plane. $C_1$ and $C_2$ are integration constants. The Schwartz-Christoffel transform has three degrees of freedom, and consequently, up to three points may be chosen arbitrarily. $T_0$ is the reference and is typically chosen at the origin.
     
-    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to the W-plane. The W-plane vastly simplifies the solution to the cell constant and the goemetric constant can be solved for with equation \ref{eqn:geometric_constant}. 
+    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to the W-plane. The W-plane vastly simplifies the solution to the cell constant, and the goemetric constant can be solved for with equation \ref{eqn:geometric_constant}. 
     
     \begin{figure}[h]
         \centering
@@ -231,16 +223,13 @@
 \subsection{Schwartz-Christoffel Transform: T to Z Mapping}
 
   \par Mapping the T-plane to the Z-plane, point $C$ and $D$ will be chosen as the polygon corners with angles of $\pi/2$.  
-  
   \begin{equation}
       Z = C_1\int (T-T_c)^{-1/2}(T-T_D)^{-1/2}dT + C_2
       \label{eqn:SCM_ZT_int}
   \end{equation}
-  
-  
  \noindent To integrate
  \begin{flalign*}
-    &\int (T-T_D)^{-1/2}(T-T_C)^{-1/2}dT&
+    &\int (T-T_D)^{-1/2}(T-T_C)^{-1/2}dT&\\
  \end{flalign*}
  \noindent Substitute $u = (T-T_C)^{1/2}\;$ with $\;du = \frac{1}{2} (T-T_C)^{-1/2} \, dT$
 \begin{flalign*}
