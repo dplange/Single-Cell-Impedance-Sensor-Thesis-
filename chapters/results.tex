@@ -6,7 +6,9 @@
 \subsection{PDMS Cast}
 \label{sec:PDMS_cast_fabrication}
 
-\par Due to the limitations of using the 20,000 DPI photo-plotting service of CAD/Art Services Inc, the produced transparency is only accurate to 8 microns. Consequently, while widths and lengths remained largely unaffected, features, such as square corners on the resolution of microns, were lost. The produced mask largely matched the CAD drawing with the exception of the rectangular cell capture/measurement chamber, which was reduced to a diamond shape. This effect was expected and replicated the results of Josh Fadriquela \cite{fadriquela_design_2009-1}. Increased accuracy and resolution can be achieved using chrome masks, but at a premium cost that is outside the scope of this project. 
+\par Due to the limitations of using the 20,000 DPI photo-plotting service of CAD/Art Services Inc, the produced transparency is only accurate to 8 microns. Consequently, while widths and lengths remained largely unaffected, features, such as square corners on the resolution of microns, were lost. The produced mask largely matched the CAD drawing with the exception of the rectangular cell capture/measurement chamber, which was reduced to a diamond shape. This effect was expected and replicated the results of Josh Fadriquela \cite{fadriquela_design_2009-1}. Increased accuracy and resolution can be achieved using chrome masks, but at a premium cost that is outside project scope. 
+
+\par The SU-8 master mold matched the transparency and the designed mold height closely. A representative SU-8 mold is depicted in figure \ref{fig:su8_results}. The sensor chamber portion of the mold, located where all four channels converge, demonstrates the limitation of the transparency mask. Rather than a square chamber, corners are opened up to create a diamond-shaped chamber.
 
 \begin{figure}[H]
     \centering
@@ -15,7 +17,8 @@
     \label{fig:su8_results}
 \end{figure}
 
-\par The SU-8 master mold matched the transparency and the designed mold height closely. A representative SU-8 mold is depicted in figure \ref{fig:su8_results}. The dimensions of the SU-8 mold was verified using the Ambios Xp-1 profilometer. The SU-8 surface profile measured by the profilometer are presented in figure \ref{fig:profilometer_300um_channel} and \ref{fig:profilometer_10um_channel_100um_sideways}. 
+
+\par The dimensions of the SU-8 mold was verified using the Ambios Xp-1 profilometer. The SU-8 surface profile measured by the profilometer are presented in figure \ref{fig:profilometer_300um_channel} and \ref{fig:profilometer_10um_channel_100um_sideways}. Profilometry found that our mold-height closely matched our target height of 10 $\mu$m with large chambers at 9.6 $\mu$m and the smaller 10 $\mu$m chamber at 9 $\mu$m.
 
 
 \begin{figure}[H]
@@ -27,17 +30,19 @@
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/10umWideAndSidewaysThrough100umWide.png}
+    \includegraphics[width=0.7\textwidth]{images/10umWideAndSidewaysThrough100umWide.png}
     \caption[Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold.]{Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold. The profile was captured with the Ambios XP-1 profilometer. The data depicts the 100 micron channel as about 140 microns wide since it crossed the channel at 45$^\circ$. The profilometer recorded a channel height of 9 and 9.6 microns for the 10 micron and 100 micron channels respectively.}
     \label{fig:profilometer_10um_channel_100um_sideways}
 \end{figure}
 
-\par PDMS casts were successfully fabricated from the SU-8 molds and operation was validated by successfully plasma bonding the casts to glass blanks and verifying channel flow with no leaks or clogs. Figure \ref{fig:pdms_results} displays a typical PDMS cast.
+\FloatBarrier
+
+\par PDMS casts were successfully fabricated from the SU-8 molds and operation was validated by successfully plasma bonding the casts to glass blanks and verifying channel flow with no leaks or clogs. Figure \ref{fig:pdms_results} displays a typical PDMS cast. The outlined region represents the effective measurement chamber. The diamond-shaped measurement chamber was carried through all steps of the manufacturing process, originating from the defective transparency mask.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/pdms_channels_outline.png}
-    \caption{PDMS cast from the master mold. Once bonded to a glass substrate, the cast will form the micro-fluidic channels of the device.}
+    \includegraphics[width=0.6\textwidth]{images/pdms_channels_outline.png}
+    \caption{PDMS cast from the master mold. Once bonded to a glass substrate, the cast will form the micro-fluidic channels of the device. The outlined region represents the effective measurement chamber.}
     \label{fig:pdms_results}
 \end{figure}
 
@@ -46,7 +51,7 @@
 
 \subsection{Electrode Fabrication}
 
-\par The micro-electrode fabrication process was developed with Dr. Ben Hawkins and Jack Foley through the course of this thesis. The fabrication process was developed with an iterative approach of tuning process parameters and was met with many failures.
+\par The micro-electrode fabrication process was developed with Dr. Ben Hawkins and Jack Foley through the course of this thesis. The fabrication process was developed through an iterative approach of tuning process parameters and was met with many failures before successful fabrication.
 
 \begin{figure}[h]
     \centering
@@ -87,7 +92,7 @@
     \label{fig:failed_elecftrodes_micro}
 \end{figure}
 
-\par The poor durability of the electrodes was attributed to an overall ineffectiveness of the chromium adhesion layer meant to glue the gold to the glass substrate. The process step of transferring the chromium sputtered wafer from the CrC-150 to the Denton Desk 5 sputtering system for gold deposition was identified as a likely candidate for the poor chromium-gold adhesion and hypothesized that the formation of chromium oxide during the wafer's exposure to atmosphere was the poor-adhesion culprit. In a short-term fix, the wafers were held in vacuum until they were quickly transported to the Denton Desk 5. Future microelectrode fabrication processes should take advantage of a dual-target sputtering system that can sputter chromium and gold in series while maintaining vacuum.  
+\par The poor durability of the electrodes was attributed to an overall ineffectiveness of the chromium adhesion layer meant to glue the gold to the glass substrate. The process step of transferring the chromium sputtered wafer from the CrC-150 to the Denton Desk 5 sputtering system for gold deposition was identified as a likely candidate for the poor chromium-gold adhesion and hypothesized that the formation of chromium oxide during the wafer's exposure to atmosphere was the cause of poor-adhesion. As a consequence, the wafers were held in vacuum until they were quickly transported to the Denton Desk 5. Future microelectrode fabrication processes should take advantage of a dual-target sputtering system that can sputter chromium and gold in series while maintaining vacuum.  
 
 \par With a remedied procedure, two additional sets of electrodes were fabricated. Figure \ref{fig:good_electrodes} depicts representative fabrication results. Overall, both sets of electrodes presented no initial cracking or delamination. However, as discussed in the following section, a set of electrodes manifested adhesion issues during device bonding.
 
@@ -115,18 +120,15 @@
     \label{fig:good_electrodes}
 \end{figure}
 
+\FloatBarrier
+
+\par Overall, both sets of electrodes presented no initial cracking or delamination. Microscopy found both sets to be intact with only negligible defects. The successful results are evidence that reducing air exposure of the chromium adhesion layer is a critical process parameter. However, as discussed in the following section, a set of electrodes manifested adhesion issues during device bonding showing that while adhesion has been significantly improved, adhesion-issues continue to persist and supports the need for a dual-target sputtering system.
 
 \FloatBarrier
 
 \subsection{Device Bonding}
 
-\par By the end of the electrode fabrication process, we had what appeared like two well-adhered and integral electrode chips. Alignment for bonding was completed by hand. The first attempt of device alignment resulted in delamination of gold from the chromium adhesion layer. Although non-functional, the bonding process for the device was continued to completion. The result of the alignment and bonding is depicted figure \ref{fig:bad_device}. The device exhibited good glass-PDMS adhesion, and was later used to test microfluidic operations and particle capture with good results.
-
-
-\par The second attempt resulted in a successful alignment and bonding. Figure \ref{fig:good_device} displays the alignment and bonding results for device 2. There is a rotational device misalignment, but is centered on the sensor chamber where the electrodes are nearly perfectly aligned. This rotational misalignment is expected to have no effect on the recorded impedance spectra. The electrodes survived the alignment process with no delamination or cracks. Plasma bonding produced  strong PDMS-glass adhesion. 
-
-\par The micro-fabrication results gave us one viable impedance spectroscopy device, and a procedure for creating new viable chips.
-
+\par By the end of the electrode fabrication process, we had what appeared like two well-adhered and integral electrode chips. Alignment for bonding was completed by hand. The first alignment attempt resulted in delamination of gold from the chromium adhesion layer. Although non-functional, the bonding process for the device was continued to completion. The result of the alignment and bonding for device 1 is depicted figure \ref{fig:bad_device}.
 
 \begin{figure}[h]
     \centering
@@ -135,12 +137,22 @@
     \label{fig:bad_device}
 \end{figure}
 
+\FloatBarrier
+
+\par Device 1 was bonded with adequate alignment and exhibited good glass-PDMS adhesion. As evident from the remains of the sputtered chromium layer, the hand alignment was successful in aligning the electrode sensor inside of the PDMS measurement chamber, although slightly biased towards the inlet channel. Tactile testing showed no delamination and the device was successfully used to test microfluidic operations. If the electrodes had survived the alignment process, this would be a functional device. 
+
+\par The second attempt resulted in a successful alignment and bonding. Figure \ref{fig:good_device} displays the alignment and bonding results for device 2. 
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{images/good_device.png}
-    \caption{Successfully bonded impedance spectroscopy device. PDMS and electrodes were aligned by hand. There is a slight rotational misalignment, but should be functionally negligible.}
+    \caption{Successfully bonded impedance spectroscopy device. PDMS and electrodes were aligned by hand. There is a slight rotational misalignment, but is expected to be functionally negligible.}
     \label{fig:good_device}
-\end{figure}
+\end{figure} 
+
+\par Device 2 is slightly rotationally misaligned, but is centered on the sensor chamber where the electrodes are nearly perfectly aligned. This rotational misalignment is expected to have only negligible effects on the recorded impedance spectra, but it is a note-worthy topic for potential investigation. The electrodes survived the alignment process with no delamination or cracks. Plasma bonding produced strong PDMS-glass adhesion. 
+
+\par The micro-fabrication results gave us one viable impedance spectroscopy device, and a procedure for creating new viable chips.
 
 \FloatBarrier
 
@@ -159,7 +171,7 @@
     \label{fig:assembled_good_device}
 \end{figure}
 
-\par Using the the Harvard Apparatus syringe pumps, PBS and DI water were successfully pumped into impedance spectroscopy chip. However, the introduction of 7 $\mu$m polystyrene beads initiated debris flow. With a careful application of alternating flow, we succeeded in saturating and flushing the sensor region of polystyrene beads over several days. The device was ultimately jammed and delaminated under applied pressure. See figure \ref{fig:IS_sensor_reigon_device_lifecycle} for representative images of IS chip lifecycle.
+\par Using the the Harvard Apparatus syringe pumps, PBS and DI water were successfully pumped into impedance spectroscopy chip. However, the introduction of 7 $\mu$m polystyrene beads initiated debris flow. See figure \ref{fig:IS_sensor_reigon_device_lifecycle} for representative images of IS chip lifecycle.
 
 \begin{figure}[h]
     \centering
@@ -180,6 +192,7 @@
         \centering
         \includegraphics[width=\textwidth]{images/IS_jammed.jpg}
         \caption{Sensor region jammed with debris and beads.}
+        \label{fig:IS_sensor_reigon_device_lifecycle_jammed}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
@@ -190,6 +203,10 @@
     \caption{Images of the sensor region of the impedance spectroscopy device. The device successfully measured fluid and 7 $\mu$m beads before the sensor region became jammed and the device ultimately delaminated. Images were taken with the LabSmith SVM340 inverted microscope.}
     \label{fig:IS_sensor_reigon_device_lifecycle}
 \end{figure}
+
+\par As the device channels were saturated with liquid, it became evident that the device channels contained debris, however, no visible debris was present in the sensor chamber and the flows of DI water and PBS did not agitate any debris. All four channels were tested with DI water and proved capable of fluid flow. 
+
+\par The introduction of 7 $\mu$m polystyrene beads into the solution initiated debris flow. By significantly decreasing the inlet flow rate, debris flow was minimized and bead suspensions were successfully captured and measured in the sensor chamber. With careful application of alternating flow, the sensor chamber was repeatedly saturated and flushed of microbeads for repeated IS measurements. However, debris progressively aggregated near the sensor chamber and ultimately entered the chamber and clogged the device as depicted in \ref{fig:IS_sensor_reigon_device_lifecycle_jammed}. Subsequent attempts to flush the chamber lead to device delaminaton.
 
 \par Fortunately, a sizable, but limited, body of data was collected. The following section describes the collected data and characterizes the device response to deionized water, phosphate buffered solution, and a suspension of polystyrene beads.
 
@@ -222,7 +239,7 @@
     \label{fig:IS_DAQ_test_circuit}
 \end{figure}
 
-\par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit_implemented} was physically implemented and tested with the IS system. The results were compared to simulations of the implemented circuit and the ideal circuit in figure \ref{fig:IS_DAQ_test_circuit_ideal}. A 10 pF capacitor was used as the device under testing. The use of the capacitor was justified by noting that the electric double layer will be the largest impedance contributor, and using Gongadze's experimentally determined EDL capacitance of 6$\mu$F/cm$^2$ for titanium electrodes \cite{_gongadze.pdf_????}, and assuming each electrode has a fluid contact area of 11.5 $\mu$m by 15 $\mu$m, the capacitance of the EDL for our electrodes can be very roughly estimated as 5.2 pF. Using a capacitor of 10 pF as the DUT is well within the margin of error.  
+\par To validate and investigate the impedance spectroscopy DAQ system, the test circuit in figure \ref{fig:IS_DAQ_test_circuit_implemented} was physically implemented and tested with the IS system. The results were compared to simulations of the implemented circuit and the ideal circuit in figure \ref{fig:IS_DAQ_test_circuit_ideal}. A 10 pF capacitor was used as the device under testing. The use of the capacitor was justified by noting that the electric double layer will be the largest impedance contributor, and using Gongadze's \cite{_gongadze.pdf_????} experimentally determined EDL capacitance of 6 $\mu$F/cm$^2$ for titanium electrodes, and assuming each electrode has a fluid contact area of 11.5 $\mu$m by 15 $\mu$m, the capacitance of the EDL for our electrodes can be very roughly estimated as 5.2 pF. Using a capacitor of 10 pF as the DUT is well within the margin of error.  
 
 \par As illustrated in the bode plot of figure \ref{fig:test_circuit_bode}, the measured data and the implemented circuit simulation with scopes largely matched, but there were large deviations from the idealized simulation. The I-V method assumes that all current flowing through the DUT is also flowing through the external resistor $R_{EXT}$, but with the application of oscilloscope 1, this is no longer the case. All current that leaks through oscilloscope 1 will inflate the calculated impedance of the DUT.  
 
@@ -233,7 +250,7 @@
     \label{fig:test_circuit_bode}
 \end{figure}
 
-\par Revisiting the impedance solution using the I-V method, we have
+\par Revisiting the impedance solution using the I-V method, and referring to figure \ref{fig:IS_DAQ_test_circuit} for circuit elements, we have
 \begin{equation}
     Z_{DUT} = \frac{V_1 - V_2}{I}.
 \end{equation}
@@ -250,12 +267,49 @@
     Z_{EXT} = \bigg(jwC_{s}+\frac{1}{R_{s}}+\frac{1}{R_{EXT}}\bigg)^{-1},
     \label{eqn:corrected_Rext}
 \end{equation}
-\noindent where $C_{s}$ and $R_{s}$ are the capacitance and resistance of the oscilloscope respectively. To correct the data calculated with the uncorrected I-V formula, the following correction function can be applied:
+\noindent where $C_{s}$ and $R_{s}$ are the capacitance and resistance of the oscilloscope respectively, $w$ is the angular frequency, and $j$ is $\sqrt{-1}$. To correct the data calculated with the uncorrected I-V formula, the following correction function can be applied:
 \begin{equation}
     Z_{DUT} = Z_{NC}\bigg(\frac{Z_{EXT}}{R_{EXT}}\bigg),
     \label{eqn:IV_correction_function}
 \end{equation}
 \noindent where $Z_{NC}$ is the non-corrected data. 
+
+\par The correction function, equation \ref{eqn:IV_correction_function}, was applied to the measured data and the results are presented in figure \ref{fig:IS_validation_corrected_spectra_comp_mag} and \ref{fig:IS_validation_corrected_spectra_comp_phase}. 
+
+\vspace{0.4 in}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/CorrectedImpedanceMag.png}
+    \caption{Plot of the measured, ideal, and corrected measured impedance magnitude. The applied}
+    \label{fig:IS_validation_corrected_spectra_comp_mag}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/CorrectedImpedancePhase.png}
+    \caption{Plot of the measured, ideal, and corrected measured impedance phase.}
+    \label{fig:IS_validation_corrected_spectra_comp_phase}
+\end{figure}
+
+% \begin{figure}[H]
+% \centering
+% \begin{subfigure}[b]{\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/CorrectedImpedanceMag.png}
+%     \caption{Plot of the measured, ideal, and corrected measured impedance magnitude.}
+% \end{subfigure}
+% \begin{subfigure}[b]{\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/CorrectedImpedancePhase.png}
+%     \caption{Plot of the measured, ideal, and corrected measured impedance phase.}
+% \end{subfigure}
+% \caption{Impedance plot in polar form of the measured circuit, the ideal circuit, and the measured circuit with the applied correction function.}
+% \label{fig:IS_validation_corrected_spectra_comp}
+% \end{figure}
+
+\par The corrected data displayed in figure \ref{fig:IS_validation_corrected_spectra_comp_mag} and \ref{fig:IS_validation_corrected_spectra_comp_phase} shows that the application of the correction function significantly decreased the observed deviation from the ideal circuit model, particularly at higher frequencies. This confirms that the oscilloscopes are a source of significant error that needs to be accounted for either through the circuit topology, or through data post-processing as done here. To investigate unaccounted deviations and to quantify residual errors, the measured and calculated errors were compared.
+
 
 \par The error associated by attaching the oscilloscope can be quantified as
 \begin{equation}
@@ -263,39 +317,29 @@
     \label{eqn:oscilloscope_error}
 \end{equation}
 
-\par Figure \ref{fig:test_circ_measurement_error} displays the measured percent error and the error calculated from equation \ref{eqn:oscilloscope_error}. Although a significant amount error is unaccounted for in the noisy low frequencies and frequencies above 25 MHz, the error due to the attached oscilloscope appears to account for the majority of the error.
+\par Figure \ref{fig:test_circ_measurement_error} displays the measured percent error and the error calculated from equation \ref{eqn:oscilloscope_error}. 
 
-\begin{figure}[H]
+
+\begin{figure}[H]{\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{images/percentError.png}
+    \includegraphics[width=\textwidth]{images/percentError.png}
     \caption{Comparison of the calculated percent error caused by the oscilloscopes and the measured percent error.}
     \label{fig:test_circ_measurement_error}
 \end{figure}
 
-\par The correction function, equation \ref{eqn:corrected_IV}, was applied to the measured data and the results are presented in figure \ref{fig:IS_validation_corrected_spectra_comp}. The residual error is displayed in figure \ref{fig:IS_residual_error}. Between 3 kHz and 25 MHz, the percent error does not increase beyond 30\%, a significant improvement over the exponential error of the uncorrected data. The unaccounted residual error may be attributed to parasitic capacitance in the breadboard and the system at large; deviations in reported values in the external resistor, the oscilloscope, and the test capacitor; and high frequency parasitic inductance.
+\par The calculated error quantifies the error created by adding the oscilloscope circuits to the I-V model while the measured error quantifies the error of the empirical data compared to the I-V model.  Although a significant amount error is unaccounted for in the noisy low frequencies and frequencies above 25 MHz, the error due to the attached oscilloscope accounts for a significant amount of error.  The remaining residual error is depicted in figure \ref{fig:IS_residual_error}.
 
-\begin{figure}[h]
-\centering
-\begin{subfigure}[b]{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/CorrectedImpedanceMag.png}
-    \caption{Plot of the measured, ideal, and corrected measured impedance magnitude.}
-\end{subfigure}
-\begin{subfigure}[b]{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/CorrectedImpedancePhase.png}
-    \caption{Plot of the measured, ideal, and corrected measured impedance phase.}
-\end{subfigure}
-\caption{Impedance plot in polar form of the measured circuit, the ideal circuit, and the measured circuit with the applied correction function.}
-\label{fig:IS_validation_corrected_spectra_comp}
-\end{figure}
-
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{images/residualPercentError.png}
     \caption{Residual percent error of impedance spectra after applying the correction function. Between 3 kHz and 25 MHz, the residual error does not exceed 30$\%$.}
     \label{fig:IS_residual_error}
 \end{figure}
+
+
+\par Between 3 kHz and 25 MHz, the percent error does not increase beyond 30\%, a significant improvement over the exponential error of the uncorrected data. The unaccounted residual error may be attributed to parasitic capacitance in the breadboard and the system at large; deviations in reported values in the external resistor, the oscilloscope, and the test capacitor; and high frequency parasitic inductance. The low-frequency noise is likely caused by the large impedance attenuating the measurement signal ($V_2$ from figure \ref{fig:test_circuit_bode}) to the noise floor of the system. This could be solved by implementing noise protection into the circuit design, or by increasing the applied voltage signal. 
+
+\par Without revising the current measurement system, and while applying the correction function (equation \ref{eqn:IV_correction_function}), data collected within 3 kHz to 25 MHz can analyzed with reasonable confidence. 
 
 \FloatBarrier
 
@@ -380,7 +424,7 @@
 
 \par The collected data met the expectations set by the material properties. Deionized water exhibited the largest impedance due to its high resistance, and the conductive PBS responded with a significantly lower impedance. By saturating the sensor chamber with PBS suspended polystyrene beads, the capacitive load significantly increased over PBS medium. However, as mentioned in the reproducibility study, low-frequency-high impedance loads continued to be inconsistent.
 
-\par In an attempt to isolate the effect of the suspended polystyrene beads in the PBS solution, and the difference between pbs-bead suspension and the pbs solution was calculated. The results are depicted in the frequency domain of 10 kHz to 30 MHz are depicted in figure \ref{fig:clean_IS_data_beads_PBS_DI_comp} with the applied correction function of equation \ref{eqn:IV_correction_function}.
+\par To demonstrate how to isolate the effect of suspended suspended particles, the difference between the polystyrene bead suspension and the pbs solution was calculated. The results are depicted in the frequency domain of 10 kHz to 30 MHz are depicted in figure \ref{fig:clean_IS_data_beads_PBS_DI_comp} with the applied correction function of equation \ref{eqn:IV_correction_function}.
 
 
 \begin{figure}[h]
