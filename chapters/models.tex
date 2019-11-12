@@ -67,7 +67,7 @@
         \label{fig:parallelCapacitorModel}
   \end{figure}
     
-    \par A brief solution for the co-planar electrode system is covered in the following section with the complete step-by-step solution included in appendix \ref{app:conformal_mapping}.
+    \par A brief solution for the co-planar electrode system is covered in the following section with the complete step-by-step solution included in appendix \ref{apx:apx:app:conformal_mapping}.
     
     \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map half of the co-planar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to half of the ideal parallel plate geometry (W-plane). The W-plane vastly simplifies the solution to the cell constant and will allow the direct calculation of the ratio $\gamma$ to $d$. Figure \ref{fig:scm_planes_models} diagrams the three mapped planes. 
   \begin{figure}[H]
@@ -87,7 +87,7 @@
       \label{eqn:SCM_ZT_int}
   \end{equation}
   
- \noindent By integrating equation \ref{eqn:SCM_ZT_int} with the coordinate relationships $Z_C = 0$, $T_C = 1$ and $Z_D = jh$, $T_D = 1$, the mapping between the Z-plane and the T-plane can be expressed as
+ \noindent By integrating equation \ref{eqn:SCM_ZT_int} with the coordinate relationships $Z_C = 0$, $T_C = 1$ and $Z_D = jh$, $T_D = 0$, the mapping between the Z-plane and the T-plane can be expressed as
   
    \begin{equation}
      Z = \frac{2h}{\pi}\ln\Big(\sqrt{T-1} + \sqrt{T}\Big)
@@ -164,7 +164,7 @@
  \begin{equation}
      F(v,k) = \int^v_0 \frac{d\alpha}{\sqrt{1 - k^2\sin^2\alpha}},
  \end{equation}
- \noindent where $v$ and $k$ are referred to as the amplitude and modulus respectively. The elliptic integrals for all conditions of $T$ on the real number line are provided in appendix \ref{app: complete_scm}, but for all values that $T$ is greater than $T_A$ or does not lay on the real number line (i.e. has an imaginary component), the elliptic integral provided is valid.
+ \noindent where $v$ and $k$ are referred to as the amplitude and modulus respectively. For all values that $T$ are greater than $T_A$ or do not lay on the real number line (i.e. has an imaginary component), the elliptic integral provided is valid.
  
  \par Using the coordinate relations for point A: $W_A = 0$, $F\big(v(T_A),k\big) = 0$; point B: $W_B = j\gamma$, $F\big(v(T_B +\lim_{x\to 0} jx),k\big) = jK(k')$; and point D: $W_D = \delta$, $F\big(v(T_D),k\big) = K(k)$; we find that 
  
@@ -266,7 +266,7 @@
      \label{eqn:dtdz}
  \end{equation}
  
- \par Combining equations, \ref{eqn:ZtoW_efield_chain}, \ref{eqn:phi_w}, \ref{eqn:dwdt}, and \ref{eqn:dtdz}, the electric field for co-planar electrodes can be expressed as equation \ref{eqn:Ez}. The electric field solution is depicted with streamlines in figure \ref{fig:electricFieldStreamLines} and with electric field magnitude in figure \ref{fig:electricFieldMag}. A complete step-by-step solution is provided in appendix \ref{app:analytic_electric_field}.
+ \par Combining equations, \ref{eqn:ZtoW_efield_chain}, \ref{eqn:phi_w}, \ref{eqn:dwdt}, and \ref{eqn:dtdz}, the electric field for co-planar electrodes can be expressed as equation \ref{eqn:Ez}. The electric field solution is depicted with streamlines in figure \ref{fig:electricFieldStreamLines} and with electric field magnitude in figure \ref{fig:electricFieldMag}. A complete step-by-step solution is provided in appendix \ref{apx:apx:app:analytic_electric_field}.
  
  \begin{equation}
     E_z = \overline{\frac{\pi V}{2hK(k)} \frac{\sqrt{(T_A-T_C)(T_B-T_D)}}{\sqrt{(T-T_A)(T-T_B)}}}

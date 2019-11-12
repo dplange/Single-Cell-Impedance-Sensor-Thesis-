@@ -2,22 +2,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Analytical Impedance Solution
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\label{app:analytic_impedance_solution}
+\label{apx:apx:app:analytic_impedance_solution}
 %\section{Analytical Impedance Solution} 
 
-\par Impedance is a measurement of the dielectric properties of a system and is related to the complex permittivity of the materials which is expressed as
+\par Impedance is the resistance of electrical current flow of a system for a given voltages signal. For dielectric materials, the impedance is related to the complex permittivity expressed as
 
 \begin{equation}
     \tilde{\epsilon} = \epsilon - j\frac{\sigma}{\omega}
 \end{equation}
 
-\noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency. The impedance of a single cell suspension, such as depicted in figure \ref{fig:simplified_IS}, can be solved for with Maxwell's mixture thoery \cite{james_clerk_maxwell_treatise_1892, sun_single-cell_2010}.
+\noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency. The impedance of a single cell suspension, such as depicted in figure \ref{apx:apx:fig:simplified_IS_apx}, can be solved for with Maxwell's mixture thoery \cite{james_clerk_maxwell_treatise_1892, sun_single-cell_2010}.
 
 \begin{figure}[ht]
  \centering
  \includegraphics[width=0.7\textwidth]{images/cellAndElectrodes.png}
  \caption[Schematic diagram of simplified impedance sensor chamber.]{Schematic diagram of simplified impedance sensor chamber where w, $g$, and $l$ are the width, gap, and length of the electrodes respectively, and $h$ is the height of the chamber.}
- \label{fig:simplified_IS}
+ \label{apx:apx:fig:simplified_IS_apx}
  \end{figure}
  
  
@@ -49,10 +49,10 @@
  \centering
  \includegraphics[width=0.7\textwidth]{images/singleShelledCell.png}
  \caption[Diagram of single shelled cell model.]{A diagram of a single shelled cell model where $\sigma_m$, $\epsilon_m$; $\sigma_{mem}$, $\epsilon_{mem}$; $\sigma_i$, and $\epsilon_i$ are the conductivity and permittivity of the medium, cell membrane, and cell cytoplasm respectively. $R$ and $d$ are the radius of the cell and membrane thickness respectively.}
- \label{fig:single_shell}
+ \label{apx:apx:fig:single_shell_apx}
  \end{figure}
 
-  \par The permittivity of the single shelled cell in figure \ref{fig:single_shell}, can be modelled as
+  \par The permittivity of the single shelled cell in figure \ref{apx:apx:fig:single_shell_apx}, can be modelled as
   
   \begin{equation}
       \tilde{\epsilon}_p = \tilde{\epsilon}_{mem} 
@@ -68,21 +68,21 @@
   
   \begin{equation}
     \tilde{Z}_{mix} = \frac{1}{jw\tilde{C}_{mix}}
-    \label{eqn:impedance_with_cap}
+    \label{apx:apx:eqn:impedance_with_cap_apx}
   \end{equation}
   
   \noindent where $w$ is the angular frequency and $\tilde{C}_{mix}$ is the complex capacitance of the mixture and can be expressed as
   
   \begin{equation}
       \tilde{C}_{mix} = \tilde{\epsilon}_{mix} G_f
-      \label{eqn:capacitance_mix}
+      \label{apx:apx:eqn:capacitance_mix_apx}
   \end{equation}
   
-  \noindent If equations \ref{eqn:impedance_with_cap} and \ref{eqn:capacitance_mix} are combined, we obtain
+  \noindent If equations \ref{apx:apx:eqn:impedance_with_cap_apx} and \ref{apx:apx:eqn:capacitance_mix_apx} are combined, we obtain
   
   \begin{equation}
     \tilde{Z}_{mix} = \frac{1}{jw\tilde{\epsilon}_{mix}G_f}
-    \label{eqn:impedance_with_Gf}
+    \label{apx:apx:eqn:impedance_with_Gf_apx}
   \end{equation}
   
   \par To find the value of the geometric factor $G_f$, the cell constant of the electrodes must be determined.
@@ -97,7 +97,7 @@
   
   \begin{equation}
       R_b = \kappa \rho
-      \label{eqn:cell_constant_proportionality}
+      \label{apx:apx:eqn:cell_constant_proportionality_apx}
   \end{equation}
   
   \noindent  Olthius related the measured resistance to capacitance in order to derive an analytic solution to cell constant \cite{olthuis_theoretical_1995}. 
@@ -106,83 +106,83 @@
   
   \begin{equation}
       RC = \frac{\oiint \epsilon \boldsymbol{E} \cdot d\boldsymbol{S}}{\oiint \sigma\boldsymbol{E}\cdot d\boldsymbol{S}}
-      \label{eqn:RC_integral}
+      \label{apx:apx:eqn:RC_integral}
   \end{equation}
   
   \noindent where $R$ and $C$ are the resistance and capacitance between the electrodes, $\epsilon$ is the product of the relative and vacuum permittivity, $\boldsymbol{E}$ is the electric field vector, and the integral is taken over a surface including one electrode.
   
-  \par If the interspatial material is homogeneous and isotropic, then equation \ref{eqn:RC_integral} can be reduced to
+  \par If the interspatial material is homogeneous and isotropic, then equation \ref{apx:apx:eqn:RC_integral} can be reduced to
   
   \begin{equation}
       RC = \frac{\epsilon}{\sigma}
-      \label{eqn:RC}
+      \label{apx:apx:eqn:RC_apx}
   \end{equation}
   
-  \par If we take $R_b = R$, we can combine equation \ref{eqn:RC} and \ref{eqn:cell_constant_proportionality} to express the cell constant in terms of capacitance.
+  \par If we take $R_b = R$, we can combine equation \ref{apx:apx:eqn:RC_apx} and \ref{apx:apx:eqn:cell_constant_proportionality_apx} to express the cell constant in terms of capacitance.
   
   \begin{equation}
       \kappa = \frac{\epsilon}{C}
-      \label{eqn:cell_constant_C}
+      \label{apx:apx:eqn:cell_constant_C}
   \end{equation}
   
    \begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{images/capacitorNoFringe.png}
   \caption[Uniform electric field between parallel plates]{Uniform electric field between two parallel electrodes where $\boldsymbol{E}$ is the electric field, $\phi$ is the voltage, and $\frac{d\phi}{d\boldsymbol{n}}=0$ is the boundary condition of a perfect insulator. The dimensions of the capacitor are the electrode height $\gamma$, and the distance between the electrodes $d$.}
-  \label{fig:parallel_capacitor}
+  \label{apx:apx:fig:parallel_capacitor}
   \end{figure}
   
-  \par The capacitance of the two parallel plates with a uniform electrode field in figure \ref{fig:parallel_capacitor} is
+  \par The capacitance of the two parallel plates with a uniform electrode field in figure \ref{apx:apx:fig:parallel_capacitor} is
   \begin{equation}
       C = \frac{\epsilon A}{d}
-      \label{eqn:capacitor}
+      \label{apx:apx:eqn:capacitor}
   \end{equation}
   
   \noindent where $A$ is the area of the plate and $d$ is the distance between the plates. Since $A = l\gamma$, where $l$ is the width, and $\gamma$ is the height of the electrode, the capacitance per unit width can be written as
   
   \begin{equation}
       C_l = \frac{\epsilon\gamma}{d} \;\;\;\text{where} \;\; C =l\, C_l
-      \label{eqn:specific_capacitance}
+      \label{apx:apx:eqn:specific_capacitance}
   \end{equation}
   
-  \par Returning to equation \ref{eqn:cell_constant_C}, and substituting equation \ref{eqn:specific_capacitance}, the cell constant can be expressed as 
+  \par Returning to equation \ref{apx:apx:eqn:cell_constant_C}, and substituting equation \ref{apx:apx:eqn:specific_capacitance}, the cell constant can be expressed as 
   
   \begin{equation}
       \kappa = \frac{d}{\gamma \, l}
-      \label{eqn:cell_constant}
+      \label{apx:apx:eqn:cell_constant}
   \end{equation}
   
   \noindent The geometric factor is related to the cell constant by 
   
   \begin{equation}
        G_f = (\kappa)^{-1}
-       \label{geometric_cell}
+       \label{apx:apx:geometric_cell}
   \end{equation}
 
-  \noindent By combining equations \ref{eqn:cell_constant} and \ref{geometric_cell}, the geometric factor can be expressed as
+  \noindent By combining equations \ref{apx:apx:eqn:cell_constant} and \ref{apx:apx:geometric_cell}, the geometric factor can be expressed as
   
   \begin{equation}
       G_f = \frac{\gamma l}{d}
-      \label{eqn:geometric_constant}
+      \label{apx:apx:eqn:geometric_constant}
   \end{equation}
   
-  \par Equation \ref{eqn:geometric_constant} is the solution of the geometric constant for the electrode configuration in figure \ref{fig:parallel_capacitor}, but to find the geometric constant for any other configuration, including the coplanar electrode in figure \ref{fig:simplified_IS}, $d$ and $\gamma$ will need to be mapped to parameters in the other configuration. This will be accomplished in the next section with conformal transformations.
+  \par Equation \ref{apx:apx:eqn:geometric_constant} is the solution of the geometric constant for the electrode configuration in figure \ref{apx:apx:fig:parallel_capacitor}, but to find the geometric constant for any other configuration, including the coplanar electrode in figure \ref{apx:apx:fig:simplified_IS_apx}, $d$ and $\gamma$ will need to be mapped to parameters in the other configuration. This will be accomplished in the next section with conformal transformations.
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%
   % Conformal Mapping
   %%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Conformal Transformations}
-  \label{app:conformal_mapping}
+  \label{apx:apx:app:conformal_mapping}
   
   \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{images/mapping.png}
   \caption[Illustration of complex mapping.]{An Illustration of complex mapping.}
-  \label{fig:mapping}
+  \label{apx:apx:fig:mapping}
   \end{figure}
   
-  \par Let $z = x + j\,y$, where $j$ is the imaginary number $\sqrt{-1}$, then a function of $z$, such as $W(z) = u(x,y) + j\,v(x,y)$, can be considered a mapping of an area of one complex plane to an area in another complex plane (figure \ref{fig:mapping}). Conformal transformations are a special kind of mapping between two complex planes that preserves local angles. A mapping is conformal if it is composed of analytic functions, and as a consequent, fulfills the Cauchy-Rieman equations. Conformal mappings are extremely useful for solving problems in complicated domains by mapping the problem to a new domain where the problem is simplified. An example of a conformal mapping is $w(z) = tan(z)$, which maps an infinite vertical strip to a circle (figure \ref{fig:circleMapping}). 
+  \par Let $z = x + j\,y$, where $j$ is the imaginary number $\sqrt{-1}$, then a function of $z$, such as $W(z) = u(x,y) + j\,v(x,y)$, can be considered a mapping of an area of one complex plane to an area in another complex plane (figure \ref{apx:apx:fig:mapping}). Conformal transformations are a special kind of mapping between two complex planes that preserves local angles. A mapping is conformal if it is composed of analytic functions, and as a consequent, fulfills the Cauchy-Rieman equations. Conformal mappings are extremely useful for solving problems in complicated domains by mapping the problem to a new domain where the problem is simplified. An example of a conformal mapping is $w(z) = tan(z)$, which maps an infinite vertical strip to a circle (figure \ref{apx:apx:fig:circleMapping}). 
 
    \begin{figure}[h]
     \centering
@@ -198,11 +198,11 @@
         \caption{Mapping of the partial infinite vertical strip to a circle }
     \end{subfigure} 
     \caption[Conformal mapping of vertical strip to circle]{An example of conformal mapping by transforming a partial infinite vertical strip to a circle with the mapping $w(z) = tan(z)$.}
-    \label{fig:circleMapping}
+    \label{apx:apx:fig:circleMapping}
  \end{figure}
   
  
-    \par Sun, Greene, et al. utilized the Schwartz-Christoffel transform to map the coplanar electrode configuration in figure \ref{fig:simplified_IS} to the configuration of parallel electrodes with uniform electrode fields in figure \ref{fig:parallel_capacitor} \cite{sun_analytical_2007}. The Schwartz-Christoffel formula is a powerful transform that allows the mapping of the upper complex T-plane ($y>0$) to the inside of a polygon. The formula is
+    \par Sun, Greene, et al. utilized the Schwartz-Christoffel transform to map the coplanar electrode configuration in figure \ref{apx:apx:fig:simplified_IS_apx} to the configuration of parallel electrodes with uniform electrode fields in figure \ref{apx:apx:fig:parallel_capacitor} \cite{sun_analytical_2007}. The Schwartz-Christoffel formula is a powerful transform that allows the mapping of the upper complex T-plane ($y>0$) to the inside of a polygon. The formula is
     
     \begin{equation}
         Z = C_1 \int_{T_0}^T \prod^m_{r=1} (T - T_r)^{(\theta_r/\pi - 1)} dT + C_2
@@ -210,13 +210,13 @@
     
     \noindent where $Z$ is the interior of a polygon in the Z-plane with vertices $Z_1,\;Z_2,\;Z_3,\; ...,Z_m$ and angles $\theta_1,\;\theta_2,\;\theta_3,\; ...,\theta_m$ which correspond to the points $T_1,\;T_2,\;T_3,\; ...,T_m$ on the real axis of the T-plane. $C_1$ and $C_2$ are integration constants. The Schwartz-Christoffel transform has three degrees of freedom, and consequently, up to three points may be chosen arbitrarily. $T_0$ is the reference and is typically chosen at the origin.
     
-    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to the W-plane. The W-plane vastly simplifies the solution to the cell constant, and the goemetric constant can be solved for with equation \ref{eqn:geometric_constant}. 
+    \par To find the geometric constant for coplanar electrodes, Schwartz-Christoffel transforms will be used to map the coplanar electrode geometry (Z-plane) to the upper complex plane (T-plane) and then to map the T-plane to the W-plane. The W-plane vastly simplifies the solution to the cell constant, and the goemetric constant can be solved for with equation \ref{apx:apx:eqn:geometric_constant}. 
     
     \begin{figure}[h]
         \centering
         \includegraphics[width=\textwidth]{images/scmPlanes.png}
         \caption[Diagrams of coplanar electrodes through Schwartz-Christoffel mapping]{Diagrams of coplanar electrodes through Schwartz-Christoffel mapping where the Z-plane contains the physical dimensions of the electrode configuration, the T-Plane links the Schwartz-Christoffel mappins of Z and W plane, and the W-plane represents the parallel electrodes producing a uniform electrode field.}
-        \label{fig:scm_planes}
+        \label{apx:apx:fig:scm_planes}
     \end{figure}
     
     
@@ -225,7 +225,7 @@
   \par Mapping the T-plane to the Z-plane, point $C$ and $D$ will be chosen as the polygon corners with angles of $\pi/2$.  
   \begin{equation}
       Z = C_1\int (T-T_c)^{-1/2}(T-T_D)^{-1/2}dT + C_2
-      \label{eqn:SCM_ZT_int}
+      \label{apx:apx:eqn:SCM_ZT_int}
   \end{equation}
  \noindent To integrate
  \begin{flalign*}
@@ -265,7 +265,7 @@
     &= 2\ln \Bigg( \sqrt{\frac{T-T_C}{T_C-T_D}} + \sqrt{\frac{T-T_D}{T_C-T_D}}\Bigg)&
 \end{flalign*}
 
-\noindent Add the integration constants from equation \ref{eqn:SCM_ZT_int} and combine $(T_C + T_D)^{-1/2}$ in $C_2$, then
+\noindent Add the integration constants from equation \ref{apx:apx:eqn:SCM_ZT_int} and combine $(T_C + T_D)^{-1/2}$ in $C_2$, then
 \begin{equation}
 Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
 \end{equation}
@@ -273,7 +273,7 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
 \noindent The points $T_C$ and $T_D$ will be chosen to be 1 and 0 respectively
 \begin{equation}
     Z = 2C_1\ln \Bigg( \sqrt{T-1} + \sqrt{T} \Bigg) + C_2
-    \label{eqn:ZT_with_constants}
+    \label{apx:apx:eqn:ZT_with_constants}
 \end{equation}
   
  \noindent The integration constants can be solved by relationships in the coordinates between the Z-plane and T-plane. 
@@ -283,18 +283,18 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  &0=2C_1(0) + C_2&\\
  &C_2=0&
  \end{flalign*}
- \noindent For point D, $Z_D = jh$ and $T_D=1$,
+ \noindent For point D, $Z_D = jh$ and $T_D=0$,
  \begin{flalign*}
  jh &= 2C_1\ln(j)&\\
  jh &= 2C_1(\frac{\pi}{2} j)&\\
  C_1 &= \frac{h}{\pi}&
  \end{flalign*}
  
- \noindent After substituting the values of the integration constants into equation \ref{eqn:ZT_with_constants},
+ \noindent After substituting the values of the integration constants into equation \ref{apx:apx:eqn:ZT_with_constants},
  
  \begin{equation}
      Z = \frac{2h}{\pi}\ln\Big(\sqrt{T-1} + \sqrt{T}\Big)
-     \label{eqn:TZ}
+     \label{apx:apx:eqn:TZ}
  \end{equation}
  
     \begin{figure}[h]
@@ -310,11 +310,11 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
         \includegraphics[width=\textwidth]{images/TtoZ_map.png}
         \caption{Mapping of the part of the T-plane to the polygon in the Z-plane}
     \end{subfigure} 
-    \caption[Mapping of the T-plane to the inside of the open polygon in the Z-Plane]{Mapping of the T-plane to the inside of the open polygon in the Z-Plane outlined by the points $F$, $C$, $D$, and $E$ in the Z-plane. Equation \ref{eqn:TZ} is the mapping function.} 
-    \label{fig:T_to_Z_mapping}
+    \caption[Mapping of the T-plane to the inside of the open polygon in the Z-Plane]{Mapping of the T-plane to the inside of the open polygon in the Z-Plane outlined by the points $F$, $C$, $D$, and $E$ in the Z-plane. Equation \ref{apx:apx:eqn:TZ} is the mapping function.} 
+    \label{apx:apx:fig:T_to_Z_mapping_apx}
  \end{figure}
  
- \noindent The mapping from the Z-plane to the T-plane can be found by solving for T in equation \ref{eqn:TZ}.
+ \noindent The mapping from the Z-plane to the T-plane can be found by solving for T in equation \ref{apx:apx:eqn:TZ}.
  \begin{flalign*}
  Z &= \frac{2h}{\pi}\ln\Big(\sqrt{T-1} + \sqrt{T}\Big)&\\
  \\
@@ -334,7 +334,7 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  \noindent Then $T$ can be solved for as
  \begin{equation}
      T = \cosh^2\bigg(\frac{z\pi}{2h}\bigg)
-     \label{eqn:ZT}
+     \label{apx:apx:eqn:ZT}
  \end{equation}
  
      \begin{figure}[h]
@@ -350,8 +350,8 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
         \includegraphics[width=\textwidth]{images/ZtoT_map.png}
         \caption{Mapping of part of the polygon in the Z-plane to the T-plane.}
     \end{subfigure} 
-    \caption[Mapping of the open polygon in the Z-Plane to the T-plane.]{Mapping of the open polygon in the Z-Plane outlined by the points $F$, $C$, $D$, and $E$ to the T-plane. Equation \ref{eqn:ZT} is the mapping function.} 
-    \label{fig:Z_to_T_mapping}
+    \caption[Mapping of the open polygon in the Z-Plane to the T-plane.]{Mapping of the open polygon in the Z-Plane outlined by the points $F$, $C$, $D$, and $E$ to the T-plane. Equation \ref{apx:apx:eqn:ZT} is the mapping function.} 
+    \label{apx:apx:fig:Z_to_T_mapping}
  \end{figure}
 
 \subsection{Schwartz-Christoffel Transform: W to T Mapping}
@@ -359,10 +359,10 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  \par Mapping the T-plane to the W-Plane, points $A$, $B$, $C$, and $D$, will be chosen as the polygon corners with angles of $\pi/2$.
  \begin{equation}
     W = D_1 \int (T-T_A)^{-1/2}(T-T_B)^{-1/2}(T-T_C)^{-1/2}(T-T_D)^{-1/2}\;dT + D_2
-    \label{eqn:scm_wt_int}
+    \label{apx:apx:eqn:scm_wt_int}
  \end{equation}
  
- \noindent Since equation \ref{eqn:scm_wt_int} is an integral of a rational function with a root of a quartic polynomial, the function can be rewritten as an elliptic integral \cite{i.s._gradshteyn_table_1980}.
+ \noindent Since equation \ref{apx:apx:eqn:scm_wt_int} is an integral of a rational function with a root of a quartic polynomial, the function can be rewritten as an elliptic integral \cite{i.s._gradshteyn_table_1980}.
  
  \begin{equation}
      W = D_3F(v,k) + D_2
@@ -382,7 +382,7 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  \begin{equation}
      F(v,k) = \int^v_0 \frac{d\alpha}{\sqrt{1 - k^2\sin^2\alpha}}
  \end{equation}
- \noindent Where $v$ and $k$ are referred to as the amplitude and modulus respectively.
+ \noindent Where $v$ and $k$ are referred to as the amplitude and modulus respectively.  For all values of $T$ that are greater than $T_A$ or do not lay on the real number line (i.e. has an imaginary component), the elliptic integral provided is valid.
  
  \noindent Solving for the integral constants, for point A, $W_A = 0$ and $v = 0$
  \begin{flalign*}
@@ -403,34 +403,84 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
      K(k) = \int_0^{\pi/2} \frac{d\alpha}{1 - k^2\sin^2(\alpha)}
  \end{equation}
  
- \noindent For point $B$, $W_B = j\gamma$ and $\lim_{T\to ^-T_B} v = \arcsin{(i\infty)}$
+ \noindent For point $B$, $W_B = j\gamma$ and $\lim_{x \to 0} v(T_B + jx)$
  \begin{flalign*}
- j\gamma &= D_3F(j\infty, k)&\\
- D_3 &= \frac{F(j\infty,k)}{j\gamma}&
+ j\gamma &= \lim_{x \to 0} D_3 F(v(T_B + jx), k)&\\
+ D_3 &= \lim_{x \to 0} \frac{F(v(T_B + jx),k)}{j\gamma}&
  \end{flalign*}
  
- \noindent Equating the two solutions for $D_3$, the Geometric factor (equation \ref{eqn:geometric_constant}) in the W-Plane can be mapped to T-plane and, using equation \ref{eqn:ZT}, mapped to the Z-plane.
+ \noindent Equating the two solutions for $D_3$, the Geometric factor (equation \ref{apx:apx:eqn:geometric_constant}) in the W-Plane can be mapped to T-plane and, using equation \ref{apx:apx:eqn:ZT}, mapped to the Z-plane.
  
  \begin{equation}
-     D_3 = \frac{d}{K(k)} = \frac{j\gamma}{\lim_{v\to j\infty}F(v,k)} 
-     \label{eqn:prep_D3}
+     D_3 = \frac{d}{K(k)} = \frac{j\gamma}{\lim_{x\to 0}F(v(T_B + jx),k)} 
+     \label{apx:apx:eqn:prep_D3}
  \end{equation}
  \begin{equation}
-     G_f = \frac{\gamma l}{2\,d} = \frac{\lim_{v\to i\infty}F(v,k)l}{j\,2\,K(k)}
-     \label{eqn:geometric_constant_mapping}
+     G_f = \frac{\gamma l}{2\,d} = \frac{\lim_{x\to 0}F(v(T_B + jx),k)l}{j\,2\,K(k)}
+     \label{apx:apx:eqn:geometric_constant_mapping}
  \end{equation}
  
- \noindent A constant of two appears in the denominator of \ref{eqn:geometric_constant_mapping} since the conformal mapping takes advantage of symmetry and only accounts for half of the disance between the electrodes in the W-plane (figure \ref{fig:scm_planes}).
+ \noindent A constant of two appears in the denominator of \ref{apx:apx:eqn:geometric_constant_mapping} since the conformal mapping takes advantage of symmetry and only accounts for half of the disance between the electrodes in the W-plane (figure \ref{apx:apx:fig:scm_planes}).
  
 
- \par However, the expression $\lim_{v \to i\infty}F(v,k)$ is difficult to handle, but by using the imaginary-argument transform, it can be shown that $\lim_{v\to j\infty} F(v,k) = iK(k')$. 
- 
-  \subsection*{Proof That $\displaystyle\boldsymbol{\lim_{v\to j\infty} F(v,k) = iK(k')}$}
+ \par However, the expression $\lim_{x \to 0}F(v(T_B + jx),k)$ is inconvenient to handle, but by using the imaginary-argument transform, it can be shown that $\lim_{x \to 0}F(v(T_B + jx),k) = iK(k')$. 
  
  The Imaginary-argument transform states that
  \begin{equation}
      F(i\phi,k) = iF(\psi, k')\;\; \text{with} \;\; \sinh\phi = \tan\psi
-     \label{eqn:imaginary_argument}
+     \label{apx:apx:eqn:imaginary_argument}
+ \end{equation}
+ 
+ \par Applying the imaginary-argument transform,
+ 
+ \begin{equation}
+     \psi = \lim_{x \to 0} \arctan\Big(\sinh\bigg(\frac{\arcsin\sqrt{\frac{(T_B-T_D)(T_B + jx-T_A)}{(T_A-T_D)(T_B+jx-T_B)}}}{j}\bigg)\Big)
+     \label{apx:eqn:imaginary-argument-transform-amplitude}
+ \end{equation}
+ 
+ \noindent Working from the inside out,
+ \begin{flalign*}
+    &\lim_{x \to 0} \frac{(T_B-T_D)(T_B + jx-T_A)}{(T_A-T_D)(T_B+jx-T_B)}  \\
+    \\
+    &= \lim_{x \to 0} \frac{(T_B-T_D)(T_B + jx-T_A)}{(T_A-T_D)jx} \;\;\;\;\;\;\; \text{where } T_D = 0  \\ 
+    \\
+    &= \lim_{x \to 0} \frac{T_B}{T_A}\frac{(T_B - T_A)}{jx} +\frac{T_B}{T_A} &
+\end{flalign*}
+ 
+ \noindent Since $T_A > T_B$, then $T_B - T_A < 0$. Therfore,
+  \begin{equation}
+    \lim_{x \to 0} \frac{(T_B-T_D)(T_B + jx-T_A)}{(T_A-T_D)(T_B+jx-T_B)} = -\infty.
+    \label{apx:eqn:limit1}
+\end{equation}
+ 
+\noindent Substituting the results from equation \ref{apx:eqn:limit1} into equation \ref{apx:eqn:imaginary-argument-transform-amplitude},
+  \begin{equation}
+    \psi = \lim_{x \to -\infty} \arctan(\sinh(\arcsin \sqrt{x})) = \arctan(\sinh(\arcsin(j\infty))
+    \label{apx:eqn:limit2}
+\end{equation}
+\noindent Working from the inside out and starting with the definition of $\arcsin x$,
+ \begin{flalign*}
+    &\arcsin{x} = -j\ln(jx + \sqrt{1-x^2})&  \\
+    \\
+    &\arcsin(jx) = -j\ln(\sqrt{1+x^2}-x) \\ 
+    \\
+    &\lim_{x\to\infty} \arcsin(jx) = \lim_{x\to\infy} -j\ln(\sqrt{1+x^2}-x)\\
+    \\
+    &= \lim_{x\to\infty} -j\ln\bigg(\frac{(\sqrt{1+x^2}+x)(\sqrt{1+x^2}-x)}{(\sqrt{1+x^2}+x)}\bigg)\\
+    \\
+    &= \lim_{x\to\infty} -j\ln\bigg(\frac{1}{x(\sqrt{1/x^2+1}+1)}\bigg)&
+\end{flalign*}
+\begin{flalign*}
+    &= -j\ln(0)&
+\end{flalign*}
+ \begin{equation}
+     \lim_{x\to\infty} \arcsin(jx) = j\infty
+     \label{apx:eqn:limit3}
+ \end{equation}
+ 
+ \noindent Substituting equation \ref{apx:eqn:limit3} into equation \ref{apx:eqn:limit2}
+ \begin{equation}
+     \psi = \lim_{x \to -\infty} \arctan(\sinh(ix))
  \end{equation}
  
  \noindent Where $k' = \sqrt{1 - k^2}$ and is called the complement modulus. Starting with the definition of $\arcsin x$:
@@ -465,7 +515,7 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
      \lim_{w\to j\infty} Q = -\infty
  \end{equation}
  
- \noindent And now it can be stated that $\arcsin(w) = -jQ$. Returning to the imaginary-argument transform (equation \ref{eqn:imaginary_argument}), 
+ \noindent And now it can be stated that $\arcsin(w) = -jQ$. Returning to the imaginary-argument transform (equation \ref{apx:apx:eqn:imaginary_argument}), 
  \begin{flalign*}
   F&(-jQ,k) = F(\psi, k')&\\
   \psi & = \arctan\Big(\sinh(-Q)\Big)&\\
@@ -501,64 +551,64 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
     \psi & = \frac{\pi}{2}&
  \end{flalign*}
  
- \noindent showing that, with equation \ref{eqn:imaginary_argument},
+ \noindent showing that, with equation \ref{apx:apx:eqn:imaginary_argument},
  
  \begin{equation}
      \lim_{v\to j\infty} F(v,k) = jK(k')
  \end{equation}
  
- \noindent Returning to the mapping of the geometric factor (equation \ref{eqn:prep_D3}, and \ref{eqn:geometric_constant_mapping}), $D_3$ and $G_f$ can be expressed as
+ \noindent Returning to the mapping of the geometric factor (equation \ref{apx:apx:eqn:prep_D3}, and \ref{apx:apx:eqn:geometric_constant_mapping}), $D_3$ and $G_f$ can be expressed as
  \begin{equation}
      D_3 = \frac{d}{K(k)} = \frac{\gamma}{K(k')}
-     \label{eqn:D3}
+     \label{apx:apx:eqn:D3}
  \end{equation}
  \begin{equation}
      G_f = \frac{2\,K(k)}{K(k')}
-     \label{eqn:Gf}
+     \label{apx:apx:eqn:Gf}
  \end{equation}
  
  \section{Solution to the Electric Field}
- \label{app:analytic_electric_field}
+ \label{apx:apx:app:analytic_electric_field}
  
  \par Now with Z-T and T-W mappings, the solution of the electric field in the W-plane can be mapped to the Z-plane. The mapping of the electric field can be expressed as 
  
  \begin{equation}
      \boldsymbol{E_z} = -\nabla \phi_z \;\;\text{with} \;\;\;\nabla \phi_z = \nabla \phi_w \overline{\frac{dW}{dZ}}
-     \label{eqn:ZtoW_efield}
+     \label{apx:apx:eqn:ZtoW_efield}
  \end{equation}
  
  \noindent Where $\nabla \phi$ is the gradient of potential and $\overline{\frac{dW}{dZ}}$ is the conjugate of the derivative of $W$ with respect to $Z$ \cite{schinzinger_conformal_2012}.
  
- \par Applying the chain rule to equation \ref{eqn:ZtoW_efield}, the electric field mapping is expressed as
+ \par Applying the chain rule to equation \ref{apx:apx:eqn:ZtoW_efield}, the electric field mapping is expressed as
  
  \begin{equation}
     \boldsymbol{E_z} =- \nabla \phi_w \overline{\frac{dW}{dT}\frac{dT}{dZ}}
-    \label{eqn:ZtoW_efield_chain}
+    \label{apx:apx:eqn:ZtoW_efield_chain}
  \end{equation}
  
- The gradient of $ \phi_w$ can be reduced to $\frac{d}{dx} \phi_w$ since the electric potential in the W-plane is independent of the $y$ and $z$ direction (figure \ref{fig:scm_planes}). The electric potential and electric field in the W-plane can be expressed as 
+ The gradient of $ \phi_w$ can be reduced to $\frac{d}{dx} \phi_w$ since the electric potential in the W-plane is independent of the $y$ and $z$ direction (figure \ref{apx:apx:fig:scm_planes}). The electric potential and electric field in the W-plane can be expressed as 
  
  \begin{equation}
     \phi_w = V\Big(1-\frac{x}{d}\Big)
  \end{equation}
  \begin{equation}
      E_w = -\nabla \phi_w = \frac{V}{d}
-     \label{eqn:phi_w}
+     \label{apx:apx:eqn:phi_w}
  \end{equation}
  
- \noindent $\frac{dW}{dT}$ can be found by integrating equation \ref{eqn:scm_wt_int}.
+ \noindent $\frac{dW}{dT}$ can be found by integrating equation \ref{apx:apx:eqn:scm_wt_int}.
  
  \begin{equation}
      \frac{dW}{dT} = \frac{d}{K(k)}\frac{(T_A - T_C)^{1/2}(T_B-T_D)^{1/2}}{(T-T_A)^{1/2}(T-T_B)^{1/2}(T-T_C)^{1/2}(T-T_D)^{1/2}}
-     \label{eqn:dwdt}
+     \label{apx:apx:eqn:dwdt}
  \end{equation}
  
  
- \noindent And $\frac{dT}{dz}$ can be found by integrating equation \ref{eqn:ZT}.
+ \noindent And $\frac{dT}{dz}$ can be found by integrating equation \ref{apx:apx:eqn:ZT}.
  \begin{flalign*}
  T &= \cosh^2\Big(\frac{Z\pi}{2h}\Big)&\\
  \\
- \frac{dT}{dZ} &= 2\cosh\Big(\frac{Z\pi}{2h}\Big)\sinh\Big(\frac{Z\pi}{2h}\Big)\frac{\pi}{2h}& \text{Substitute equation \ref{eqn:TZ}}\\
+ \frac{dT}{dZ} &= 2\cosh\Big(\frac{Z\pi}{2h}\Big)\sinh\Big(\frac{Z\pi}{2h}\Big)\frac{\pi}{2h}& \text{Substitute equation \ref{apx:apx:eqn:TZ}}\\
  \\
   \frac{dT}{dZ} &= \frac{\pi}{h}\cosh\Big(\ln(\sqrt{T-1}+\sqrt{T})\Big)\sinh\Big(\ln(\sqrt{T-1}+\sqrt{T})\Big)&
  \end{flalign*}
@@ -571,20 +621,20 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  
  \begin{equation}
      \frac{dT}{dZ} = \frac{\pi}{h}(\sqrt{T-T_D})(\sqrt{T-T_C})
-     \label{eqn:dtdz}
+     \label{apx:apx:eqn:dtdz}
  \end{equation}
  
- \par Combining equations, \ref{eqn:ZtoW_efield_chain}, \ref{eqn:phi_w}, \ref{eqn:dwdt}, and \ref{eqn:dtdz}, the electric field for the coplanar electrodes can be expressed as equation \ref{eqn:Ez} and is depicted in figure \ref{fig:Ez}
+ \par Combining equations, \ref{apx:apx:eqn:ZtoW_efield_chain}, \ref{apx:apx:eqn:phi_w}, \ref{apx:apx:eqn:dwdt}, and \ref{apx:apx:eqn:dtdz}, the electric field for the coplanar electrodes can be expressed as equation \ref{apx:apx:eqn:Ez} and is depicted in figure \ref{apx:apx:fig:Ez}
  
  \begin{equation}
     E_z = \overline{\frac{\pi V}{2hK(k)} \frac{\sqrt{(T_A-T_C)(T_B-T_D)}}{\sqrt{(T-T_A)(T-T_B)}}}
-    \label{eqn:Ez}
+    \label{apx:apx:eqn:Ez}
  \end{equation}
  
  
      \begin{figure}[h]
         \centering
         \includegraphics[width=\textwidth]{images/Ez.png}
-        \caption[Electric Field for Coplanar Electrodes]{The electric field for coplanar electrodes as defined by equation \ref{eqn:Ez}.}
-        \label{fig:Ez}
+        \caption[Electric Field for Coplanar Electrodes]{The electric field for coplanar electrodes as defined by equation \ref{apx:apx:eqn:Ez}.}
+        \label{apx:apx:fig:Ez}
     \end{figure}
