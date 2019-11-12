@@ -344,10 +344,10 @@
     \phi_w = \frac{2}{3} \frac{r_z \iint_{A_w} dA}{K(k)K(k')l}.
 \end{equation}
 
-\par The major shortcoming of this method is operating under the assumption that the mapped particle cross-sections are circle or ellipsoid-like. From empirical tests, many particle-electrode configurations result in mapped particle cross-sections that do appear circular or ellipse-like, but there will be an associated error that will often grow with the degree of the non-uniformity. Compared to the traditional volume fraction, the error is minimal. The W-plane volume fraction accounts for fringe field effects and the local non-uniformity of the electric field, allowing for the calculation of the volume fraction for a particle located anywhere in the system. 
+\par The major shortcoming of this method is operating under the assumption that the mapped particle cross-sections are circle or ellipsoid-like. From simulated data, many particle-electrode configurations result in mapped particle cross-sections that do appear circular or ellipse-like, but there will be an associated error that will often grow with the degree of the non-uniformity. Compared to the traditional volume fraction, the error is minimal. The W-plane volume fraction accounts for fringe field effects and the local non-uniformity of the electric field, allowing for the calculation of the volume fraction for a particle located anywhere in the system. 
 
 \subsection*{Power Volume Fraction}
-\par In the W-plane, which represents the ideal parallel plate electrode model depicted in figure \ref{fig:parallelCapacitorModel}, the electric field is uniform inside the valid domain, and as a direct result, the power density is uniform throughout the domain of the w-plane. By interpreting the effective volume fraction as the ratio of volumes in the W-plane, we arrive at the following relationship:
+\par In the W-plane, which represents the ideal parallel plate electrode model depicted in figure \ref{fig:parallelCapacitorModel}, the electric field is uniform inside the valid domain, and as a direct result, the power density is uniform throughout the domain of the W-plane. By interpreting the effective volume fraction as the ratio of volumes in the W-plane, we arrive at the following relationship:
 \begin{equation}
     \phi ' = \frac{V_p'}{V_{sys}'} = \frac{V^w_p}{V^w_{sys}} = \frac{P_p}{P_{sys}}.
     \label{eqn: effectiveVolumeFractions}
@@ -407,6 +407,9 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 
 \par The power fraction provides an exact solution to the volume fraction for the co-planar electrode system outlined in section \ref{sec: coplanarElectrodeCellConstant}. These corrected volume fractions allow for a complete analytic impedance solution that accounts for the effect of the fringe field and non-uniform electric field based on the position of the particle. If incorporated in a drag-flow model, flow-through IS systems can be simulated with respect to time.
 
+\par To further explain the interaction between these volume fractions, figure ??? illustrates the power fraction and W-plane mapping as a cell traverses through the co-planar electrode chamber. 
+
+\par The W-plane mapping is a powerful tool in visually investigating the effects of cell position, chamber geometry, and electrode geometry on a particle's volume fraction. 
 
 \subsection{Device Sensitivity}
 \par Linderholm defined the sensitivity of a device as the local dissipation of power normalized by the total power of the system. In otherwords, Linderholm sensitivity is the ratio of power density at a point in the system to the power of the system, and can be expressed as
