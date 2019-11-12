@@ -431,10 +431,10 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
      \label{apx:apx:eqn:imaginary_argument}
  \end{equation}
  
- \par Applying the imaginary-argument transform,
+ \noindent Where $k' = \sqrt{1 - k^2}$ and is called the complement modulus. Applying the imaginary-argument transform,
  
  \begin{equation}
-     \psi = \lim_{x \to 0} \arctan\Big(\sinh\bigg(\frac{\arcsin\sqrt{\frac{(T_B-T_D)(T_B + jx-T_A)}{(T_A-T_D)(T_B+jx-T_B)}}}{j}\bigg)\Big)
+     \psi = \lim_{x \to 0} \arctan\bigg(\sinh\bigg(\frac{\arcsin\sqrt{\frac{(T_B-T_D)(T_B + jx-T_A)}{(T_A-T_D)(T_B+jx-T_B)}}}{j}\bigg)\bigg)
      \label{apx:eqn:imaginary-argument-transform-amplitude}
  \end{equation}
  
@@ -455,7 +455,7 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  
 \noindent Substituting the results from equation \ref{apx:eqn:limit1} into equation \ref{apx:eqn:imaginary-argument-transform-amplitude},
   \begin{equation}
-    \psi = \lim_{x \to -\infty} \arctan(\sinh(\arcsin \sqrt{x})) = \arctan(\sinh(\arcsin(j\infty))
+    \psi = \lim_{x \to -\infty} \arctan\Big(\sinh\Big(\frac{\arcsin\sqrt{x}}{j}\Big)\Big) = \arctan\Big(\sinh\Big(\frac{\arcsin(j\infty)}{j}\Big)\Big)
     \label{apx:eqn:limit2}
 \end{equation}
 \noindent Working from the inside out and starting with the definition of $\arcsin x$,
@@ -480,82 +480,99 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
  
  \noindent Substituting equation \ref{apx:eqn:limit3} into equation \ref{apx:eqn:limit2}
  \begin{equation}
-     \psi = \lim_{x \to -\infty} \arctan(\sinh(ix))
+     \psi = \lim_{x \to \infty} \arctan(\sinh(x)).
  \end{equation}
  
- \noindent Where $k' = \sqrt{1 - k^2}$ and is called the complement modulus. Starting with the definition of $\arcsin x$:
+\noindent Applying the following common limits,
  \begin{flalign*}
-    \arcsin{x} =& -j\Log(jx + (1-x^2)^{1/2})&
- \end{flalign*}
+    &\lim_{x\to\infty} \sinh{x} = \infty,\\
+    &\lim_{x\to\infty} \arctan{x} = \frac{\pi}{2},&
+\end{flalign*}
+\begin{equation}
+    \psi = \frac{\pi}{2}
+    \label{apx:eqn:imaginary-argument_solution}
+\end{equation}
+\noindent And then applying the results of equation \ref{apx:eqn:imaginary-argument_solution} to equation \ref{apx:apx:eqn:imaginary_argument},
+\begin{equation}
+F(\lim_{x \to 0}v(T_B + jx),k) = jF(\pi/2,k') 
+\end{equation}
+\begin{equation}
+F(\lim_{x \to 0}v(T_B + jx),k) = jK(k')  
+\end{equation}
  
- \noindent and with $w$ defined as $w = jx$, where $x$ is a real number, then
- \begin{flalign*}
-  jw + (1 - w^2)^{1/2} &= (1+x^2)^{1/2} - x&
- \end{flalign*}
+%  \noindent Where $k' = \sqrt{1 - k^2}$ and is called the complement modulus. Starting with the definition of $\arcsin x$:
+%  \begin{flalign*}
+%     \arcsin{x} =& -j\Log(jx + (1-x^2)^{1/2})&
+%  \end{flalign*}
  
- \noindent and taking the limit as $x\to\infty$
- \begin{flalign*}
-  \lim_{x\to\infty}& \;\; (1+x^2)^{1/2} - x&\\
-  =\lim_{x\to\infty}& \;\; \frac{(\frac{1}{x^2}+1)^{1/2}}{x^{-1}}& \text{Apply L'Hopitals}\\
-  =\lim_{x\to\infty}& \;\; \frac{1}{x(\frac{1}{x^2}+1)^{1/2}}&\\
-  =& \;\; 0&
- \end{flalign*}
+%  \noindent and with $w$ defined as $w = jx$, where $x$ is a real number, then
+%  \begin{flalign*}
+%   jw + (1 - w^2)^{1/2} &= (1+x^2)^{1/2} - x&
+%  \end{flalign*}
+ 
+%  \noindent and taking the limit as $x\to\infty$
+%  \begin{flalign*}
+%   \lim_{x\to\infty}& \;\; (1+x^2)^{1/2} - x&\\
+%   =\lim_{x\to\infty}& \;\; \frac{(\frac{1}{x^2}+1)^{1/2}}{x^{-1}}& \text{Apply L'Hopitals}\\
+%   =\lim_{x\to\infty}& \;\; \frac{1}{x(\frac{1}{x^2}+1)^{1/2}}&\\
+%   =& \;\; 0&
+%  \end{flalign*}
 
- \noindent Which implies that 
-  \begin{flalign*}
-  \lim_{w\to j\infty} \Log(jw + (1-w^2)^{1/2}) &= -\infty&
- \end{flalign*}
+%  \noindent Which implies that 
+%   \begin{flalign*}
+%   \lim_{w\to j\infty} \Log(jw + (1-w^2)^{1/2}) &= -\infty&
+%  \end{flalign*}
  
- \noindent For convenience, the following will be defined:
+%  \noindent For convenience, the following will be defined:
  
- \begin{equation}
-     Q(w) = \Log(jw + (1-w^2)^{1/2})
- \end{equation}
- \begin{equation}
-     \lim_{w\to j\infty} Q = -\infty
- \end{equation}
+%  \begin{equation}
+%      Q(w) = \Log(jw + (1-w^2)^{1/2})
+%  \end{equation}
+%  \begin{equation}
+%      \lim_{w\to j\infty} Q = -\infty
+%  \end{equation}
  
- \noindent And now it can be stated that $\arcsin(w) = -jQ$. Returning to the imaginary-argument transform (equation \ref{apx:apx:eqn:imaginary_argument}), 
- \begin{flalign*}
-  F&(-jQ,k) = F(\psi, k')&\\
-  \psi & = \arctan\Big(\sinh(-Q)\Big)&\\
-  \psi & = \arctan\Big(\frac{1}{2}(e^{-Q}-e^{Q})\Big)&\\
-  \\
-  \psi & = \frac{j}{2}\Log\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)&\\
-  \\
-  \psi & = \frac{j}{2} \bigg[\ln\bigg|\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})} \bigg| + j\,arg\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]
- \end{flalign*}
- \noindent Where $\text{arg}(x+jy)$ is the angle of the vector $<x,y>$ with respect to the positive $x$ axis. 
- \noindent It can be noted that 
- \begin{flalign*}
- \Big|\frac{jy-x}{jy-x}\Big| &= \frac{|jy-x|}{|jy-x|}&\\
- \frac{|jy-x|}{|jy-x|} &= \frac{\sqrt{x^2+y^2}}{\sqrt{x^2+y^2}}&\\
- \ln\frac{\sqrt{x^2+y^2}}{\sqrt{x^2+y^2}} &= 0
- \end{flalign*}
+%  \noindent And now it can be stated that $\arcsin(w) = -jQ$. Returning to the imaginary-argument transform (equation \ref{apx:apx:eqn:imaginary_argument}), 
+%  \begin{flalign*}
+%   F&(-jQ,k) = F(\psi, k')&\\
+%   \psi & = \arctan\Big(\sinh(-Q)\Big)&\\
+%   \psi & = \arctan\Big(\frac{1}{2}(e^{-Q}-e^{Q})\Big)&\\
+%   \\
+%   \psi & = \frac{j}{2}\Log\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)&\\
+%   \\
+%   \psi & = \frac{j}{2} \bigg[\ln\bigg|\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})} \bigg| + j\,arg\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]
+%  \end{flalign*}
+%  \noindent Where $\text{arg}(x+jy)$ is the angle of the vector $<x,y>$ with respect to the positive $x$ axis. 
+%  \noindent It can be noted that 
+%  \begin{flalign*}
+%  \Big|\frac{jy-x}{jy-x}\Big| &= \frac{|jy-x|}{|jy-x|}&\\
+%  \frac{|jy-x|}{|jy-x|} &= \frac{\sqrt{x^2+y^2}}{\sqrt{x^2+y^2}}&\\
+%  \ln\frac{\sqrt{x^2+y^2}}{\sqrt{x^2+y^2}} &= 0
+%  \end{flalign*}
  
- \noindent Returning to the solution of $\psi$,
- \begin{flalign*}
-   \psi & = \frac{j}{2} \bigg[\ln\bigg|\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})} \bigg| + j\,arg\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]&\\
-   \\
-    \psi & = \frac{j}{2} \bigg[ j\,\text{arg}\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]&
- \end{flalign*}
+%  \noindent Returning to the solution of $\psi$,
+%  \begin{flalign*}
+%   \psi & = \frac{j}{2} \bigg[\ln\bigg|\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})} \bigg| + j\,arg\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]&\\
+%   \\
+%     \psi & = \frac{j}{2} \bigg[ j\,\text{arg}\Big(\frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]&
+%  \end{flalign*}
  
- \noindent And then letting $Q \to -\infty$
- \begin{flalign*}
-    \psi & = \frac{j}{2} \bigg[ j\,\text{arg}\Big( \lim_{Q\to -\infty}  \frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]& \text{Apply L'Hopital's rule}\\
-    \\
-    \psi & = \frac{j}{2} \bigg[ j\,\text{arg}\Big( \lim_{Q\to -\infty}  \frac{\frac{d}{dQ}\frac{1}{2}(e^{-Q}-e^{Q})}{-\frac{d}{dQ}\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]&\\
-    \\
-    \psi & = \frac{j}{2} \bigg[ j\,\text{arg}(-1)\bigg]&\\
-    \\
-    \psi & = \frac{\pi}{2}&
- \end{flalign*}
+%  \noindent And then letting $Q \to -\infty$
+%  \begin{flalign*}
+%     \psi & = \frac{j}{2} \bigg[ j\,\text{arg}\Big( \lim_{Q\to -\infty}  \frac{j+\frac{1}{2}(e^{-Q}-e^{Q})}{j-\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]& \text{Apply L'Hopital's rule}\\
+%     \\
+%     \psi & = \frac{j}{2} \bigg[ j\,\text{arg}\Big( \lim_{Q\to -\infty}  \frac{\frac{d}{dQ}\frac{1}{2}(e^{-Q}-e^{Q})}{-\frac{d}{dQ}\frac{1}{2}(e^{-Q}-e^{Q})}\Big)\bigg]&\\
+%     \\
+%     \psi & = \frac{j}{2} \bigg[ j\,\text{arg}(-1)\bigg]&\\
+%     \\
+%     \psi & = \frac{\pi}{2}&
+%  \end{flalign*}
  
- \noindent showing that, with equation \ref{apx:apx:eqn:imaginary_argument},
+%  \noindent showing that, with equation \ref{apx:apx:eqn:imaginary_argument},
  
- \begin{equation}
-     \lim_{v\to j\infty} F(v,k) = jK(k')
- \end{equation}
+%  \begin{equation}
+%      \lim_{v\to j\infty} F(v,k) = jK(k')
+%  \end{equation}
  
  \noindent Returning to the mapping of the geometric factor (equation \ref{apx:apx:eqn:prep_D3}, and \ref{apx:apx:eqn:geometric_constant_mapping}), $D_3$ and $G_f$ can be expressed as
  \begin{equation}
@@ -563,7 +580,7 @@ Z = 2C_1\ln \Bigg( \sqrt{T-T_C} + \sqrt{T-T_D} \Bigg) + C_2
      \label{apx:apx:eqn:D3}
  \end{equation}
  \begin{equation}
-     G_f = \frac{2\,K(k)}{K(k')}
+     G_f = \frac{lK(k')}{2\,K(k)}
      \label{apx:apx:eqn:Gf}
  \end{equation}
  
