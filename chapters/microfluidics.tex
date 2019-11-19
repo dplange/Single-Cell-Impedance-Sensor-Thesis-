@@ -161,12 +161,12 @@ or in index notation as
 
 \par Fick's second law arises from the continuity of mass
 \begin{equation}
-    \frac{dC}{dt} + \boldsymbol{\nabla} \cdot \boldsymbol{J} = 0,
+    \frac{\partial C}{\partial t} + \boldsymbol{\nabla} \cdot \boldsymbol{J} = 0,
 \end{equation}
 
 \noindent And by substituting in Fick's first law (equation \ref{eqn:ficks_first}), Fick's second law can be expressed as 
 \begin{equation}
-    \frac{dc}{dt} = D\Delta C
+    \frac{\partial c}{\partial t} = D\Delta C
     \label{eqn:ficks_second}
 \end{equation}
 
@@ -181,10 +181,10 @@ or in index notation as
 
 \par The translation diffusion constant is a ratio of thermal motion and viscous resistance terms and can be generally expressed as 
 \begin{equation}
-    D = \frac{k_bT}{\overline{f}},
+    D = \frac{k_bT}{f_r},
 \end{equation}
 
-\noindent where $k_b$ is the boltzman constant, $T$ is the temperature, and $\overline{f}$ is the mean friction coefficient \cite{probstein_physicochemical_2005}. The mean friction coefficient arises from the average of the translation friction tensor ($f_{ij}$) components. This tensor describes the viscous force on a particle as a function of velocity:
+\noindent where $k_b$ is the boltzman constant, $T$ is the temperature, and $f_r$ is the mean friction coefficient \cite{Clague_dissertation}, \cite{probstein_physicochemical_2005}. The mean friction coefficient arises from the average of the translation friction tensor ($f_{ij}$) components. This tensor describes the viscous force on a particle as a function of velocity:
 \begin{equation}
     F_i = f_{ij}v_j
 \end{equation}
@@ -201,7 +201,7 @@ or in index notation as
 
 and is known as the Stokes-Einstein equation. For spheroid particles where the radius depends on the orientation of the particle, the mean friction coefficient can be used since brownian motion will randomly move the particle in all directions. From the translation friction tensor, the mean friction coefficient can be described as 
 \begin{equation}
-    \overline{f}^{-1} = \frac{1}{3}(\frac{1}{f_1} + \frac{1}{f_2} + \frac{1}{f_3})
+    f_r^{-1} = \frac{1}{3}(\frac{1}{f_1} + \frac{1}{f_2} + \frac{1}{f_3})
 \end{equation}
 
 \noindent where $f_1$, $f_2$, and $f_3$ refer to the components of the main diagonal of the translation friction tensor \cite{probstein_physicochemical_2005}. 

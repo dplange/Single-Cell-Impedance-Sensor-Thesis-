@@ -8,7 +8,7 @@
 \begin{figure}[ht]
  \centering
  \includegraphics[width=\textwidth]{images/humanCellOverview.png}
- \caption[Diagram of human cell structure.]{Diagram of human cell structure. \cite{daniel_d_chiras_human_2005} }
+ \caption[Diagram of human cell structure.]{Diagram of human cell structure \cite{daniel_d_chiras_human_2005}. }
  \label{fig:human_cell_model}
  \end{figure}
  
@@ -18,14 +18,14 @@
  % The Cell Membrane
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsection{The Cell Membrane}
- \par The cell membrane is an essential component of the cell that is necessary for signalling, extracellular interaction, and maintaining equilibrium. The membrane is primarily composed of the lipid bilayer which is a semi-permeable barrier constructed from phospholipids. A phospholipid has a hydrophilic head group and a hydrophobic tail group. When exposed to an aqueous environment, phospholipids join together in a configuration that leaves the head groups exposed to the aqueous solution and the tail group surrounded by other non-polar tail groups. In the case of a cell, the phospholipids take the form of a spherical bilayer membrane (figure \ref{fig:cell_membrane}). The membrane forms a semi-permeable barrier that allows for restricted diffusion of certain molecules. 
+ \par The cell membrane is an essential component of the cell that is necessary for signalling, extracellular interaction, and maintaining equilibrium. The membrane is primarily composed of the lipid bilayer, which is a semi-permeable barrier constructed from phospholipids. A phospholipid has a hydrophilic head group and a hydrophobic tail group. When exposed to an aqueous environment, phospholipids join together in a configuration that leaves the head groups exposed to the aqueous solution and the tail group surrounded by other non-polar tail groups. In the case of a cell, the phospholipids take the form of a spherical bilayer membrane (figure \ref{fig:cell_membrane}). The membrane forms a semi-permeable barrier that allows for restricted diffusion of certain molecules. 
  
- \par In addition to phospholipids, the cell membrane is packed with proteins that are critical for a range of functions. Of interest to this thesis, are channel and transport proteins that allow controlled passage of molecules through the membrane. 
+ \par In addition to phospholipids, the cell membrane is packed with proteins that are critical for cell life and its interaction with the environment. Of interest to this thesis, are channel and transport proteins that allow controlled passage of molecules through the membrane.  
  
  \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/Cell_membrane_detailed_diagram.png}
-    \caption[Diagram of the cell membrane]{Diagram of the cell membrane \cite{mariana_ruiz_cell_????}}
+    \caption[Diagram of the cell membrane]{Diagram of the cell membrane \cite{mariana_ruiz_cell_????}.}
     \label{fig:cell_membrane}
  \end{figure}
  
@@ -37,11 +37,11 @@
 
 \par The state of a cell directly affects its electrical properties. Measuring these properties provides insight into the cell state, type, and afflictions. A common representation of the bulk electrical model of a cell is presented in figure \ref{fig:electric_model_cell}. As a bulk electrical element, the cell membrane can be modeled as a leaky capacitor that can accumulate a charge differential, but also leaks charges across the membrane. This behaviour can be modeled as a resistor and capacitor in parallel. The membrane capacitance is supplemented by the formation of an electric double layer (EDL). A biological cell carries a net negative charge which results in the development of a surrounding 10-100 nm thick electric double layer in electrolyte solutions \cite{swaminathan_effect_2009}. The electric double layer contributes to the capacitance of the cell membrane. The EDL will be described in further detail in section \ref{sec:the_electric_double_layer}. The bulk electrical properties of the cytoplasm are often modeled as a RC series circuit with a relatively large capacitance. 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.4\textwidth]{images/completeCellCircuit.png}
-    \caption[Electrical model of single shelled cell.]{Electrical model of single shelled cell. $R'_i$ and $C'_i$ are the resistance and capacitance of the cytoplasm, and $R'_{mem}$ and $C'_{mem}$ are the resistance and capacitance of the membrane}
-    \label{fig:electric_model_cell}
+    \caption[Electrical model of single shelled cell.]{Electrical model of single shelled cell. $R'_i$ and $C'_i$ are the resistance and capacitance of the cytoplasm, and $R'_{mem}$ and $C'_{mem}$ are the resistance and capacitance of the membrane.}
+    \label{fig:electric_model_cell}.
 \end{figure}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,7 +107,7 @@
  \par The dielectrophoretic force (DEP) is the force generated on a particle suspended in a solution by the interaction of an applied nonuniform electric field and an induced dipole moment developed through Maxwell-Wagner polarization (a build up of charges at dielectric boundaries). Peter Debye and Herbert A. Pohl were among the first to develop dielectrophoresis and demonstrated how particles could be moved with nonuniform electric fields \cite{muller_potential_2003}. With an applied AC electric field, the average DEP force on a spherical particle is expressed as \cite{morgan_single_2007, green_dielectrophoresis_1999}
  
  \begin{equation}
-     \big< F_{DEP} \big> = \pi \epsilon_m R^3 \text{Re}[\tilde{f}_{CM}] \nabla |\textbf{E}|^2, 
+     \big< F_{DEP} \big> = 2\pi \epsilon_m R^3 \text{Re}[\tilde{f}_{CM}] \nabla |\textbf{E}_\textbf{rms}|^2, 
      \label{eqn:dep_force}
  \end{equation}
  
@@ -118,11 +118,11 @@
      \label{eqn:fcm_background}
  \end{equation}
  
- \noindent where $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the particle, $\tilde{f}_{CM}$ is the Clausius-Mossotti factor for spherical particles,  $\tilde{\epsilon}_p$ is the complex permittivity of the particle, $\tilde{\epsilon}_m$ is the complex permittivity of the medium, and $\textbf{E}$ is the electric field. For most cases, the complex permittivity can be expressed as 
+ \noindent where $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the particle, $\tilde{f}_{CM}$ is the Clausius-Mossotti factor for spherical particles,  $\tilde{\epsilon}_p$ is the complex permittivity of the particle, $\tilde{\epsilon}_m$ is the complex permittivity of the medium, and $\textbf{E}_\textbf{rms}$ is the root mean square of the electric field. For most cases, the complex permittivity can be expressed as 
  \begin{equation}
      \tilde{\epsilon} = \epsilon - j\frac{\sigma}{\omega}
  \end{equation}
-\noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency. 
+\noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency of the electric field. 
 
 \par From equation \ref{eqn:dep_force} and \ref{eqn:fcm_background}, it can be noted that, given a non-uniform electric field, the magnitude of the dielectrophoretic force depends on the size of the particle and the polarizability of the particle with respect to the medium (i.e Re$\big[\tilde{f}_{CM}\big]$), and the sign of the force only relates to the polarizability of the particle and medium (figure \ref{fig:freq_crossover}). It should be noted that, based on equation \ref{eqn:fcm_background}, the real part of the Clausius-Mossotti factor is restricted to less than 1 and greater than -0.5. However, for non-spherical shapes, such as elongated ellipses, equation \ref{eqn:fcm_background} does not satisfy the Clausius-Mossotti factor which can reach values far greater than 1.  
 
@@ -185,7 +185,7 @@
  \end{equation}
  \noindent where $R_{\text{ROT}}$ is the angular velocity, $\eta$ is the dynamic viscosity, and K is the scaling factor. When the angular velocity has reached equilibrium, the applied torque will be proportional $R_{\text{ROT}}$ and related by the scaling factor K. The electrorotation torque spectrum of a cell can be used, in tandem with equation \ref{eqn:ROT_torque}, to determine the dielectric properties of the cell. 
  
- \par By combining dielectrophoretic and electrorotation spectroscopy techniques, significant details of the dielectric properties can be obtained. Since dielectrophoretic spectroscopy determines the real Clausius-Mossotti factor spectrum, and electrorotation determines the imaginary Clausius-Mossotti factor, the full $\tilde{f}_{CM}$ spectrum can deduced from which dielectric properties can be extracted. Separating the real and imaginary components of the Clausius-Mossotti factor, the following expressions are obtained \cite{hober_zweites_1912, morgan_single_2007}.
+ \par By combining dielectrophoretic and electrorotation spectroscopy techniques, significant details of the dielectric properties can be obtained. Since dielectrophoretic spectroscopy determines the real Clausius-Mossotti factor spectrum, and electrorotation determines the imaginary Clausius-Mossotti factor, the full $\tilde{f}_{CM}$ spectrum can be deduced from which dielectric properties can be extracted. By separating the real and imaginary components of the Clausius-Mossotti factor, the following expressions are obtained \cite{hober_zweites_1912, morgan_single_2007}.
  \begin{equation}
      \text{Re}\big[\tilde{f}_{\text{CM}}\big] = \frac{(\sigma_p - \sigma_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\sigma_p + 2\sigma_m)} + \frac{\omega^2\tau^2_{\text{MW}}(\epsilon_p-\epsilon_m)}{(1+\omega^2\tau_{\text{MW}}^2)(\epsilon_p+2\epsilon_m)},
  \end{equation}
@@ -200,7 +200,7 @@
  \subsection{Impedance Spectroscopy}
  \label{sec:impedance_spectroscopy}
  \subsection*{Impedance}
- \par Electrical Impedance is defined as the opposition of a system to the flow of electrical current on a applied. If a sinusoidal voltage is applied to an arbitrary system, then the voltage and current can be expressed as
+ \par Electrical Impedance is defined as the opposition of a system to the flow of electrical current for an applied voltage. If a sinusoidal voltage is applied to an arbitrary system, then the voltage and current can be expressed as
  \begin{equation}
     V(w) = |V|\cos(wt-\theta_V),
     \label{eqn:V(w)}
@@ -255,7 +255,7 @@
  \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{images/ac_signal.png}
-    \caption[Current Response of a system to an applied voltage]{Current Response of a system to a 1 volt applied potential. Using equations \ref{eqn:z_polar} and \ref{eqn:ohm_mag}, the impedance of the system can be expressed as $Z=\sqrt{2}\angle -\pi/4$} 
+    \caption[Current Response of a system to an applied voltage]{Current Response of a system to a 1 volt applied potential. Using equations \ref{eqn:z_polar} and \ref{eqn:ohm_mag}, the impedance of the system can be expressed as $Z=\sqrt{2}\angle -\pi/4$.} 
     \label{fig:ac_signal}
  \end{figure}
  
@@ -289,7 +289,7 @@
  \noindent where $s=jw$ for steady state solutions.
 
 \subsection*{Impedance Spectroscopy: Coulter Counter}
-\par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chambers connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Measuring the resistance over time, pulses of increased resistance mark a particles flowing through the aperture, and the magnitude of the resistance pulse relates to the size of the particle. 
+\par One of the first devices capable of measuring the electrical properties of particles is the Coulter counter, which measures the direct current resistance of two fluid filled chambers connected by an aperture (figure \ref{fig:coulter_counter}). The apparatus drives fluid through the aperture by a pressure differential caused by different levels of fluid in the two chambers. As particles flow through the aperture, conductive fluid is displaced and there is a change in resistance. Pulses of increased resistance mark particles flowing through the aperture, and the magnitude of the resistance pulse relates to the size of the particle. 
 
 
 \begin{figure}[ht]
@@ -327,10 +327,10 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
     \label{fig:aperture}
 \end{figure}
  
-\par Since 2000, Coulter counters have been fabricated on the micro scale and has allowed increased sensitivity and adaptability, leading to nanopore devices capable of analyzing single molecules \cite{sun_single-cell_2010}.
+\par Since 2000, Coulter counters have been fabricated on the micro scale and have allowed increased sensitivity and adaptability, leading to nanopore devices capable of analyzing single molecules \cite{sun_single-cell_2010}.
  
  \subsection*{Impedance Spectroscopy: Microfluidic Impedance Cytometry}
- \par Instead of electrodes on either side of an aperture, as in Coulter counter designs, microfluidic impedance cytometry designs electrodes directly onto the walls of the test volume. The test volume is the region that contains the particle and fluid with significant current density. The impedance of the test volume can be approximated as leaky capacitor:
+ \par Instead of electrodes on either side of an aperture, as in Coulter counter designs, microfluidic impedance cytometry designs electrodes directly onto the walls of the test volume. The test volume is the region that contains the particle and fluid with significant current density. The impedance of the test volume can be approximated as a leaky capacitor:
  \begin{equation}
        \tilde{Z}_{mix} = \frac{1}{jw\tilde{C}_{mix}},
     \label{eqn:impedance_with_cap}
@@ -346,17 +346,17 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
  \begin{figure}[ht]
      \centering
      \includegraphics[width=\textwidth]{images/parallel.png}
-     \caption{Parallel electrode configuration for impedance cytometry}
+     \caption{Parallel electrode configuration for impedance cytometry.}
      \label{fig:parallel_electrodes}
  \end{figure}
  
- \par Common electrode configurations are parallel facing coplanar (figure \ref{fig:parallel_electrodes} and \ref{fig:coplanar_electrodes}). Coplanar electrodes are easier to fabricate than parallel facing electrodes, but come at the cost of diminished sensitivity and accuracy \cite{sun_analytical_2007}. Parallel electrode systems produce smaller variations in the electric field compared to coplanar electrodes. As a result the signal variation be greater for coplanar configurations. This results in a loss of accuracy, unless the vertical placement of the cell in the test volume can be controlled. In addition, parallel facing electrodes designs generally have larger volume fractions, and therefore, are more sensitive than coplanar electrodes. This can be observed by noting that given an electrode width, channel height, and channel depth, the coplanar test volume will be over twice that of parallel electrodes configurations.
+ \par Common electrode configurations are parallel and coplanar facing (figure \ref{fig:parallel_electrodes} and \ref{fig:coplanar_electrodes}). Coplanar electrodes are easier to fabricate than parallel facing electrodes, but come at the cost of diminished sensitivity and accuracy \cite{sun_analytical_2007}. Parallel electrode systems produce smaller variations in the electric field compared to coplanar electrodes. As a result, the signal variation is far greater for coplanar configurations. This results in a loss of accuracy, unless the vertical placement of the cell in the test volume can be controlled. In addition, parallel facing electrodes designs generally have larger volume fractions, and therefore, are more sensitive than coplanar electrodes. This can be observed by noting that given an electrode width, channel height, and channel depth, the coplanar test volume will be over twice that of parallel electrodes configurations.
   
  
  \begin{figure}[ht]
      \centering
      \includegraphics[width=\textwidth]{images/coplanar.png}
-     \caption{Coplanar electrode configuration for impedance cytometry}
+     \caption{Coplanar electrode configuration for impedance cytometry.}
      \label{fig:coplanar_electrodes}
  \end{figure}
  
@@ -383,7 +383,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
         \caption{Nyquist plot}
         \label{fig:nyquist_plot}
     \end{subfigure}
-    \caption[Impedance Diagrams]{Examples of magnitude-phase diagrams, real-complex diagrams, and a nyquist plot. The data is based off of the impedance of the circuit in figure \ref{fig:example_circuit}}
+    \caption[Impedance Diagrams]{Examples of magnitude-phase diagrams, real-complex diagrams, and a nyquist plot. The data is based off of the impedance of the circuit in figure \ref{fig:example_circuit}.}
     \label{fig:impedance_diagrams}
 \end{figure}
 
@@ -391,7 +391,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.3\textwidth]{images/exampleCircuit.png}
-    \caption{Example circuit used in impedance diagrams}
+    \caption{Example circuit used in impedance diagrams.}
     \label{fig:example_circuit}
 \end{figure} 
 \newpage 
@@ -413,24 +413,24 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
  \begin{table}[ht]
     \centering
     \includegraphics[width=\textwidth]{images/impedanceMeasurementMethods.png}
-    \caption[Common impedance measurement methods]{Common impedance measurement methods \cite{keysight_technologies_impedance_2015}}
+    \caption[Common impedance measurement methods.]{Common impedance measurement methods. \cite{keysight_technologies_impedance_2015}}
     \label{tab:z_measurement_methods}
  \end{table}
  
  \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/I-VMethod.png}
-    \caption[I-V impedance measurement configuration]{I-V impedance measurement }
+    \caption[I-V impedance measurement configuration.]{I-V impedance measurement.}
     \label{fig:IV_impedance_measurement}
 \end{figure}
 
 \par Another circuit configuration to measure impedance is the auto-balancing bridge method (figure \ref{fig:auto-balancing_bridge}) \cite{keysight_technologies_impedance_2015}. The auto-balancing bridge method works as an extension of the I-V method. Instead of measuring the current directly, the potential on the low side of the DUT is driven to a virtual ground by an op-amp, and an equivalent current is measured. By applying Kirchoff's current law to the virtual ground node, the impedance of the DUT for using the auto-balancing bridge method can be expressed as
 
 \begin{equation}
-    \frac{V_1}{Z_{DUT}} - \frac{V_2}{R} = 0
+    \frac{V_1}{Z_{DUT}} - \frac{V_2}{R} = 0,
 \end{equation}
 \begin{equation}
-    Z_{DUT} = \frac{V_1}{V_2}R
+    Z_{DUT} = \frac{V_1}{V_2}R.
 \end{equation}
 
 A significant advantage of the auto-balancing bridge method, is that when used with coaxial-grounded cables, the parasitic capacitance is removed from the measurement since all capacitances and measured elements are connected to ground. 
@@ -439,7 +439,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{images/autoBalancingBridge.png}
-    \caption[Auto-balancing bridge impedance method]{Auto-balancing bridge impedance method}
+    \caption[Auto-balancing bridge impedance method.]{Auto-balancing bridge impedance method.}
     \label{fig:auto-balancing_bridge}
 \end{figure}
  
@@ -635,7 +635,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
     \par Sun, Greene, et al. utilized the Schwartz-Christoffel transform to map the coplanar electrode configuration in figure \ref{fig:simplified_IS} to the configuration of parallel electrodes with uniform electrode fields in figure \ref{fig:parallel_capacitor} \cite{sun_analytical_2007}. The Schwartz-Christoffel formula is a powerful transform that allows the mapping of the upper complex T-plane ($y>0$) to the inside of a polygon. The formula is
     
     \begin{equation}
-        Z = C_1 \int_{T_0}^T \prod^m_{r=1} (T - T_r)^{(\theta_r/\pi - 1)} dT + C_2
+        Z = C_1 \int_{T_0}^T \prod^m_{r=1} (T - T_r)^{(\theta_r/\pi - 1)} dT + C_2,
     \end{equation}
     
     \noindent where $Z$ is the interior of a polygon in the Z-plane with vertices $Z_1,\;Z_2,\;Z_3,\; ...,Z_m$ and angles $\theta_1,\;\theta_2,\;\theta_3,\; ...,\theta_m$ which correspond to the points $T_1,\;T_2,\;T_3,\; ...,T_m$ on the real axis of the T-plane. $C_1$ and $C_2$ are integration constants. The Schwartz-Christoffel transform has three degrees of freedom, and consequently, up to three points may be chosen arbitrarily. $T_0$ is the reference and is typically chosen at the origin.
@@ -723,7 +723,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  
  \subsection*{Soft-lithography}
  
- \par Soft-lithography uses photolithography to create a mold of the desired structures. A material such as PDMS can be cast on the mold and then removed to create the desired structure. The PDMS can be plasma bonded to a substrate to create fluid channels. Soft-lithography is frequently used for the fabrication of microfluidic channels since the process is far easier and cheaper than the alternative of glass etching \cite{whitesides_soft_2001}.
+ \par Soft-lithography uses photolithography to create a mold of the desired structures. A material such as polydimethyl siloxane (PDMS) can be cast on the mold and then removed to create the desired structure. The PDMS can be plasma bonded to a substrate to create fluid channels. Soft-lithography is frequently used for the fabrication of microfluidic channels since the process is far easier and cheaper than the alternative of glass etching \cite{whitesides_soft_2001}.
  
 
  
@@ -740,7 +740,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  
  \subsection*{Plasma Bonding}
  
- \par To irreversibly bond polydimethyl Siloxane (PDMS), the surface can be exposed to an air plasma. The plasma activates the PDMS surface by creating Si-OH groups that can bond to itself, glass, silicon, polystyrene, polyethylene, and silicon nitride \cite{mcdonald_polydimethylsiloxane_2002-1}.
+ \par To irreversibly bond PDMS, the surface can be exposed to an air plasma. The plasma activates the PDMS surface by creating Si-OH groups that can bond to itself, glass, silicon, polystyrene, polyethylene, and silicon nitride \cite{mcdonald_polydimethylsiloxane_2002-1}.
 
 
  
@@ -863,7 +863,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
     Z_m = \frac{R_m}{sC_mR_m+1},
 \end{equation}
 
-\noindent where $Z_p$, $C_p$, and $R_p$ are the impedance, capacitance, and resistance of the electric double layer respectively; and $Z_m$, $C_m$, and $R_m$ are the impedance, capacitance, and resistance of the medium respectively. $s$ is the Laplace variable, and since our interest is in the steady state behaviour, $s = iw$.
+\noindent where $Z_p$, $C_p$, and $R_p$ are the impedance, capacitance, and resistance of the electric double layer respectively; and $Z_m$, $C_m$, and $R_m$ are the impedance, capacitance, and resistance of the medium respectively. $s$ is the Laplace variable, and since our interest is in the steady state behaviour, $s = jw$.
 
 \begin{figure}[h]
     \centering
@@ -880,7 +880,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
 
 \noindent where C is capacitance, R is resistance, and $v$ is $0<v<1$. $v$ determines the degree of capacitance or resistance behavior, with $v=1$ a complete capacitor, and $v=0$ a pure resistor. The recap element is known as a type of constant phase element (CPE), which is named after its property of contributing a constant angle and describes an imperfect dielectric. Constant phase elements are found in a wide range of electrodes and are used extensively in empirical descriptions of electrode polarization \cite{ishai_electrode_2013}. To fit data to the CPE, it is useful to express the system impedance as
 \begin{equation}
-    Z_{sys} = Z_{bulk} + Z_0\bigg(j\frac{f}{f_0}\bigg)^{-v}
+    Z_{sys} = Z_{bulk} + Z_0\bigg(j\frac{f}{f_0}\bigg)^{-v},
 \end{equation}
 
 \noindent where $Z_{bulk}$ is the impedance of the medium, $j$ is the imaginary number, $f$ is frequency, $f_0$ is the onset frequency of the electrode polarization, and $Z_0$ is a impedance fitting term. It is convenient to find the onset frequency by looking for the characteristic tail of the CPE on a nyquist plot (figure \ref{fig:nyquist_onset}).

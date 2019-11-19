@@ -11,23 +11,23 @@
 \section{Analytic Single Cell Impedance Model}
 \par For cell suspensions with low volume fractions, Maxwell's Mixture theory can model the electrical impedance of the system. The model is summarized in equations \ref{eqn: analyticImpedance} to \ref{eqn: cEpsParticle} below. 
 \begin{equation}
-    \Tilde{Z}_{mix} = \frac{1}{jw\Tilde{C}}
+    \Tilde{Z}_{mix} = \frac{1}{jw\Tilde{C}},
     \label{eqn: analyticImpedance}
 \end{equation}
 \begin{equation}
-    \Tilde{C} = \Tilde{\epsilon}_{mix}G_f    
+    \Tilde{C} = \Tilde{\epsilon}_{mix}G_f,    
 \end{equation}
 \begin{equation}
-    \Tilde{\epsilon}_{mix} = \Tilde{\epsilon}_m \frac{1 + 2\phi\Tilde{f}_{cm}}{1-\phi\Tilde{f}_{cm}}
+    \Tilde{\epsilon}_{mix} = \Tilde{\epsilon}_m \frac{1 + 2\phi\Tilde{f}_{cm}}{1-\phi\Tilde{f}_{cm}},
 \end{equation}
 \begin{equation}
- \Tilde{f}_{cm} = \frac{\Tilde{\epsilon}_p - \Tilde{\epsilon}_{m}}{\Tilde{\epsilon}_p + 2\Tilde{\epsilon}_m}
+ \Tilde{f}_{cm} = \frac{\Tilde{\epsilon}_p - \Tilde{\epsilon}_{m}}{\Tilde{\epsilon}_p + 2\Tilde{\epsilon}_m},
 \end{equation}
 \begin{equation}
       \tilde{\epsilon}_p = \tilde{\epsilon}_{mem} 
       \frac{\gamma^3+2(\frac{\tilde{\epsilon}_i - \tilde{\epsilon}_{mem}}
       {\tilde{\epsilon}_i + 2\tilde{\epsilon}_{mem}})}{\gamma^3 - (\frac{\tilde{\epsilon}_i - \tilde{\epsilon}_{mem}}{\tilde{\epsilon}_i + 2\tilde{\epsilon}_{mem}})} \;\text{  with  } 
-      \gamma = \frac{R + d}{R},
+      \gamma = \frac{R + d}{R}.
       \label{eqn: cEpsParticle}
 \end{equation}
 
@@ -83,14 +83,14 @@
 
   \par Mapping the T-plane to the Z-plane, point $C$ and $D$ from figure \ref{fig:scm_planes_models} will be chosen as the polygon corners with angles of $\pi/2$.  
    \begin{equation}
-      Z = C_1\int (T-T_c)^{-1/2}(T-T_D)^{-1/2}dT + C_2
+      Z = C_1\int (T-T_c)^{-1/2}(T-T_D)^{-1/2}dT + C_2,
       \label{eqn:SCM_ZT_int}
   \end{equation}
   
  \noindent By integrating equation \ref{eqn:SCM_ZT_int} with the coordinate relationships $Z_C = 0$, $T_C = 1$ and $Z_D = jh$, $T_D = 0$, the mapping between the Z-plane and the T-plane can be expressed as
   
    \begin{equation}
-     Z = \frac{2h}{\pi}\ln\Big(\sqrt{T-1} + \sqrt{T}\Big)
+     Z = \frac{2h}{\pi}\ln\Big(\sqrt{T-1} + \sqrt{T}\Big),
      \label{eqn:TZ}
  \end{equation}
  
@@ -116,7 +116,7 @@
 \par The mapping of the Z-plane to the T-plane can be found by solving for the inverse of equation \ref{eqn:TZ}:
 
 \begin{equation}
-     T = \cosh^2\bigg(\frac{Z\pi}{2h}\bigg)
+     T = \cosh^2\bigg(\frac{Z\pi}{2h}\bigg).
      \label{eqn:ZT}
  \end{equation}
 
@@ -195,18 +195,18 @@
 \noindent By combining equations \ref{eqn:D3 w/ d} and \ref{eqn:D3 w/ gamma} we get
 
 \begin{equation}
-    \frac{\gamma}{\delta} = \frac{K(k')}{K(k)}
+    \frac{\gamma}{\delta} = \frac{K(k')}{K(k)},
     \label{eqn:d gamma relationship}
 \end{equation}
 
 \noindent and then substituting equation \ref{eqn:d gamma relationship} into equation \ref{eqn: cellConstants}, and recognizing that $\delta$ in the W-plane only represents half of the actual parallel plate distance ($d$), we find that the cell constant and geometric factor for co-planar electrodes are 
 
 \begin{equation}
-    \kappa = \frac{2K(k)}{lK(k')}
+    \kappa = \frac{2K(k)}{lK(k')},
     \label{eqn: cellConstantSolution}
 \end{equation}
 \begin{equation}
-    G_f = \frac{lK(k')}{2K(k)}
+    G_f = \frac{lK(k')}{2K(k)}.
 \end{equation}
 
 \par It should be noted that the current mapping of the T-plane to W-plane is unconstrained with no solution to the constant $D_3$. By selecting a value for either $D_3$, $\gamma$, or $\delta$, we constrain the mapping, but the actual value we choose is of no consequence to the power, current, or impedance of the system. Physically, this is explained since the cell constant is defined by the ratio of $d$ and $\gamma$ and, given the same material properties, as long the ratio in equation \ref{eqn:d gamma relationship} is maintained, the effective impedance will be the same. There are an infinite number of W-planes that satisfy the ratio in equation \ref{eqn:d gamma relationship}. For mapping the T-plane to the W-plane, $D_3$ can be arbitrarily chosen. If $D_3$ is chosen to be 1, the W transform can be expressed as 
@@ -240,7 +240,7 @@
  \par With Z-T and T-W mappings, the solution of the electric field in the W-plane can be mapped to the Z-plane. The mapping of the electric field can be expressed as 
  
  \begin{equation}
-     \boldsymbol{E_z} = -\nabla \phi_z \;\;\text{with} \;\;\;\nabla \phi_z = \nabla \phi_w \overline{\frac{dW}{dZ}}
+     \boldsymbol{E_z} = -\nabla \phi_z \;\;\text{with} \;\;\;\nabla \phi_z = \nabla \phi_w \overline{\frac{dW}{dZ}}.
      \label{eqn:ZtoW_efield}
  \end{equation}
  
@@ -314,7 +314,7 @@
 \end{equation}
 \noindent where $\phi '$ and $V_p '$ and $V_{sys}'$ denotes the effective volume fraction, effective volume of the particle, and effective volume of the system respectively. When considering a particle suspended in the Z-plane, it is difficult to determine the effective volume for the system or the particle due to the non-uniform electric field. However, the electric field is uniform when the system is mapped to the W-plane. The effective volume fraction can be expressed as
 \begin{equation}
-    \phi ' = \frac{V^w_p}{V^w_{sys}}
+    \phi ' = \frac{V^w_p}{V^w_{sys}},
 \end{equation}
 \noindent where $w$ denotes volumes in the W-plane.
 
@@ -342,6 +342,7 @@
 \par Combining equations equations \ref{eqn: Vwsys} and \ref{eqn: Vwp}, we can approximate the effective volume fraction as
 \begin{equation}
     \phi_w = \frac{2}{3} \frac{r_z \iint_{A_w} dA}{K(k)K(k')l}.
+    \label{eqn:w-plane_vf}
 \end{equation}
 
 \par The major shortcoming of this method is operating under the assumption that the mapped particle cross-sections are circle or ellipsoid-like. From simulated data, many particle-electrode configurations result in mapped particle cross-sections that do appear circular or ellipse-like, but there will be an associated error that will often grow with the degree of the non-uniformity. Compared to the traditional volume fraction, the error is minimal. The W-plane volume fraction accounts for fringe field effects and the local non-uniformity of the electric field, allowing for the calculation of the volume fraction for a particle located anywhere in the system. 
@@ -379,13 +380,13 @@
 \end{equation}
 \noindent By substituting the solution of the electric field from equation \ref{eqn:Ez}, we can express the power in the domain of the particle as
 \begin{equation}
-    P_p = \frac{1}{\rho}\bigg(\frac{\pi^2 V^2}{4h^2K(k)^2}\bigg)\iiint_V \bigg|\bigg(\frac{T_A-T_C}{T-T_A}\bigg)\bigg(\frac{T_B-T_D}{T-T_B}\bigg)\bigg| \;dV
+    P_p = \frac{1}{\rho}\bigg(\frac{\pi^2 V^2}{4h^2K(k)^2}\bigg)\iiint_V \bigg|\bigg(\frac{T_A-T_C}{T-T_A}\bigg)\bigg(\frac{T_B-T_D}{T-T_B}\bigg)\bigg| \;dV.
     \label{eqn: powerParticle}
 \end{equation}
 
 Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSystem}, and \ref{eqn: powerParticle}, the power fraction can be expressed as
 \begin{equation}
-    \phi_p = \frac{\pi^2 }{8h^2K(k)K(k')l}\iiint_V \bigg|\bigg(\frac{T_A-T_C}{T-T_A}\bigg)\bigg(\frac{T_B-T_D}{T-T_B}\bigg)\bigg| \;dV
+    \phi_p = \frac{\pi^2 }{8h^2K(k)K(k')l}\iiint_V \bigg|\bigg(\frac{T_A-T_C}{T-T_A}\bigg)\bigg(\frac{T_B-T_D}{T-T_B}\bigg)\bigg| \;dV.
     \label{eqn:power_fraction}
 \end{equation}
 
@@ -407,33 +408,33 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
 
 \par The power fraction provides an exact solution to the volume fraction for the co-planar electrode system outlined in section \ref{sec: coplanarElectrodeCellConstant}. These corrected volume fractions allow for a complete analytic impedance solution that accounts for the effect of the fringe field and non-uniform electric field based on the position of the particle. If incorporated in a drag-flow model, flow-through IS systems can be simulated with respect to time.
 
-\par To illustrate the relationship between these volume fractions, figure ??? illustrates the power fraction and W-plane mapping as a cell traverses through the co-planar electrode chamber. 
+\par To illustrate the relationship between these volume fractions, figure \ref{fig:novel_volume_fractions_illustrations} illustrates the power fraction and W-plane mapping as a cell traverses through the co-planar electrode chamber. 
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/Particles_in_Z_Plane.png}
-        \caption{Particle position on the Z-plane overlay on the electric field magnitude of a co-planar electrode system.}
+        \caption{Particle position overlay on the electric field magnitude plot of a co-planar electrode system.}
     \end{subfigure}
     \\
     \vspace{0.1 in}
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/Particle_in_W_Plane.png}
-        \caption{Nyquist plot}
+        \caption{Particle mapped to the W-plane.}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/HorizontalPowerFraction.png}
-        \caption{Clausius Mossotti Factor}
+        \caption{Calculated power fraction of the particle.}
     \end{subfigure}
-    \caption{Example plots depicting results of the analytic impedance solution generated by the IS App.}
+    \caption[Illustration of the novel volume fractions.]{Illustration of the W-plane particle mapping and the power fraction. (b) depicts the mapped region of an ideal parallel electrode system occupied from a particle in a co-planar electrode system.The gold colored y axis represent the systems electrodes.}
     \label{fig:novel_volume_fractions_illustrations}
 \end{figure}
 
-\par The W-plane mapping is a powerful tool in visually investigating the effects of cell position, chamber geometry, and electrode geometry on a particle's volume fraction. 
+\par As expected, both illustrations of the power fraction indicates the maximum volume fraction as the particle passes through the center of the electrode chamber. It should also be noted how the orthodrome of the particle mapped to the W-plane becomes deformed, which will contribute error to the W-plane volume fraction estimation described by equation \ref{eqn:w-plane_vf}.  Although the power fraction is the more accurate tool in calculating the volume fraction, the W-plane mapping is a powerful tool in visually investigating the effects of cell position, chamber geometry, and electrode geometry. 
 
 \subsection{Device Sensitivity}
 \par Linderholm defined the sensitivity of a device as the local dissipation of power normalized by the total power of the system. In otherwords, Linderholm sensitivity is the ratio of power density at a point in the system to the power of the system, and can be expressed as
@@ -620,6 +621,8 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
 \end{enumerate}
 
 \par The simple geometry approximated assumption 1 by making the sensor chamber sufficiently long. An iterative approach determined the sufficient length of the chamber by repeatedly increasing the length of the chamber until the model impedance stabilized to a constant value. 
+
+\vspace{1 in}
 
 \begin{figure}[H]
     \centering
