@@ -1,0 +1,36 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces SU-8 photoresist as the master mold for PDMS micro-fluidic channels.\relax }}{1}{figure.caption.4}% 
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Surface profile of a 300 micron wide channel on the SU-8 master mold.}}{2}{figure.caption.5}% 
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Surface profile of a 10 micron and 100 micron wide channel on the SU-8 master mold.}}{3}{figure.caption.6}% 
+\contentsline {figure}{\numberline {1.4}{\ignorespaces PDMS cast from the master mold. Once bonded to a glass substrate, the cast will form the micro-fluidic channels of the device.\relax }}{3}{figure.caption.7}% 
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Electrode fabrication failure demonstrating two modes of failure: the Ma-N1420 photoresist failed to properly adhere to the glass surface manifesting as two anomalous flower patterns, and poor adhesion of the deposited gold to the first chrome layer as evident by gold-stripped leads.\relax }}{4}{figure.caption.8}% 
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Images of common electrode fabrication failures.\relax }}{5}{figure.caption.9}% 
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Integral electrodes with no breaks in sputtered gold layer. The successful results were realized by minimizing the exposure of the chromium adhesion layer to air and reducing the formation chromium oxide.\relax }}{6}{figure.caption.10}% 
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Electrode adhesion failure during plasma bonding process of device 1. The sputtered gold layer delaminated from the chromium adhesion layer during PDMS to electrode alignment.\relax }}{7}{figure.caption.11}% 
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Successfully bonded impedance spectroscopy device. PDMS and electrodes were aligned by hand. There is a slight rotational misalignment, but should be functionally negligible.\relax }}{8}{figure.caption.12}% 
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Successfully assembled cell impedance spectroscopy device.\relax }}{9}{figure.caption.13}% 
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Images of the sensor region of the impedance spectroscopy device. The device successfully measured fluid and 7 $\mu $m beads before the sensor region became jammed and the device ultimately delaminated. Images were taken with the LabSmith SVM340 inverted microscope.\relax }}{10}{figure.caption.14}% 
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Bode plot of the ratio of the voltage out of the DUT to the voltage in.\relax }}{12}{figure.caption.15}% 
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Circuit measured and modeled. Need to include parameter values. Consider moving to the models section.\relax }}{13}{figure.caption.16}% 
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Comparison of measured and simulated response of test circuit.}}{14}{figure.caption.17}% 
+\contentsline {figure}{\numberline {1.15}{\ignorespaces The percent error of the recorded data and the spice model with scopes with respect to the ideal spice model. (Reconsider inclusion. Replace with data post correction and another displaying the error due to the oscilloscopes and error to empirical data)\relax }}{15}{figure.caption.18}% 
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Reproducibility of the demonstrated with repeated measurement of phosphate buffered solution over a span of three days.\relax }}{17}{figure.caption.19}% 
+\contentsline {figure}{\numberline {1.17}{\ignorespaces PBS, DI, microbead IS Raw data comparison.}}{18}{figure.caption.20}% 
+\contentsline {figure}{\numberline {1.18}{\ignorespaces PBS, PBS saturated with micro-beads, and the phasor difference.}}{19}{figure.caption.21}% 
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Truncated phasor difference between PBS, and micro-bead saturated PBS.}}{20}{figure.caption.22}% 
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Analyitic and FEA generated medium impedance spectrum}}{22}{figure.caption.23}% 
+\contentsline {figure}{\numberline {1.21}{\ignorespaces Analyitic and FEA generated single cell impedance spectrums}}{23}{figure.caption.24}% 
+\contentsline {figure}{\numberline {1.22}{\ignorespaces Clausius Mossotti factor overlaid on IS model data.}}{24}{figure.caption.25}% 
+\contentsline {figure}{\numberline {1.23}{\ignorespaces FEA simple model electric field surface plot.}}{25}{figure.caption.26}% 
+\contentsline {figure}{\numberline {1.24}{\ignorespaces Current density plot of the FEA device model.}}{26}{figure.caption.27}% 
+\contentsline {figure}{\numberline {1.25}{\ignorespaces Simple FEA model sensitivity}}{28}{figure.caption.28}% 
+\contentsline {figure}{\numberline {1.26}{\ignorespaces Device sensitivity}}{30}{figure.caption.29}% 
+\contentsline {figure}{\numberline {1.27}{\ignorespaces Device sensitivity average}}{31}{figure.caption.30}% 
+\contentsline {figure}{\numberline {1.28}{\ignorespaces Analytic Sensitivity}}{32}{figure.caption.31}% 
+\contentsline {figure}{\numberline {1.29}{\ignorespaces Analytic Sensitivity}}{33}{figure.caption.32}% 
+\contentsline {figure}{\numberline {1.30}{\ignorespaces power comp}}{34}{figure.caption.33}% 
+\contentsline {figure}{\numberline {1.31}{\ignorespaces power comp}}{35}{figure.caption.34}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

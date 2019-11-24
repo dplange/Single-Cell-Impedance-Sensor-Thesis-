@@ -1,0 +1,21 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\contentsline {chapter}{\numberline {1}Results}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Device Frabrication}{1}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}PDMS channels}{1}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}Electrode Fabrication}{4}{subsection.1.1.2}% 
+\contentsline {subsection}{\numberline {1.1.3}Device Bonding}{6}{subsection.1.1.3}% 
+\contentsline {section}{\numberline {1.2}Impedance Spectroscopy System}{8}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Microfluidic Evaluation}{8}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}Impedance Spectroscopy System Validation}{10}{subsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.2.3}Impedance Spectroscopy Reproducibility}{16}{subsection.1.2.3}% 
+\contentsline {subsection}{\numberline {1.2.4}Impedance Spectroscopy Performance}{16}{subsection.1.2.4}% 
+\contentsline {subsection}{\numberline {1.2.5}Corrected Impedance Spectra}{21}{subsection.1.2.5}% 
+\contentsline {section}{\numberline {1.3}Modeling}{21}{section.1.3}% 
+\contentsline {subsection}{\numberline {1.3.1}Impedance Spectroscopy Results}{21}{subsection.1.3.1}% 
+\contentsline {subsection}{\numberline {1.3.2}Solution Optimization}{27}{subsection.1.3.2}% 
+\contentsline {subsection}{\numberline {1.3.3}Device Optimization}{27}{subsection.1.3.3}% 
+\contentsline {subsection}{\numberline {1.3.4}Analytic Solution Sensitivity Curves}{31}{subsection.1.3.4}% 
+\contentsline {chapter}{Bibliography}{31}{section*.35}% 
+\contentsline {chapter}{\numberline {A}Co-planar Electrodes to Ideal Parallel Plate Mapping}{36}{appendix.A}% 
+\contentsline {chapter}{\numberline {B}Analytic Impedance MATLAB Code}{37}{appendix.B}% 
+\contentsline {chapter}{\numberline {C}Spice Models}{38}{appendix.C}% 
