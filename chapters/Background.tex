@@ -20,7 +20,7 @@
  \subsection{The Cell Membrane}
  \par The cell membrane is an essential component of the cell that is necessary for signalling, extracellular interaction, and maintaining equilibrium. The membrane is primarily composed of the lipid bilayer, which is a semi-permeable barrier constructed from phospholipids. A phospholipid has a hydrophilic head group and a hydrophobic tail group. When exposed to an aqueous environment, phospholipids join together in a configuration that leaves the head groups exposed to the aqueous solution and the tail group surrounded by other non-polar tail groups. In the case of a cell, the phospholipids take the form of a spherical bilayer membrane (figure \ref{fig:cell_membrane}). The membrane forms a semi-permeable barrier that allows for restricted diffusion of certain molecules. 
  
- \par In addition to phospholipids, the cell membrane is packed with proteins that are critical for cell life and its interaction with the environment. Of interest to this thesis, are channel and transport proteins that allow controlled passage of molecules through the membrane.  
+ \par In addition to phospholipids, the cell membrane is packed with proteins that are critical for cell life and its interaction with the environment. Of special interest to this thesis, are channel and transport proteins that allow controlled passage of molecules through the membrane.  
  
  \begin{figure}[h]
     \centering
@@ -94,7 +94,7 @@
  \label{fig:schwan_dispersions}
  \end{figure}
  
- \par $\beta$ dispersions occurs up to 10 Mhz and is caused by the relaxation of the cell membrane. For lower frequencies, the membrane has enough time to charge and provide resistance to the electric field, but at frequencies greater than about 10 Mhz, the membrane does not have sufficient time to fully charge and provides little resistance to the electric field. $\gamma$ dispersion is related to the relaxation of water molecules. Instead of a charging membrane, $\gamma$ dispersion is due to the dipole rotation of the water molecules and the biomolecules that water is bound to. The source of $\alpha$ dispersion is undetermined, but current theories include the surface reactance of the electric double layer near the charged cell, the impedance of the sarcoplasmic recticulum (for muscle fibers), or the frequency dependent conductance of ionic membrane channels as predicted by the Hodgkin-Huxley equations \cite{schwan_electrical_1994}.
+ \par $\beta$ dispersions can occur up to a magnitude of 10 Mhz and is caused by the relaxation of the cell membrane. For lower frequencies, the membrane has enough time to charge and provide resistance to the electric field, but at frequencies greater than than the relaxation, the membrane does not have sufficient time to fully charge and provides little resistance to the electric field. $\gamma$ dispersion is related to the relaxation of water molecules. Instead of a charging membrane, $\gamma$ dispersion is due to the dipole rotation of the water molecules and the biomolecules that water is bound to. The source of $\alpha$ dispersion is undetermined, but current theories include the surface reactance of the electric double layer near the charged cell, the impedance of the sarcoplasmic recticulum (for muscle fibers), or the frequency dependent conductance of ionic membrane channels as predicted by the Hodgkin-Huxley equations \cite{schwan_electrical_1994}.
  
  
  \par These developments laid the foundations for the following techniques for measuring the dielectric properties of single cells. 
@@ -120,7 +120,7 @@
  
  \noindent where $\epsilon_m$ is the permittivity of the medium, $R$ is the radius of the particle, $\tilde{f}_{CM}$ is the Clausius-Mossotti factor for spherical particles,  $\tilde{\epsilon}_p$ is the complex permittivity of the particle, $\tilde{\epsilon}_m$ is the complex permittivity of the medium, and $\textbf{E}_\textbf{rms}$ is the root mean square of the electric field. For most cases, the complex permittivity can be expressed as 
  \begin{equation}
-     \tilde{\epsilon} = \epsilon - j\frac{\sigma}{\omega}
+     \tilde{\epsilon} = \epsilon - j\frac{\sigma}{\omega},
  \end{equation}
 \noindent where $\epsilon$ is the permittivity, $j = \sqrt{-1}$, $\sigma$ is the conductivity, and $\omega$ is the angular frequency of the electric field. 
 
@@ -360,7 +360,7 @@ In 1970, Deblois and Bean developed an analytical model of the Coulter counter r
      \label{fig:coplanar_electrodes}
  \end{figure}
  
- \par In microfluidic impedance cytometry, alternating currents at a series of frequencies are applied to the system to measure the impedance response. From this impedance spectrum, the frequency dependent response can be depicted as magnitude-phase plots, real-imamginary plots, and nyquist plots in order to gain insight into the behaviour of the system (figure \ref{fig:impedance_diagrams}). 
+ \par In microfluidic impedance cytometry, alternating currents at a series of frequencies are applied to the system to measure the impedance response. From this impedance spectrum, the frequency dependent response can be depicted as magnitude-phase plots, real-imaginary plots, and nyquist plots in order to gain insight into the behaviour of the system (figure \ref{fig:impedance_diagrams}). 
  
  \begin{figure}
     \centering
@@ -463,7 +463,7 @@ A significant advantage of the auto-balancing bridge method, is that when used w
  \label{fig:simplified_IS}
  \end{figure}
  
-  \par The impedance of a single cell suspension, such as depicted in figure \ref{fig:simplified_IS}, can be solved for with Maxwell's mixture thoery \cite{james_clerk_maxwell_treatise_1892, sun_single-cell_2010}. Maxwell's equation for the complex permittivity of a mixture is
+  \par The impedance of a single cell suspension with low volume fractions (less than 10\%), such as depicted in figure \ref{fig:simplified_IS}, can be solved for with Maxwell's mixture thoery \cite{james_clerk_maxwell_treatise_1892, sun_single-cell_2010}. For high volume fraction suspensions, Hanai's theory should be considered \cite{hanai_theory_1960}. In the case of single-cell impedance spectroscopy, the inherently low volume fraction of the suspension justifies the use of Maxwell's mixture theory.  Maxwell's equation for the complex permittivity of a mixture is
   \begin{equation}
       \tilde{\epsilon}_{mix} = \tilde{\epsilon}_m\frac{1 + 2\Phi\tilde{f}_{CM}}{1-\Phi\tilde{f}_{CM}},
   \end{equation}

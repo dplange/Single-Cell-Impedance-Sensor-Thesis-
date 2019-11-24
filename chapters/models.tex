@@ -406,7 +406,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
     C = \frac{\pi^2}{8h^2K(k)K(k')l}.
 \end{equation}
 
-\par The power fraction provides an exact solution to the volume fraction for the co-planar electrode system outlined in section \ref{sec: coplanarElectrodeCellConstant}. These corrected volume fractions allow for a complete analytic impedance solution that accounts for the effect of the fringe field and non-uniform electric field based on the position of the particle. If incorporated in a drag-flow model, flow-through IS systems can be simulated with respect to time.
+\par The power fraction provides an accurate solution to the volume fraction for the co-planar electrode system outlined in section \ref{sec: coplanarElectrodeCellConstant}. These corrected volume fractions allow for a complete analytic impedance solution that accounts for the effect of the fringe field and non-uniform electric field based on the position of the particle. If incorporated in a drag-flow model, flow-through IS systems can be simulated with respect to time.
 
 \par To illustrate the relationship between these volume fractions, figure \ref{fig:novel_volume_fractions_illustrations} illustrates the power fraction and W-plane mapping as a cell traverses through the co-planar electrode chamber. 
 
@@ -434,7 +434,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
     \label{fig:novel_volume_fractions_illustrations}
 \end{figure}
 
-\par As expected, both illustrations of the power fraction indicates the maximum volume fraction as the particle passes through the center of the electrode chamber. It should also be noted how the orthodrome of the particle mapped to the W-plane becomes deformed, which will contribute error to the W-plane volume fraction estimation described by equation \ref{eqn:w-plane_vf}.  Although the power fraction is the more accurate tool in calculating the volume fraction, the W-plane mapping is a powerful tool in visually investigating the effects of cell position, chamber geometry, and electrode geometry. 
+\par As expected, both illustrations of the power fraction indicates the maximum volume fraction as the particle passes through the center of the electrode chamber. It should also be noted how the orthodrome of the particle mapped to the W-plane becomes deformed, which will contribute error to the W-plane volume fraction estimate described by equation \ref{eqn:w-plane_vf}.  Although the power fraction is the more accurate tool in calculating the volume fraction, the W-plane mapping is a powerful tool in visually investigating the effects of cell position, chamber geometry, and electrode geometry. 
 
 \subsection{Device Sensitivity}
 \par Linderholm defined the sensitivity of a device as the local dissipation of power normalized by the total power of the system. In otherwords, Linderholm sensitivity is the ratio of power density at a point in the system to the power of the system, and can be expressed as
@@ -455,7 +455,7 @@ Combining equations \ref{eqn: powerVolumeFraction_initial}, \ref{eqn: powerSyste
     \label{eqn:Sun_sensitivity}
 \end{equation}
 
-\par Sun's definition has the advantage of taking into account the dielectric properties of the suspension. However, his calculations used the standard method of determining the volume fraction, which does not account for the non-uniformity of the electric field local and the position of the particle. 
+\par Sun's definition has the advantage of taking into account the dielectric properties of the suspension. However, his calculations used the standard method of determining the volume fraction, which do not account for the non-uniformity of the electric field local and the position of the particle. 
 
 \par By using the power volume fraction with Sun's definition of sensitivity, we get the advantages of both sensitivity definitions: the ability to account for dielectric properties, and local non-uniformity in the power density over the region of the particle.
 
@@ -679,15 +679,15 @@ where $w_{electro}$ is the electrode width, and $g_{electro}$ is the gap between
 \subsection*{Physics}
 \par The electric current COMSOL interface set the physical equations for the models. The governing formula is the equation of continuity:
 \begin{equation}
-    \boldsymbol\nabla \boldsymbol\cdot \boldsymbol J = -\frac{d\rho}{dt}
+    \boldsymbol\nabla \boldsymbol\cdot \boldsymbol J = -\frac{d\rho}{dt},
 \end{equation}
 
-where $-\frac{d\rho}{dt}$ is the rate of change of charge density and $\boldsymbol J$ is the current density expressed as
+\noindent where $-\frac{d\rho}{dt}$ is the rate of change of charge density and $\boldsymbol J$ is the current density expressed as
 \begin{equation}
-    \boldsymbol J = \sigma\boldsymbol E + jw\boldsymbol D + \boldsymbol J_e
+    \boldsymbol J = \sigma\boldsymbol E + jw\boldsymbol D + \boldsymbol J_e,
 \end{equation}
 
-where $\boldsymbol E$ is the electric field, $j$ is $\sqrt{-1}$, $w$ is the angular frequency, $\boldsymbol J_e$ is the externally generated current density, and $\boldsymbol D$ is the electric displacement field. 
+\noindent where $\boldsymbol E$ is the electric field, $j$ is $\sqrt{-1}$, $w$ is the angular frequency, $\boldsymbol J_e$ is the externally generated current density, and $\boldsymbol D$ is the electric displacement field. 
 
 \par All exterior bounds, except for the electrodes, were modeled as perfect insulators with the boundary condition
 \begin{equation}
@@ -699,7 +699,7 @@ where $\boldsymbol E$ is the electric field, $j$ is $\sqrt{-1}$, $w$ is the angu
     \hat{\boldsymbol n} \boldsymbol\cdot \boldsymbol J = \frac{\Tilde{\sigma}}{d_{m}} \Delta V,
 \end{equation}
 
-where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the complex conductivity expressed as
+\noindent where $d_m$ is the thickness of the cell membrane and $\Tilde{\sigma}$ is the complex conductivity expressed as
 \begin{equation}
     \Tilde{\sigma} = \sigma + jw\epsilon ,
 \end{equation}

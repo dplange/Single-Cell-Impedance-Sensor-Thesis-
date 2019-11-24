@@ -6,7 +6,7 @@
 \subsection{PDMS Cast}
 \label{sec:PDMS_cast_fabrication}
 
-\par Due to the limitations of using the 20,000 DPI photo-plotting service of CAD/Art Services Inc, the produced transparency is only accurate to 8 microns. Consequently, while widths and lengths remained largely unaffected, features, such as square corners on the resolution of microns, were lost. The produced mask largely matched the CAD drawing with the exception of the rectangular cell capture/measurement chamber, which was reduced to a diamond shape. This effect was expected and replicated the results of Josh Fadriquela \cite{fadriquela_design_2009-1}. Increased accuracy and resolution can be achieved using chrome masks, but at a premium cost that is outside project scope. 
+\par Due to the limitations of using the 20,000 DPI photo-plotting service of CAD/Art Services Inc, the produced transparency is only accurate to 8 microns. Consequently, while widths and lengths remained largely unaffected, features, such as square corners on the resolution of microns, were lost. The produced mask largely matched the CAD drawing with the exception of the rectangular cell capture/measurement chamber, which was reduced to a diamond shape. This effect was expected and replicated the results of Fadriquela \cite{fadriquela_design_2009-1}. Increased accuracy and resolution can be achieved using chrome masks, but at a premium cost that is outside project scope. 
 
 \par The SU-8 master mold matched the transparency and the designed mold height closely. A representative SU-8 mold is depicted in figure \ref{fig:su8_results}. The sensor chamber portion of the mold, located where all four channels converge, demonstrates the limitation of the transparency mask. Rather than a square chamber, corners are opened up to create a diamond-shaped chamber.
 
@@ -86,7 +86,7 @@
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/electrodeFailureSlide.png}
-        \caption{Gold electrode strips sliding off chrome adhesion layer}
+        \caption{Gold electrode strips sliding off chrome adhesion layer.}
     \end{subfigure}
     \caption{Images of common electrode fabrication failures.}
     \label{fig:failed_elecftrodes_micro}
@@ -122,7 +122,7 @@
 
 \FloatBarrier
 
-\par Overall, both sets of electrodes presented no initial cracking or delamination. Microscopy found both sets to be intact with only negligible defects. The successful results are evidence that reducing air exposure of the chromium adhesion layer is a critical process parameter. However, as discussed in the following section, a set of electrodes manifested adhesion issues during device bonding showing that while adhesion has been significantly improved, adhesion-issues continue to persist and supports the need for a dual-target sputtering system.
+\par Microscopy found both sets to be intact with only negligible defects. The successful results are evidence that reducing air exposure of the chromium adhesion layer is a critical process parameter. However, as discussed in the following section, a set of electrodes manifested adhesion issues during device bonding showing that while adhesion has been significantly improved, adhesion-issues continue to persist and supports the need for a dual-target sputtering system.
 
 \FloatBarrier
 
@@ -339,7 +339,7 @@
 
 \par Between 3 kHz and 25 MHz, the percent error does not increase beyond 30\%, a significant improvement over the exponential error of the uncorrected data. The unaccounted residual error may be attributed to parasitic capacitance in the breadboard and the system at large; deviations in reported values in the external resistor, the oscilloscope, and the test capacitor; and high frequency parasitic inductance. The low-frequency noise is likely caused by the large impedance attenuating the measurement signal ($V_2$ from figure \ref{fig:test_circuit_bode}) to the noise floor of the system. This could be solved by implementing noise protection into the circuit design, or by increasing the applied voltage signal. 
 
-\par Without revising the current measurement system, and while applying the correction function (equation \ref{eqn:IV_correction_function}), data collected within 3 kHz to 25 MHz can analyzed with reasonable confidence. 
+\par Without revising the current measurement system, and while applying the correction function (equation \ref{eqn:IV_correction_function}), data collected within 3 kHz to 25 MHz can be analyzed with reasonable confidence. 
 
 \FloatBarrier
 
@@ -650,9 +650,9 @@
 \end{figure}
 
 \par At DC, the cell membrane is effectively non-conductive relative to the medium and the cell acts as an obstruction to current through the chamber. 
-\par With an applied frequency of 1 MHz there is evidence of cell polarization, but the electric field of the cell is only a fraction of the surrounding medium and the cell continues to largely obstruct current through the chamber. At 1 MHz the onset of Maxwell-Wagner relaxation is evident, but is far from dominating the spectra. 
+\par With an applied frequency of 1 MHz there is evidence of applied signal frequency nearing the time constant of the membrane interface, but the electric field of the cell is only a fraction of the surrounding medium and the cell continues to largely obstruct current through the chamber. At 1 MHz the onset of Maxwell-Wagner relaxation is evident, but is far from dominating the spectra. 
 
-\par At 10 MHz, the effects of Maxwell-Wagner relaxation has fully developed. The cell membrane is effectively short-circuited and the effect of the cell is dominated by the dielectric properties of the cytoplasm. In this model, since the cytoplasm is more conductive than the medium, the isolated cell impedance is negative at 10 MHz, signifying that the cell is promoting current flow instead of impeding it. 
+\par At 10 MHz, the effects of Maxwell-Wagner relaxation have fully developed. The cell membrane is effectively short-circuited and the effect of the cell is dominated by the dielectric properties of the cytoplasm. In this model, since the cytoplasm is more conductive than the medium, the isolated cell impedance is negative at 10 MHz, signifying that the cell is promoting current flow instead of impeding it. 
 
 \par With an applied frequency of 1 GHz the effect of the cell is negligible as the entire system is effectively short-circuited and current is unaffected by non-homogeneities of the dielectric. 
 
@@ -791,7 +791,7 @@
     \label{fig:device_sensitivity}
 \end{figure}
 
-\par The device FEA parametric study identified a max sensitivity of 0.059 with an electrode gap of 6 $\mu$m and an electrode width of 6 $\mu$m. However, as apparent in figure \ref{fig:device_sensitivity_curve}, there is significant "noise" which is indicative of low accuracy results. Figure \ref{fig:device_sensitivity_average_width} and \ref{fig:device_sensitivity_average_gap} depict the average trends over the electrode width and gap.
+\par The device FEA parametric study identified a max sensitivity of 0.059 with an electrode gap of 6 $\mu$m and an electrode width of 6 $\mu$m. However, as apparent in figure \ref{fig:device_sensitivity_curve}, there is significant "noise" which is indicative of low precision results. Figure \ref{fig:device_sensitivity_average_width} and \ref{fig:device_sensitivity_average_gap} depict the average trends over the electrode width and gap.
 
 %The averaged trends do share a semblance to the simple model in figure \ref{fig:simple_sensitivity_gap} and \ref{fig:simple_sensitivity_width}. 
 
@@ -837,7 +837,7 @@
 \noindent The analytic sensitivity was calculated with Sun's definition using the power fraction (equation \ref{eqn:Sun_sensitivity} and \ref{eqn:power_fraction}), and the power fraction by itself (\ref{eqn:power_fraction}). 
 
 \par Sun's sensitivity and the simple FEA sensitivity are compared in figure \ref{fig:sunVsSimpleSensitivity}. Sun's method found a maximum sensitivity of 0.0684 at an electrode width and gap of 15 $\mu$m and 5 $\mu$m respectively, compared to the simple FEA maximum sensitivity of 0.0762 at an electrode width and gap of 14 $\mu$m and 4 $\mu$m respectively. The curves largely tracked each other except for electrode gap values less than 4 $\mu$m where the analytic sensitivity drops. This is where the maximum percent difference of 52.88\% is recorded. 
-\par Since the power fraction does not share the same scale as Sun's method and the simple FEA sensivity, all three studies were normalized by their maximum and compared in figure \ref{fig:sun-simple-powerFrac-comp}. The maximum power fraction was found at an electrode width and gap of 15 $\mu$m and 5 $\mu$m. The mean absolute error between the power fraction vs. Sun's method, the power fraction vs. the simple FEA, and Sun's method vs the simple FEA sensitivity curves are 0.0039, 0.0471, and 0.0486 respectively. This indicates that while the all three sensitivity studies track each other well, Sun's sensitivity and the power fraction track each other very closely. This is supported by how all three studies predict nearly the same optimal electrode gap and width values inside the tested domain. 
+\par Since the power fraction does not share the same scale as Sun's method and the simple FEA sensivity, all three studies were normalized by their maximum and compared in figure \ref{fig:sun-simple-powerFrac-comp}. The maximum power fraction was found at an electrode width and gap of 15 $\mu$m and 5 $\mu$m. The mean absolute error between the power fraction vs. Sun's method, the power fraction vs. the simple FEA, and Sun's method vs the simple FEA sensitivity curves are 0.0039, 0.0471, and 0.0486 respectively. This indicates that while the all three sensitivity studies track each other well, Sun's sensitivity and the power fraction clearly track each other the closest. This is supported by how all three studies predict nearly the same optimal electrode gap and width values inside the tested domain. 
 
 
 %\par To validate the analytic parametric studies, the simple FEA model, the analytic sensitivity calculated with Sun's definition and the power fraction, and the power fraction used as a sensitivity metric. To explore device behaviour and optimization, the more efficient power fraction is used to significantly expand the domain of the sensitivity analysis by exploring increased ranges in electrode gap, electrode height, channel height, particle location, and particle size. 
@@ -870,7 +870,7 @@
 
 \par The power fraction (equation \ref{eqn:power_fraction}) was used to calculate a high resolution sensitivity curve, perform a parametric study over an expanded domain, and to explore the effects of cell position on sensitivity. 
 
-\par The high resolution power fraction curve is depicted in figure \ref{fig:high_resolution_power_fraction}. The study found a maximum power fraction of 0.0438 at an electrode width of 20 $\mu$m and an electrode gap of 4.8 $\mu$m to a precision of 0.1$\mu$m. The study was was performed over an electrode length spanning 5 $\mu$m to 20 $\mu$m and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. 
+\par The high resolution power fraction curve is depicted in figure \ref{fig:high_resolution_power_fraction}. The study found a maximum power fraction of 0.0438 at an electrode width of 20 $\mu$m and an electrode gap of 4.8 $\mu$m to a precision of 0.1$\mu$m. The study was performed over an electrode length spanning 5 $\mu$m to 20 $\mu$m and the electrode gap spanning 1 $\mu$m to 10 $\mu$m. 
 
 \begin{figure}[h]
     \centering
@@ -925,7 +925,7 @@
         \includegraphics[width=\textwidth]{images/expandedPowerVsWidth.png}
         \caption{Projection of the power fraction curve onto the power fraction - electrode width plane.}
     \end{subfigure}
-    \caption[Expanded power fraction sensitivity study.]{Expanded sensitivity study that varied the electrode width and gap from 1 $\mu$m to 40 $\mu$m with a resolution of 0.5 $\mu$m. The study found a maximum power fraction of 0.0438 with an electrode gap and width of 5 $\mu$m  and 40 $\mu$m  respectively. A 2.26\% increase in power fraction was found by increasing the electrode gap from 10 $\mu$m to 20 $\mu$m. A 0.091\% increase in power fraction was found by increasing the electrode gap from 20 $\mu$m to 40 $\mu$m.}
+    \caption[Expanded power fraction sensitivity study.]{Expanded sensitivity study that varied the electrode width and gap from 1 $\mu$m to 40 $\mu$m with a resolution of 0.5 $\mu$m. The study found a maximum power fraction of 0.0438 with an electrode gap and width of 5 $\mu$m  and 40 $\mu$m  respectively. A 2.26\% increase in power fraction was found by increasing the electrode width from 10 $\mu$m to 20 $\mu$m. A 0.091\% increase in power fraction was found by increasing the electrode width from 20 $\mu$m to 40 $\mu$m.}
     \label{fig:expanded_power_sensitivity} 
 \end{figure}
 
